@@ -53,23 +53,15 @@
          try {
              //Eval the code to overwrite existing function. Access the iframe by name
 	         preview.eval(js_content);
-	         preview.remove();
-	         preview.p5PlayRebind();
-	         preview.eval("new p5();");
+	         // preview.remove();
+	         // preview.p5PlayRebind();
+	         // preview.eval("new p5();");
          } catch (err) {
              // ReferenceError: alph is not defined
-             alert("Make sure you've defined your variable before trying to use it");
+             alert(err);
+             // alert("Make sure you've defined your variable before trying to use it");
          }
 
-
-         // var script = document.createElement('script');
-         // try {
-         //     script.appendChild(document.createTextNode(code));
-         //     view.contents().find('body').appendChild(script);
-         // } catch (e) {
-         //     script.text = code;
-         //     document.body.appendChild(script);
-         // }
      }, 2000);
  }
 

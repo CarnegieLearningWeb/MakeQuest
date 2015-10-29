@@ -69,7 +69,7 @@ $(document).ready(function() {
 
     loadCurrentUserProject();
     //Set iframe to right level
-    $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
+    $('iframe#preview').attr('src', 'mini/index.html');
     $instructions.find("h3").text(instructions["level"+currentLevel].title);
     $instructions.find("p").text(instructions["level"+currentLevel].content);
 });

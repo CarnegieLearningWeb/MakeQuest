@@ -36,49 +36,39 @@
         <a class="account hide-for-medium-up" href="#" data-reveal-id="signupModal"><i class="fi-unlock"></i></a>
     </nav>
     <main>
-    	<div id="instructions" class="row">
-    		<div class="large-6 large-centered columns">
-    			<h3 class="title">
-    				<!-- Level 1 -->
-    			</h3>
-    			<p class="content">
-    				<!-- Somebody messed up the code and the platforms are not properly aligned
-					Change the numbers so you can reach the goal -->
-    			</p>
-    		</div>
-    	</div>
         <div class="row">
             <div class="large-6 columns">
             	<div class="row">
             		<div class="large-12 columns">
 		                <ul class="tabs" data-tab role="tablist">
-		                    <li class="tab-title active" role="presentation"><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel2-1">html</a></li>
-		                    <li class="tab-title" role="presentation"><a href="#panel2-2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-2">css</a></li>
-		                    <li class="tab-title" role="presentation"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-3">js</a></li>
+		                    <li class="tab-title active" role="presentation"><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel2-1">Code</a></li>
+		                    <!-- <li class="tab-title" role="presentation"><a href="#panel2-2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-2">css</a></li>
+		                    <li class="tab-title" role="presentation"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-3">html</a></li> -->
 		                </ul>
 		                <div class="tabs-content">
 		                    <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
 		                        <div class="ace-editor-container">
-		                            <!-- HTML FOR ACE -->
-		                            <div id="html_editor" class="ace-editor">
-		                            </div>
-		                            <!-- END HTML FOR ACE -->
+		                            <!-- JS FOR ACE -->
+                                    <div id="js_editor" class="ace-editor">
+                                    </div>
+                                    <!-- END JS FOR ACE -->
+
 		                        </div>
 		                    </section>
 		                    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
 		                        <div class="ace-editor-container">
-		                            <!-- HTML FOR ACE -->
+		                            <!-- CSS FOR ACE -->
 		                            <div id="css_editor" class="ace-editor">
 		                            </div>
-		                            <!-- END HTML FOR ACE -->
+		                            <!-- END CSS FOR ACE -->
 		                        </div>
 		                    </section>
 		                    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
 		                        <div class="ace-editor-container">
 		                            <!-- HTML FOR ACE -->
-		                            <div id="js_editor" class="ace-editor">
-		                            </div>
-		                            <!-- END HTML FOR ACE -->
+                                    <div id="html_editor" class="ace-editor">
+                                    </div>
+                                    <!-- END HTML FOR ACE -->
 		                        </div>
 		                    </section>
 		                </div>
@@ -103,7 +93,8 @@
             	<!-- LIVE PREVIEW -->
 		        <div class="preview_container">
 		        	<!-- src="project_template/index.html" -->
-		            <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
+		            <iframe name = "preview" frameborder="0" id="preview">
+                        <!-- sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals"> -->
 		            </iframe>
 		        </div>
 		        <!-- END LIVE PREVIEW -->
@@ -166,10 +157,12 @@
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
 
-    <script src="js/ace_editors.js"></script>
+    <script src="js/ace-editors.js"></script>
+    <script src="js/iframe-listeners.js"></script>
     <script>
     	$(document).foundation();
     </script>
+
 </body>
 
 </html>
