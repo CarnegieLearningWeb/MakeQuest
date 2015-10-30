@@ -5,7 +5,7 @@
  // Hide vertical ruler
  editor_html.setOption("printMargin", 10);
  editor_html.setOption("showPrintMargin", false);
- editor_html.setValue('<h2>Multiple 1 Enemies</h2><canvas id="myCanvas" width="600" height="400" style="background:#cccccc;"></canvas>');
+
  // JS EDITOR
  var editor_js = ace.edit("js_editor");
  editor_js.setTheme("ace/theme/monokai");
@@ -13,7 +13,7 @@
  // Hide vertical ruler
  editor_js.setOption("printMargin", 10);
  editor_js.setOption("showPrintMargin", false);
- editor_js.setValue("var x = 0; alert(x+12);");
+
 
  // CSS EDITOR
  var editor_css = ace.edit("css_editor");
@@ -22,7 +22,7 @@
  // Hide vertical ruler
  editor_css.setOption("printMargin", 10);
  editor_css.setOption("showPrintMargin", false);
- editor_css.setValue("h1{color: red;}");
+
 
  // LIVE PREVIEW
  var view = $('#preview');
@@ -60,6 +60,8 @@
 	         preview.eval("new p5();");
          } catch (err) {
              // ReferenceError: alph is not defined
+             console.log("ERROR");
+             console.log(err);
              alert(err);
              // alert("Make sure you've defined your variable before trying to use it");
          }

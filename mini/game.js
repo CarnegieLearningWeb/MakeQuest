@@ -40,7 +40,7 @@ function draw() {
     fill("red");
     textSize(24);
     textFont("Georgia");
-    text("My Game", 50, 50);
+    text("Level " + currentLevel, 50, 50);
 
     playerInput();
 

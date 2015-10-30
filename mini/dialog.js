@@ -94,7 +94,25 @@ function setupDialogue(){
 		},
 	];
 
-	dialogues = [dialogueLevel1, dialogueLevel2, dialogueLevel3, dialogueLevel4, dialogueLevel5, dialogueLevel6, dialogueLevel7];
+	dialogueLevel8 = [
+		{
+			character: "heroA",
+			image: heroAPic,
+			textColor: "blue",
+			text: "Level 8 instructions",
+		},
+	];
+
+	dialogueLevel9 = [
+		{
+			character: "heroA",
+			image: heroAPic,
+			textColor: "blue",
+			text: "Level 9 instructions",
+		},
+	];
+
+	dialogues = [dialogueLevel1, dialogueLevel2, dialogueLevel3, dialogueLevel4, dialogueLevel5, dialogueLevel6, dialogueLevel7, dialogueLevel8, dialogueLevel9];
 }
 
 function drawDialogue(){
