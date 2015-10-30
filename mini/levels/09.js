@@ -9,8 +9,18 @@ function setupLevel(){
   	playerImage = loadImage("images/hero.png");
     player.addImage(playerImage);
 	
+
+	platformWidth = 80;
+	platformHeight = 20;
+
+	platformColor = "orange";
+	platform1 = createPlatform(40, 450, platformWidth, platformHeight, platformColor);
+	platform2 = createPlatform(220, 450, platformWidth, platformHeight, platformColor);
+	platform3 = createPlatform(400, 450, platformWidth, platformHeight, platformColor);
+
 	//Now try adding an image to some of your platforms. Remember you can reuse anything you've stored inside a variable, including images.
 	platformImage = loadImage("images/walls-floors.png");
+	
 	
 }
 
