@@ -8,6 +8,18 @@ function base_setupLevel() {
   goal.position.y = 440;
 }
 
+function base_drawLevel() {
+	
+  platformWidth = 80;
+  platformHeight = 20;
+  
+  platformColor = "orange";
+  createPlatform(40, 450, platformWidth, platformHeight, platformColor);
+  createPlatform(220, 450, platformWidth, platformHeight, platformColor);
+  createPlatform(400, 450, platformWidth, platformHeight, platformColor);
+
+}
+
 function makePlayerJump(){
   // Change the force of the jump to reach the goal.
     force = 5;

@@ -1,5 +1,5 @@
 PLAYER_START_X = 20;
-PLAYER_START_Y = 380;
+PLAYER_START_Y = 180;
 
 GOAL_REACHED_TEXT = "Goal reached. Conditionals unlocked!";
 

@@ -1,12 +1,3 @@
-function setupLevel() {
-  platformWidth = 80;
-  platformHeight = 20;
-  
-  platformColor = "orange";
-  createPlatform(40, 450, platformWidth, platformHeight, platformColor);
-
-}
-
 function drawLevel() {
   //isPlayerOnPlatform is a truth teller function. But it only knows two words, TRUE or FALSE.function
   //Although they don't sound like much, TRUE and FALSE, together with CONDITIONALS,  hold the key to opening new possibilities
