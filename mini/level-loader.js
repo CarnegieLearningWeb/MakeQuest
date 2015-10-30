@@ -1,12 +1,19 @@
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
+var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
+
 var currentLevelFilename;
 
 if (isNaN(currentLevel)) currentLevel = 1;
+if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 1;
 
 currentLevelFilename = 'levels/0' + currentLevel + '.js';
 
 if (currentLevel > 1) {
   document.getElementById('previous').style.display = 'block';
+}
+
+if( currentLevel < maxLevelUnlocked ){
+	document.getElementById('next').style.display = 'block';	
 }
 
 function showNextLevelButton() {
@@ -22,6 +29,12 @@ function previousLevel() {
 
 function nextLevel() {
   window.sessionStorage['currentLevel'] = currentLevel + 1;
+
+  if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
+  	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
+  }
+  
+
   window.location.reload();
 
   parent.nextLevel();
