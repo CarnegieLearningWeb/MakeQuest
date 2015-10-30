@@ -9,11 +9,16 @@ function setupDialogue(){
 
 	dialoguePicWidth = 64;
 	dialoguePicX = WIDTH - dialoguePicWidth - dialogueGutter;
-	heroAPic = loadImage("images/heroA.png");	
-	heroBPic = loadImage("images/heroB.png");	
+	
+	heroAPic = loadImage("images/hero.png");
+	heroBPic = loadImage("images/bird.png");	
+	
+	
 
+	platformImg = loadImage('images/walls-floors.png');
 
-	dialogueBox = loadImage("images/DialogueBox.png");
+	dialogueBox = loadImage("images/dialogue-box.png");
+
 	dialogueTextHeight = 90;	//If we include the preload function, we can use dialogueBox.height
 								//We could also set this inside draw, but it doesn't feel right
 	dialogueTextWidth = WIDTH - dialoguePicWidth - dialogueGutter;
@@ -23,7 +28,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
 		},
 		{
@@ -35,7 +40,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Goodbye",
 		}
 	];
@@ -44,7 +49,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 2 instructions",
 		},
 	];
@@ -53,7 +58,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 3 instructions",
 		},
 	];
@@ -62,7 +67,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 4 instructions",
 		},
 	];
@@ -71,7 +76,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 5 instructions",
 		},
 	];
@@ -80,7 +85,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 6 instructions",
 		},
 	];
@@ -89,7 +94,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 7 instructions",
 		},
 	];
@@ -98,7 +103,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 8 instructions",
 		},
 	];
@@ -107,7 +112,7 @@ function setupDialogue(){
 		{
 			character: "heroA",
 			image: heroAPic,
-			textColor: "blue",
+			textColor: "white",
 			text: "Level 9 instructions",
 		},
 	];
@@ -120,7 +125,11 @@ function drawDialogue(){
 
 	if(dialogueOn){
 		image( dialogueBox, 0, 0, WIDTH );
-		image( dialogues[currentDialogue][dialogueIndex].image, dialoguePicX, dialogueGutter, dialoguePicWidth );
+		image( dialogues[currentDialogue][dialogueIndex].image, 
+				dialoguePicX, 
+				dialogueGutter, 
+				dialoguePicWidth,
+				64 );
 
 		fill( dialogues[currentDialogue][dialogueIndex].textColor );
 	    textSize(12);
