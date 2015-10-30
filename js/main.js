@@ -1,16 +1,9 @@
-var instructions = {
-    level1: {
-        title: "Level 1",
-        content: "Somebody messed up the code and the platforms are not properly aligned. \nChange the numbers so you can reach the goal"
-    },
-    level2: {
-        title: "Level 2",
-        content: "Repeat last exercise.\n //Black platforms are fragile places to try and stand on. Change the color on the platforms to help the hero."
-    }
-}
 $(document).ready(function() {
+    //Reset sessionStorage to keep editor and iframe in sync
+    window.sessionStorage['currentLevel'] = 1;
+
     currentLevel = 1;
-    maxLevel = 2;
+    maxLevel = 9;
     $instructions = $("#instructions");
 
     $(document).on('click', '#loginButton', function(e) {
@@ -70,8 +63,6 @@ $(document).ready(function() {
     loadCurrentUserProject();
     //Set iframe to right level
     $('iframe#preview').attr('src', 'mini/index.html');
-    $instructions.find("h3").text(instructions["level"+currentLevel].title);
-    $instructions.find("p").text(instructions["level"+currentLevel].content);
 });
 
 function loadMiniCourse(){
@@ -84,12 +75,12 @@ function loadMiniCourse(){
         console.log(course);
         //Set html
         if(course){
-            if( course.hasOwnProperty("html") ){
-                editor_html.setValue(course.html);        
-            }
-            if( course.hasOwnProperty("css") ){
-                editor_css.setValue(course.css);        
-            }
+            // if( course.hasOwnProperty("html") ){
+            //     editor_html.setValue(course.html);        
+            // }
+            // if( course.hasOwnProperty("css") ){
+            //     editor_css.setValue(course.css);        
+            // }
             if( course.hasOwnProperty("js") ){
                 editor_js.setValue(course.js);        
             }
@@ -114,16 +105,16 @@ function loadCurrentUserProject(){
 
             //Set html
             if(project){
-                if( project.hasOwnProperty("html") ){
-                    console.log("Setting html to");
-                    console.log(project.html);
-                    editor_html.setValue(project.html);        
-                }
-                if( project.hasOwnProperty("css") ){
-                    console.log("Setting css to");
-                    console.log(project.css);
-                    editor_css.setValue(project.css);        
-                }
+                // if( project.hasOwnProperty("html") ){
+                //     console.log("Setting html to");
+                //     console.log(project.html);
+                //     editor_html.setValue(project.html);        
+                // }
+                // if( project.hasOwnProperty("css") ){
+                //     console.log("Setting css to");
+                //     console.log(project.css);
+                //     editor_css.setValue(project.css);        
+                // }
                 if( project.hasOwnProperty("js") ){
                     console.log("Setting js to");
                     console.log(project.js);
@@ -160,13 +151,6 @@ function saveProject(){
                 "js": editor_js.getValue()
             }; 
         myFirebaseRef.child("projects").child(currentUser.uid).child(currentLevelStr).set(payload, function(){alert("Save successful")});
-        // myFirebaseRef.child("projects").child(currentUser.uid).set({
-        //     currentLevelStr: {
-        //         "html": editor_html.getValue(),
-        //         "css": editor_css.getValue(),
-        //         "js": editor_js.getValue()
-        //     }
-        // }, function(){alert("Save successful")});
     } else {
         alert("Please sign in to save your work");
     }
@@ -175,9 +159,9 @@ function saveProject(){
 function nextLevel(){
     currentLevel == maxLevel ? maxLevel : currentLevel++;
     //Update iframe source
-    $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
-    $instructions.find("h3").text(instructions["level"+currentLevel].title);
-    $instructions.find("p").text(instructions["level"+currentLevel].content);
+    // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
+    // $instructions.find("h3").text(instructions["level"+currentLevel].title);
+    // $instructions.find("p").text(instructions["level"+currentLevel].content);
     loadCurrentUserProject();
 }
 
@@ -185,8 +169,8 @@ function prevLevel(){
     currentLevel == 1 ? 1 : currentLevel--;
     
     //Update iframe source
-    $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
-    $instructions.find("h3").text(instructions["level"+currentLevel].title);
-    $instructions.find("p").text(instructions["level"+currentLevel].content);
+    // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
+    // $instructions.find("h3").text(instructions["level"+currentLevel].title);
+    // $instructions.find("p").text(instructions["level"+currentLevel].content);
     loadCurrentUserProject();
 }

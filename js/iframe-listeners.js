@@ -4,4 +4,4 @@ function receiveMessage(event)
   	console.log(event)
 }
 
-window.addEventListener("nextLevel", receiveMessage, false);
+window.addEventListener("message", receiveMessage, false);

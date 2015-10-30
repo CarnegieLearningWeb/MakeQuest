@@ -14,8 +14,8 @@
 }
 
 .preview_container {
-    min-width: 645px;
-    min-height: 485px;
+    min-width: 650px;
+    min-height: 550px;
     position: relative;
     /*border: 2px solid red;*/
 }

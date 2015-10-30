@@ -25,9 +25,9 @@
     <nav class="menu">
         <h1 class="name">Mini</a></h1>
         <ul class="inline-list">
-            <li><a href="#">Home</a></li>
+            <!-- <li><a href="#">Home</a></li>
             <li class="active"><a href="#">Project</a></li>
-            <li><a href="#">Topic</a></li>
+            <li><a href="#">Topic</a></li> -->
         </ul>
         <ul class="inline-list hide-for-small-only account-action">
             <li><a href="#" data-reveal-id="signupModal">Login</a></li>
@@ -77,13 +77,14 @@
                 <div class="row">
 		        	
 	        		<div class="large-4 medium-4 columns">
-	        			<button class="button left" onclick="prevLevel()">Prev</button>
+	        			<button style = "visibility:hidden;" class="button left" disabled onclick="prevLevel()">Prev</button>
 	        		</div>
 	        		<div class="large-4 medium-4 columns text-center">
-	        			<button class="button button success center" onclick="saveProject()">Save</button>
+	        			<button class="button success center" onclick="saveProject()">Save</button>
+                        <button class="button button center" onclick="refreshPreview()">Run</button>
 	        		</div>
 	        		<div class="large-4 medium-4 columns">
-	        			<button class="button right" onclick="nextLevel()">Next</button>
+	        			<button style = "visibility:hidden;" class="button right" disabled onclick="nextLevel()">Next</button>
 	        		</div>
 		        	
 		        </div>
@@ -93,8 +94,8 @@
             	<!-- LIVE PREVIEW -->
 		        <div class="preview_container">
 		        	<!-- src="project_template/index.html" -->
-		            <iframe name = "preview" frameborder="0" id="preview">
-                        <!-- sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals"> -->
+		            <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
+                        
 		            </iframe>
 		        </div>
 		        <!-- END LIVE PREVIEW -->
