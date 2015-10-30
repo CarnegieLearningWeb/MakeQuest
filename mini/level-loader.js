@@ -6,7 +6,7 @@ var currentLevelFilename;
 if (isNaN(currentLevel)) currentLevel = 1;
 if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 1;
 
-currentLevelFilename = 'levels/0' + currentLevel + '.js';
+currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
 if (currentLevel > 1) {
   document.getElementById('previous').style.display = 'block';
@@ -51,7 +51,7 @@ function setupLevel() {}
 function drawLevel() {}
 
 // Load the BASE level file for the current level.
-document.write('<script src="levels/0' + currentLevel + '-base.js"></script>');
+document.write('<script src="' + currentLevelFilename + '-base.js"></script>');
 
 // Load the normal level file for the current level.
-document.write('<script src="' + currentLevelFilename + '"></script>');
+document.write('<script src="' + currentLevelFilename + '.js"></script>');

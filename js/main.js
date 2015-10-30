@@ -3,7 +3,7 @@ $(document).ready(function() {
     window.sessionStorage['currentLevel'] = 1;
 
     currentLevel = 1;
-    maxLevel = 9;
+    maxLevel = 10;
     $instructions = $("#instructions");
 
     $(document).on('click', '#loginButton', function(e) {
