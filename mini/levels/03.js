@@ -1,7 +1,6 @@
-function setupLevel() {
-  //Your x-ray vision let's you see the grid
-  //The y-axis is inverted in this weird programming world
-  
+function setupLevel(){
+//Update the first two numbers of every platform to change their position.
+//Example (x-position, y-position, width, height);
   createPlatform(40, 100, 80, 10);
   createPlatform(160, 200, 80, 10);
   createPlatform(160, 300, 80, 10);

@@ -122,7 +122,7 @@ function setupDialogue(){
 			character: "heroA",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 9 instructions",
+			text: "Level 10 instructions",
 		},
 	];
 

@@ -1,15 +1,13 @@
-function setupLevel() {
-	//So far there have been enough platforms for you to get through.function
-	//Now its time to create them from scratch.
+function setupLevel(){
 
-  //Use the width and height variables when creating new platforms
-  platformWidth = 80;
-  platformHeight = 20;
-  
-  //Remember black platforms have been corrupted
-  platformColor = "orange";
-  createPlatform(40, 100, platformWidth, platformHeight, platformColor);
-  
-  //Make two new platforms below.
-  
+  platformColor = "red";
+
+  //Update the number in this VARIABLE to make all platforms have a width between 80 and 120
+  platformWidth = 40;
+
+//Leave this code alone
+  createPlatform(90, 200, platformWidth, 10, platformColor);
+  createPlatform(190, 300, platformWidth, 10, platformColor);
+  createPlatform(290, 400, platformWidth, 10, platformColor);
+  createPlatform(390, 500, platformWidth, 10, platformColor);
 }

@@ -1,7 +1,7 @@
-PLAYER_START_X = 20;
-PLAYER_START_Y = 50;
+PLAYER_START_X = 580;
+PLAYER_START_Y = 80;
 
-GOAL_REACHED_TEXT = "Goal reached. Create your own platforms!";
+GOAL_REACHED_TEXT = "Goal reached. Conditionals unlocked!";
 
 function base_setupLevel() {
   goal.position.x = 600;
