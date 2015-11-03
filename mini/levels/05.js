@@ -1,8 +1,14 @@
 function setupLevel() {
-  //Update the color of this VARIABLE to change all of the platform colors
+  // ***** LEVEL FIVE INSTRUCTIONS *****
+  //
+  // Update the color of the VARIABLE below to change all of the
+  // platform colors.
+  //
+  // ***** ENTER YOUR CODE BELOW *****
+
   platformColor = 'red';
 
-  //Leave this code alone
+  // Leave this code alone
   createPlatform(40, 100, 80, 10, 'green');
   createPlatform(160, 200, 80, 10, platformColor);
   createPlatform(250, 300, 80, 10, platformColor);
