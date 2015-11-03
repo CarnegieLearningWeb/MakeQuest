@@ -193,6 +193,10 @@ function setupDialogue(){
 }
 
 function drawDialogue(){
+
+	//Exit on level 0. No dialogues for full game
+	if( window.sessionStorage['currentLevel'] == 0) return;
+
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
 	if(dialogueOn){

@@ -1,9 +1,9 @@
 $(document).ready(function() {
     //Reset sessionStorage to keep editor and iframe in sync
-    window.sessionStorage['currentLevel'] = 1;
+    window.sessionStorage['currentLevel'] = 0;
 
-    currentLevel = 1;
-    maxLevel = 10;
+    currentLevel = 0;
+    maxLevel = 20;
     $instructions = $("#instructions");
 
     $(document).on('click', '#loginButton', function(e) {

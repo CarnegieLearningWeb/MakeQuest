@@ -45,6 +45,16 @@ function draw() {
     playerInput();
 
     if (goalReached) {
+
+        //First level triggers a modal on completion
+        if(currentLevel == 0){
+            player.position.x = PLAYER_START_X;
+            player.position.y = PLAYER_START_Y;
+            goalReached = false;
+            alert("Evil thing has happened");
+            return;
+        }
+
         fill('red');
         textAlign(CENTER);
         text(GOAL_REACHED_TEXT, WIDTH/2, HEIGHT/2);
@@ -75,13 +85,17 @@ function draw() {
 
 function isPlayerOnPlatform() {
     for (var i = 0; i < platforms.length; i++) {
-        if (player.overlap(platforms[i]) & player.velocity.y > 0) {
+        if (player.overlap(platforms[i]) && player.velocity.y > 0) {
             if (platforms[i].shapeColor.toLowerCase() !== 'red') {
                 return true;
             }
         }
     }
     return false;
+}
+
+function makePlayerJump(force){
+    player.setSpeed(force, 270);
 }
 
 function createPlatform(x, y, width, height, color) {
