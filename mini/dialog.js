@@ -19,7 +19,10 @@ function setupDialogue(){
 
 	dialogueBox = loadImage("images/dialogue-box.png");
 
-	dialogueTextHeight = 90;	//If we include the preload function, we can use dialogueBox.height
+
+	//Need a text height + "next" text to fit inside the BoxHeight
+	dialogueBoxHeight = 128;	
+	dialogueTextHeight = 110;	//If we include the preload function, we can use dialogueBox.height
 								//We could also set this inside draw, but it doesn't feel right
 	dialogueTextWidth = WIDTH - dialoguePicWidth - dialogueGutter;
 
@@ -196,25 +199,28 @@ function drawDialogue(){
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
 	if(dialogueOn){
-		image( dialogueBox, 0, 0, WIDTH );
+		image( dialogueBox, 0, 0, WIDTH, 128 );
 		image( dialogues[currentDialogue][dialogueIndex].image, 
 				dialoguePicX, 
 				dialogueGutter, 
 				dialoguePicWidth,
-				64 );
+				dialogueBoxHeight );
 
 		fill( dialogues[currentDialogue][dialogueIndex].textColor );
 	    textSize(12);
 	    textFont(pixelFont);
 
 	    text( dialogues[currentDialogue][dialogueIndex].text, dialogueGutter, dialogueGutter, dialogueTextWidth, dialogueTextHeight - dialogueGutter );
+	    //Simulate a next "button" so the user clicks on the dialogueBox
+	    fill("green");
+	    text( "Next", dialogueGutter, dialogueTextHeight, dialogueTextWidth );
 	}
 }
 
 function mouseClickedDialogue() {
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
-	if(dialogueOn && mouseY < dialogueTextHeight){
+	if(dialogueOn && mouseY < dialogueBoxHeight){
 		dialogueIndex++;
 		if( dialogueIndex >= dialogues[currentDialogue].length ){
 			dialogueIndex = 0;			
