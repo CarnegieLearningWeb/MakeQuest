@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
-    <!-- ACE -->
-    <script type="text/javascript" src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <!-- CODEMIRROR -->
+    <script type="text/javascript" src="codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="codemirror/javascript.js"></script>
+    <link rel="stylesheet" href="css/codemirror_editors.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/ace_editors.css">
+    <link rel="stylesheet" href="codemirror/codemirror.css">
 
     <!-- FIREBASE -->
     <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
@@ -47,11 +49,11 @@
 		                </ul>
 		                <div class="tabs-content">
 		                    <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
-		                        <div class="ace-editor-container">
-		                            <!-- JS FOR ACE -->
-                                    <div id="js_editor" class="ace-editor">
+		                        <div class="codemirror-editor-container">
+		                            <!-- JS FOR CODEMIRROR -->
+                                    <div id="js_editor">
                                     </div>
-                                    <!-- END JS FOR ACE -->
+                                    <!-- END JS FOR CODEMIRROR -->
 
 		                        </div>
 		                    </section>
@@ -158,7 +160,7 @@
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
 
-    <script src="js/ace-editors.js"></script>
+    <script src="js/codemirror-editors.js"></script>
     <script src="js/iframe-listeners.js"></script>
     <script>
     	$(document).foundation();
