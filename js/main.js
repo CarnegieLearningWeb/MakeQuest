@@ -72,6 +72,13 @@ function loadMiniCourse(){
     $.get('mini/levels/' + zeroPaddedLevel + '.js', function(data) {
         console.log("Course retrieved: ");
         console.log(data);
+
+        // We want to make it less likely that the user accidentally
+        // deletes the closing brace of a function definition, so
+        // we'll move it way down to the bottom of the file with
+        // plenty of white-space in between.
+        data = data.replace(/}\n*$/, '\n\n\n\n\n\n\n\n\n\n}\n');
+
         editor_js.setValue(data);
     });
 }
