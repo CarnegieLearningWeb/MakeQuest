@@ -1,4 +1,5 @@
 GOAL_REACHED_TEXT = "JavaScript unlocked!";
+CURRENT_LEVEL_TEXT = "Level 1";
 
 function base_setupLevel() {
   var platform1 = createPlatform(WIDTH/2, 460, 640, 10);

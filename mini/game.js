@@ -40,7 +40,7 @@ function draw() {
     fill("red");
     textSize(24);
     textFont("Georgia");
-    text("Level " + currentLevel, 50, 50);
+    text(CURRENT_LEVEL_TEXT, 50, 50);
 
     playerInput();
 
