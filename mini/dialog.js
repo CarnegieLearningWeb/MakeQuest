@@ -47,47 +47,93 @@ function setupDialogue(){
 
 	dialogueLevel2 = [
 		{
-			character: "heroA",
+			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 2 instructions",
+			text: "OMG… you did it! You really did it!  It isn’t that I didn’t think you could, but so many others tried and failed before you, but that doesn’t matter now.  I can feel something special in you.",
 		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "The Vile For-oh-For’s code corruption powers have forced all platforms and walkways to diminish.  If the people can’t go anywhere, they can never rebel against his rule! With your new “javaScript vision” you can see platforms as they are meant to be seen, through numbers.",
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "The one we are standing on for instance, looks like (40, 100, 80, 10).  The first two numbers are it’s origin, but without more powers it is very risky to try and teleport a platform to another location.  Instead let us make the platform longer by changing the 80 to a larger number, and see if it can help us reach the access point!  Each time you reach an access point you return the use of that code to Humanity.  With everyone understanding how to code, The For-oh-For doesn’t stand a chance!",
+		}
 	];
 
 	dialogueLevel3 = [
 		{
-			character: "heroA",
+			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 3 instructions",
+			text: "Yes!  You did it!  By making the platforms larger you were able to power up your visual sensors and now you can see not only javaScript, but also the coordinate plane!  With this floating grid, we will be able to make more changes in the world and reach more distant access points.  The For-oh-For should be scared… but lets not go after him just yet, there is more training to do!",
 		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "Remember the platform numbers? (40, 100, 80, 10)   We know that we can make platforms larger, but now with the grid we can begin to change the Origin, or the first two numbers in our code.  The first number tells the platform where to start according to the numbers going left to right, (or the x-axis), and the second number controls location based on the numbers going from top to bottom (or an upside-down y-axis).  Rearrange the platforms to reach the next access point!",
+		}
 	];
 
 	dialogueLevel4 = [
 		{
-			character: "heroA",
+			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 4 instructions",
+			text: "Oh No!  The For-oh-For has detected some tampering in the code.  We are going to have to be even smarter now to reach the remaining access points.  Since you figured out how to change platform size and teleport them around, The For-oh-For has changed almost all of the platforms in the world to “red” holograms that you will fall through if you try and stand on them.",
 		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "We must use our latest power to change the colors of the platforms back into solid “green” holograms so we can reach our access point!  You can do it!",
+		}
+
 	];
 
 	dialogueLevel5 = [
 		{
-			character: "heroA",
+			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 5 instructions",
+			text: "Amazing.  You found a Variable Entering Storage Tank or VEST!  This VEST can store enough information that it will allow you to change multiple platforms at the same time!  No longer do you need to manipulate just one object at a time, now you can cause all the platforms to grow with one move!  Oh, if I could only see the frustration on The For-oh-For’s face.  I mean he deserves it for all the frustrations he causes right?  You know what I’m talking about!",
 		},
+		{
+			character: "heroB",
+			image: heroAPic,
+			textColor: "white",
+			text: "Ok, back to understanding your new power!  The VEST allows you to store a number that controls all of your platforms at the same time!  To store a value it must be written like this: \n\nplatformWidth = 80;",
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "Now when you use your javaScript vision, you will see code slightly differently! (see below)  By changing the value “80” in the above code, it will change how long all of your platforms are at the same time!"
+					+"\n\nplatform1 = createSprite(40, 100, platformWidth, 10);"
+					+"\nplatform2 = createSprite(40, 100, platformWidth, 10);"
+					+"\nplatform3 = createSprite(40, 100, platformWidth, 10);",
+		}
 	];
 
 	dialogueLevel6 = [
 		{
-			character: "heroA",
+			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Level 6 instructions",
+			text: "",
 		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "",
+		}
 	];
 
 	dialogueLevel7 = [

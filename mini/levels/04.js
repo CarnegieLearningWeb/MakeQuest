@@ -1,4 +1,4 @@
-funciton setupLevel(){ 
+function setupLevel(){ 
   //Change the word red to something else like magenta or blue.
 
   createPlatform(40, 100, 80, 10, 'green');

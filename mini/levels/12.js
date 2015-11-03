@@ -11,7 +11,7 @@ function setupLevel (){
 function drawLevel (){
   //Update the platforms to move to the left on every frame. Make platform1 move at a speed of 1 unit, platform2 at a speed of 2 units and platform3 at a speed of 3 units. We already updated the code for platform1
   platform1.position.x = platform1.position.x - 1;
-
+  
 }
 
 
