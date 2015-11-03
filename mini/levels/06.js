@@ -1,8 +1,8 @@
 function setupLevel(){
   // ***** LEVEL FIVE (SILVER) INSTRUCTIONS *****
   //
-  // Update the number in the platformWidth VARIABLE to make all
-  // platforms have a width between 80 and 120.
+  // Update the number in the platformWidth VARIABLE to change
+  // the width of many platforms.
   //
   // Update the color of the platformColor VARIABLE below to
   // change all of the platform colors.
