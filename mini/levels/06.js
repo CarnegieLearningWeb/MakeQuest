@@ -1,6 +1,6 @@
 function setupLevel(){
 
-  platformColor = "red";
+  platformColor = 'red';
 
   //Update the number in this VARIABLE to make all platforms have a width between 80 and 120
   platformWidth = 40;
