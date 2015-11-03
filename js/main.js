@@ -69,7 +69,7 @@ function loadMiniCourse(){
     console.log("Loading mini course template");
     editor_js.setValue("hi");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
-    $.get('mini/levels/' + zeroPaddedLevel + '.js', function(data) {
+    $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         console.log("Course retrieved: ");
         console.log(data);
 
