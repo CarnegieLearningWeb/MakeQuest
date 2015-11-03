@@ -67,25 +67,12 @@ $(document).ready(function() {
 
 function loadMiniCourse(){
     console.log("Loading mini course template");
-
-    var courseRef = new Firebase('https://mini-course.firebaseio.com/mini-course/level'+currentLevel);
-    courseRef.once('value', function(snapshot) {
-        var course = snapshot.val();
+    editor_js.setValue("hi");
+    var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
+    $.get('mini/levels/' + zeroPaddedLevel + '.js', function(data) {
         console.log("Course retrieved: ");
-        console.log(course);
-        //Set html
-        if(course){
-            // if( course.hasOwnProperty("html") ){
-            //     editor_html.setValue(course.html);        
-            // }
-            // if( course.hasOwnProperty("css") ){
-            //     editor_css.setValue(course.css);        
-            // }
-            if( course.hasOwnProperty("js") ){
-                editor_js.setValue(course.js);        
-            }
-            
-        }
+        console.log(data);
+        editor_js.setValue(data);
     });
 }
 
