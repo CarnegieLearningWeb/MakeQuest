@@ -2,10 +2,13 @@ var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
 var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
 
+console.log("INITIAL VALUES");
+console.log(currentLevel, maxLevelUnlocked);
+
 var currentLevelFilename;
 
-if (isNaN(currentLevel)) currentLevel = 1;
-if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 1;
+if (isNaN(currentLevel)) currentLevel = 0;
+if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 0;
 if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLevel] = 1;
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;

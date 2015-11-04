@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var startLevel = 1;
+    var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
 
     if (debugLevel) {
@@ -11,7 +11,8 @@ $(document).ready(function() {
     window.sessionStorage['currentLevel'] = startLevel;
 
     currentLevel = startLevel;
-    maxLevel = 10;
+    maxLevel = 20;
+
     $instructions = $("#instructions");
 
     $(document).on('click', '#loginButton', function(e) {
