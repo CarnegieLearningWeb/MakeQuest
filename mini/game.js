@@ -87,8 +87,11 @@ function draw() {
 
 function isPlayerOnPlatform() {
     for (var i = 0; i < platforms.length; i++) {
-        if (player.overlap(platforms[i]) && player.velocity.y > 0) {
+        console.log("platform velocity " + platforms[i].velocity.y);
+        if (player.overlap(platforms[i]) & (player.velocity.y > 0 || platforms[i].velocity.y < 0 ) ) {
             if (platforms[i].shapeColor.toLowerCase() !== 'red') {
+                player.velocity.y = platforms[i].velocity.y;
+                
                 return true;
             }
         }

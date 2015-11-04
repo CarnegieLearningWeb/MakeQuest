@@ -1,8 +1,8 @@
-PLAYER_START_X = 580;
-PLAYER_START_Y = 80;
+PLAYER_START_X = 20;
+PLAYER_START_Y = 130;
 
 GOAL_REACHED_TEXT = "Goal reached.";
-CURRENT_LEVEL_TEXT = "Level 7 Silver";
+CURRENT_LEVEL_TEXT = "Level 7 Gold";
 
 function base_setupLevel() {
   goal.position.x = 600;
