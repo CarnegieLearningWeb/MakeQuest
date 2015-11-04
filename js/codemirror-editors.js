@@ -3,12 +3,16 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   mode: 'javascript'
 });
 
-function markHint() {
+function markHint(/* esprima token match pattern ... */) {
   var candidateMarks = [];
   var candidateIndex = 0;
   var numHighlights = 0;
   var code = editor_js.getValue();
+
+  // For guidance on what this might look like in practice, play around
+  // with http://esprima.org/demo/parse.html and select the "Tokens" tab.
   var tokens = esprima.tokenize(code, {range: true});
+
   var pattern = [].slice.call(arguments).map(function(arg) {
     if (typeof(arg) == 'string') {
       arg = {value: arg};
