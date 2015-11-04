@@ -74,7 +74,12 @@ $(document).ready(function() {
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 });
 
-function loadMiniCourse(){
+function revertMiniCourse() {
+    loadMiniCourse(refreshPreview);
+}
+
+function loadMiniCourse(cb){
+    cb = cb || function() {}
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
@@ -131,6 +136,8 @@ function loadMiniCourse(){
             console.log("Executing editor command: " + command);
             eval(command);
         });
+
+        cb();
     });
 }
 
