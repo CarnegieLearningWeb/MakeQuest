@@ -1,8 +1,16 @@
 $(document).ready(function() {
-    //Reset sessionStorage to keep editor and iframe in sync
-    window.sessionStorage['currentLevel'] = 1;
+    var startLevel = 1;
+    var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
 
-    currentLevel = 1;
+    if (debugLevel) {
+        startLevel = parseInt(debugLevel[1]);
+    }
+
+
+    //Reset sessionStorage to keep editor and iframe in sync
+    window.sessionStorage['currentLevel'] = startLevel;
+
+    currentLevel = startLevel;
     maxLevel = 10;
     $instructions = $("#instructions");
 
