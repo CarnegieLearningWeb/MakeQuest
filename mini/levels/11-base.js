@@ -1,5 +1,5 @@
 PLAYER_START_X = 20;
-PLAYER_START_Y = 180;
+PLAYER_START_Y = 420;
 
 GOAL_REACHED_TEXT = "Goal reached. Conditionals unlocked!";
 CURRENT_LEVEL_TEXT = "Level 7 Bronze";

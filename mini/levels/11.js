@@ -1,5 +1,5 @@
 function setupLevel (){
-  // ***** LEVEL SIX (GOLD) INSTRUCTIONS *****
+  // ***** LEVEL SEVEN (BRONZE) INSTRUCTIONS *****
   //
   // Use platform1’s setVelocity function to move towards the
   // goal
@@ -8,6 +8,6 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform1.setSpeed( 1, 270 );
+  platform1.setSpeed( 0.5, 270 );
   
 }
