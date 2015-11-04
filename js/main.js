@@ -76,7 +76,6 @@ $(document).ready(function() {
 
 function loadMiniCourse(){
     console.log("Loading mini course template");
-    editor_js.setValue("hi");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         var editorCommands = [];
@@ -102,6 +101,7 @@ function loadMiniCourse(){
         // the file with plenty of white-space in between.
         data = data.replace(/}\n*$/, '\n\n\n\n\n\n\n\n\n\n}\n');
 
+        originalEditorContent = data;
         editor_js.setValue(data);
 
         // Make the first line read-only.
