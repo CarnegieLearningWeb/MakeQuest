@@ -1,10 +1,12 @@
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
+var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
 
 var currentLevelFilename;
 
 if (isNaN(currentLevel)) currentLevel = 1;
 if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 1;
+if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLevel] = 1;
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
@@ -38,6 +40,11 @@ function nextLevel() {
   window.location.reload();
 
   parent.nextLevel();
+}
+
+function showDialogue(){
+  dialogueOn = true;
+  window.sessionStorage['dialogueOn'+currentLevel] = 1;
 }
 
 // These functions can be overridden by the BASE level file, which

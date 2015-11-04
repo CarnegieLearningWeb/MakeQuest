@@ -2,7 +2,10 @@
 function setupDialogue(){
 	pixelFont = loadFont('c64-pixelized.otf');
 
-	dialogueOn = true;
+	console.log("DIALOGUE SEEN: ");
+	console.log(window.sessionStorage['dialogueOn'+currentLevel]);
+	console.log(dialogueOn);
+
 	dialogueIndex = 0;
 
 	dialogueGutter = 10;
@@ -19,7 +22,10 @@ function setupDialogue(){
 
 	dialogueBox = loadImage("images/dialogue-box.png");
 
-	dialogueTextHeight = 90;	//If we include the preload function, we can use dialogueBox.height
+
+	//Need a text height + "next" text to fit inside the BoxHeight
+	dialogueBoxHeight = 128;	
+	dialogueTextHeight = 110;	//If we include the preload function, we can use dialogueBox.height
 								//We could also set this inside draw, but it doesn't feel right
 	dialogueTextWidth = WIDTH - dialoguePicWidth - dialogueGutter;
 
@@ -35,7 +41,10 @@ function setupDialogue(){
 			character: "heroB",
 			image: heroBPic,
 			textColor: "red",
-			text: "Quod rem, libero quam ab nam et inventore nulla blanditiis repellat consequuntur! Libero tenetur a, voluptates sunt sapiente qui autem neque facilis.",
+			text: "Quod rem, libero quam ab nam et inventore nulla blanditiis"
+						+" repellat consequuntur!"
+			      +" Libero tenetur a, voluptates sunt sapiente qui autem"
+			      +" neque facilis."
 		},
 		{
 			character: "heroA",
@@ -50,19 +59,52 @@ function setupDialogue(){
 			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "OMG… you did it! You really did it!  It isn’t that I didn’t think you could, but so many others tried and failed before you, but that doesn’t matter now.  I can feel something special in you.",
+			text: "OMG… you did it! You really did it!"
+						+" It isn’t that I didn’t think you could,"
+			      +" but so many others tried and failed before you,"
+			      +" but that doesn’t matter now."
+			      +" I can feel something special in you."
 		},
 		{
 			character: "heroB",
 			image: heroBPic,
 			textColor: "white",
-			text: "The Vile For-oh-For’s code corruption powers have forced all platforms and walkways to diminish.  If the people can’t go anywhere, they can never rebel against his rule! With your new “javaScript vision” you can see platforms as they are meant to be seen, through numbers.",
+			text: "The Vile For-oh-For’s code corruption powers have forced"
+						+" all platforms and walkways to diminish.  If the people"
+						+" can’t go anywhere, they can never rebel against his rule!"
 		},
 		{
 			character: "heroB",
 			image: heroBPic,
 			textColor: "white",
-			text: "The one we are standing on for instance, looks like (40, 100, 80, 10).  The first two numbers are it’s origin, but without more powers it is very risky to try and teleport a platform to another location.  Instead let us make the platform longer by changing the 80 to a larger number, and see if it can help us reach the access point!  Each time you reach an access point you return the use of that code to Humanity.  With everyone understanding how to code, The For-oh-For doesn’t stand a chance!",
+			text: "With your new “javaScript vision” you can see platforms as"
+						+" they are meant to be seen, through numbers."
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "The one we are standing on for instance, looks like"
+						+" (40, 100, 80, 10)"
+						+" The first two numbers are it’s origin, but without more"
+						+" powers it is very risky to try and teleport a platform"
+						+" to another location."
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "Instead let us make the platform longer"
+						+" by changing the 80 to a larger number, and see if it can help"
+						+" us reach the access point!  Each time you reach an access"
+						+" point you return the use of that code to Humanity."
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "With everyone understanding how to code,"
+						+" The For-oh-For doesn’t stand a chance!"
 		}
 	];
 
@@ -71,14 +113,33 @@ function setupDialogue(){
 			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Yes!  You did it!  By making the platforms larger you were able to power up your visual sensors and now you can see not only javaScript, but also the coordinate plane!  With this floating grid, we will be able to make more changes in the world and reach more distant access points.  The For-oh-For should be scared… but lets not go after him just yet, there is more training to do!",
+			text: "Yes!  You did it!  By making the platforms larger you were"
+						+" able to power up your visual sensors and now you can see not"
+						+" only javaScript, but also the coordinate plane!"
+						+" With this floating grid, we will be able to make more changes"
+						+" in the world and reach more distant access points."
 		},
 		{
 			character: "heroB",
 			image: heroBPic,
 			textColor: "white",
-			text: "Remember the platform numbers? (40, 100, 80, 10)   We know that we can make platforms larger, but now with the grid we can begin to change the Origin, or the first two numbers in our code.  The first number tells the platform where to start according to the numbers going left to right, (or the x-axis), and the second number controls location based on the numbers going from top to bottom (or an upside-down y-axis).  Rearrange the platforms to reach the next access point!",
+			text: "The For-oh-For should be scared… but lets not go after him just yet,"
+						+" there is more training to do!"
+						+" Remember the platform numbers? (40, 100, 80, 10) "
+						+" We know that we can make platforms larger, but now with the grid we"
+						+" can begin to change the Origin, or the first two numbers in our code."
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "The first number tells the platform where to start according to the"
+						+" numbers going left to right, (or the x-axis), and the second number"
+						+" controls location based on the numbers going from top to bottom"
+						+" (or an upside-down y-axis).  Rearrange the platforms to reach the"
+						+" next access point!"
 		}
+		
 	];
 
 	dialogueLevel4 = [
@@ -86,13 +147,20 @@ function setupDialogue(){
 			character: "heroB",
 			image: heroAPic,
 			textColor: "white",
-			text: "Oh No!  The For-oh-For has detected some tampering in the code.  We are going to have to be even smarter now to reach the remaining access points.  Since you figured out how to change platform size and teleport them around, The For-oh-For has changed almost all of the platforms in the world to “red” holograms that you will fall through if you try and stand on them.",
+			text: "Oh No!  The For-oh-For has detected some tampering in the code."
+						+" We are going to have to be even smarter now to reach the remaining"
+						+" access points.  Since you figured out how to change platform size"
+						+" and teleport them around,",
 		},
 		{
 			character: "heroB",
 			image: heroBPic,
 			textColor: "white",
-			text: "We must use our latest power to change the colors of the platforms back into solid “green” holograms so we can reach our access point!  You can do it!",
+			text: "The For-oh-For has changed almost all of the platforms in the world"
+						+" to “red” holograms that you will fall through if you try and stand"
+						+" on them. We must use our latest power to change the colors of the"
+						+" platforms back into solid “green” holograms so we can reach our "
+						+" access point!  You can do it!",
 		}
 
 	];
@@ -196,29 +264,33 @@ function drawDialogue(){
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
 	if(dialogueOn){
-		image( dialogueBox, 0, 0, WIDTH );
+		image( dialogueBox, 0, 0, WIDTH, 128 );
 		image( dialogues[currentDialogue][dialogueIndex].image, 
 				dialoguePicX, 
 				dialogueGutter, 
 				dialoguePicWidth,
-				64 );
+				dialogueBoxHeight );
 
 		fill( dialogues[currentDialogue][dialogueIndex].textColor );
-	    textSize(12);
+	    textSize(14);
 	    textFont(pixelFont);
 
 	    text( dialogues[currentDialogue][dialogueIndex].text, dialogueGutter, dialogueGutter, dialogueTextWidth, dialogueTextHeight - dialogueGutter );
+	    //Simulate a next "button" so the user clicks on the dialogueBox
+	    fill("orange");
+	    text( "Click to continue...", dialogueGutter, dialogueTextHeight, dialogueTextWidth );
 	}
 }
 
 function mouseClickedDialogue() {
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
-	if(dialogueOn && mouseY < dialogueTextHeight){
+	if(dialogueOn && mouseY < dialogueBoxHeight){
 		dialogueIndex++;
 		if( dialogueIndex >= dialogues[currentDialogue].length ){
 			dialogueIndex = 0;			
 			dialogueOn = false;
+			window.sessionStorage['dialogueOn'+currentLevel] = 0;
 		}
 	}
 }
