@@ -73,13 +73,34 @@ function loadMiniCourse(){
         console.log("Course retrieved: ");
         console.log(data);
 
+        // Normalize whitespace if we're on windows.
+        data = data.replace(/\r\n/g, '\n');
+
         // We want to make it less likely that the user accidentally
-        // deletes the closing brace of a function definition, so
-        // we'll move it way down to the bottom of the file with
-        // plenty of white-space in between.
+        // deletes the closing brace of a function definition or adds
+        // code after it, so we'll move it way down to the bottom of
+        // the file with plenty of white-space in between.
         data = data.replace(/}\n*$/, '\n\n\n\n\n\n\n\n\n\n}\n');
 
         editor_js.setValue(data);
+
+        // Make the first line read-only.
+        editor_js.markText({line: 0, ch: 0}, {line: 1, ch: 0}, {
+          readOnly: true
+        });
+
+        // Make the last two lines read-only.
+        var numLines = data.split('\n').length;
+
+        editor_js.markText({
+            line: numLines - 2,
+            ch: 0
+        }, {
+            line: numLines,
+            ch: 0
+        }, {
+          readOnly: true
+        });
     });
 }
 
