@@ -100,7 +100,7 @@ function loadMiniCourse(){
         // By default, make the last two lines read-only; however, if
         // there's a comment to 'leave this code alone', then start the
         // read-only section there.
-        var numLines = data.split('\n').length;
+        var numLines = editor_js.lineCount();
         var startReadOnly = {line: numLines - 2, ch: 0};
         var leaveAloneIndex = data.indexOf('// Leave this code alone');
 
