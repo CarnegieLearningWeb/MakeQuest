@@ -24,6 +24,18 @@ function refreshPreview() {
 
   var js_content = editor_js.getValue();
 
+  if (typeof(esprima) !== 'undefined') {
+    try {
+      esprima.parse(js_content);
+    } catch (e) {
+      if (e.lineNumber) {
+        markJsErrorAtLine(e.lineNumber);
+        alert(e.description + " at line " + e.lineNumber);
+        return;
+      }
+    }
+  }
+
   //Error checking (provide user feedback)
   try {
      console.log("Eval js");
