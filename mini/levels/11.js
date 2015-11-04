@@ -10,6 +10,17 @@ function setupLevel (){
   // 
   // Use platform1’s setSpeed function to move towards the
   // goal
+  // 
+  // // Example:
+  //
+  //   platform1.setSpeed(0.5, MOVE_DOWN);
+  //                      ^        ^   
+  //                      |        |   
+  //                      |        |   
+  //                      |        direction
+  //                      speed
+  //                  
+  //                  
   // Use the variable MOVE_RIGHT instead of MOVE_LEFT
   //
   // ***** ENTER YOUR CODE BELOW *****
