@@ -70,7 +70,7 @@ $(document).ready(function() {
 
     loadCurrentUserProject();
     //Set iframe to right level
-    $('iframe#preview').attr('src', 'mini/index.html');
+    $('iframe#preview').attr('src', 'mini/index.html').focus();
 });
 
 function loadMiniCourse(){
