@@ -52,6 +52,7 @@ function draw() {
             player.position.y = PLAYER_START_Y;
             goalReached = false;
             alert("Evil thing has happened");
+            nextLevel();
             return;
         }
 
