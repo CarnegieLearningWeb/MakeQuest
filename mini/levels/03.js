@@ -16,6 +16,7 @@ function setupLevel(){
   //
   // ***** ENTER YOUR CODE BELOW *****
 
+  // EDITOR: markHint('createPlatform', '(', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true});
   createPlatform(40, 100, 80, 10);
   createPlatform(160, 200, 80, 10);
   createPlatform(160, 300, 80, 10);

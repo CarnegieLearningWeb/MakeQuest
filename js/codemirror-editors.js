@@ -14,12 +14,14 @@ function markHint(/* esprima token match pattern ... */) {
   var tokens = esprima.tokenize(code, {range: true});
 
   var pattern = [].slice.call(arguments).map(function(arg) {
+    if (arg === null) return {canBeAnything: true};
     if (typeof(arg) == 'string') {
       arg = {value: arg};
     }
     return arg;
   });
   var patternPartMatches = function(patternPart, token) {
+    if (patternPart.canBeAnything) return true;
     if ('value' in patternPart) {
       return token.value === patternPart.value;
     }

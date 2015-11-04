@@ -6,6 +6,7 @@ function setupLevel() {
   //
   // ***** ENTER YOUR CODE BELOW *****
 
+  // EDITOR: markHint('platformColor', '=', {type: 'String', highlight: true});
   platformColor = 'red';
 
   // Leave this code alone
