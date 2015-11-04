@@ -16,12 +16,12 @@ function setupLevel() {
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //
-  // Change the size of the platforms below so you can reach the goal.
+  // Change the position of the platforms below so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
 
   // EDITOR: markHint('createPlatform', '(', null, ',', null, ',', {type: 'Numeric', highlight: true});
-  createPlatform(40, 100, 80, 10);
-  createPlatform(60, 180, 80, 10);
-  createPlatform(510, 400, 80, 10);
+  createPlatform(60, 100, 120, 10);
+  createPlatform(90, 130, 120, 10);
+  createPlatform(120, 160, 120, 10);
 }

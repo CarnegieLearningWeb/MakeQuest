@@ -1,5 +1,8 @@
-function setupLevel(){
-  // ***** LEVEL THREE INSTRUCTIONS *****
+function setupLevel() {
+  // ***** LEVEL TWO INSTRUCTIONS *****
+  //
+  // The first two numbers control the position, the last
+  // two numbers control the size.
   //
   // Example:
   //
@@ -11,15 +14,14 @@ function setupLevel(){
   //                  |   y-position
   //                  x-position
   //
-  // Update the first two numbers of every platform
-  // to change their position.
+  // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
+  //
+  // Change the size of the platforms below so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
 
-  // EDITOR: markHint('createPlatform', '(', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true});
+  // EDITOR: markHint('createPlatform', '(', null, ',', null, ',', {type: 'Numeric', highlight: true});
   createPlatform(40, 100, 80, 10);
-  createPlatform(160, 200, 80, 10);
-  createPlatform(160, 300, 80, 10);
-  createPlatform(70, 370, 80, 10);
+  createPlatform(60, 180, 80, 10);
   createPlatform(510, 400, 80, 10);
 }

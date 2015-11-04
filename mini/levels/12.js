@@ -1,4 +1,9 @@
 function setupLevel (){
+  MOVE_RIGHT = 0;
+  MOVE_LEFT = 180;
+  MOVE_DOWN = 90;
+  MOVE_UP = 270;
+
   platformWidth = 200;
   platformHeight = 20;
 
@@ -15,5 +20,5 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform1.setSpeed( 1, 180 );
+  platform1.setSpeed( 1, MOVE_LEFT );
 }

@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Goal reached. Pixel grid unlocked!";
-CURRENT_LEVEL_TEXT = "Level 2";
+GOAL_REACHED_TEXT = "Goal reached. Color code unlocked!";
+CURRENT_LEVEL_TEXT = "Level 3";
 
 function base_getLevelDialogue() {
   return [
@@ -10,53 +10,33 @@ function base_getLevelDialogue() {
       character: "heroB",
       image: heroAPic,
       textColor: "white",
-      text: "OMG… you did it! You really did it!"
-            +" It isn’t that I didn’t think you could,"
-            +" but so many others tried and failed before you,"
-            +" but that doesn’t matter now."
-            +" I can feel something special in you."
+      text: "Yes!  You did it!  By making the platforms larger you were"
+            +" able to power up your visual sensors and now you can see not"
+            +" only javaScript, but also the coordinate plane!"
+            +" With this floating grid, we will be able to make more changes"
+            +" in the world and reach more distant access points."
     },
     {
       character: "heroB",
       image: heroBPic,
       textColor: "white",
-      text: "The Vile For-oh-For’s code corruption powers have forced"
-            +" all platforms and walkways to diminish.  If the people"
-            +" can’t go anywhere, they can never rebel against his rule!"
+      text: "The For-oh-For should be scared… but lets not go after him just yet,"
+            +" there is more training to do!"
+            +" Remember the platform numbers? (40, 100, 80, 10) "
+            +" We know that we can make platforms larger, but now with the grid we"
+            +" can begin to change the Origin, or the first two numbers in our code."
     },
     {
       character: "heroB",
       image: heroBPic,
       textColor: "white",
-      text: "With your new “javaScript vision” you can see platforms as"
-            +" they are meant to be seen, through numbers."
-    },
-    {
-      character: "heroB",
-      image: heroBPic,
-      textColor: "white",
-      text: "The one we are standing on for instance, looks like"
-            +" (40, 100, 80, 10)"
-            +" The first two numbers are it’s origin, but without more"
-            +" powers it is very risky to try and teleport a platform"
-            +" to another location."
-    },
-    {
-      character: "heroB",
-      image: heroBPic,
-      textColor: "white",
-      text: "Instead let us make the platform longer"
-            +" by changing the 80 to a larger number, and see if it can help"
-            +" us reach the access point!  Each time you reach an access"
-            +" point you return the use of that code to Humanity."
-    },
-    {
-      character: "heroB",
-      image: heroBPic,
-      textColor: "white",
-      text: "With everyone understanding how to code,"
-            +" The For-oh-For doesn’t stand a chance!"
+      text: "The first number tells the platform where to start according to the"
+            +" numbers going left to right, (or the x-axis), and the second number"
+            +" controls location based on the numbers going from top to bottom"
+            +" (or an upside-down y-axis).  Rearrange the platforms to reach the"
+            +" next access point!"
     }
+    
   ];
 }
 
