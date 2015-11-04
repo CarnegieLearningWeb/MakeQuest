@@ -12,12 +12,9 @@ function base_setupLevel() {
   
   platformColor = "orange";
   createPlatform(40, 450, platformWidth, platformHeight, platformColor);
-  createPlatform(220, 450, platformWidth, platformHeight, platformColor);
-  createPlatform(400, 450, platformWidth, platformHeight, platformColor);
+  
 }
 
-function makePlayerJump(){
-  // Change the force of the jump to reach the goal.
-    force = 5;
+function makePlayerJump(force){
     player.setSpeed(force, 270);
 }
