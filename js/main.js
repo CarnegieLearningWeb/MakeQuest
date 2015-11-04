@@ -78,11 +78,22 @@ function loadMiniCourse(){
     editor_js.setValue("hi");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
+        var editorCommands = [];
+
         console.log("Course retrieved: ");
         console.log(data);
 
         // Normalize whitespace if we're on windows.
         data = data.replace(/\r\n/g, '\n');
+
+        data = data.split('\n').filter(function(line) {
+            var match = line.match(/\s*\/\/\s*EDITOR:(.*)/);
+            if (!match) return true;
+
+            editorCommands.push(match[1]);
+
+            return false;
+        }).join('\n');
 
         // We want to make it less likely that the user accidentally
         // deletes the closing brace of a function definition or adds
@@ -113,6 +124,11 @@ function loadMiniCourse(){
           ch: 0
         }, {
           readOnly: true
+        });
+
+        editorCommands.forEach(function(command) {
+            console.log("Executing editor command: " + command);
+            eval(command);
         });
     });
 }

@@ -3,6 +3,56 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   mode: 'javascript'
 });
 
+function markHint() {
+  var candidateMarks = [];
+  var candidateIndex = 0;
+  var numHighlights = 0;
+  var code = editor_js.getValue();
+  var tokens = esprima.tokenize(code, {range: true});
+  var pattern = [].slice.call(arguments).map(function(arg) {
+    if (typeof(arg) == 'string') {
+      arg = {value: arg};
+    }
+    return arg;
+  });
+  var patternPartMatches = function(patternPart, token) {
+    if ('value' in patternPart) {
+      return token.value === patternPart.value;
+    }
+    if ('type' in patternPart) {
+      return token.type == patternPart.type;
+    }
+  };
+
+  tokens.forEach(function(token, i) {
+    var patternPart = pattern[candidateIndex];
+
+    if (patternPartMatches(patternPart, token)) {
+      candidateIndex++;
+      if (patternPart.highlight) {
+        candidateMarks.push(token);
+      }
+      if (pattern.length == candidateIndex) {
+        candidateMarks.forEach(function(token) {
+          var start = editor_js.posFromIndex(token.range[0]);
+          var end = editor_js.posFromIndex(token.range[1]);
+
+          if (numHighlights++ == 0) {
+            editor_js.scrollIntoView(start);
+          }
+          editor_js.markText(start, end, {
+            className: 'js-hint'
+          });
+        });
+        candidateIndex = 0;
+      }
+    } else {
+      candidateIndex = 0;
+      candidateMarks = [];
+    }
+  });
+}
+
 function markJsErrorAtLine(line) {
   var start = {line: line - 1, ch: 0};
   editor_js.markText(start, {line: line, ch: 0}, {
