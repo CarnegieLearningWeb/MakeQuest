@@ -3,6 +3,15 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   mode: 'javascript'
 });
 
+function markJsErrorAtLine(line) {
+  var start = {line: line - 1, ch: 0};
+  editor_js.markText(start, {line: line, ch: 0}, {
+    className: 'js-error',
+    clearOnEnter: true
+  });
+  editor_js.scrollIntoView(start);
+}
+
 function refreshPreview() {
   console.log("Refreshing view");
 
@@ -20,11 +29,21 @@ function refreshPreview() {
      console.log("Eval js");
      console.log(js_content);
       //Eval the code to overwrite existing function. Access the iframe by name
-    preview.eval(js_content);
+    preview.eval(js_content + '//# sourceURL=user-level.js');
     preview.remove();
     preview.p5PlayRebind();
     preview.eval("new p5();");
   } catch (err) {
+    StackTrace.fromError(err, {
+      offline: true,
+      filter: function(stackFrame) {
+        return /user-level\.js/.test(stackFrame.fileName);
+      }
+    }).then(function(frames) {
+      if (frames.length) {
+        markJsErrorAtLine(frames[0].lineNumber);
+      }
+    });
       // ReferenceError: alph is not defined
       console.log("ERROR");
       console.log(err);

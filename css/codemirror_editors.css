@@ -13,6 +13,10 @@
     min-height: 500px;
 }
 
+.js-error {
+    background: pink !important;
+}
+
 .preview_container {
     min-width: 650px;
     min-height: 550px;
