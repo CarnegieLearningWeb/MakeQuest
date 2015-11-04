@@ -263,7 +263,7 @@ function setupDialogue(){
 function drawDialogue(){
 	currentDialogue = window.sessionStorage['currentLevel'] - 1;
 
-	if(dialogueOn){
+	if(dialogueOn && dialogues[currentDialogue]){
 		image( dialogueBox, 0, 0, WIDTH, 128 );
 		image( dialogues[currentDialogue][dialogueIndex].image, 
 				dialoguePicX, 
