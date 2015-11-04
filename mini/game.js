@@ -7,6 +7,7 @@ var PLAYER_START_X = 20;
 var PLAYER_START_Y = 300;
 
 var GOAL_REACHED_TEXT = "Goal reached!";
+var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 2;
 
