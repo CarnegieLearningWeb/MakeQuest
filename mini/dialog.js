@@ -28,6 +28,10 @@ function setupDialogue(){
 	dialogueTextWidth = WIDTH - dialoguePicWidth - dialogueGutter;
 
 	currentDialogue = base_getLevelDialogue();
+
+	if (currentDialogue) {
+		document.getElementById('showDialogue').style.visibility = 'visible';
+	}
 }
 
 function drawDialogue(){
