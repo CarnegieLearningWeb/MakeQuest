@@ -85,13 +85,38 @@ function draw() {
     drawLevel();
 }
 
+function keepPlatformsInScene(){
+    //Stop platforms when colliding with walls. 
+    //Pivot point is at the center of the platform.
+
+    for (var i = 0; i < platforms.length; i++) {    
+        
+
+        if( platforms[i].velocity.x < 0 && (platforms[i].position.x - platforms[i].width/2) < 0 ){
+            platforms[i].velocity.x = 0;
+            platforms[i].position.x = 0 + platforms[i].width/2;
+        }
+        if( platforms[i].velocity.x > 0 && (platforms[i].position.x + platforms[i].width/2) > WIDTH ){
+            platforms[i].velocity.x = 0;
+            platforms[i].position.x = WIDTH - platforms[i].width/2;
+        }
+        if( platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height/2 - player.height) < 0 ){
+            platforms[i].velocity.x = 0;
+            platforms[i].position.y = 0 + platforms[i].height/2 + player.height;
+        }
+        if( platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height/2) > HEIGHT ){
+            platforms[i].velocity.x = 0;
+            platforms[i].position.y = HEIGHT - platforms[i].height/2;
+        }
+    }
+}
+
 function isPlayerOnPlatform() {
     for (var i = 0; i < platforms.length; i++) {
-        console.log("platform velocity " + platforms[i].velocity.y);
         if (player.overlap(platforms[i]) & (player.velocity.y > 0 || platforms[i].velocity.y < 0 ) ) {
             if (platforms[i].shapeColor.toLowerCase() !== 'red') {
                 player.velocity.y = platforms[i].velocity.y;
-                
+                player.position.y = platforms[i].position.y - platforms[i].height;
                 return true;
             }
         }
@@ -111,7 +136,7 @@ function createPlatform(x, y, width, height, color) {
 }
 
 function resetOnGameOver() {
-    if (player.position.y > HEIGHT) {
+    if (player.position.y > HEIGHT + 20) {
         player.position.x = PLAYER_START_X;
         player.position.y = PLAYER_START_Y;
     }
