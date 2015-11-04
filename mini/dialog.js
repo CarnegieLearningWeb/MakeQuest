@@ -72,15 +72,20 @@ function setupDialogue(){
 			text: "The Vile For-oh-For’s code corruption powers have forced"
 						+" all platforms and walkways to diminish.  If the people"
 						+" can’t go anywhere, they can never rebel against his rule!"
-						+" With your new “javaScript vision” you can see platforms as"
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "With your new “javaScript vision” you can see platforms as"
 						+" they are meant to be seen, through numbers."
 		},
 		{
 			character: "heroB",
 			image: heroBPic,
 			textColor: "white",
-			text: "The one we are standing on for instance, looks like\n"
-						+"(40, 100, 80, 10)\n"
+			text: "The one we are standing on for instance, looks like"
+						+" (40, 100, 80, 10)"
 						+" The first two numbers are it’s origin, but without more"
 						+" powers it is very risky to try and teleport a platform"
 						+" to another location."
@@ -93,7 +98,12 @@ function setupDialogue(){
 						+" by changing the 80 to a larger number, and see if it can help"
 						+" us reach the access point!  Each time you reach an access"
 						+" point you return the use of that code to Humanity."
-						+" With everyone understanding how to code,"
+		},
+		{
+			character: "heroB",
+			image: heroBPic,
+			textColor: "white",
+			text: "With everyone understanding how to code,"
 						+" The For-oh-For doesn’t stand a chance!"
 		}
 	];
@@ -262,13 +272,13 @@ function drawDialogue(){
 				dialogueBoxHeight );
 
 		fill( dialogues[currentDialogue][dialogueIndex].textColor );
-	    textSize(12);
+	    textSize(14);
 	    textFont(pixelFont);
 
 	    text( dialogues[currentDialogue][dialogueIndex].text, dialogueGutter, dialogueGutter, dialogueTextWidth, dialogueTextHeight - dialogueGutter );
 	    //Simulate a next "button" so the user clicks on the dialogueBox
-	    fill("green");
-	    text( "Next", dialogueGutter, dialogueTextHeight, dialogueTextWidth );
+	    fill("orange");
+	    text( "Click to continue...", dialogueGutter, dialogueTextHeight, dialogueTextWidth );
 	}
 }
 
