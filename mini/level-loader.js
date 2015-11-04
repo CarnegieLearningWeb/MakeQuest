@@ -49,6 +49,16 @@ function showDialogue(){
 
 // These functions can be overridden by the BASE level file, which
 // hackers will not see by default.
+function base_getLevelDialogue() {
+  return [
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "TODO: Add level " + currentLevel + " instructions",
+    },
+  ];
+}
 function base_setupLevel() {}
 function base_drawLevel() {}
 
