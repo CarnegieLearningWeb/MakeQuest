@@ -1,6 +1,6 @@
 // EDITOR: beginReadOnly();
 function setupLevel() {
-  // ***** LEVEL TWO INSTRUCTIONS *****
+  // ***** LEVEL THREE INSTRUCTIONS *****
   //
   // The first two numbers control the position, the last
   // two numbers control the size.
@@ -12,6 +12,7 @@ function setupLevel() {
   // ***** ENTER YOUR CODE BELOW *****
 // EDITOR: endReadOnly();
 
+// EDITOR: markHint('createPlatform', '(', null, ',', null, ',', {type: 'Numeric', highlight: true});
 // EDITOR: beginReadOnly();
   createPlatform(40, 100, 80, 10);
 // EDITOR: endReadOnly();
@@ -20,6 +21,7 @@ function setupLevel() {
   createPlatform(460, 280, 80, 10);
 
 // EDITOR: beginReadOnly();
+// EDITOR: beginCodeFold('Click here for an example.');
   // ******See Example Below******:
   //
   //   createPlatform(40, 100, 80, 10);
@@ -29,6 +31,7 @@ function setupLevel() {
   //                  |   |    width
   //                  |   y-position
   //                  x-position
+  // EDITOR: endCodeFold();
 }
 // EDITOR: endReadOnly();
 
