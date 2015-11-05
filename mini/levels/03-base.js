@@ -69,6 +69,4 @@ function base_drawLevel() {
   if (isPlayerOnPlatform()) {
     player.velocity.y = 0;
   }
-
-  drawGrid();
 }
