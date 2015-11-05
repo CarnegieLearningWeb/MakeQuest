@@ -43,6 +43,7 @@ function base_getLevelDialogue() {
 function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
+
 }
 
 function base_drawLevel() {
