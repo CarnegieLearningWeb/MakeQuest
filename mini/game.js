@@ -112,9 +112,12 @@ function keepPlatformsInScene(){
 }
 
 function isPlayerOnPlatform() {
+    var pCol;
+
     for (var i = 0; i < platforms.length; i++) {
         if (player.overlap(platforms[i]) & (player.velocity.y > 0 || platforms[i].velocity.y < 0 ) ) {
-            if (platforms[i].shapeColor.toLowerCase() !== 'red') {
+            pCol = color(platforms[i].shapeColor);
+            if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
                 player.velocity.y = platforms[i].velocity.y;
                 player.position.y = platforms[i].position.y - platforms[i].height;
                 return true;
@@ -128,9 +131,18 @@ function makePlayerJump(force){
     player.setSpeed(force, 270);
 }
 
-function createPlatform(x, y, width, height, color) {
+function createPlatform(x, y, width, height, col) {
     var platform = createSprite(x, y, width, height);
-    platform.shapeColor = color || 'green';
+    var colorObj = color(col || 'green');
+
+    // Invalid/unrecognized color names seem to show up as
+    // white, which isn't awesome because our background is
+    // white by default, so just disallow it for now.
+    if (red(colorObj) == 255 && green(colorObj) == 255 &&
+        blue(colorObj) == 255)
+        throw new Error('Invalid color: ' + col);
+
+    platform.shapeColor = colorObj;
     platforms.add(platform);
     return platform;
 }
