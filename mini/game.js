@@ -60,6 +60,10 @@ function draw() {
     text(CURRENT_LEVEL_TEXT, 50, 50);
 
     if (goalReached) {
+        player.position.x = goal.position.x;
+        player.position.y = goal.position.y;
+        player.velocity.x = 0;
+        player.velocity.y = 0;
 
         //First level triggers a modal on completion
         if(currentLevel == 0){
