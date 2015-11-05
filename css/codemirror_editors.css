@@ -23,6 +23,7 @@
 
 .js-read-only {
     opacity: 0.66;
+    background-color: lightgray;
 }
 
 .preview_container {

@@ -1,3 +1,4 @@
+// EDITOR: beginReadOnly();
 function setupLevel() {
   // ***** LEVEL TWO INSTRUCTIONS *****
   // The first two numbers control the position, the last
@@ -8,12 +9,16 @@ function setupLevel() {
   // Change the position of the platforms below so you can reach the goal. (Hint: how would you make a down staircase?)
   //
   // ***** ENTER YOUR CODE BELOW *****
+// EDITOR: endReadOnly();
 
+// EDITOR: beginReadOnly();
   createPlatform(60, 100, 120, 10);
+// EDITOR: endReadOnly();
   createPlatform(90, 130, 120, 10);
   createPlatform(120, 160, 120, 10);
 
 
+// EDITOR: beginReadOnly();
  // ******See Example Below******:
   //
   //   createPlatform(40, 100, 80, 10);
@@ -28,3 +33,4 @@ function setupLevel() {
 
 
 }
+// EDITOR: endReadOnly();

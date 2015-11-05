@@ -1,3 +1,4 @@
+// EDITOR: beginReadOnly();
 function setupLevel() {
   // ***** LEVEL TWO INSTRUCTIONS *****
   //
@@ -9,11 +10,16 @@ function setupLevel() {
   // Change the size of the platforms below so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
+// EDITOR: endReadOnly();
 
+// EDITOR: beginReadOnly();
   createPlatform(40, 100, 80, 10);
+// EDITOR: endReadOnly();
+
   createPlatform(260, 180, 80, 10);
   createPlatform(460, 280, 80, 10);
 
+// EDITOR: beginReadOnly();
   // ******See Example Below******:
   //
   //   createPlatform(40, 100, 80, 10);
@@ -24,5 +30,6 @@ function setupLevel() {
   //                  |   y-position
   //                  x-position
 }
+// EDITOR: endReadOnly();
 
 
