@@ -38,12 +38,26 @@ function draw() {
 
     if (currentLevel > UNLOCK_GRID_LEVEL) drawGrid();
 
+    playerInput();
+
+    gravity(player);
+
+    // Draw player
+    player.shapeColor = 'Aqua';
+    player.display();
+
+    drawSprites();
+
+    resetOnGameOver();
+
+    base_drawLevel();
+    drawLevel();
+
+    // Move text to the bottom so it doesn't get hidden by objects
     fill("red");
     textSize(24);
     textFont("Georgia");
     text(CURRENT_LEVEL_TEXT, 50, 50);
-
-    playerInput();
 
     if (goalReached) {
 
@@ -69,20 +83,7 @@ function draw() {
         goalReached = true;
     }
 
-    gravity(player);
-
-    // Draw player
-    player.shapeColor = 'Aqua';
-    player.display();
-
-    drawSprites();
-
-    resetOnGameOver();
-
     drawDialogue();
-
-    base_drawLevel();
-    drawLevel();
 }
 
 function keepPlatformsInScene(){
@@ -119,7 +120,8 @@ function isPlayerOnPlatform() {
             pCol = color(platforms[i].shapeColor);
             if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
                 player.velocity.y = platforms[i].velocity.y;
-                player.position.y = platforms[i].position.y - platforms[i].height;
+                player.position.y = platforms[i].position.y - platforms[i].height/2 - player.height/2;
+
                 return true;
             }
         }
