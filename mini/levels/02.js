@@ -4,6 +4,7 @@ function setupLevel() {
   // The first two numbers control the position, the last
   // two numbers control the size.
   //
+  // EDITOR: beginCodeFold();
   // Example:
   //
   //   createPlatform(40, 100, 80, 10);
@@ -13,6 +14,7 @@ function setupLevel() {
   //                  |   |    width
   //                  |   y-position
   //                  x-position
+  // EDITOR: endCodeFold();
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //

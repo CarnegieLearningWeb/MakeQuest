@@ -85,6 +85,7 @@ function loadMiniCourse(cb){
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         var markHints = [];
         var readOnlyRanges = [];
+        var foldedRanges = [];
         var currLineNumber = 0;
         var editorCommands = {
             markHint: function() {
@@ -95,6 +96,13 @@ function loadMiniCourse(cb){
             },
             endReadOnly: function() {
                 var currRange = readOnlyRanges[readOnlyRanges.length - 1];
+                currRange.push(currLineNumber);
+            },
+            beginCodeFold: function() {
+                foldedRanges.push([currLineNumber]);
+            },
+            endCodeFold: function() {
+                var currRange = foldedRanges[foldedRanges.length - 1];
                 currRange.push(currLineNumber);
             }
         };
@@ -157,6 +165,22 @@ function loadMiniCourse(cb){
         } else {
             $("#showHints").hide();
         }
+
+        foldedRanges.forEach(function(range) {
+            var start = {line: range[0], ch: 0};
+            editor_js.foldCode(start, {
+                widget: '',
+                rangeFinder: function(cm, pos) {
+                    return {
+                        from: start,
+                        to: {
+                            line: range[1],
+                            ch: 0
+                        }
+                    };
+                }
+            });
+        });
 
         cb();
     });
