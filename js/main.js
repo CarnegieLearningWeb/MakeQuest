@@ -83,7 +83,21 @@ function loadMiniCourse(cb){
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
-        var editorCommands = [];
+        var markHints = [];
+        var readOnlyRanges = [];
+        var currLineNumber = 0;
+        var editorCommands = {
+            markHint: function() {
+                markHints.push(arguments);
+            },
+            beginReadOnly: function() {
+                readOnlyRanges.push([currLineNumber]);
+            },
+            endReadOnly: function() {
+                var currRange = readOnlyRanges[readOnlyRanges.length - 1];
+                currRange.push(currLineNumber);
+            }
+        };
 
         console.log("Course retrieved: ");
         console.log(data);
@@ -91,50 +105,48 @@ function loadMiniCourse(cb){
         // Normalize whitespace if we're on windows.
         data = data.replace(/\r\n/g, '\n');
 
-        data = data.split('\n').filter(function(line) {
-            var match = line.match(/\s*\/\/\s*EDITOR:(.*)/);
-            if (!match) return true;
-
-            editorCommands.push(match[1]);
-
-            return false;
-        }).join('\n');
-
         // We want to make it less likely that the user accidentally
         // deletes the closing brace of a function definition or adds
         // code after it, so we'll move it way down to the bottom of
         // the file with plenty of white-space in between.
         data = data.replace(/}\n*$/, '\n\n\n\n\n\n\n\n\n\n}\n');
 
+        data = data.split('\n').filter(function(line) {
+            var match = line.match(/\s*\/\/\s*EDITOR:(.*)/);
+            if (!match) {
+                currLineNumber++;
+                return true;
+            }
+
+            with (editorCommands) {
+                console.log("Executing editor command: " + match[1]);
+                eval(match[1]);
+            }
+
+            return false;
+        }).join('\n');
+
         originalEditorContent = data;
         editor_js.setValue(data);
 
         // Make the first line read-only.
-        editor_js.markText({line: 0, ch: 0}, {line: 1, ch: 0}, {
-          readOnly: true
+        readOnlyRanges.push([0, 1]);
+
+        // Make the last two lines read-only.
+        readOnlyRanges.push([editor_js.lineCount() - 2, 
+                             editor_js.lineCount()]);
+
+        readOnlyRanges.forEach(function(range) {
+            editor_js.markText({line: range[0], ch: 0}, {
+              line: range[1],
+              ch: 0
+            }, {
+              readOnly: true
+          });
         });
 
-        // By default, make the last two lines read-only; however, if
-        // there's a comment to 'leave this code alone', then start the
-        // read-only section there.
-        var numLines = editor_js.lineCount();
-        var startReadOnly = {line: numLines - 2, ch: 0};
-        var leaveAloneIndex = data.indexOf('// Leave this code alone');
-
-        if (leaveAloneIndex != -1) {
-          startReadOnly = editor_js.posFromIndex(leaveAloneIndex);
-        }
-
-        editor_js.markText(startReadOnly, {
-          line: numLines,
-          ch: 0
-        }, {
-          readOnly: true
-        });
-
-        editorCommands.forEach(function(command) {
-            console.log("Executing editor command: " + command);
-            eval(command);
+        markHints.forEach(function(arguments) {
+            markHint.apply(this, arguments);
         });
 
         cb();

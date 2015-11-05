@@ -16,9 +16,11 @@ function setupLevel(){
   platformWidth = 40;
   platformHeight = 10;
 
+  // EDITOR: beginReadOnly();
   // Leave this code alone
   createPlatform(30, 100, platformWidth, platformHeight, 'green');
   createPlatform(190, 200, platformWidth, platformHeight, platformColor);
   createPlatform(290, 300, platformWidth, platformHeight, platformColor);
   createPlatform(390, 400, platformWidth, platformHeight, platformColor);
+  // EDITOR: endReadOnly();
 }
