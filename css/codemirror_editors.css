@@ -21,6 +21,10 @@
     background: pink !important;
 }
 
+.js-read-only {
+    opacity: 0.66;
+}
+
 .preview_container {
     min-width: 650px;
     min-height: 550px;

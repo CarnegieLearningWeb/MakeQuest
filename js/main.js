@@ -141,6 +141,7 @@ function loadMiniCourse(cb){
               line: range[1],
               ch: 0
             }, {
+              className: 'js-read-only',
               readOnly: true
           });
         });
