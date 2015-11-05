@@ -150,8 +150,21 @@ function loadMiniCourse(cb){
             markHint.apply(this, arguments);
         });
 
+        $("#js_editor").removeClass('show-js-hints');
+
+        if (markHints.length) {
+            $("#showHints").show();
+        } else {
+            $("#showHints").hide();
+        }
+
         cb();
     });
+}
+
+function showHints() {
+    $("#js_editor").addClass('show-js-hints');
+    $("#showHints").fadeOut();
 }
 
 function loadCurrentUserProject(){

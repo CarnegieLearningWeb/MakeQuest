@@ -13,7 +13,7 @@
     min-height: 500px;
 }
 
-.js-hint {
+#js_editor.show-js-hints .js-hint {
     background: yellow;
 }
 
