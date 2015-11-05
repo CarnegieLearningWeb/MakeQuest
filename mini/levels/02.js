@@ -4,7 +4,7 @@ function setupLevel() {
   // The first two numbers control the position, the last
   // two numbers control the size.
   //
-  // EDITOR: beginCodeFold();
+  // EDITOR: beginCodeFold('Click here for an example.');
   // Example:
   //
   //   createPlatform(40, 100, 80, 10);

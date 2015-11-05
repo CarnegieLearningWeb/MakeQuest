@@ -25,6 +25,11 @@
     opacity: 0.66;
 }
 
+.js-code-fold-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .preview_container {
     min-width: 650px;
     min-height: 550px;

@@ -87,6 +87,7 @@ function loadMiniCourse(cb){
         var readOnlyRanges = [];
         var foldedRanges = [];
         var currLineNumber = 0;
+        var currIndentation = 0;
         var editorCommands = {
             markHint: function() {
                 markHints.push(arguments);
@@ -98,12 +99,16 @@ function loadMiniCourse(cb){
                 var currRange = readOnlyRanges[readOnlyRanges.length - 1];
                 currRange.push(currLineNumber);
             },
-            beginCodeFold: function() {
-                foldedRanges.push([currLineNumber]);
+            beginCodeFold: function(linkText) {
+                foldedRanges.push({
+                    begin: currLineNumber,
+                    indentation: currIndentation,
+                    linkText: linkText || 'More\u2026'
+                });
             },
             endCodeFold: function() {
                 var currRange = foldedRanges[foldedRanges.length - 1];
-                currRange.push(currLineNumber);
+                currRange.end = currLineNumber;
             }
         };
 
@@ -120,15 +125,16 @@ function loadMiniCourse(cb){
         data = data.replace(/}\n*$/, '\n\n\n\n\n\n\n\n\n\n}\n');
 
         data = data.split('\n').filter(function(line) {
-            var match = line.match(/\s*\/\/\s*EDITOR:(.*)/);
+            var match = line.match(/(\s*)\/\/\s*EDITOR:(.*)/);
             if (!match) {
                 currLineNumber++;
                 return true;
             }
 
+            currIndentation = match[1];
             with (editorCommands) {
-                console.log("Executing editor command: " + match[1]);
-                eval(match[1]);
+                console.log("Executing editor command: " + match[2]);
+                eval(match[2]);
             }
 
             return false;
@@ -167,15 +173,20 @@ function loadMiniCourse(cb){
         }
 
         foldedRanges.forEach(function(range) {
-            var start = {line: range[0], ch: 0};
+            var start = {line: range.begin, ch: 0};
+            var span = $('<span class="cm-comment">' + range.indentation +
+                         '// </span>');
+            $('<span class="js-code-fold-link"></span>')
+              .text(range.linkText)
+              .appendTo(span);
             editor_js.foldCode(start, {
-                widget: '',
+                widget: span[0],
                 rangeFinder: function(cm, pos) {
                     return {
                         from: start,
                         to: {
-                            line: range[1],
-                            ch: 0
+                            line: range.end - 1,
+                            ch: editor_js.getLine(range.end - 1).length
                         }
                     };
                 }
