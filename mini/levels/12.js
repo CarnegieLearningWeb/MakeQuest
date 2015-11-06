@@ -1,9 +1,9 @@
 function setupLevel (){
   // EDITOR: beginReadOnly();
-  MOVE_RIGHT = 0;
-  MOVE_LEFT = 180;
-  MOVE_DOWN = 90;
-  MOVE_UP = 270;
+  FACE_RIGHT = 0;
+  FACE_LEFT = 180;
+  FACE_DOWN = 90;
+  FACE_UP = 270;
 
   platformWidth = 200;
   platformHeight = 20;
@@ -22,12 +22,12 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform2.setSpeed( 2, MOVE_RIGHT );
-  platform3.setSpeed( 3, MOVE_RIGHT );
+  platform2.setSpeed( 2, FACE_RIGHT );
+  platform3.setSpeed( 3, FACE_RIGHT );
 
   // EDITOR: beginCodeFold('Click here for an example.');
   // Example:
-  //   platform1.setSpeed(0.5, MOVE_DOWN);
+  //   platform1.setSpeed(0.5, FACE_DOWN);
   //                      ^        ^   
   //                      |        |   
   //                      |        |   
