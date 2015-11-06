@@ -5,12 +5,12 @@ function setupLevel (){
   MOVE_DOWN = 90;
   MOVE_UP = 270;
 
-  platformHeight = 60;
+  platformHeight = 100;
 
   platform1 = createPlatform(320, 460, 640, 20, 'orange');
-  platform2 = createPlatform(180, 100, 100, platformHeight, 'blue');
-  platform3 = createPlatform(320, 100, 100, platformHeight, 'red');
-  platform4 = createPlatform(500, 100, 100, platformHeight, 'green');
+  platform2 = createPlatform(180, 200, 100, platformHeight, 'blue');
+  platform3 = createPlatform(320, 200, 100, platformHeight, 'red');
+  platform4 = createPlatform(500, 200, 100, platformHeight, 'green');
   // EDITOR: endReadOnly();
   
   // ***** LEVEL SEVEN (SILVER) INSTRUCTIONS *****
@@ -19,11 +19,11 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform2.setSpeed( 2, MOVE_DOWN );
+  platform2.setSpeed( 4, MOVE_DOWN );
   platform3.setSpeed( 3, MOVE_DOWN );
   platform4.setSpeed( 4, MOVE_DOWN );
 
-  // EDITOR: beginCodeFold('Click here for an example.');
+  // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
   // Example:
   //   platform1.setSpeed(0.5, MOVE_DOWN);
   //                      ^        ^   
@@ -31,5 +31,9 @@ function setupLevel (){
   //                      |        |   
   //                      |        direction
   //                      speed
+  // EDITOR: endCodeFold();
+  
+  // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
+  // Change the speed of just two platforms
   // EDITOR: endCodeFold();
 }
