@@ -66,7 +66,7 @@ function draw() {
         player.velocity.y = 0;
 
         //First level triggers a modal on completion
-        if(currentLevel == 0){
+        if (currentLevel == 0) {
             player.position.x = PLAYER_START_X;
             player.position.y = PLAYER_START_Y;
             goalReached = false;
@@ -77,7 +77,7 @@ function draw() {
 
         fill('red');
         textAlign(CENTER);
-        text(GOAL_REACHED_TEXT, WIDTH/2, HEIGHT/2);
+        text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2);
         particles.addParticle();
         particles.run();
     }
@@ -90,29 +90,29 @@ function draw() {
     drawDialogue();
 }
 
-function keepPlatformsInScene(){
+function keepPlatformsInScene() {
     //Stop platforms when colliding with walls. 
     //Pivot point is at the center of the platform.
     //Consider refactoring to use method collides and place colliding boxes on the borders
 
-    for (var i = 0; i < platforms.length; i++) {    
-        
+    for (var i = 0; i < platforms.length; i++) {
 
-        if( platforms[i].velocity.x < 0 && (platforms[i].position.x - platforms[i].width/2) < 0 ){
+
+        if (platforms[i].velocity.x < 0 && (platforms[i].position.x - platforms[i].width / 2) < 0) {
             platforms[i].velocity.x = 0;
-            platforms[i].position.x = 0 + platforms[i].width/2;
+            platforms[i].position.x = 0 + platforms[i].width / 2;
         }
-        if( platforms[i].velocity.x > 0 && (platforms[i].position.x + platforms[i].width/2) > WIDTH ){
+        if (platforms[i].velocity.x > 0 && (platforms[i].position.x + platforms[i].width / 2) > WIDTH) {
             platforms[i].velocity.x = 0;
-            platforms[i].position.x = WIDTH - platforms[i].width/2;
+            platforms[i].position.x = WIDTH - platforms[i].width / 2;
         }
-        if( platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height/2 - player.height) < 0 ){
+        if (platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height / 2 - player.height) < 0) {
             platforms[i].velocity.x = 0;
-            platforms[i].position.y = 0 + platforms[i].height/2 + player.height;
+            platforms[i].position.y = 0 + platforms[i].height / 2 + player.height;
         }
-        if( platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height/2) > HEIGHT ){
+        if (platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height / 2) > HEIGHT) {
             platforms[i].velocity.x = 0;
-            platforms[i].position.y = HEIGHT - platforms[i].height/2;
+            platforms[i].position.y = HEIGHT - platforms[i].height / 2;
         }
     }
 }
@@ -121,20 +121,25 @@ function isPlayerOnPlatform() {
     var pCol;
 
     for (var i = 0; i < platforms.length; i++) {
-        if (player.overlap(platforms[i]) & (player.velocity.y > 0 || platforms[i].velocity.y < 0 ) ) {
-            pCol = color(platforms[i].shapeColor);
-            if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
-                player.velocity.y = platforms[i].velocity.y;
-                player.position.y = platforms[i].position.y - platforms[i].height/2 - player.height/2;
 
-                return true;
-            }
+        pCol = color(platforms[i].shapeColor);
+        if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
+            player.collide(platforms[i], function(){
+
+                if(player.touching.bottom){
+                  player.velocity.y = platforms[i].velocity.y;
+                  player.position.y = platforms[i].position.y - platforms[i].height / 2 - player.height / 2;
+
+                  return true;
+                }
+
+            });
         }
     }
     return false;
 }
 
-function makePlayerJump(force){
+function makePlayerJump(force) {
     player.setSpeed(force, 270);
 }
 
