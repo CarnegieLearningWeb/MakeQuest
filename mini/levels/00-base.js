@@ -16,29 +16,15 @@ function base_setupLevel() {
 
   platformImage1 = loadImage("images/fence.png");
   
-  platform1 = createPlatform(100, 160, 80, 10, 'blue');
-  platform2 = createPlatform(100, 260, 80, 10, 'blue');
-  platform3 = createPlatform(150, 460, 130, 10, 'magenta');
-  platform4 = createPlatform(350, 460, 20, 10, 'magenta');
-  platform5 = createPlatform(450, 460, 20, 10, 'magenta');
-  platform6 = createPlatform(500, 360, 40, 10, 'pink');
-  platform7 = createPlatform(600, 260, 40, 10, 'pink');
-  platform8 = createPlatform(250, 230, 80, 10, 'orange');
-  platform9 = createPlatform(350, 130, 80, 10, 'orange');
-  platform10 = createPlatform(0, 350, 80, 10, 'brown');
-  platform11 = createPlatform(350, 300, 80, 10, 'brown');
-
-  platform1.addImage(platformImage1);
-  platform2.addImage(platformImage1);
-  platform3.addImage(platformImage1);
-  platform4.addImage(platformImage1);
-  platform5.addImage(platformImage1);
-  platform6.addImage(platformImage1);
-  platform7.addImage(platformImage1);
-  platform8.addImage(platformImage1);
-  platform9.addImage(platformImage1);
-  platform10.addImage(platformImage1);
-  platform11.addImage(platformImage1);
+  createPlatform(180, 320, 80, 10, 'blue');
+  createPlatform(150, 460, 130, 10, 'magenta');
+  createPlatform(350, 460, 20, 10, 'magenta');
+  createPlatform(450, 460, 20, 10, 'magenta');
+  createPlatform(500, 390, 40, 10, 'pink');
+  createPlatform(600, 320, 40, 10, 'pink');
+  // createPlatform(500, 320, 40, 10, 'pink');
+  createPlatform(350, 260, 80, 10, 'orange');
+  createPlatform(30, 400, 80, 10, 'brown');
   
   
   goal.position.x = 500;
@@ -49,6 +35,6 @@ function base_setupLevel() {
 
 function base_drawLevel() {
   if (isPlayerOnPlatform()) {
-    makePlayerJump(3);
+    makePlayerJump(4);
   }
 }
