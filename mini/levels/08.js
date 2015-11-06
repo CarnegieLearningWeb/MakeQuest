@@ -1,14 +1,16 @@
 function setupLevel() {
   // ***** LEVEL SIX (BRONZE) INSTRUCTIONS *****
   //
-  // Make two new platforms by filling in the missing parts.
+  // Fix the values for the last two platforms.
   //
-  // Refer to the first line of code for help.
+  // Refer to the first platform code for help.
   //
   // ***** ENTER YOUR CODE BELOW *****
+  // EDITOR: markHint('createPlatform', '(', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'String', highlight: true});
+  createPlatform(0, 0, 0, 0, 'red');
+  createPlatform(0, 0, 0, 0, 'red');
 
+  // EDITOR: beginReadOnly();
   createPlatform(40, 100, 80, 20, 'orange');
-  
-  createPlatform(                         );
-  createPlatform(                         );
+  // EDITOR: endReadOnly();
 }
