@@ -1,48 +1,35 @@
 function setupLevel (){
-
+  // EDITOR: beginReadOnly();
   MOVE_RIGHT = 0;
   MOVE_LEFT = 180;
   MOVE_DOWN = 90;
   MOVE_UP = 270;
 
-  platformWidth = 80;
-  platformHeight = 10;
+  platformHeight = 60;
 
-  createPlatform(20, 150, platformWidth, platformHeight, 'green');
+  platform1 = createPlatform(320, 460, 640, 20, 'orange');
+  platform2 = createPlatform(180, 100, 100, platformHeight, 'blue');
+  platform3 = createPlatform(320, 100, 100, platformHeight, 'red');
+  platform4 = createPlatform(500, 100, 100, platformHeight, 'green');
+  // EDITOR: endReadOnly();
   
-  platform1 = createPlatform(20, 150, platformWidth, platformHeight, 'orange');
-  speedPlatform1 = 0;
-
-
-
-}
-
-function drawLevel (){
-
-  // ***** LEVEL SEVEN (GOLD) INSTRUCTIONS *****
-  // 
-  // Just as you've been calling FUNCTIONS such as createPlatform and makePlayerJump,
-  // the game autormatically calls setupLevel and drawLevel, which is where you've been writing your code.
-  // 
-  // Code inside drawLevel runs and runs and runs (runs eveyr frame?)
-  // By updating the speed in here, you increase the speed so you can go faster and faster
-  // 
-  // Update the value of speedPlatform1 to increase by 0.005 units instead of 0.001
-  // 
+  // ***** LEVEL SEVEN (SILVER) INSTRUCTIONS *****
+  //
+  // Update the platforms to move slower so you can reach the goal. 
+  //
   // ***** ENTER YOUR CODE BELOW *****
-  speedPlatform1 = speedPlatform1 + 0.001;
-
-  platform1.setSpeed( speedPlatform1, MOVE_RIGHT );
   
-  
+  platform2.setSpeed( 2, MOVE_DOWN );
+  platform3.setSpeed( 3, MOVE_DOWN );
+  platform4.setSpeed( 4, MOVE_DOWN );
 
-
-  // **** CHALLENGE ADVANCED ****
-  // The setupLevel function runs at the beginning of the game, but only once.
-  // The drawLevel function runs every frame.
-  // What happens if you move line 27 to line 11? 
+  // EDITOR: beginCodeFold('Click here for an example.');
+  // Example:
+  //   platform1.setSpeed(0.5, MOVE_DOWN);
+  //                      ^        ^   
+  //                      |        |   
+  //                      |        |   
+  //                      |        direction
+  //                      speed
+  // EDITOR: endCodeFold();
 }
-
-
-
-
