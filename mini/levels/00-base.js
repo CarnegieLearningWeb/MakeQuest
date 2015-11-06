@@ -4,8 +4,6 @@ PLAYER_START_Y = 400;
 GOAL_REACHED_TEXT = "";
 CURRENT_LEVEL_TEXT = "The world of code";
 
-var img;
-
 function base_getLevelDialogue() {
   return null;
 }
