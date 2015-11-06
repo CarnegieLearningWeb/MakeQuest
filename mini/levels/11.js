@@ -1,5 +1,5 @@
 function setupLevel (){
-  // EDITOR: markHint('platformColor', '=', {type: 'String', highlight: true});
+  
   // EDITOR: beginReadOnly();
   MOVE_RIGHT = 0;
   MOVE_LEFT = 180;
@@ -13,9 +13,9 @@ function setupLevel (){
   // 
   // Use platform1’s setSpeed function to move towards the
   // goal
-  
+  // Use the variable MOVE_RIGHT instead of MOVE_LEFT
   // ***** ENTER YOUR CODE BELOW *****
-  
+
   platform1.setSpeed( 0.3, MOVE_LEFT );
 
   // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
@@ -27,9 +27,6 @@ function setupLevel (){
   //                      |        |   
   //                      |        direction
   //                      speed
-  //                  
-  //                  
-  // Use the variable MOVE_RIGHT instead of MOVE_LEFT
   // EDITOR: endCodeFold('Click here for an EXAMPLE.');
    
   // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
