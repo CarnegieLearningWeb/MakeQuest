@@ -121,19 +121,22 @@ function isPlayerOnPlatform() {
     var pCol;
 
     for (var i = 0; i < platforms.length; i++) {
+        console.log("Index");
+        console.log(i);        
 
         pCol = color(platforms[i].shapeColor);
         if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
-            player.collide(platforms[i], function(){
+            
+            player.collide(platforms[i]);
 
-                if(player.touching.bottom){
-                  player.velocity.y = platforms[i].velocity.y;
-                  player.position.y = platforms[i].position.y - platforms[i].height / 2 - player.height / 2;
+            if(player.touching.bottom){
+              player.velocity.y = platforms[i].velocity.y;
+              player.position.y = platforms[i].position.y - platforms[i].height / 2 - player.height / 2;
 
-                  return true;
-                }
+              return true;
+            }
 
-            });
+            
         }
     }
     return false;
