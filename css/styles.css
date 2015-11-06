@@ -58,3 +58,7 @@
 .sidebar-border {
   border-left: 3.2rem solid #0B6481;
 }
+
+main {
+  height: 100vh;
+}
