@@ -3,7 +3,7 @@
 
 .menu {
   background-color: #0b6481;
-  padding: 1.5rem 3rem;
+  padding: .06rem 0rem;
   height: auto; }
   .menu .inline-list {
     text-align: center; }
@@ -25,8 +25,6 @@
     .menu .account a, .menu .account i {
       color: #fff; }
   @media only screen and (min-width: 40.063em) {
-    .menu {
-      height: 5rem; }
       .menu .inline-list {
         float: left;
         margin: 0 0 0 1.5rem; }
@@ -56,3 +54,7 @@
   @media only screen and (min-width: 40.063em) {
     .name {
       float: left; } }
+
+.sidebar-border {
+  border-left: 3.2rem solid #0B6481;
+}
