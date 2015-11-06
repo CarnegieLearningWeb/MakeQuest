@@ -22,8 +22,8 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform2.setSpeed( 2, FACE_RIGHT );
-  platform3.setSpeed( 3, FACE_RIGHT );
+  platform2.setSpeed( 3.5, FACE_RIGHT );
+  platform3.setSpeed( 5, FACE_RIGHT );
 
   // EDITOR: beginCodeFold('Click here for an example.');
   // Example:
