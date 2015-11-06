@@ -2,6 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 380;
 
 GOAL_REACHED_TEXT = "Goal reached. Images unlocked!";
+CURRENT_LEVEL_TEXT = "Level 8 Bronze";
 
 function base_setupLevel() {
   goal.position.x = 600;
