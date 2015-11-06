@@ -1,4 +1,5 @@
 function setupLevel (){
+  // EDITOR: beginReadOnly();
   MOVE_RIGHT = 0;
   MOVE_LEFT = 180;
   MOVE_DOWN = 90;
@@ -7,28 +8,30 @@ function setupLevel (){
   platformWidth = 200;
   platformHeight = 20;
 
-  platform1 = createPlatform(600, 150, platformWidth, platformHeight, 'orange');
-  platform2 = createPlatform(600, 250, platformWidth, platformHeight, 'blue');
-  platform3 = createPlatform(600, 350, platformWidth, platformHeight, 'green');
-
+  platform1 = createPlatform(0, 150, platformWidth, platformHeight, 'orange');
+  platform2 = createPlatform(0, 250, platformWidth, platformHeight, 'blue');
+  platform3 = createPlatform(0, 350, platformWidth, platformHeight, 'green');
+  // EDITOR: endReadOnly();
+  
   // ***** LEVEL SEVEN (SILVER) INSTRUCTIONS *****
   //
-  // // Example:
+  // Update the platforms to move slower so you can reach the goal. 
+  // Make platform2 move at a speed of 0.6 units or less
+  // and platform3 at a speed of 0.3 units or less. 
+  // We already updated the code for platform1 for you
   //
+  // ***** ENTER YOUR CODE BELOW *****
+  
+  platform2.setSpeed( 2, MOVE_RIGHT );
+  platform3.setSpeed( 3, MOVE_RIGHT );
+
+  // EDITOR: beginCodeFold('Click here for an example.');
+  // Example:
   //   platform1.setSpeed(0.5, MOVE_DOWN);
   //                      ^        ^   
   //                      |        |   
   //                      |        |   
   //                      |        direction
   //                      speed
-  //
-  //
-  // Update the platforms to move to the left. 
-  // Make platform1 move at a speed of 1 unit, platform2 at a speed of 0.6 units
-  // and platform3 at a speed of 0.3 units. 
-  // We already updated the code for platform1 for you
-  //
-  // ***** ENTER YOUR CODE BELOW *****
-  
-  platform1.setSpeed( 1, MOVE_LEFT );
+  // EDITOR: endCodeFold();
 }
