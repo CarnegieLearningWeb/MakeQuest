@@ -93,6 +93,7 @@ function draw() {
 function keepPlatformsInScene(){
     //Stop platforms when colliding with walls. 
     //Pivot point is at the center of the platform.
+    //Consider refactoring to use method collides and place colliding boxes on the borders
 
     for (var i = 0; i < platforms.length; i++) {    
         
