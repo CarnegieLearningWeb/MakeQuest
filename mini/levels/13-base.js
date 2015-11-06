@@ -10,6 +10,17 @@ function base_setupLevel() {
 }
 
 function base_drawLevel() {
+
+  for (var i = 0; i < platforms.length; i++) {
+    
+    pCol = color(platforms[i].shapeColor);
+    if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
+    	player.collide(platforms[i]);
+    }
+  }
+  
+
+
   isPlayerOnPlatform();
   keepPlatformsInScene();
 }
