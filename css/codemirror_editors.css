@@ -13,7 +13,7 @@
     min-height: 500px;
 }
 
-#js_editor.show-js-hints .js-hint {
+#js_editor.show-js-hints .js-hint:not(.js-read-only) {
     background: yellow;
 }
 
