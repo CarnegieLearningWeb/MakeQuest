@@ -15,7 +15,3 @@ function base_setupLevel() {
   createPlatform(220, 450, platformWidth, platformHeight, platformColor);
   createPlatform(400, 450, platformWidth, platformHeight, platformColor);
 }
-
-function makePlayerJump(force){
-    player.setSpeed(force, 270);
-}
