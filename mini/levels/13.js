@@ -1,9 +1,9 @@
 function setupLevel (){
   // EDITOR: beginReadOnly();
-  MOVE_RIGHT = 0;
-  MOVE_LEFT = 180;
-  MOVE_DOWN = 90;
-  MOVE_UP = 270;
+  FACE_RIGHT = 0;
+  FACE_LEFT = 180;
+  FACE_DOWN = 90;
+  FACE_UP = 270;
 
   platformHeight = 100;
 
@@ -19,13 +19,13 @@ function setupLevel (){
   //
   // ***** ENTER YOUR CODE BELOW *****
   
-  platform2.setSpeed( 4, MOVE_DOWN );
-  platform3.setSpeed( 3, MOVE_DOWN );
-  platform4.setSpeed( 4, MOVE_DOWN );
+  platform2.setSpeed( 4, FACE_DOWN );
+  platform3.setSpeed( 3, FACE_DOWN );
+  platform4.setSpeed( 4, FACE_DOWN );
 
   // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
   // Example:
-  //   platform1.setSpeed(0.5, MOVE_DOWN);
+  //   platform1.setSpeed(0.5, FACE_DOWN);
   //                      ^        ^   
   //                      |        |   
   //                      |        |   
