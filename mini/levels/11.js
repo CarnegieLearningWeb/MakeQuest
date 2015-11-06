@@ -15,7 +15,7 @@ function setupLevel (){
   // goal
   // Use the variable MOVE_RIGHT instead of FACE_LEFT
   // ***** ENTER YOUR CODE BELOW *****
-
+  // EDITOR: markHint('platform1', '.', 'setSpeed', '(', null, ',', {type: 'Identifier', highlight: true});
   platform1.setSpeed( 0.3, FACE_LEFT );
 
   // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
