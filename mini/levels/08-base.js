@@ -1,24 +1,37 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Goal reached. drawLevel function unlocked!";
+GOAL_REACHED_TEXT = "Congratulations, the Mysterious Tattoo glows brighter!";
 CURRENT_LEVEL_TEXT = "Level 6 Bronze";
 
 function base_getLevelDialogue() {
   return [
     {
-      character: "heroB",
+      character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "After that last energy surge a tattoo appeared on your arm. Oh my! I never thought we would make it this far, victory always seemed like a dream, but you keep getting stronger!  The tattoo says"
-        +"\nplatform1 = createSprite(40, 100, width, height);"
-        +"\nplatform1.shapeColor = color;",
+      text: "After that last energy surge a tattoo appeared on your arm. Oh my! I never thought we would make it this far, victory always seemed like a dream, but you keep getting stronger!  The tattoo seems to be code.",
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "This is the ancient lost code of platform creation! You can now create your own platforms.  If you repeat this code but change the number from a 1, to another number such as platform2 or platform3 you can create as many platforms as you need! HAHA, how will The For-oh-For ever stop you now, rebuild the bridge and reach the access point, give the world back its builders!",
+      text: "It says:\n"
+            +"createPlatform(x,y,width,height,color);\n"
+            +"example:\n"
+            +"createPlatform(0, 0, 0, 0, ‘red’);"
+    },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "Do you know what this is?!? This is the ancient lost code of platform creation! You can now create your own platforms.  Look for parts of the code where platforms may have once existed.  You can bring them back!",
+    },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "Quickly rebuild the bridge and reach the access point, give the world back its builders!",
     }
   ];
 }

@@ -1,42 +1,35 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Goal reached. Color code unlocked!";
+GOAL_REACHED_TEXT = "Congratulations, Dimensional Manipulation Unlocked!";
 CURRENT_LEVEL_TEXT = "Level 2";
 
 function base_getLevelDialogue() {
   return [
     {
-      character: "heroB",
+      character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Yes!  You did it!  By making the platforms larger you were"
-            +" able to power up your visual sensors and now you can see not"
-            +" only javaScript, but also the coordinate plane!"
-            +" With this floating grid, we will be able to make more changes"
-            +" in the world and reach more distant access points."
+      text: "Yes!  You did it!  By reaching the access point, you were able to power up your visual sensors and now you can see not only javaScript, but also the coordinate plane!",
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "The For-oh-For should be scared… but lets not go after him just yet,"
-            +" there is more training to do!"
-            +" Remember the platform numbers? (40, 100, 80, 10) "
-            +" We know that we can make platforms larger, but now with the grid we"
-            +" can begin to change the Origin, or the first two numbers in our code."
+      text: "With this floating grid, we will be able to make more changes in the world and reach more distant access points.  The For-oh-For should be scared… but we need you to gain more powers if you are going to win for good!"
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "The first number tells the platform where to start according to the"
-            +" numbers going left to right, (or the x-axis), and the second number"
-            +" controls location based on the numbers going from top to bottom"
-            +" (or an upside-down y-axis).  Rearrange the platforms to reach the"
-            +" next access point!"
+      text: "Every platform in the world of code looks like this (40, 100, 80, 10)   The first 2 numbers control where the platforms are located.",
+    },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "The first number uses the top numbers (x-axis), and the second number uses the left numbers (y-axis).  Let’s move the platforms closer to the access point!"
     }
-    
   ];
 }
 

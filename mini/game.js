@@ -75,11 +75,12 @@ function draw() {
             return;
         }
 
-        fill('red');
-        textAlign(CENTER);
-        text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2);
         particles.addParticle();
         particles.run();
+
+        fill('black');
+        textAlign(CENTER);
+        text(GOAL_REACHED_TEXT, WIDTH / 2 - 200, HEIGHT / 2 - 50, 400, 100);
     }
 
     if (player.overlap(goal)) {

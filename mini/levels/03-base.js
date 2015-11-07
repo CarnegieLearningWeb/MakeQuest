@@ -1,61 +1,34 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Goal reached. Pixel grid unlocked!";
+GOAL_REACHED_TEXT = "Congratulations, Hex Unscrambler and Converter Unlocked!";
 CURRENT_LEVEL_TEXT = "Level 3";
 
 function base_getLevelDialogue() {
   return [
     {
-      character: "heroB",
+      character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "OMG… you did it! You really did it!"
-            +" It isn’t that I didn’t think you could,"
-            +" but so many others tried and failed before you,"
-            +" but that doesn’t matter now."
-            +" I can feel something special in you."
+      text: "OMG… you did it! You really did it!  It isn’t that I didn’t think you could, but so many others tried and failed before you, but that doesn’t matter now.  I can feel something special in you.",
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "The Vile For-oh-For’s code corruption powers have forced"
-            +" all platforms and walkways to diminish.  If the people"
-            +" can’t go anywhere, they can never rebel against his rule!"
+      text: "The Vile For-oh-For’s code corruption powers have forced all platforms and walkways to diminish.  If the people can’t go anywhere, they can never rebel against his rule!"
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "With your new “javaScript vision” you can see platforms as"
-            +" they are meant to be seen, through numbers."
+      text: "Dimensional Manipulation has given you access to a platforms third and fourth numbers!  The third number controls how long a platform is, and the fourth controls how tall it is.  Make the platforms large enough to reach the goal!",
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "The one we are standing on for instance, looks like"
-            +" (40, 100, 80, 10)"
-            +" The first two numbers are it’s origin, but without more"
-            +" powers it is very risky to try and teleport a platform"
-            +" to another location."
-    },
-    {
-      character: "heroB",
-      image: heroBPic,
-      textColor: "white",
-      text: "Instead let us make the platform longer"
-            +" by changing the 80 to a larger number, and see if it can help"
-            +" us reach the access point!  Each time you reach an access"
-            +" point you return the use of that code to Humanity."
-    },
-    {
-      character: "heroB",
-      image: heroBPic,
-      textColor: "white",
-      text: "With everyone understanding how to code,"
-            +" The For-oh-For doesn’t stand a chance!"
+      text: "Did you know each time you reach an access point you return the use of that code to the world?  With everyone understanding how to code, The For-oh-For doesn’t stand a chance!"
     }
   ];
 }
