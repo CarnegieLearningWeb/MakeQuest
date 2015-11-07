@@ -1,31 +1,28 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Goal reached. Create your own platforms!";
+GOAL_REACHED_TEXT = "Congratulations, V.E.S.T. has reached Level 2!";
 CURRENT_LEVEL_TEXT = "Level 5 Bronze";
 
 function base_getLevelDialogue() {
   return [
     {
-      character: "heroB",
+      character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Amazing.  You found a Variable Entering Storage Tank or VEST!  This VEST can store enough information that it will allow you to change multiple platforms at the same time!  No longer do you need to manipulate just one object at a time, now you can cause all the platforms to grow with one move!  Oh, if I could only see the frustration on The For-oh-For’s face.  I mean he deserves it for all the frustrations he causes right?  You know what I’m talking about!",
+      text: "Amazing.  You found a Variable Entering Storage Tank or V.E.S.T.!  This V.E.S.T. can store enough information that it will allow you to change multiple platforms at the same time!",
     },
     {
-      character: "heroB",
+      character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Ok, back to understanding your new power!  The VEST allows you to store a number that controls all of your platforms at the same time!  To store a value it must be written like this: \n\nplatformWidth = 80;",
+      text: "We are in luck, it would be exhausting to change the color of every platform in the world one at a time right? With the V.E.S.T. we can see Variables, or parts of code that can control many things at once."
     },
     {
-      character: "heroB",
-      image: heroBPic,
+      character: "heroA",
+      image: heroAPic,
       textColor: "white",
-      text: "Now when you use your javaScript vision, you will see code slightly differently! (see below)  By changing the value “80” in the above code, it will change how long all of your platforms are at the same time!"
-          +"\n\nplatform1 = createSprite(40, 100, platformWidth, 10);"
-          +"\nplatform2 = createSprite(40, 100, platformWidth, 10);"
-          +"\nplatform3 = createSprite(40, 100, platformWidth, 10);",
+      text: "For example, we have 4 red platforms, by changing ‘red’ in platformColor = ‘red’; to another color, it will take effect for all platforms using platformColor!  Talk about useful!  Let’s change these platforms and reach the access point!",
     }
   ];
 }
