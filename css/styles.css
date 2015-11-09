@@ -62,3 +62,11 @@
 main {
   height: 100vh;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #0B6481;
+}
+
+.border-right {
+  border-right: 1px solid #000000;
+}
