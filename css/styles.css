@@ -70,3 +70,7 @@ main {
 .border-right {
   border-right: 1px solid #000000;
 }
+
+.margin-left-0 {
+  padding-left: 0;
+}
