@@ -64,7 +64,7 @@
 
 
 main {
-  height: 100vh;
+  height: 95vh;
 }
 
 main > .row.border-bottom{
@@ -85,6 +85,24 @@ main > .row.border-bottom{
 
 .margin-right-0 {
   padding-right: 0;
+}
+
+.controls{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.controls button{
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+
+  /*Copying iframe styles*/
+  padding: 10px 20px;
+  font-size: .8rem;
+  border: 3px solid rgba(12, 111, 143, 1);
+  color: rgba(12, 111, 143, 1);
 }
 
 .globaloria-logo {

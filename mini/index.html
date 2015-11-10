@@ -47,31 +47,43 @@
             letter-spacing: 1px;
         }
 
+        
         /*Flexbox*/
+        .container{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         #p5_canvas{
             display: flex;
             justify-content: center;
         }
 
         .controls{
+            position: fixed;
+            bottom: 0;
             display: flex;
             justify-content: center;
         }
 
         .controls button{
-            margin: 1rem;
+
+            margin: 0.5rem;
         }
     </style>
 </head>
 
 <body>
-    
-    <div id="p5_canvas"></div>    
-    
-    <div class="controls">
-        <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
-        <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
-        <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>    
+    <div class="container">
+        <div id="p5_canvas"></div>    
+        
+        <div class="controls">
+            <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
+            <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
+            <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>    
+        </div>
     </div>
     
     <script src="game.js"></script>

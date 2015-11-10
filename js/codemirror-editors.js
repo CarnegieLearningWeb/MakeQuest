@@ -5,7 +5,7 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   foldGutter: true,
   gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
   mode: 'javascript',
-  theme : 'monokai'
+  // theme : 'monokai'
 });
 
 editor_js.on('changes', function() {
