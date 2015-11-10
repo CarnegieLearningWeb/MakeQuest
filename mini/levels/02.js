@@ -14,6 +14,7 @@ function setupLevel() {
   createPlatform(60, 100, 120, 10);
   // EDITOR: endReadOnly();
   // EDITOR: markHint('createPlatform', '(', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', null);
+  // EDITOR: readOnlyToken('createPlatform', '(', null, ',', null, ',', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true} );
   createPlatform(90, 130, 120, 10);
   createPlatform(120, 160, 120, 10);
 

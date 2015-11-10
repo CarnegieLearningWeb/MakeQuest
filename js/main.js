@@ -84,6 +84,7 @@ function loadMiniCourse(cb){
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         var markHints = [];
+        var readOnlyTokens = [];
         var readOnlyRanges = [];
         var foldedRanges = [];
         var currLineNumber = 0;
@@ -91,6 +92,9 @@ function loadMiniCourse(cb){
         var editorCommands = {
             markHint: function() {
                 markHints.push(arguments);
+            },
+            readOnlyToken: function(){
+                readOnlyTokens.push(arguments);
             },
             beginReadOnly: function() {
                 readOnlyRanges.push([currLineNumber]);
@@ -158,6 +162,10 @@ function loadMiniCourse(cb){
               className: 'js-read-only',
               readOnly: true
           });
+        });
+
+        readOnlyTokens.forEach(function(arguments) {
+            readOnlyToken.apply(this, arguments);
         });
 
         markHints.forEach(function(arguments) {
