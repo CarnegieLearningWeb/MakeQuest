@@ -22,8 +22,8 @@
 }
 
 .js-read-only {
-    opacity: 0.66;
-    background-color: lightgray;
+    opacity: 0.5;
+    /*background-color: lightgray;*/
 }
 
 .js-code-fold-link {
