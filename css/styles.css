@@ -55,12 +55,20 @@
     .name {
       float: left; } }
 
-.sidebar-border {
-  border-left: 2.2rem solid #0B6481;
+
+@media only screen and (min-width: 1300px) {
+  .sidebar-border {
+    border-left: 2.2rem solid #0B6481;
+  }
 }
+
 
 main {
   height: 100vh;
+}
+
+main > .row.border-bottom{
+  height: 100%;
 }
 
 .border-bottom {
@@ -75,10 +83,22 @@ main {
   padding-left: 0;
 }
 
+.margin-right-0 {
+  padding-right: 0;
+}
+
 .globaloria-logo {
   height: 24px;
   width: 24px;
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px
+}
+
+/*FLEXBOX*/
+.preview_container{
+  display: flex;
+  justify-content: center;
+  min-width: 640px;
+  height: 100%;
 }

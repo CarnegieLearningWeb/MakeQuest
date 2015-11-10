@@ -7,6 +7,11 @@
     <script src="libs/p5.js"></script>
     <script src="libs/p5.play.js"></script>
 
+    <!-- FOUNDATION -->
+    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/foundation/js/foundation.min.js"></script>
+
     <!-- Need to rebind p5 Play library when restarting p5 -->
     <script type="text/javascript" src="https://elasticbeanstalk-us-west-2-171842701542.s3.amazonaws.com/p5.play.min.js"></script>
     <script type="text/javascript" src="https://elasticbeanstalk-us-west-2-171842701542.s3.amazonaws.com/rebind_p5_play.min.js"></script>
@@ -16,9 +21,9 @@
             border: 2px solid red;
         }
 
-        code {
+        /*code {
             margin-top: 1px;
-        }
+        }*/
 
         #previous,
         #next,
@@ -41,14 +46,34 @@
             color: #ffffff;
             letter-spacing: 1px;
         }
+
+        /*Flexbox*/
+        #p5_canvas{
+            display: flex;
+            justify-content: center;
+        }
+
+        .controls{
+            display: flex;
+            justify-content: center;
+        }
+
+        .controls button{
+            margin: 1rem;
+        }
     </style>
 </head>
 
 <body>
-    <div id="p5_canvas"></div>
-    <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
-    <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
-    <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>
+    
+    <div id="p5_canvas"></div>    
+    
+    <div class="controls">
+        <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
+        <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
+        <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>    
+    </div>
+    
     <script src="game.js"></script>
     <script src="dialog.js"></script>
     <script src="grid.js"></script>

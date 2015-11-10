@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Globaloria Mini-Course Prototype</title>
     <!-- FOUNDATION -->
-    <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
     <!-- CODEMIRROR -->
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/codemirror_editors.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="vendor/codemirror/codemirror.css">
+    <link rel="stylesheet" href="vendor/codemirror/themes/monokai.css">
     <link rel="stylesheet" href="vendor/codemirror/foldgutter.css">
 
     <!-- FIREBASE -->
@@ -43,45 +44,25 @@
         <a class="account hide-for-medium-up" href="#" data-reveal-id="signupModal"><i class="fi-unlock"></i></a> -->
     </nav>
     <main class="sidebar-border">
-        <div class="row border-bottom">
-            <div class="large-5 columns border-right">
-            	<div class="row">
-            		<div class="large-12 columns margin-left-0">
-		                <ul class="tabs" data-tab role="tablist">
-		                    <li class="tab-title active" role="presentation"><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel2-1">Code</a></li>
-		                    <!-- <li class="tab-title" role="presentation"><a href="#panel2-2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-2">css</a></li>
-		                    <li class="tab-title" role="presentation"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-3">html</a></li> -->
-		                </ul>
-		                <div class="tabs-content">
-		                    <section role="tabpanel" aria-hidden="false" class="content active" id="panel2-1">
-		                        <div class="codemirror-editor-container">
-		                            <!-- JS FOR CODEMIRROR -->
-                                    <div id="js_editor">
-                                    </div>
-                                    <!-- END JS FOR CODEMIRROR -->
+        <div class="row border-bottom" data-equalizer>
 
-		                        </div>
-		                    </section>
-		                    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
-		                        <div class="ace-editor-container">
-		                            <!-- CSS FOR ACE -->
-		                            <div id="css_editor" class="ace-editor">
-		                            </div>
-		                            <!-- END CSS FOR ACE -->
-		                        </div>
-		                    </section>
-		                    <section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
-		                        <div class="ace-editor-container">
-		                            <!-- HTML FOR ACE -->
-                                    <div id="html_editor" class="ace-editor">
-                                    </div>
-                                    <!-- END HTML FOR ACE -->
-		                        </div>
-		                    </section>
-		                </div>
+
+            <div class="medium-12 large-6 columns border-right" data-equalizer-watch>
+            	<div class="row">
+            		<div class="large-12 columns margin-left-0 margin-right-0">
+
+                        <div class="codemirror-editor-container">
+                            <!-- JS FOR CODEMIRROR -->
+                            <div id="js_editor">
+                            </div>
+                            <!-- END JS FOR CODEMIRROR -->
+                        </div>
+
+                        
+		                
 	                </div>
 	            </div>
-                <div class="row">
+                <div class="row" id="editor">
 
 	        		<div class="large-4 medium-4 columns">
 	        			<button style = "visibility:hidden;" class="button left" disabled onclick="prevLevel()">Prev</button>
@@ -94,11 +75,10 @@
                         <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
 	        			<button style = "visibility:hidden;" class="button right" disabled onclick="nextLevel()">Next</button>
 	        		</div>
-
 		        </div>
             </div>
-            <div class="large-7 columns">
-            	<h2>Game</h2>
+            <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
+            	<!-- <h2>Game</h2> -->
             	<!-- LIVE PREVIEW -->
 		        <div class="preview_container">
 		        	<!-- src="project_template/index.html" -->
