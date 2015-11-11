@@ -31,13 +31,6 @@
     cursor: pointer;
 }
 
-.preview_container {
-    min-width: 650px;
-    min-height: 550px;
-    position: relative;
-    /*border: 2px solid red;*/
-}
-
 #p5_canvas{
     margin-top: 200px;
 }

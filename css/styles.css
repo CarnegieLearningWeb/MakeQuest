@@ -119,6 +119,7 @@ main > .row.border-bottom{
 .preview_container {
   display: flex;
   justify-content: center;
-  min-width: 640px;
+  min-width: 500px;
   height: 100%;
+  position: relative;
 }
