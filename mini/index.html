@@ -62,8 +62,8 @@
         }
 
         .controls{
-            position: fixed;
-            bottom: 0;
+            /*position: fixed;
+            bottom: 0;*/
             display: flex;
             justify-content: center;
         }
@@ -77,13 +77,15 @@
 
 <body>
     <div class="container">
-        <div id="p5_canvas"></div>    
+        
         
         <div class="controls">
             <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
             <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
             <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>    
         </div>
+
+        <div id="p5_canvas"></div>    
     </div>
     
     <script src="game.js"></script>
