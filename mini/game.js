@@ -54,7 +54,7 @@ function draw() {
     drawLevel();
 
     // Move text to the bottom so it doesn't get hidden by objects
-    fill("red");
+    fill("#0b6481");
     textSize(24);
     textFont("Georgia");
     text(CURRENT_LEVEL_TEXT, 50, 50);
@@ -78,9 +78,16 @@ function draw() {
         particles.addParticle();
         particles.run();
 
-        fill('black');
+        rectMode(CENTER);
+        fill('#24a4cd');
+        rect( WIDTH/2, HEIGHT/2, 420, 120 );
+
+        fill('white');
         textAlign(CENTER);
-        text(GOAL_REACHED_TEXT, WIDTH / 2 - 200, HEIGHT / 2 - 50, 400, 100);
+        text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, 400, 100);
+
+        //Reset rectMode back to default
+        rectMode(CORNER);
     }
 
     if (player.overlap(goal)) {
