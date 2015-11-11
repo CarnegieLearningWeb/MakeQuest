@@ -160,7 +160,11 @@ function refreshPreview() {
     } catch (e) {
       if (e.lineNumber) {
         markJsErrorAtLine(e.lineNumber);
-        alert(e.description + " at line " + e.lineNumber);
+
+        // alert(e.description + " at line " + e.lineNumber);
+        $('#errorModal p.error-text').text( e.description + " at line " + e.lineNumber );
+        $('#errorModal').foundation('reveal', 'open');
+
         return;
       }
     }
