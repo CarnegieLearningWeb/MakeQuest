@@ -62,6 +62,9 @@
   }
 }
 
+#errorModal{
+  width: 50%;
+}
 
 main {
   height: 95vh;
