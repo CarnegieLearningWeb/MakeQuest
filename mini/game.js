@@ -65,21 +65,28 @@ function draw() {
         player.velocity.x = 0;
         player.velocity.y = 0;
 
-        //First level triggers a modal on completion
-        if (currentLevel == 0) {
-            player.position.x = PLAYER_START_X;
-            player.position.y = PLAYER_START_Y;
-            goalReached = false;
-            alert("Evil thing has happened");
-            nextLevel();
-            return;
-        }
 
-        particles.addParticle();
-        particles.run();
+        if (currentLevel != 0) {
+            particles.addParticle();
+            particles.run();
+        }
 
         rectMode(CENTER);
         fill('#24a4cd');
+
+        //Level 0 only
+        if (currentLevel == 0) {
+            // player.position.x = PLAYER_START_X;
+            // player.position.y = PLAYER_START_Y;
+            // goalReached = false;
+            fill('red');
+            // alert("Evil thing has happened");
+            // nextLevel();
+            // return;
+            destroyScene();
+            
+        }
+
         rect( WIDTH/2, HEIGHT/2, 420, 120 );
 
         fill('white');
@@ -96,6 +103,32 @@ function draw() {
     }
 
     drawDialogue();
+}
+
+var removeLetter = true;
+function destroyScene(){
+    //Remove a letter from the level title everytime we remove a sprite
+    if(removeLetter){
+        var removeIndex = floor( random(0, CURRENT_LEVEL_TEXT.length) );
+        var newText = CURRENT_LEVEL_TEXT.split("");
+        newText.splice(removeIndex, 1);
+        CURRENT_LEVEL_TEXT = newText.join("");
+
+        removeLetter = false;
+
+        setTimeout(function(){
+            removeLetter = true;
+        }, 200);
+    }
+
+    allSprites.forEach(function(sprite){
+        sprite.position.y++;
+        sprite.rotation = sprite.rotation + random(0, 15);
+
+        if( sprite.position.y > HEIGHT + 20 ){
+            sprite.remove();
+        }
+    });
 }
 
 function keepPlatformsInScene() {
