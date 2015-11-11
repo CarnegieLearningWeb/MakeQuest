@@ -48,42 +48,25 @@
 
 
             <div class="medium-12 large-6 columns border-right" data-equalizer-watch>
+                <div class="row">
+                    <div class="large-12 columns margin-left-0 margin-right-0">
+                        <div class="controls">
+                            <button id="revert" class="button alert center" onclick="revertMiniCourse()">Reset</button>
+                            <button class="button success center" onclick="refreshPreview()">Run</button>
+                            <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
+                        </div>
+                    </div>
+                </div>
             	<div class="row">
             		<div class="large-12 columns margin-left-0 margin-right-0">
-
                         <div class="codemirror-editor-container">
                             <!-- JS FOR CODEMIRROR -->
                             <div id="js_editor">
                             </div>
                             <!-- END JS FOR CODEMIRROR -->
                         </div>
-
-                        
-		                
 	                </div>
 	            </div>
-                <div class="controls">
-
-
-                    <button id="revert" class="button alert center" onclick="revertMiniCourse()">Reset</button>
-                    <button class="button success center" onclick="refreshPreview()">Run</button>
-                    <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
-                    
-
-	        		<!-- <div class="large-4 medium-4 columns">
-	        			<button style = "visibility:hidden;" class="button left" disabled onclick="prevLevel()">Prev</button>
-                        <button id="revert" class="button alert center" onclick="revertMiniCourse()">Reset</button>
-	        		</div>
-	        		<div class="large-4 medium-4 columns text-center">
-                        <button class="button button center" onclick="refreshPreview()">Run</button>
-	        		</div>
-	        		<div class="large-4 medium-4 columns">
-                        <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
-	        			<button style = "visibility:hidden;" class="button right" disabled onclick="nextLevel()">Next</button>
-	        		</div> -->
-
-
-		        </div>
             </div>
             <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
             	<!-- <h2>Game</h2> -->
@@ -91,13 +74,13 @@
 		        <div class="preview_container">
 		        	<!-- src="project_template/index.html" -->
 		            <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
-                        
+
 		            </iframe>
 		        </div>
 		        <!-- END LIVE PREVIEW -->
             </div>
         </div>
-        
+
     </main>
     <!-- modal content -->
     <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="login or sign up" aria-hidden="true" role="dialog">

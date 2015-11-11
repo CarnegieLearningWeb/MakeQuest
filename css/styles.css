@@ -87,14 +87,13 @@ main > .row.border-bottom{
   padding-right: 0;
 }
 
-.controls{
-  position: fixed;
-  bottom: 0;
+.controls {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
-.controls button{
+.controls button {
   margin-bottom: 0.5rem;
   margin-right: 1rem;
 
@@ -114,7 +113,7 @@ main > .row.border-bottom{
 }
 
 /*FLEXBOX*/
-.preview_container{
+.preview_container {
   display: flex;
   justify-content: center;
   min-width: 640px;
