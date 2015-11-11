@@ -30,7 +30,7 @@ function setupDialogue(){
 	currentDialogue = base_getLevelDialogue();
 
 	if (currentDialogue) {
-		document.getElementById('showDialogue').style.visibility = 'visible';
+		document.getElementById('showDialogue').style.display = 'inline-block';
 	}
 }
 

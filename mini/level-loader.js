@@ -14,7 +14,7 @@ if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLe
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
 if (currentLevel > 1) {
-  document.getElementById('previous').style.visibility = 'visible';
+  document.getElementById('previous').style.display = 'inline-block';
 }
 
 if( currentLevel < maxLevelUnlocked ){
@@ -22,7 +22,7 @@ if( currentLevel < maxLevelUnlocked ){
 }
 
 function showNextLevelButton() {
-  document.getElementById('next').style.visibility = 'visible';
+  document.getElementById('next').style.display = 'inline-block';
 }
 
 function previousLevel() {
