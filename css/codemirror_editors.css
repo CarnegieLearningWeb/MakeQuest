@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 85vh;
+    min-height: 75vh;
 }
 
 #js_editor.show-js-hints .js-hint:not(.js-read-only) {
