@@ -36,10 +36,15 @@ function setupDialogue(){
 
 function drawDialogue(){
 	if(dialogueOn && currentDialogue){
-		image( dialogueBox, 0, 0, WIDTH, 128 );
+		rectMode(CENTER);
+		image( dialogueBox, 
+				0, 
+				HEIGHT/3, 
+				WIDTH, 
+				128 );
 		image( currentDialogue[dialogueIndex].image, 
 				dialoguePicX, 
-				dialogueGutter, 
+				dialogueGutter + HEIGHT/3, 
 				dialoguePicWidth,
 				dialogueBoxHeight );
 
@@ -47,15 +52,30 @@ function drawDialogue(){
 	    textSize(14);
 	    textFont(pixelFont);
 
-	    text( currentDialogue[dialogueIndex].text, dialogueGutter, dialogueGutter, dialogueTextWidth, dialogueTextHeight - dialogueGutter );
+	    rectMode(CORNER);
+	    text( currentDialogue[dialogueIndex].text, 
+				dialogueGutter, 
+				dialogueGutter + HEIGHT/3,
+				dialogueTextWidth,
+				dialogueTextHeight - dialogueGutter );
 	    //Simulate a next "button" so the user clicks on the dialogueBox
 	    fill("orange");
-	    text( "Click to continue...", dialogueGutter, dialogueTextHeight, dialogueTextWidth );
+	    text( "Click to continue...", 
+	    		dialogueGutter, 
+	    		dialogueTextHeight + HEIGHT/3, 
+	    		dialogueTextWidth );
 	}
 }
 
 function mouseClickedDialogue() {
-	if(dialogueOn && mouseY < dialogueBoxHeight){
+	console.log(HEIGHT/3);
+	console.log(dialogueBoxHeight);
+	console.log(mouseY);
+
+	if(dialogueOn && 
+		( mouseY <= ( HEIGHT/3 + dialogueBoxHeight ) && mouseY >= ( HEIGHT/3 ) ) 
+		)
+	{
 		dialogueIndex++;
 		if( dialogueIndex >= currentDialogue.length ){
 			dialogueIndex = 0;			

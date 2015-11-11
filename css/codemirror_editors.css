@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 500px;
+    min-height: 85vh;
 }
 
 #js_editor.show-js-hints .js-hint:not(.js-read-only) {
@@ -22,8 +22,8 @@
 }
 
 .js-read-only {
-    opacity: 0.66;
-    background-color: lightgray;
+    opacity: 0.5;
+    /*background-color: lightgray;*/
 }
 
 .js-code-fold-link {
@@ -38,9 +38,13 @@
     /*border: 2px solid red;*/
 }
 
+#p5_canvas{
+    margin-top: 200px;
+}
+
 iframe#preview {
     position: absolute;
-    top: 1em;
+    /*top: 1em;*/
     right: 0;
     bottom: 0;
     left: 0;

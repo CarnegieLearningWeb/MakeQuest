@@ -55,12 +55,20 @@
     .name {
       float: left; } }
 
-.sidebar-border {
-  border-left: 2.2rem solid #0B6481;
+
+@media only screen and (min-width: 1300px) {
+  .sidebar-border {
+    border-left: 2.2rem solid #0B6481;
+  }
 }
 
+
 main {
-  height: 100vh;
+  height: 95vh;
+}
+
+main > .row.border-bottom{
+  height: 100%;
 }
 
 .border-bottom {
@@ -75,10 +83,40 @@ main {
   padding-left: 0;
 }
 
+.margin-right-0 {
+  padding-right: 0;
+}
+
+.controls{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.controls button{
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+
+  /*Copying iframe styles*/
+  padding: 10px 20px;
+  font-size: .8rem;
+  border: 3px solid rgba(12, 111, 143, 1);
+  color: rgba(12, 111, 143, 1);
+}
+
 .globaloria-logo {
   height: 24px;
   width: 24px;
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px
+}
+
+/*FLEXBOX*/
+.preview_container{
+  display: flex;
+  justify-content: center;
+  min-width: 640px;
+  height: 100%;
 }
