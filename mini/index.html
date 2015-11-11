@@ -65,6 +65,10 @@
             justify-content: center;
             margin-top: 20px;
         }
+
+        .controls button{
+            margin-right: 1rem;
+        }
     </style>
 </head>
 
@@ -73,9 +77,9 @@
         <div class="row">
             <div class="large-12 columns">
                 <div class="controls">
-                    <button id="previous" onclick="previousLevel()" style="visibility: hidden;">Previous Level</button>
-                    <button id="next" onclick="nextLevel()" style="visibility: hidden;">Next Level</button>
-                    <button id="showDialogue" onclick="showDialogue()" style="visibility: hidden;">Story</button>
+                    <button id="previous" onclick="previousLevel()" style="display: none;">Previous Level</button>
+                    <button id="next" onclick="nextLevel()" style="display: none;">Next Level</button>
+                    <button id="showDialogue" onclick="showDialogue()" style="display: none;">Story</button>
                 </div>
             </div>
         </div>
