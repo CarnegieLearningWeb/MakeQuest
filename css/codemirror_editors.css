@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 85vh;
+    min-height: 75vh;
 }
 
 #js_editor.show-js-hints .js-hint:not(.js-read-only) {
@@ -29,13 +29,6 @@
 .js-code-fold-link {
     text-decoration: underline;
     cursor: pointer;
-}
-
-.preview_container {
-    min-width: 650px;
-    min-height: 550px;
-    position: relative;
-    /*border: 2px solid red;*/
 }
 
 #p5_canvas{
