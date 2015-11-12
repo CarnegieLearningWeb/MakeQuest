@@ -1,3 +1,5 @@
+var maxLevel = window.sessionStorage['maxLevel'] = 16;
+
 $(document).ready(function() {
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
@@ -14,7 +16,6 @@ $(document).ready(function() {
     window.sessionStorage['currentLevel'] = startLevel;
 
     currentLevel = startLevel;
-    maxLevel = 16;
 
     $instructions = $("#instructions");
 
@@ -85,6 +86,12 @@ function loadMiniCourse(cb){
     cb = cb || function() {}
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
+
+    // Skip to sandbox
+    if( window.sessionStorage['skipToSandbox'] == "true" ){
+        zeroPaddedLevel = window.sessionStorage['maxLevel'];
+    }
+
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         var markHints = [];
         var readOnlyTokens = [];

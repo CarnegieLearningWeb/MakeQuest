@@ -1,7 +1,13 @@
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
-var maxLevel = 16;
+var maxLevel = window.sessionStorage['maxLevel'];
 var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
+var skipToSandbox = window.sessionStorage['skipToSandbox'] == "true" ? true : false;
+if( skipToSandbox ){
+  currentLevel = maxLevel;
+  document.getElementById('skipToSandbox').style.display = 'none';
+  document.getElementById('backToGame').style.display = 'inline-block';
+}
 
 console.log("INITIAL VALUES");
 console.log(currentLevel, maxLevelUnlocked);
@@ -14,12 +20,22 @@ if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLe
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
-if (currentLevel > 1) {
+if (currentLevel > 1 && !skipToSandbox) {
   document.getElementById('previous').style.display = 'inline-block';
 }
 
-if( currentLevel < maxLevelUnlocked ){
+if(currentLevel < maxLevelUnlocked && !skipToSandbox){
 	showNextLevelButton();
+}
+
+function goToSandbox(){
+    console.log("LOAD SANDBOX");
+    window.sessionStorage['skipToSandbox'] = true;
+
+    //Don't use nextLevel, we need to preserve currentLevel.
+    window.location.reload();
+
+    parent.loadCurrentUserProject();
 }
 
 function showNextLevelButton() {
@@ -38,7 +54,6 @@ function nextLevel() {
   if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
   	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
   }
-  
 
   window.location.reload();
 
