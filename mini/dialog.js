@@ -74,7 +74,7 @@ function mouseClickedDialogue() {
 		if( dialogueIndex >= currentDialogue.length ){
 			dialogueIndex = 0;			
 			dialogueOn = false;
-			window.sessionStorage['dialogueOn'+currentLevel] = 0;
+			storage.set('dialogueOn'+currentLevel, 0);
 		}
 	}
 }
