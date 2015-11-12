@@ -1,3 +1,5 @@
+var maxLevel = window.sessionStorage['maxLevel'] = 16;
+
 $(document).ready(function() {
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
@@ -14,7 +16,6 @@ $(document).ready(function() {
     window.sessionStorage['currentLevel'] = startLevel;
 
     currentLevel = startLevel;
-    maxLevel = 20;
 
     $instructions = $("#instructions");
 
@@ -81,10 +82,72 @@ function revertMiniCourse() {
     loadMiniCourse(refreshPreview);
 }
 
+function publishPrompt(){
+  $('#publishModal').foundation('reveal', 'open');
+}
+
+function publish(){
+  console.log("PARENT PUBLISH");
+  
+  generatedHTML = null;
+  MinicoursePublisher.generateHTML({
+    baseURL: './mini/',
+    baseLevel: maxLevel,
+    js: editor_js.getValue()
+  }, function(err, html) {
+    if (err) {
+      alert("Error generating published HTML: " + err.message);
+      return;
+    }
+    
+    generatedHTML = html;
+    console.log("GENERATED HTML");
+    console.log(generatedHTML);
+
+    if (!generatedHTML) {
+      alert("There was an error publishing your game. Please try again later!");
+      return;
+    }
+    
+    // Begin publishing
+    $("#published").hide();
+    $("#publishing").fadeIn();
+
+    $.ajax({
+      type: 'POST',
+      url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
+      data: {
+        'html': generatedHTML
+      },
+      crossDomain: true,
+      dataType: 'json',
+      error: function() {
+        alert("Error publishing HTML!");
+        console.log(arguments);
+      },
+      success: function(data) {
+        $("#published").fadeIn()
+          .find('a')
+          .attr('href', data['published-url'])
+          .text(data['published-url']);
+      },
+      complete: function() {
+        $("#publishing").hide();
+      }
+    });
+  });
+}
+
 function loadMiniCourse(cb){
     cb = cb || function() {}
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
+
+    // Skip to sandbox
+    if( window.sessionStorage['skipToSandbox'] == "true" ){
+        zeroPaddedLevel = window.sessionStorage['maxLevel'];
+    }
+
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
         var markHints = [];
         var readOnlyTokens = [];
