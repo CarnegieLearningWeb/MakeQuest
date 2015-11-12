@@ -13,9 +13,11 @@
 </p>
 <p>Base Level: <input type="number" id="base-level" value="1"></p>
 <p>Level JS code:</p>
-<textarea id="js" rows="25" cols="80">CURRENT_LEVEL_TEXT = "I am a published level!";</textarea>
+<textarea id="js" rows="25" cols="80" spellcheck="false">CURRENT_LEVEL_TEXT = "I am a published level!";</textarea>
 <p><button id="publish">Generate published HTML and inject it into the <code>&lt;iframe&gt;</code> below</button></p>
 <p id="iframe-holder"></p>
+<p>Here is the published HTML:</p>
+<textarea id="html" rows="25" cols="80" spellcheck="false"></textarea>
 <p><a id="data-url" href="#" target="_blank">Link to the above game as a <code>data:</code> URL</a></p>
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/publish.js"></script>
@@ -29,7 +31,7 @@ $(function() {
     }, function(err, html) {
       if (err) throw err;
 
-      console.log(html);
+      $("#html").val(html);
       $("#data-url").attr("href", "data:text/html;base64," +
                           window.btoa(html));
 
