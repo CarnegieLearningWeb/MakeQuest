@@ -7,6 +7,7 @@ if( skipToSandbox ){
   currentLevel = maxLevel;
   document.getElementById('skipToSandbox').style.display = 'none';
   document.getElementById('backToGame').style.display = 'inline-block';
+  document.getElementById('publish').style.display = 'inline-block';
 }
 
 console.log("INITIAL VALUES");
