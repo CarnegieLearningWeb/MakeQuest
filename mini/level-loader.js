@@ -69,6 +69,7 @@ function base_drawLevel() {}
 // hackers will see by default.
 function setupLevel() {}
 function drawLevel() {}
+function getLevelDialogue() {}
 
 // Load the BASE level file for the current level.
 document.write('<script src="' + currentLevelFilename + '-base.js"></script>');
