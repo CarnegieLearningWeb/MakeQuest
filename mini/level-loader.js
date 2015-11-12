@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
 var maxLevel = window.sessionStorage['maxLevel'];
@@ -8,6 +9,19 @@ if( skipToSandbox ){
   document.getElementById('skipToSandbox').style.display = 'none';
   document.getElementById('backToGame').style.display = 'inline-block';
   document.getElementById('publish').style.display = 'inline-block';
+=======
+var currentLevel = parseInt(storage.get('currentLevel'));
+var maxLevelUnlocked = parseInt(storage.get('maxLevelUnlocked'));
+var dialogueOn = parseInt(storage.get('dialogueOn'+currentLevel));
+var isPublishedGame = false;
+
+if (document.body.hasAttribute('data-published-game-base-level')) {
+  // We're a standalone, published game!
+  isPublishedGame = true;
+  currentLevel = maxLevelUnlocked =parseInt(
+    document.body.getAttribute('data-published-game-base-level')
+  );
+>>>>>>> publish
 }
 
 console.log("INITIAL VALUES");
@@ -16,12 +30,16 @@ console.log(currentLevel, maxLevelUnlocked);
 var currentLevelFilename;
 
 if (isNaN(currentLevel)) currentLevel = 0;
-if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 0;
-if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLevel] = 1;
+if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = storage.set('maxLevelUnlocked', 0);
+if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
+<<<<<<< HEAD
 if (currentLevel > 1 && !skipToSandbox) {
+=======
+if (currentLevel > 1 && !isPublishedGame) {
+>>>>>>> publish
   document.getElementById('previous').style.display = 'inline-block';
 }
 
@@ -49,30 +67,38 @@ function backToGame(){
 }
 
 function showNextLevelButton() {
+  if (isPublishedGame) return;
   document.getElementById('next').style.display = 'inline-block';
 }
 
 function previousLevel() {
-  window.sessionStorage['currentLevel'] = currentLevel - 1;
+  storage.set('currentLevel', currentLevel - 1);
   window.location.reload();
 
-  parent.prevLevel();
+  if (parent !== window) parent.prevLevel();
 }
 
 function nextLevel() {
+<<<<<<< HEAD
   window.sessionStorage['currentLevel'] = (currentLevel == maxLevel) ? maxLevel : currentLevel+1;
   if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
   	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
+=======
+  storage.set('currentLevel', currentLevel + 1);
+
+  if(storage.get('maxLevelUnlocked') < currentLevel+1){
+  	storage.set('maxLevelUnlocked', currentLevel+1);
+>>>>>>> publish
   }
 
   window.location.reload();
 
-  parent.nextLevel();
+  if (parent !== window) parent.nextLevel();
 }
 
 function showDialogue(){
   dialogueOn = true;
-  window.sessionStorage['dialogueOn'+currentLevel] = 1;
+  storage.set('dialogueOn'+currentLevel, 1);
 }
 
 // These functions can be overridden by the BASE level file, which

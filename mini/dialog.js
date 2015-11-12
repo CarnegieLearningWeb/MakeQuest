@@ -3,7 +3,7 @@ function setupDialogue(){
 	pixelFont = loadFont('c64-pixelized.otf');
 
 	console.log("DIALOGUE SEEN: ");
-	console.log(window.sessionStorage['dialogueOn'+currentLevel]);
+	console.log(storage.get('dialogueOn'+currentLevel));
 	console.log(dialogueOn);
 
 	dialogueIndex = 0;
@@ -80,7 +80,7 @@ function mouseClickedDialogue() {
 		if( dialogueIndex >= currentDialogue.length ){
 			dialogueIndex = 0;			
 			dialogueOn = false;
-			window.sessionStorage['dialogueOn'+currentLevel] = 0;
+			storage.set('dialogueOn'+currentLevel, 0);
 		}
 	}
 }
