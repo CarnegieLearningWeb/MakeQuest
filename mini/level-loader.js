@@ -38,6 +38,15 @@ function goToSandbox(){
     parent.loadCurrentUserProject();
 }
 
+function backToGame(){
+  console.log("BACK TO GAME");
+  window.sessionStorage['skipToSandbox'] = false;
+  
+  window.location.reload();
+
+  parent.loadCurrentUserProject();
+}
+
 function showNextLevelButton() {
   document.getElementById('next').style.display = 'inline-block';
 }
