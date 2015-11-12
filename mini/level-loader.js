@@ -46,66 +46,7 @@ if(currentLevel < maxLevelUnlocked && !skipToSandbox){
 }
 
 function publish(){
-  alert("Still need to implement publish functionality");
-  // $("#generate-html").click(function() {
-  //   generatedHTML = null;
-  //   MinicoursePublisher.generateHTML({
-  //     baseURL: './mini/',
-  //     baseLevel: parseInt($("#base-level").val()),
-  //     js: $("#js").val()
-  //   }, function(err, html) {
-  //     if (err) {
-  //       alert("Error generating published HTML: " + err.message);
-  //       return;
-  //     }
-
-  //     generatedHTML = html;
-
-  //     $("#html").val(html);
-  //     $("#data-url").attr("href", "data:text/html;base64," +
-  //                         window.btoa(html));
-
-  //     var iframe = document.createElement("iframe");
-  //     $("#iframe-holder").empty().append(iframe);
-  //     iframe.contentDocument.open();
-  //     iframe.contentDocument.write(html);
-  //     iframe.contentDocument.close();
-  //   });
-  // }).click();
-
-  // $("#publish").click(function() {
-  //   if (!generatedHTML) {
-  //     alert("Generate HTML first!");
-  //     return;
-  //   }
-
-  //   $("#published").hide();
-  //   $("#publishing").fadeIn();
-
-  //   // https://github.com/hackasaurus/hackpub#sample-code
-  //   $.ajax({
-  //     type: 'POST',
-  //     url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
-  //     data: {
-  //       'html': generatedHTML
-  //     },
-  //     crossDomain: true,
-  //     dataType: 'json',
-  //     error: function() {
-  //       alert("Error publishing HTML!");
-  //       console.log(arguments);
-  //     },
-  //     success: function(data) {
-  //       $("#published").fadeIn()
-  //         .find('a')
-  //         .attr('href', data['published-url'])
-  //         .text(data['published-url']);
-  //     },
-  //     complete: function() {
-  //       $("#publishing").hide();
-  //     }
-  //   });
-  // });
+  parent.publish();
 }
 
 function goToSandbox(){
