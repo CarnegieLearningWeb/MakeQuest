@@ -29,6 +29,6 @@ function setupLevel() {
 function drawLevel() {
 // EDITOR: endReadOnly();
   if (isPlayerOnPlatform()) {
-    makePlayerJump(4);
+    makePlayerJump(8);
   }
 }

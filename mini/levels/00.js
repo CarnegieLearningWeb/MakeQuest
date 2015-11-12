@@ -22,7 +22,7 @@ function setupLevel() {
 
 function drawLevel() {
   if (isPlayerOnPlatform()) {
-    makePlayerJump(4);
+    makePlayerJump(8);
   }
 // EDITOR: endReadOnly();
 }
