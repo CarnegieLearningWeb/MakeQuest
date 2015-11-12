@@ -1,6 +1,6 @@
-var currentLevel = parseInt(window.sessionStorage['currentLevel']);
-var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
-var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
+var currentLevel = parseInt(storage.get('currentLevel'));
+var maxLevelUnlocked = parseInt(storage.get('maxLevelUnlocked'));
+var dialogueOn = parseInt(storage.get('dialogueOn'+currentLevel));
 var isPublishedGame = false;
 
 if (document.body.hasAttribute('data-published-game-base-level')) {
@@ -17,8 +17,8 @@ console.log(currentLevel, maxLevelUnlocked);
 var currentLevelFilename;
 
 if (isNaN(currentLevel)) currentLevel = 0;
-if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = window.sessionStorage['maxLevelUnlocked'] = 0;
-if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLevel] = 1;
+if (isNaN(maxLevelUnlocked)) maxLevelUnlocked = storage.set('maxLevelUnlocked', 0);
+if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
@@ -36,17 +36,17 @@ function showNextLevelButton() {
 }
 
 function previousLevel() {
-  window.sessionStorage['currentLevel'] = currentLevel - 1;
+  storage.set('currentLevel', currentLevel - 1);
   window.location.reload();
 
   if (parent !== window) parent.prevLevel();
 }
 
 function nextLevel() {
-  window.sessionStorage['currentLevel'] = currentLevel + 1;
+  storage.set('currentLevel', currentLevel + 1);
 
-  if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
-  	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
+  if(storage.get('maxLevelUnlocked') < currentLevel+1){
+  	storage.set('maxLevelUnlocked', currentLevel+1);
   }
   
 
@@ -57,7 +57,7 @@ function nextLevel() {
 
 function showDialogue(){
   dialogueOn = true;
-  window.sessionStorage['dialogueOn'+currentLevel] = 1;
+  storage.set('dialogueOn'+currentLevel, 1);
 }
 
 // These functions can be overridden by the BASE level file, which
