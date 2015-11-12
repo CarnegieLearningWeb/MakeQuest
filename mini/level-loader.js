@@ -1,5 +1,6 @@
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
+var maxLevel = 16;
 var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
 
 console.log("INITIAL VALUES");
@@ -33,8 +34,7 @@ function previousLevel() {
 }
 
 function nextLevel() {
-  window.sessionStorage['currentLevel'] = currentLevel + 1;
-
+  window.sessionStorage['currentLevel'] = (currentLevel == maxLevel) ? maxLevel : currentLevel+1;
   if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
   	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
   }

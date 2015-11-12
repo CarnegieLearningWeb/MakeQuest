@@ -14,7 +14,7 @@ $(document).ready(function() {
     window.sessionStorage['currentLevel'] = startLevel;
 
     currentLevel = startLevel;
-    maxLevel = 20;
+    maxLevel = 16;
 
     $instructions = $("#instructions");
 
