@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+#iframe-holder iframe {
+  width: 800px;
+  height: 600px;
+}
+</style>
+<title>Publish Test</title>
+<h1>Publish Test</h1>
+<p>
+  This page can be used to manually test publish functionality.
+</p>
+<p>Base Level: <input type="number" id="base-level" value="1"></p>
+<p>Level JS code:</p>
+<textarea id="js" rows="25" cols="80">CURRENT_LEVEL_TEXT = "I am a published level!";</textarea>
+<p><button id="publish">Generate published HTML and inject it into the <code>&lt;iframe&gt;</code> below</button></p>
+<p id="iframe-holder"></p>
+<p><a id="data-url" href="#" target="_blank">Link to the above game as a <code>data:</code> URL</a></p>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/publish.js"></script>
+<script>
+$(function() {
+  $("#publish").click(function() {
+    MinicoursePublisher.generateHTML({
+      baseURL: './mini/',
+      baseLevel: parseInt($("#base-level").val()),
+      js: $("#js").val()
+    }, function(err, html) {
+      if (err) throw err;
+
+      console.log(html);
+      $("#data-url").attr("href", "data:text/html;base64," +
+                          window.btoa(html));
+
+      var iframe = document.createElement("iframe");
+      $("#iframe-holder").empty().append(iframe);
+      iframe.contentDocument.open();
+      iframe.contentDocument.write(html);
+      iframe.contentDocument.close();
+    });
+  }).click();
+});
+</script>

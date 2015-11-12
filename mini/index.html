@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- PUBLISHER: INSERT BASE HREF TAG HERE -->
     <title>Game</title>
     <script src="libs/p5.js"></script>
     <script src="libs/p5.play.js"></script>
@@ -86,7 +87,7 @@
     </style>
 </head>
 
-<body>
+<body data-is-unpublished-game>
     <div class="container">
         <div class="row">
             <div class="large-12 columns">
@@ -111,6 +112,9 @@
     <script src="grid.js"></script>
     <script src="particle-system.js"></script>
     <script src="level-loader.js"></script>
+    <script id="published-level-code">
+    // PUBLISHER: INSERT LEVEL CODE HERE
+    </script>
 </body>
 
 </html>

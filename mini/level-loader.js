@@ -1,6 +1,15 @@
 var currentLevel = parseInt(window.sessionStorage['currentLevel']);
 var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
 var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
+var isPublishedGame = false;
+
+if (document.body.hasAttribute('data-published-game-base-level')) {
+  // We're a standalone, published game!
+  isPublishedGame = true;
+  currentLevel = maxLevelUnlocked =parseInt(
+    document.body.getAttribute('data-published-game-base-level')
+  );
+}
 
 console.log("INITIAL VALUES");
 console.log(currentLevel, maxLevelUnlocked);
@@ -13,7 +22,7 @@ if (isNaN(dialogueOn)) dialogueOn = window.sessionStorage['dialogueOn'+currentLe
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
-if (currentLevel > 1) {
+if (currentLevel > 1 && !isPublishedGame) {
   document.getElementById('previous').style.display = 'inline-block';
 }
 
@@ -22,6 +31,7 @@ if( currentLevel < maxLevelUnlocked ){
 }
 
 function showNextLevelButton() {
+  if (isPublishedGame) return;
   document.getElementById('next').style.display = 'inline-block';
 }
 
