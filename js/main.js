@@ -108,10 +108,7 @@ function publish(){
       alert("There was an error publishing your game. Please try again later!");
       return;
     }
-
-    alert("Still need to implement publish functionality");
     
-
     // Begin publishing
     $("#published").hide();
     $("#publishing").fadeIn();
