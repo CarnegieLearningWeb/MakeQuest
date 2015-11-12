@@ -1,7 +1,7 @@
 var WIDTH = 640;
 var HEIGHT = 480;
 
-var GRAVITY = -0.2;
+var GRAVITY = -0.4;
 
 var PLAYER_START_X = 20;
 var PLAYER_START_Y = 300;
