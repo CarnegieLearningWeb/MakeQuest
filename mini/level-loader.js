@@ -29,7 +29,7 @@ function previousLevel() {
   window.sessionStorage['currentLevel'] = currentLevel - 1;
   window.location.reload();
 
-  parent.prevLevel();
+  if (parent !== window) parent.prevLevel();
 }
 
 function nextLevel() {
@@ -42,7 +42,7 @@ function nextLevel() {
 
   window.location.reload();
 
-  parent.nextLevel();
+  if (parent !== window) parent.nextLevel();
 }
 
 function showDialogue(){
