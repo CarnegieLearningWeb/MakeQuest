@@ -82,6 +82,10 @@ function revertMiniCourse() {
     loadMiniCourse(refreshPreview);
 }
 
+function publishPrompt(){
+  $('#publishModal').foundation('reveal', 'open');
+}
+
 function publish(){
   console.log("PARENT PUBLISH");
   
@@ -106,33 +110,34 @@ function publish(){
     }
 
     alert("Still need to implement publish functionality");
-    return; //DEBUG ONLY
+    
 
     // Begin publishing
+    $("#published").hide();
     $("#publishing").fadeIn();
 
-      $.ajax({
-        type: 'POST',
-        url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
-        data: {
-          'html': generatedHTML
-        },
-        crossDomain: true,
-        dataType: 'json',
-        error: function() {
-          alert("Error publishing HTML!");
-          console.log(arguments);
-        },
-        success: function(data) {
-          $("#published").fadeIn()
-            .find('a')
-            .attr('href', data['published-url'])
-            .text(data['published-url']);
-        },
-        complete: function() {
-          $("#publishing").hide();
-        }
-      });
+    $.ajax({
+      type: 'POST',
+      url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
+      data: {
+        'html': generatedHTML
+      },
+      crossDomain: true,
+      dataType: 'json',
+      error: function() {
+        alert("Error publishing HTML!");
+        console.log(arguments);
+      },
+      success: function(data) {
+        $("#published").fadeIn()
+          .find('a')
+          .attr('href', data['published-url'])
+          .text(data['published-url']);
+      },
+      complete: function() {
+        $("#publishing").hide();
+      }
+    });
   });
 }
 

@@ -46,7 +46,7 @@ if(currentLevel < maxLevelUnlocked && !skipToSandbox){
 }
 
 function publish(){
-  parent.publish();
+  parent.publishPrompt();
 }
 
 function goToSandbox(){
