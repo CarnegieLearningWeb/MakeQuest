@@ -1,19 +1,19 @@
-<<<<<<< HEAD
-var currentLevel = parseInt(window.sessionStorage['currentLevel']);
-var maxLevelUnlocked = parseInt(window.sessionStorage['maxLevelUnlocked']);
+var currentLevel = parseInt(storage.get('currentLevel'));
+var maxLevelUnlocked = parseInt(storage.get('maxLevelUnlocked'));
+var dialogueOn = parseInt(storage.get('dialogueOn'+currentLevel));
+
 var maxLevel = window.sessionStorage['maxLevel'];
 var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
 var skipToSandbox = window.sessionStorage['skipToSandbox'] == "true" ? true : false;
+
+var isPublishedGame = false;
+
 if( skipToSandbox ){
   currentLevel = maxLevel;
   document.getElementById('skipToSandbox').style.display = 'none';
   document.getElementById('backToGame').style.display = 'inline-block';
   document.getElementById('publish').style.display = 'inline-block';
-=======
-var currentLevel = parseInt(storage.get('currentLevel'));
-var maxLevelUnlocked = parseInt(storage.get('maxLevelUnlocked'));
-var dialogueOn = parseInt(storage.get('dialogueOn'+currentLevel));
-var isPublishedGame = false;
+}
 
 if (document.body.hasAttribute('data-published-game-base-level')) {
   // We're a standalone, published game!
@@ -21,7 +21,6 @@ if (document.body.hasAttribute('data-published-game-base-level')) {
   currentLevel = maxLevelUnlocked =parseInt(
     document.body.getAttribute('data-published-game-base-level')
   );
->>>>>>> publish
 }
 
 console.log("INITIAL VALUES");
@@ -35,11 +34,10 @@ if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
-<<<<<<< HEAD
-if (currentLevel > 1 && !skipToSandbox) {
-=======
-if (currentLevel > 1 && !isPublishedGame) {
->>>>>>> publish
+
+
+
+if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
   document.getElementById('previous').style.display = 'inline-block';
 }
 
@@ -79,16 +77,11 @@ function previousLevel() {
 }
 
 function nextLevel() {
-<<<<<<< HEAD
-  window.sessionStorage['currentLevel'] = (currentLevel == maxLevel) ? maxLevel : currentLevel+1;
-  if(window.sessionStorage['maxLevelUnlocked'] < currentLevel+1){
-  	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
-=======
-  storage.set('currentLevel', currentLevel + 1);
+  storage.set('currentLevel', (currentLevel == maxLevel) ? maxLevel : currentLevel+1 );
 
   if(storage.get('maxLevelUnlocked') < currentLevel+1){
-  	storage.set('maxLevelUnlocked', currentLevel+1);
->>>>>>> publish
+  	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
+    storage.set('maxLevelUnlocked', currentLevel+1);
   }
 
   window.location.reload();
