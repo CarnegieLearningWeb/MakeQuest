@@ -4,6 +4,7 @@
 // Lines of code that start with two slashes (like this one) are called “comments”
 // Only humans can read comments - computers can’t see them.
 // EDITOR: beginReadOnly();
+
 function setupLevel() {
   platformHeight = 10;
 
