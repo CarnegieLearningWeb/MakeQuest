@@ -4,6 +4,9 @@ $(document).ready(function() {
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
 
+    //Open welcome modal on first load
+    $('#welcomeModal').foundation('reveal', 'open');
+
     var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
 
