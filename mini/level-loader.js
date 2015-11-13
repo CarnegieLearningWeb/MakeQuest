@@ -81,6 +81,12 @@ function previousLevel() {
 }
 
 function nextLevel() {
+
+  if( currentLevel+1 == maxLevel ){
+    goToSandbox();
+    return;
+  }
+
   storage.set('currentLevel', (currentLevel == maxLevel) ? maxLevel : currentLevel+1 );
 
   if(storage.get('maxLevelUnlocked') < currentLevel+1){

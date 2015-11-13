@@ -39,13 +39,13 @@ function getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "The world is restored! The power of code is yours to shape your world!",
+      text: "\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Thanks for coding!",
+      text: "\nThanks for coding!",
     }
   ];
 }

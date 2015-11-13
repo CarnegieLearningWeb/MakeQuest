@@ -13,7 +13,7 @@ function setupLevel (){
   platform4 = createPlatform(500, 200, 100, platformHeight, 'green');
   // EDITOR: endReadOnly();
   
-  // ***** LEVEL SEVEN (SILVER) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
   // Update the platforms to move slower so you can reach the goal. 
   //

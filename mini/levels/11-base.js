@@ -1,8 +1,8 @@
 PLAYER_START_X = 120;
 PLAYER_START_Y = 420;
 
-GOAL_REACHED_TEXT = "Congratulations, Speedometer Instruction Manual Unlocked!";
-CURRENT_LEVEL_TEXT = "Level 7 Bronze";
+GOAL_REACHED_TEXT = "Congratulations, Remote Control Instruction Manual Unlocked!";
+CURRENT_LEVEL_TEXT = "Change Direction";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,19 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "What is that thing?  It says Speedometer on the side, I have never seen one before…*rumble* *rumble* Oh, Hey! Whatever it’s doing, make it stop.  Make it stop.  Whew, that was close. Do you suppose that Speedometer made the ground move?",
+      text: "\nWhat is that thing, a remote control? Whoa, the platform is moving, but the wrong way!",
+    },
+        {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "\nLook closer, it seems to have something written on it.  You need to face the RIGHT direction to make this platform move towards the next goal.  Maybe that will uncover more about it.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Look Closer, it seems to have a something written on it.  You need to face it in RIGHT direction to make this platform move towards the next access point.  Maybe that will uncover more about it."
+      text: "\nMake the platform FACE the correct direction to reach the goal."
     }
   ];
 }

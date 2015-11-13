@@ -1,6 +1,6 @@
 function setupLevel(){ 
   // EDITOR: beginReadOnly();
-  // ***** LEVEL FOUR INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
   // Change the word 'red' to something else
   // like 'magenta' or 'blue'.

@@ -3,7 +3,7 @@ function drawLevel() {
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
   
-  // ***** LEVEL EIGHT (BRONZE) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   // 
   // Use a number different from 0 to give the jump some force.
   // 

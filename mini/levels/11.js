@@ -9,7 +9,7 @@ function setupLevel (){
 
 
 
-  // ***** LEVEL SEVEN (BRONZE) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   // 
   // Use platform1’s setSpeed function to move towards the
   // goal

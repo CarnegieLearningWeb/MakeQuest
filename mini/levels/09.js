@@ -1,5 +1,5 @@
 function setupLevel() {
-  // ***** LEVEL SIX (SILVER) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
   // Make two new platforms from scratch.
   //

@@ -2,7 +2,7 @@ function drawLevel() {
   // EDITOR: beginReadOnly();
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
-  // ***** LEVEL EIGHT (SILVER) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   // 
   // Use the right amount of force to reach the goal with a single jump.
   // 
