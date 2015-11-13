@@ -116,20 +116,13 @@ function draw() {
     drawDialogue();
 }
 
-var removeLetter = true;
 function destroyScene(){
     //Remove a letter from the level title everytime we remove a sprite
-    if(removeLetter){
+    if(frameCount % 20 == 0){
         var removeIndex = floor( random(0, CURRENT_LEVEL_TEXT.length) );
         var newText = CURRENT_LEVEL_TEXT.split("");
         newText.splice(removeIndex, 1);
         CURRENT_LEVEL_TEXT = newText.join("");
-
-        removeLetter = false;
-
-        setTimeout(function(){
-            removeLetter = true;
-        }, 200);
     }
 
     allSprites.forEach(function(sprite){
