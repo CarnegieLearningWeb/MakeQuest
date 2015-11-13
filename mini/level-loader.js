@@ -68,7 +68,7 @@ function backToGame(){
 }
 
 function showNextLevelButton() {
-  if (isPublishedGame) return;
+  if (isPublishedGame || currentLevel == maxLevel) return;
   document.getElementById('next').style.display = 'inline-block';
 }
 
@@ -80,6 +80,7 @@ function previousLevel() {
 }
 
 function nextLevel() {
+  if (isPublishedGame || currentLevel == maxLevel) return;
 
   if( currentLevel+1 == maxLevel ){
     goToSandbox();

@@ -2,6 +2,7 @@ function setupLevel() {
   PLAYER_START_X = 100;
   PLAYER_START_Y = 400;
   GOAL_REACHED_TEXT = "Change this text, this is YOUR world!";
+  CURRENT_LEVEL_TEXT = "My world of code";
 
   platformHeight = 10;
 
