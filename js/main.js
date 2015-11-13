@@ -1,4 +1,4 @@
-var maxLevel = window.sessionStorage['maxLevel'] = 16;
+var maxLevel = gameConstants.MAX_LEVEL;
 
 $(document).ready(function() {
     //Resize to viewport
@@ -113,9 +113,13 @@ function publish(){
     $("#published").hide();
     $("#publishing").fadeIn();
 
+    var baseURL = window.location.hostname == 'code.globaloria.com'
+                  ? 'http://globaloria.com:8000/'
+                  : 'https://hackpub.herokuapp.com/buckets/globaloria/';
+
     $.ajax({
       type: 'POST',
-      url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
+      url: baseURL + 'publish',
       data: {
         'html': generatedHTML
       },
@@ -145,7 +149,7 @@ function loadMiniCourse(cb){
 
     // Skip to sandbox
     if( window.sessionStorage['skipToSandbox'] == "true" ){
-        zeroPaddedLevel = window.sessionStorage['maxLevel'];
+        zeroPaddedLevel = maxLevel;
     }
 
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {

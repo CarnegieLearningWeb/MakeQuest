@@ -11,7 +11,7 @@ var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 1;
 
-var player, particles, platforms, goalReached;
+var player, particles, platforms, goalReached, autoAdvanceToNextLevel;
 
 function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
@@ -28,6 +28,8 @@ function setup() {
 
     player = createSprite(PLAYER_START_X, PLAYER_START_Y, 20, 20);
     player.shapeColor = 'Aqua';
+
+    autoAdvanceToNextLevel = 0;
 
     base_setupLevel();
     setupLevel();
@@ -72,23 +74,26 @@ function draw() {
         }
 
         rectMode(CENTER);
-        fill('#24a4cd');
+        strokeWeight(7);
+        stroke(36,164,205);
+        fill('#0B6481');
 
         //Level 0 only
         if (currentLevel == 0) {
             // player.position.x = PLAYER_START_X;
             // player.position.y = PLAYER_START_Y;
             // goalReached = false;
+            noStroke();
             fill('red');
             // alert("Evil thing has happened");
             // nextLevel();
             // return;
             destroyScene();
-            
+
         }
 
         rect( WIDTH/2, HEIGHT/2, 420, 120 );
-
+        noStroke();
         fill('white');
         textAlign(CENTER);
         text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, 400, 100);
@@ -97,9 +102,15 @@ function draw() {
         rectMode(CORNER);
     }
 
-    if (player.overlap(goal)) {
+    if (player.overlap(goal) && !goalReached) {
         showNextLevelButton();
         goalReached = true;
+        autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
+    }
+
+    if (autoAdvanceToNextLevel && frameCount >= autoAdvanceToNextLevel) {
+        autoAdvanceToNextLevel = 0;
+        nextLevel();
     }
 
     drawDialogue();
@@ -132,7 +143,7 @@ function destroyScene(){
 }
 
 function keepPlatformsInScene() {
-    //Stop platforms when colliding with walls. 
+    //Stop platforms when colliding with walls.
     //Pivot point is at the center of the platform.
     //Consider refactoring to use method collides and place colliding boxes on the borders
 
@@ -165,7 +176,7 @@ function isPlayerOnPlatform() {
 
         pCol = color(platforms[i].shapeColor);
         if (!(red(pCol) == 255.0 && green(pCol) == 0 && blue(pCol) == 0)) {
-            
+
             player.collide(platforms[i]);
 
             if(player.touching.bottom){
@@ -175,7 +186,7 @@ function isPlayerOnPlatform() {
               return true;
             }
 
-            
+
         }
     }
     return false;
