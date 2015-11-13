@@ -97,8 +97,11 @@ function draw() {
         rectMode(CORNER);
     }
 
-    if (player.overlap(goal)) {
+    if (player.overlap(goal) && !goalReached) {
         showNextLevelButton();
+        setTimeout(function() {
+            Foundation.libs.tooltip.showTip($("#next"));
+        }, 5000);
         goalReached = true;
     }
 

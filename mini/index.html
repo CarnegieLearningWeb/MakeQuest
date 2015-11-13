@@ -102,12 +102,13 @@
 </head>
 
 <body data-is-unpublished-game>
+
     <div class="container">
         <div class="row">
             <div class="large-12 columns">
                 <div class="controls">
                     <button id="previous" onclick="previousLevel()" style="display: none;">Previous Level</button>
-                    <button id="next" onclick="nextLevel()" style="display: none;">Next Level</button>
+                    <button id="next" onclick="nextLevel()" style="cursor: pointer; display: none;" data-tooltip aria-haspopup="true" class="has-tip" title="Click here to continue to the next level.">Next Level</button>
                     <button id="showDialogue" onclick="showDialogue()" style="display: none;">Story</button>
                     <button id="skipToSandbox" onclick="goToSandbox()" style="display: inline-block;">Skip to sandbox</button>
                     <button id="backToGame" onclick="backToGame()" style="display: none;">Back to game</button>
@@ -124,6 +125,10 @@
         <div id="p5_canvas"></div>    
     </div>
 
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/foundation/js/foundation.js"></script>
+
     <script src="storage.js"></script>
     <script src="game.js"></script>
     <script src="dialog.js"></script>
@@ -132,6 +137,9 @@
     <script src="level-loader.js"></script>
     <script id="published-level-code">
     // PUBLISHER: INSERT LEVEL CODE HERE
+    </script>
+    <script>
+        $(document).foundation();
     </script>
 </body>
 
