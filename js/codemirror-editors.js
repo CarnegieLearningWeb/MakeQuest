@@ -193,7 +193,9 @@ function refreshPreview() {
       // ReferenceError: alph is not defined
       console.log("ERROR");
       console.log(err);
-      alert(err);
+      
+      $('#errorModal p.error-text').text( err );
+      $('#errorModal').foundation('reveal', 'open');
       // alert("Make sure you've defined your variable before trying to use it");
   }
 }
