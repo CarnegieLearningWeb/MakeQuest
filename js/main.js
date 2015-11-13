@@ -1,4 +1,4 @@
-var maxLevel = window.sessionStorage['maxLevel'] = 16;
+var maxLevel = gameConstants.MAX_LEVEL;
 
 $(document).ready(function() {
     //Resize to viewport
@@ -149,7 +149,7 @@ function loadMiniCourse(cb){
 
     // Skip to sandbox
     if( window.sessionStorage['skipToSandbox'] == "true" ){
-        zeroPaddedLevel = window.sessionStorage['maxLevel'];
+        zeroPaddedLevel = maxLevel;
     }
 
     $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
