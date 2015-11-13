@@ -3,7 +3,8 @@ function setupLevel() {
   //
   // Use the VARIABLES platformWidth, platformHeight and
   // platformColor to make two new platforms from scratch.
-  // (*they will appear the same as the starting platform because they use the same variables)
+  // (*they will appear the same as the starting platform 
+  // because they use the same variables)
   // ***** ENTER YOUR CODE BELOW *****
   // EDITOR: beginReadOnly();
   platformWidth = 80;
