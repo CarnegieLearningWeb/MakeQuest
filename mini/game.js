@@ -11,7 +11,7 @@ var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 1;
 
-var player, particles, platforms, goalReached;
+var player, particles, platforms, goalReached, autoAdvanceToNextLevel;
 
 function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
@@ -28,6 +28,8 @@ function setup() {
 
     player = createSprite(PLAYER_START_X, PLAYER_START_Y, 20, 20);
     player.shapeColor = 'Aqua';
+
+    autoAdvanceToNextLevel = 0;
 
     base_setupLevel();
     setupLevel();
@@ -97,9 +99,15 @@ function draw() {
         rectMode(CORNER);
     }
 
-    if (player.overlap(goal)) {
+    if (player.overlap(goal) && !goalReached) {
         showNextLevelButton();
         goalReached = true;
+        autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
+    }
+
+    if (autoAdvanceToNextLevel && frameCount >= autoAdvanceToNextLevel) {
+        autoAdvanceToNextLevel = 0;
+        nextLevel();
     }
 
     drawDialogue();
