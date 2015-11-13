@@ -57,8 +57,9 @@ function draw() {
 
     // Move text to the bottom so it doesn't get hidden by objects
     fill("#0b6481");
-    textSize(24);
-    textFont("Georgia");
+    noStroke();
+    textSize(18);
+    textFont(pixelFont);
     text(CURRENT_LEVEL_TEXT, 50, 50);
 
     if (goalReached) {
