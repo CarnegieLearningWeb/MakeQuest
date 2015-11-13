@@ -69,8 +69,14 @@
         }
 
         body[data-published-game-base-level] #publishedGameInfo{
-            display: none;
+            display: block;
+            text-align: center;
         }
+
+        #publishedGameInfo p{
+            text-align: center;
+        }
+
 
         /*Flexbox*/
         .container{
@@ -112,12 +118,9 @@
 
 <body data-is-unpublished-game>
     <div class="container">
-        <div class="row" id="publishedGameInfo">
+        <div class="row" id="publishedGameInfo" style="display: none;">
             <p>
-                This game was created using Globaloria's HOC activity at code.globaloria.com
-            </p>
-            <p>
-                Make your own game!
+                This game was created at <a href="http://www.code.globaloria.com">code.globaloria.com</a>
             </p>
         </div>
         <div class="row">
