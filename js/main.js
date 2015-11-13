@@ -113,9 +113,13 @@ function publish(){
     $("#published").hide();
     $("#publishing").fadeIn();
 
+    var baseURL = window.location.hostname == 'code.globaloria.com'
+                  ? 'http://globaloria.com:8000/'
+                  : 'https://hackpub.herokuapp.com/buckets/globaloria/';
+
     $.ajax({
       type: 'POST',
-      url: "https://hackpub.herokuapp.com/buckets/globaloria/publish",
+      url: baseURL + 'publish',
       data: {
         'html': generatedHTML
       },
