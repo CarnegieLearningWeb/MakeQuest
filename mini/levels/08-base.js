@@ -1,7 +1,7 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, the Mysterious Tattoo glows brighter!";
+GOAL_REACHED_TEXT = "Congratulations, the mysterious watch glows brighter!";
 CURRENT_LEVEL_TEXT = "Make 2 platforms";
 
 function base_getLevelDialogue() {

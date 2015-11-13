@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, Remote Control Acquired!";
-CURRENT_LEVEL_TEXT = "Master Platform Creation";
+CURRENT_LEVEL_TEXT = "Write Code with Variables";
 
 function base_getLevelDialogue() {
   return [

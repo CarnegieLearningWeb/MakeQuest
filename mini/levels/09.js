@@ -1,7 +1,7 @@
 function setupLevel() {
   // ***** INSTRUCTIONS *****
   //
-  // Make two new platforms from scratch.
+  // Write the code to create two new platforms.
   //
   // Refer to the first line of code for help.
   //
