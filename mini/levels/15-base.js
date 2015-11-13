@@ -1,8 +1,8 @@
 PLAYER_START_X = 120;
 PLAYER_START_Y = 380;
 
-GOAL_REACHED_TEXT = "OH EM GEE!!! You did it!, You did it! now Go kick bad guy butt!";
-CURRENT_LEVEL_TEXT = "Level 8 Silver";
+GOAL_REACHED_TEXT = "OH EM GEE!!! You did it! You are truly among the Globalorians!";
+CURRENT_LEVEL_TEXT = "Save the World of Code";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "With the Codo Stick at maximum power you can jump into infinity! Haha, ok well maybe that isn’t super useful, but really, you can jump as much as you want, all over any platform, or even one super jump can skip all the platforms.",
+      text: "Here it is, the doorstep of doom, the threshold of terror, the spinning color wheel of… what that’s something else.  We are at the 404’s dungeon entrance, let’s reach the vault and release coding back into the world!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Use the Codo Stick to reach the final access point!  This final point will give you full control over the code, and allow you to reshape the world in any way, to defeat the Evil For-oh-For.  You are but one mighty jump away!"
+      text: "Use the Codo Stick to reach the final goal.  This will give you full control over the code, and allow you to reshape the world in any way.\n\nYou are but one mighty jump away!"
     }
   ];
 }

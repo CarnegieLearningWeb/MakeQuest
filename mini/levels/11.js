@@ -9,11 +9,11 @@ function setupLevel (){
 
 
 
-  // ***** LEVEL SEVEN (BRONZE) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   // 
   // Use platform1’s setSpeed function to move towards the
   // goal
-  // Use the variable MOVE_RIGHT instead of FACE_LEFT
+  // Use the variable FACE_RIGHT instead of FACE_LEFT
   // ***** ENTER YOUR CODE BELOW *****
   // EDITOR: markHint('platform1', '.', 'setSpeed', '(', null, ',', {type: 'Identifier', highlight: true});
   platform1.setSpeed( 0.3, FACE_LEFT );

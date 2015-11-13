@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, Dimensional Manipulation Unlocked!";
-CURRENT_LEVEL_TEXT = "Level 2";
+GOAL_REACHED_TEXT = "Congratulations, Size Modification Unlocked!";
+CURRENT_LEVEL_TEXT = "Master the coordinate plane";
 
 function base_getLevelDialogue() {
   return [
@@ -10,25 +10,19 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Yes!  You did it!  By reaching the access point, you were able to power up your visual sensors and now you can see not only javaScript, but also the coordinate plane!",
+      text: "Welcome to the coordinate plane! With your coordinateVision, you can now see an x and y axis. It’s like the coordinate plane you know from math class, but the starting point (0,0) is in the top left, instead of the bottom left corner. Weird, right?",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "With this floating grid, we will be able to make more changes in the world and reach more distant access points.  The For-oh-For should be scared… but we need you to gain more powers if you are going to win for good!"
+      text: "Move the platforms so you can reach the goal. To create the platform, the computer needs 4 numbers: (x position, y position, width, height)Go into the code and edit the x and y position for each platform. (Hint: that’s the first 2 numbers!)",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Every platform in the world of code looks like this (40, 100, 80, 10)   The first 2 numbers control where the platforms are located.",
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-      textColor: "white",
-      text: "The first number uses the top numbers (x-axis), and the second number uses the left numbers (y-axis).  Let’s move the platforms closer to the access point!"
+      text: "The 404 should be scared…"
     }
   ];
 }

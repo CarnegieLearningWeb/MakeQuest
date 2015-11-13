@@ -1,13 +1,16 @@
 function setupLevel() {
   // EDITOR: beginReadOnly();
-  // ***** LEVEL TWO INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
-  // The first two numbers control the position, the last
-  // two numbers control the size.
+  // Move the platforms by changing their x and y position in the code.
+  //
+  // Use “Reset” to start each level over
+  // Use “Run” to see your changes
+  // Use “Show Hints” to get extra help if you need it
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //
-  // Change the position of the platforms below so you can reach the goal.
+  // Change the position of the last two platforms below so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
 
@@ -19,7 +22,7 @@ function setupLevel() {
   createPlatform(120, 160, 120, 10);
 
   // EDITOR: beginReadOnly();
-  // EDITOR: beginCodeFold('Click here for an example.');
+  // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
   // Example:
   //
   //   createPlatform(40, 100, 80, 10);

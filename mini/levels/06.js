@@ -1,6 +1,6 @@
 function setupLevel(){
   // EDITOR: beginReadOnly();
-  // ***** LEVEL FIVE (SILVER) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
   // Update the number in the platformWidth VARIABLE to change
   // the width of many platforms.

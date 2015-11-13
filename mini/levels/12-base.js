@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 80;
 
-GOAL_REACHED_TEXT = "Congratulations, Speedometer Advanced Settings Unlocked!";
-CURRENT_LEVEL_TEXT = "Level 7 Silver";
+GOAL_REACHED_TEXT = "Congratulations, Remote Control Advanced Settings Unlocked!";
+CURRENT_LEVEL_TEXT = "Slow the Platforms";
 
 function base_getLevelDialogue() {
   return [
@@ -10,19 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Ok, it seems you can use that to move other platforms, not just the one you are standing on.  Good to know.  It says here you can also change how fast the platform is moving.",
+      text: "Wow, the instruction manual helps a lot! You can use it to change the speed of the platforms. \nMake the numbers smaller and use the platforms to reach the goal before it’s too late.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "This is amazing! With the lost powers of code you are doing all sorts of amazing things, but the best part is that with each access point, everyone else in the world can also learn to code!"
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-      textColor: "white",
-      text: "Why would the For-oh-For not want people to code? Oh well, a question for another time.  See if you can slow down the platforms and reach the next access point!"
+      text: "\nYou’ve come so far, and restored so much of the damage caused by the 404... victory will soon be yours!"
     }
   ];
 }

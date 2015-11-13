@@ -1,5 +1,5 @@
 function setupLevel() {
-  // ***** LEVEL SIX (BRONZE) INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
   // Fix the values for the last two platforms.
   //

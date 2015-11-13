@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, V.E.S.T Discovered!";
-CURRENT_LEVEL_TEXT = "Level 4";
+CURRENT_LEVEL_TEXT = "Recolor the Platforms";
 
 function base_getLevelDialogue() {
   return [
@@ -10,20 +10,20 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Oh No!  The For-oh-For has detected some tampering in the code.  We are going to have to be even smarter now to reach the remaining access points.",
+      text: "Careful! You will fall right through red platforms.  Be sure to change them to a different color! With your Hex Code Unscrambler it’s  easy - just change the word ‘red’ to a different color in the platform code.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "The For-oh-For has changed the path to the access point into red! Blast! Everyone knows that you will fall through if you try and stand on them."
+      text: "Hex codes are numbers that computers read as colors. Thankfully we unscrambled it, so we can see the color name (‘red’) and not the hex code (#FF0000). Get these platforms re-colored so you can reach the goal!"
     },
-    {
-      character: "heroA",
-      image: heroAPic,
-      textColor: "white",
-      text: "Wait, I almost forgot… the Hex Unscrambler and Converter or H.U.E. code we discovered! While we can not walk on red platforms, we can change them into other colors that will allow us to reach the next access point. Get to it!",
-    }
+    // {
+    //   character: "heroA",
+    //   image: heroAPic,
+    //   textColor: "white",
+    //   text: "",
+    // }
   ];
 }
 

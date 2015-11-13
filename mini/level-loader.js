@@ -81,6 +81,12 @@ function previousLevel() {
 }
 
 function nextLevel() {
+
+  if( currentLevel+1 == maxLevel ){
+    goToSandbox();
+    return;
+  }
+
   storage.set('currentLevel', (currentLevel == maxLevel) ? maxLevel : currentLevel+1 );
 
   if(storage.get('maxLevelUnlocked') < currentLevel+1){
@@ -117,6 +123,7 @@ function base_drawLevel() {}
 // hackers will see by default.
 function setupLevel() {}
 function drawLevel() {}
+function getLevelDialogue() {}
 
 // Load the BASE level file for the current level.
 document.write('<script src="' + currentLevelFilename + '-base.js"></script>');

@@ -32,3 +32,20 @@ function drawLevel() {
     makePlayerJump(8);
   }
 }
+
+function getLevelDialogue() {
+  return [
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!",
+    },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "\nThanks for coding!",
+    }
+  ];
+}
