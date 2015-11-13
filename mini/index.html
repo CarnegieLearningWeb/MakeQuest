@@ -63,6 +63,21 @@
             letter-spacing: 1px;
         }
 
+        /*PUBLISHED GAME ONLY*/
+        body[data-published-game-base-level] #skipToSandbox{
+            display: none !important;
+        }
+
+        body[data-published-game-base-level] #publishedGameInfo{
+            display: block !important;
+            text-align: center !important;
+        }
+
+        #publishedGameInfo p{
+            text-align: center;
+        }
+
+
         /*Flexbox*/
         .container{
             height: 100%;
@@ -103,6 +118,11 @@
 
 <body data-is-unpublished-game>
     <div class="container">
+        <div class="row" id="publishedGameInfo" style="display: none;">
+            <p>
+                This game was created at <a href="http://www.code.globaloria.com">code.globaloria.com</a>
+            </p>
+        </div>
         <div class="row">
             <div class="large-12 columns">
                 <div class="controls">
