@@ -2,16 +2,13 @@ function setupLevel() {
   // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
   //
-  // Move the platforms by changing their x and y position in the code.
+  // Move the two lower platforms by changing their x and y position in the code.
   //
   // Use “Reset” to start each level over
   // Use “Run” to see your changes
   // Use “Show Hints” to get extra help if you need it
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
-  //
-  // Change the position of the last two platforms below 
-  // so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
 

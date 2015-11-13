@@ -17,12 +17,6 @@ function base_getLevelDialogue() {
       image: heroAPic,
       textColor: "white",
       text: "Move the platforms so you can reach the goal. To create the platform, the computer needs 4 numbers: (x position, y position, width, height)Go into the code and edit the x and y position for each platform. (Hint: that’s the first 2 numbers!)",
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-      textColor: "white",
-      text: "The 404 should be scared…"
     }
   ];
 }

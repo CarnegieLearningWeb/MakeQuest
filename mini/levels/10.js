@@ -1,19 +1,31 @@
 function setupLevel() {
+  // EDITOR: beginReadOnly();
+  createPlatform(40, 100, 80, 20, "orange");
+  // EDITOR: endReadOnly();
+  
   // ***** INSTRUCTIONS *****
   //
-  // Use the VARIABLES platformWidth, platformHeight and
-  // platformColor to make two new platforms from scratch.
-  // (*they will appear the same as the starting platform 
-  // because they use the same variables)
+  // Add as many platforms as you need to reach the goal.
+  //
+  // Use the VARIABLES to control the size and color of
+  // all your platforms. 
+  // 
   // ***** ENTER YOUR CODE BELOW *****
-  // EDITOR: beginReadOnly();
+  
   platformWidth = 80;
   platformHeight = 20;
   platformColor = "orange";
-  // EDITOR: endReadOnly();
-  
-  // EDITOR: beginReadOnly();
-  createPlatform(40, 100, platformWidth, platformHeight, platformColor);
-  // EDITOR: endReadOnly();
+
+  // EDITOR: beginCodeFold('Click here for an example.');
+  // ******See Example Below******:
+  //
+  //   createPlatform(40, 100, platformWidth, platformHeight, platformColor);
+  //                  ^   ^    ^              ^               ^                     
+  //                  |   |    |              |               color                     
+  //                  |   |    |              height                                      
+  //                  |   |    width
+  //                  |   y-position
+  //                  x-position
+  // EDITOR: endCodeFold();
   
 }
