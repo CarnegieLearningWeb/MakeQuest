@@ -63,6 +63,15 @@
             letter-spacing: 1px;
         }
 
+        /*PUBLISHED GAME ONLY*/
+        body[data-published-game-base-level] #skipToSandbox{
+            display: none;
+        }
+
+        body[data-published-game-base-level] #publishedGameInfo{
+            display: none;
+        }
+
         /*Flexbox*/
         .container{
             height: 100%;
@@ -103,6 +112,14 @@
 
 <body data-is-unpublished-game>
     <div class="container">
+        <div class="row" id="publishedGameInfo">
+            <p>
+                This game was created using Globaloria's HOC activity at code.globaloria.com
+            </p>
+            <p>
+                Make your own game!
+            </p>
+        </div>
         <div class="row">
             <div class="large-12 columns">
                 <div class="controls">
