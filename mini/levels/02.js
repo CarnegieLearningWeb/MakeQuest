@@ -10,7 +10,8 @@ function setupLevel() {
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //
-  // Change the position of the last two platforms below so you can reach the goal.
+  // Change the position of the last two platforms below 
+  // so you can reach the goal.
   //
   // ***** ENTER YOUR CODE BELOW *****
 
