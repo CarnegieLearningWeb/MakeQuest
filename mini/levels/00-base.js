@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Welcome to the world of code!  In this wonderful world, everyone has codeVision and can use the wonderful power of code to effect the world around them.  Explore the world of code by clicking on the scene and moving with the arrow keys.",
+      text: "Welcome to the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
     }
   ];
 }
