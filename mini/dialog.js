@@ -14,15 +14,15 @@ function setupDialogue(){
 	dialogueBox = loadImage("images/dialogue-box.png");
 
 	heroAPic = loadImage("images/hero.png");
-	heroBPic = loadImage("images/bird.png");	
+	heroBPic = loadImage("images/bird.png");
 
 	platformImg = loadImage('images/walls-floors.png');
 
 	//Try to get dialogue override
 	currentDialogue = getLevelDialogue();
 	if( !currentDialogue ){
-		currentDialogue = base_getLevelDialogue();	
-	}	
+		currentDialogue = base_getLevelDialogue();
+	}
 
 	if (currentDialogue) {
 		document.getElementById('showDialogue').style.display = 'inline-block';
@@ -32,47 +32,41 @@ function setupDialogue(){
 function drawDialogue(){
 	if(dialogueOn && currentDialogue){
 		rectMode(CENTER);
-		//Dialogue box
-		image( dialogueBox, 
-				0, 
-				HEIGHT/3, 
-				WIDTH, 
-				dialogueBoxHeight );
 
-		//Dialogue box character image
-		image( currentDialogue[dialogueIndex].image, 
-				dialoguePicX, 
-				dialogueGutter + HEIGHT/3, 
-				dialoguePicWidth,
-				dialogueBoxHeight );
+		// Build 'Story' Dialogue box for text
+		fill("#0B6481");
+		stroke(36,164,205);
+		strokeWeight(12);
+		rect(320, 270, 630, 204);
 
+		noStroke();
 		fill( currentDialogue[dialogueIndex].textColor );
 	    textSize( dialogueFontSize );
 	    textFont(pixelFont);
 
 	    rectMode(CORNER);
-	    text( currentDialogue[dialogueIndex].text, 
-				dialogueGutter, 
+	    text( currentDialogue[dialogueIndex].text,
+				dialogueGutter,
 				dialogueGutter + HEIGHT/3,
 				dialogueTextWidth,
 				dialogueTextHeight - dialogueGutter );
 	    //Simulate a next "button" so the user clicks on the dialogueBox
 	    fill("orange");
-	    text( "Click to continue...", 
-	    		dialogueGutter, 
-	    		dialogueTextHeight + HEIGHT/3, 
+	    text( "Click to continue...",
+	    		dialogueGutter,
+	    		dialogueTextHeight + HEIGHT/3,
 	    		dialogueTextWidth );
 	}
 }
 
 function mouseClickedDialogue() {
-	if(dialogueOn && 
-		( mouseY <= ( HEIGHT/3 + dialogueBoxHeight ) && mouseY >= ( HEIGHT/3 ) ) 
+	if(dialogueOn &&
+		( mouseY <= ( HEIGHT/3 + dialogueBoxHeight ) && mouseY >= ( HEIGHT/3 ) )
 		)
 	{
 		dialogueIndex++;
 		if( dialogueIndex >= currentDialogue.length ){
-			dialogueIndex = 0;			
+			dialogueIndex = 0;
 			dialogueOn = false;
 			storage.set('dialogueOn'+currentLevel, 0);
 		}
