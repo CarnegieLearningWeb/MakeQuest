@@ -16,20 +16,8 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Click on the code and resize the platforms to reach the goal! (Don’t forget you need to click in the code area to change it, and click Run to see the changes in the world of code.)"
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-      textColor: "white",
-      text: "Better hurry, the 404 won’t avoid you forever...",
-    },
-    // {
-    //   character: "heroA",
-    //   image: heroAPic,
-    //   textColor: "white",
-    //   text: "Did you know each time you reach an access point you return the use of that code to the world?  With everyone understanding how to code, The For-oh-For doesn’t stand a chance!"
-    // }
+      text: "\nClick on the code and resize the platforms to reach the goal! \n\nBetter hurry, the 404 won’t avoid you forever..."
+    }
   ];
 }
 

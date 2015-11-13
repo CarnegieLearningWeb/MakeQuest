@@ -17,13 +17,7 @@ function base_getLevelDialogue() {
       image: heroAPic,
       textColor: "white",
       text: "Hex codes are numbers that computers read as colors. Thankfully we unscrambled it, so we can see the color name (‘red’) and not the hex code (#FF0000). Get these platforms re-colored so you can reach the goal!"
-    },
-    // {
-    //   character: "heroA",
-    //   image: heroAPic,
-    //   textColor: "white",
-    //   text: "",
-    // }
+    }
   ];
 }
 

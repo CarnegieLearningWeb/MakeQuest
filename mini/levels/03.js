@@ -1,13 +1,12 @@
 // EDITOR: beginReadOnly();
 function setupLevel() {
-  // ***** LEVEL THREE INSTRUCTIONS *****
+  // ***** INSTRUCTIONS *****
   //
-  // The first two numbers control the position, the last
-  // two numbers control the size.
+  // Make the platforms bigger by changing their width and height in the code.
   //
-  // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
+  // The third number controls width, the last number controls height.
   //
-  // Change the size of the last two platforms below so you can reach the goal.
+  // TIP: Your x and y position will be at the center of the platform. 
   //
   // ***** ENTER YOUR CODE BELOW *****
 // EDITOR: endReadOnly();
