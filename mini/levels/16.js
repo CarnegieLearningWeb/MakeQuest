@@ -18,6 +18,7 @@
 
 // Inside the setupLevel function is where we create platforms
 // and other things we will use in our game.
+
 // EDITOR: beginReadOnly();
 function setupLevel() {
 // EDITOR: endReadOnly();
@@ -52,6 +53,9 @@ function setupLevel() {
   // These code creates all the platforms in the game
   // Some platforms are stored in VARIABLES like 'platform1'
   // so that we can modify them later by name
+  // 
+  // You can change the numbers and the color to update your platforms
+  // Red platforms are broken and the hero 
   platform1 = createPlatform(30, 400, 80, platformHeight, 'brown');
   platform2 = createPlatform(180, 320, 80, platformHeight, 'blue');
   platform3 = createPlatform(150, 460, 130, platformHeight, 'magenta');
