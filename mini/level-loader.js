@@ -2,9 +2,8 @@ var currentLevel = parseInt(storage.get('currentLevel'));
 var maxLevelUnlocked = parseInt(storage.get('maxLevelUnlocked'));
 var dialogueOn = parseInt(storage.get('dialogueOn'+currentLevel));
 
-var maxLevel = window.sessionStorage['maxLevel'];
-var dialogueOn = parseInt(window.sessionStorage['dialogueOn'+currentLevel]);
-var skipToSandbox = window.sessionStorage['skipToSandbox'] == "true" ? true : false;
+var maxLevel = gameConstants.MAX_LEVEL;
+var skipToSandbox = storage.get('skipToSandbox') == "true" ? true : false;
 
 var isPublishedGame = false;
 
@@ -51,7 +50,7 @@ function publish(){
 
 function goToSandbox(){
     console.log("LOAD SANDBOX");
-    window.sessionStorage['skipToSandbox'] = true;
+    storage.set('skipToSandbox', 'true');
 
     //Don't use nextLevel, we need to preserve currentLevel.
     window.location.reload();
@@ -61,7 +60,7 @@ function goToSandbox(){
 
 function backToGame(){
   console.log("BACK TO GAME");
-  window.sessionStorage['skipToSandbox'] = false;
+  storage.del('skipToSandbox');
   
   window.location.reload();
 
@@ -90,7 +89,6 @@ function nextLevel() {
   storage.set('currentLevel', (currentLevel == maxLevel) ? maxLevel : currentLevel+1 );
 
   if(storage.get('maxLevelUnlocked') < currentLevel+1){
-  	window.sessionStorage['maxLevelUnlocked'] = currentLevel+1;	
     storage.set('maxLevelUnlocked', currentLevel+1);
   }
 
