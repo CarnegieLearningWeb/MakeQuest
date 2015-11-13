@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, a Mysterious Tattoo has appeared!";
-CURRENT_LEVEL_TEXT = "Variables reloaded";
+GOAL_REACHED_TEXT = "Congratulations, a mysterious watch has appeared!";
+CURRENT_LEVEL_TEXT = "Change Three Variables";
 
 function base_getLevelDialogue() {
   return [
@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "With your V.E.S.T. at full power, you can now store as many different variables as you will ever need.  What a wondrous piece of equipment, I bet the possibilities with variables are endless.  But for now, let’s focus on reaching the goal.",
+      text: "With your V.E.S.T. at full power you can now store as many different variables as you will ever need.  What a wondrous piece of equipment, I bet the possibilities with variables are endless.  But for now, let’s focus on reaching the goal.",
     },
     {
       character: "heroA",

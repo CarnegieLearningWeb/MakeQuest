@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, V.E.S.T. has reached Level 2!";
-CURRENT_LEVEL_TEXT = "Manipulate Variables";
+CURRENT_LEVEL_TEXT = "Use Variables";
 
 function base_getLevelDialogue() {
   return [

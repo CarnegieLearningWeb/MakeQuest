@@ -7,20 +7,20 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Oh no, our code is broken! The Vile 404 has corrupted all the world’s code, giving him infinite power and control over reality!",
+      text: "\nOh no, our code is broken! The Vile 404 has corrupted all the world’s code, giving him infinite power and control over reality!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Use the arrows to move your avatar to the goal.  This will power up your visual sensors so you can see JavaScript and the coordinate plane. Then you can start fixing code!"
+      text: "\nYou’re the only one with access to the code now, so we need you to fix it. I’ll coach you through it!"
     },
-    // {
-    //   character: "heroA",
-    //   image: heroAPic,
-    //   textColor: "white",
-    //   text: "Psst, psst are you there? Can you hear me? Can you read this?  Oh please let my search be over for someone who can finally understand our secret brownComment Language.  ",
-    // },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "\nUse the arrows to move your avatar to the goal.  This will power up your visual sensors so you can see JavaScript and the coordinate plane.",
+    },
     // {
     //   character: "heroA",
     //   image: heroAPic,

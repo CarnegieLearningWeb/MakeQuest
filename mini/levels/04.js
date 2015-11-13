@@ -6,7 +6,7 @@ function setupLevel(){
   // like 'magenta' or 'blue'.
   // You'll have to change it every time you see
   // the word 'red' below, but it's worth the extra work to
-  // beat the evil For-Oh-For!
+  // beat the evil 404!
 
   //
   // ***** ENTER YOUR CODE BELOW *****
