@@ -6,6 +6,9 @@ $(document).ready(function() {
 
     //Open welcome modal on first load
     $('#welcomeModal').foundation('reveal', 'open');
+    $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+      $(document).foundation('joyride', 'start');
+    });
 
     var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
