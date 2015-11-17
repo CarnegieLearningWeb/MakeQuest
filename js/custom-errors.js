@@ -30,7 +30,8 @@ var CustomErrors = {
 
   errorMsgs: {
     color: "You need a valid color name. Make sure you're spelling the name of your color correctly, and that it's surrounded with quotation marks.",
-    comma: "Every value or ARGUMENT inside parentheses must be separated by a comma"
+    comma: "Every value or ARGUMENT inside parentheses must be separated by a comma",
+    semicolon: "Every line of code or STATEMENT must end with a semicolon ';' ",
   },
 
   // Custom functions to handle tailored feedback.
@@ -48,6 +49,7 @@ var CustomErrors = {
                  {type: ['Punctuator'],           value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
                  {type: ['String', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.color },
                  {type: ['Punctuator'],           value: [')'],  errorMsg: ''  },
+                 {type: ['Punctuator'],           value: [';'],  errorMsg: CustomErrors.errorMsgs.semicolon  },
                  ];
   
     for (var j = 0; j < tests.length; j++) {
@@ -61,7 +63,8 @@ var CustomErrors = {
         // Error found. Display to the user and exit
 
         var err = {
-          token: tokens[tokenIndex], 
+          // Use original index to highlight the correct line
+          token: tokens[index], 
           errMsg: tests[j].errorMsg
         };
 
@@ -72,7 +75,17 @@ var CustomErrors = {
 
       // If we need a specific value, check it
       if( tests[j].value && tests[j].value.indexOf( tokenValue ) == -1 ){
+        // Error found. Display to the user and exit
+
+        var err = {
+          // Use original index to highlight the correct line
+          token: tokens[index], 
+          errMsg: tests[j].errorMsg
+        };
+
+        this.displayError( err );
         
+        return true;
       }
     };           
     
