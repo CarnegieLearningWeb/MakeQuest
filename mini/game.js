@@ -7,6 +7,9 @@ var PLAYER_START_X = 20;
 var PLAYER_START_Y = 300;
 
 var GOAL_REACHED_TEXT = "Goal reached!";
+var GOAL_REACHED_BOX_WIDTH = 400;
+var GOAL_REACHED_BOX_HEIGHT = 100;
+
 var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 1;
@@ -63,44 +66,7 @@ function draw() {
     text(CURRENT_LEVEL_TEXT, 50, 50);
 
     if (goalReached) {
-        player.position.x = goal.position.x;
-        player.position.y = goal.position.y;
-        player.velocity.x = 0;
-        player.velocity.y = 0;
-
-
-        if (currentLevel != 0) {
-            particles.addParticle();
-            particles.run();
-        }
-
-        rectMode(CENTER);
-        strokeWeight(7);
-        stroke(36,164,205);
-        fill('#0B6481');
-
-        //Level 0 only
-        if (currentLevel == 0) {
-            // player.position.x = PLAYER_START_X;
-            // player.position.y = PLAYER_START_Y;
-            // goalReached = false;
-            noStroke();
-            fill('red');
-            // alert("Evil thing has happened");
-            // nextLevel();
-            // return;
-            destroyScene();
-
-        }
-
-        rect( WIDTH/2, HEIGHT/2, 420, 120 );
-        noStroke();
-        fill('white');
-        textAlign(CENTER);
-        text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, 400, 100);
-
-        //Reset rectMode back to default
-        rectMode(CORNER);
+        levelComplete();
     }
 
     if (player.overlap(goal) && !goalReached) {
@@ -186,6 +152,59 @@ function isPlayerOnPlatform() {
     return false;
 }
 
+function levelComplete(){
+    player.position.x = goal.position.x;
+    player.position.y = goal.position.y;
+    player.velocity.x = 0;
+    player.velocity.y = 0;
+
+
+    if (currentLevel != 0) {
+        particles.addParticle();
+        particles.run();
+    }
+
+    rectMode(CENTER);
+    strokeWeight(7);
+    stroke(36,164,205);
+    fill('#0B6481');
+
+    //Level 0 only
+    if (currentLevel == 0) {
+        // player.position.x = PLAYER_START_X;
+        // player.position.y = PLAYER_START_Y;
+        // goalReached = false;
+        noStroke();
+        fill('red');
+        // alert("Evil thing has happened");
+        // nextLevel();
+        // return;
+        destroyScene();
+
+    }
+
+    rect( WIDTH/2, HEIGHT/2, 420, 120 );
+    noStroke();
+    fill('white');
+    textAlign(CENTER);
+    text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, GOAL_REACHED_BOX_WIDTH, GOAL_REACHED_BOX_HEIGHT);
+    
+    fill('orange');
+    text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2);
+
+    //Reset rectMode back to default
+    rectMode(CORNER);
+}
+
+function mouseClickedLevelComplete() {
+    if(goalReached &&
+        ( mouseY <= ( HEIGHT / 2 + GOAL_REACHED_BOX_HEIGHT ) && mouseY >= ( HEIGHT/2 - GOAL_REACHED_BOX_HEIGHT ) )
+        )
+    {
+      nextLevel();
+    }
+}
+
 function makePlayerJump(force) {
     player.setSpeed(force, 270);
 }
@@ -228,4 +247,5 @@ function playerInput() {
 
 function mouseClicked() {
     mouseClickedDialogue();
+    mouseClickedLevelComplete();
 }
