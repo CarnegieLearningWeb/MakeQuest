@@ -115,6 +115,10 @@ main > .row.border-bottom{
   margin-bottom: 5px
 }
 
+.joyride-highlight{
+  border: 3px solid red !important;
+}
+
 /*FLEXBOX*/
 .preview_container {
   display: flex;

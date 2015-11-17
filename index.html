@@ -203,20 +203,17 @@
 
     <!-- JOYRIDE -->
     <ol class="joyride-list" data-joyride>
-      <li data-id="run" data-text="Next" data-options="tip_location: top; prev_button: false">
-        <p>Hello and welcome to the Joyride <br>documentation page.</p>
+      <li data-id="run" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+        <p>Run</p>
       </li>
-      <li data-id="revert" data-class="custom so-awesome" data-text="Next" data-prev-text="Prev">
-        <h4>Stop #1</h4>
-        <p>You can control all the details for you tour stop. Any valid HTML will work inside of Joyride.</p>
+      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+        <p>Reset</p>
       </li>
-      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:top;tip_animation:fade">
-        <h4>Stop #2</h4>
-        <p>Get the details right by styling Joyride with a custom stylesheet!</p>
+      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Hints</p>
       </li>
-      <li data-button="End" data-prev-text="Prev">
-        <h4>Stop #3</h4>
-        <p>It works as a modal too!</p>
+      <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+        <p>Editor</p>
       </li>
     </ol>
 
@@ -226,7 +223,6 @@
     <script src="vendor/esprima.js"></script>
     <script>
     	$(document).foundation();
-
     </script>
 
     <script src="js/publish.js"></script>
