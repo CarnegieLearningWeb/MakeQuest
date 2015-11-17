@@ -20,6 +20,20 @@ var CustomErrors = {
     };
     
   },
+
+  displayError: function(err){
+    markJsErrorAtLine( err.token.loc.start.line );
+
+    $('#errorModal p.error-text').text( err.errMsg );
+    $('#errorModal').foundation('reveal', 'open');
+  },
+
+  errorMsgs: {
+    color: "You need a valid color name. Make sure you're spelling the name of your color correctly, and that it's surrounded with quotation marks.",
+    comma: "Every value or ARGUMENT inside parentheses must be separated by a comma"
+  },
+
+  // Custom functions to handle tailored feedback.
   createPlatform: function(tokens, index){
     var tests = [
                 // We might allow multiple options, such as Identifier or Numeric. Use arrays to account for that
@@ -63,16 +77,6 @@ var CustomErrors = {
     };           
     
   },
-  displayError: function(err){
-    markJsErrorAtLine( err.token.loc.start.line );
-
-    $('#errorModal p.error-text').text( err.errMsg );
-    $('#errorModal').foundation('reveal', 'open');
-  },
-  errorMsgs: {
-    color: "You need a valid color name. Make sure you're spelling the name of your color correctly, and that it's surrounded with quotation marks.",
-    comma: "Every value or ARGUMENT inside parentheses must be separated by a comma"
-  }
 }
 
 
