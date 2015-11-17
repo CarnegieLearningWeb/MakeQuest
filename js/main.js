@@ -39,6 +39,13 @@ $(document).ready(function() {
         $('#signupModal').foundation('reveal', 'close');
     });
 
+    //Remove tooltips from code editor
+    $(document).on('click', 'span.tooltip', function(){
+        Foundation.libs.tooltip.hide( $('#editor-tooltip') );
+        $(this).remove();
+        $('#editor-tooltip').remove();
+    });
+
     $(document).on('click', '#signupButton', function(e) {
         e.preventDefault();
         console.log("signup");

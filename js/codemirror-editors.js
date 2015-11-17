@@ -199,3 +199,15 @@ function refreshPreview() {
       // alert("Make sure you've defined your variable before trying to use it");
   }
 }
+
+function insertEditoTooltip(text, line, ch){
+  // Create a new tooltip
+  $('body').prepend('<span id="editor-tooltip" data-tooltip class="has-tip" title="'+text+'"></span>');
+  
+  // Widget gets inserted one line below. Use line - 1 to account for this
+  editor_js.addWidget({ch: ch , line: line-1}, $('#editor-tooltip')[0], true);
+
+  $(document).foundation('tooltip', 'reflow');
+  Foundation.libs.tooltip.showTip( $('#editor-tooltip') );
+
+}
