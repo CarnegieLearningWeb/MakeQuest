@@ -147,36 +147,40 @@
           <input name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/"><br>
         
           <div class="row">
-            <div class="large-12 columns">
+            <div class="large-6 columns">
               <label for="school">School</label>
-              <input id="school" maxlength="80" name="school" type="text" required pattern="[a-zA-Z]+">
+              <input id="school" name="school" type="text" required pattern="[a-zA-Z]+">
+              <small class="error">This field is required.</small>
             </div>
   
-            <div class="large-12 columns">
+            <div class="large-6 columns">
               <label for="city">City</label>
-              <input id="city" maxlength="40" name="city" size="20" type="text">
-              <small class="error">City is required.</small>
+              <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
+              <small class="error">This field is required.</small>
             </div>
-            <div class="large-12 columns">
+            <div class="large-6 columns">
               <label for="state">State/Province</label
-              ><input id="state" maxlength="20" name="state" size="20" type="text">
+              ><input id="state" name="state" type="text" required pattern="[a-zA-Z]+">
+              <small class="error">This field is required.</small>
             </div>
-            <div class="large-12 columns">
+            <div class="large-6 columns">
               <label for="country">Country</label>
-              <input id="country" name="country" type="text">
+              <input id="country" name="country" type="text" required pattern="[a-zA-Z]+">
+              <small class="error">This field is required.</small>
             </div>
+
             <div class="large-12 columns">
-              <label for="is-adult">I'm over 18 and would like to know more <input id="is-adult" name="is-adult" type="checkbox"></label>
+              <label for="is-adult">I'm a parent/guardian/teacher. Tell me more <input id="is-adult" name="is-adult" type="checkbox"></label>
             </div>
           
             <div class="large-12 columns">
-              <label for="name">Name <input id="name" name="name" type="text" disabled=></label>
+              <label for="name">Name <input id="name" name="name" type="text" disabled></label>
             </div>
             <div class="large-6 columns">
-              <label for="email">Email <input id="email" name="email" type="email" disabled=></label>
+              <label for="email">Email <input id="email" name="email" type="email" disabled></label>
             </div>
             <div class="large-6 columns">
-              <label for="phone">Phone <input id="phone" name="phone" type="text" disabled=></label>
+              <label for="phone">Phone <input id="phone" name="phone" type="text" disabled></label>
             </div>    
           </div>
           

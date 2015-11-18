@@ -81,7 +81,6 @@ $(document).ready(function() {
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 
     // Publishing form submission
-    // TODO: Get salesforce url for post
     $('form #is-adult').on('change', function(){
         console.log( $(this).prop('checked') );
         if( $(this).prop('checked') ){
@@ -98,11 +97,12 @@ $(document).ready(function() {
             $('#phone').prop('disabled', true);
         }
     });
+    // TODO: Get salesforce url for post
     $('form').submit(function(event) {
         
         $.ajax({
             type        : 'POST', 
-            url         : '#', 
+            url         : 'https://www.globaloria.com', 
             data        : $(this).serialize(), 
         })
             
