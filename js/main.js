@@ -79,6 +79,44 @@ $(document).ready(function() {
     loadCurrentUserProject();
     //Set iframe to right level
     $('iframe#preview').attr('src', 'mini/index.html').focus();
+
+    // Publishing form submission
+    $('form #is-adult').on('change', function(){
+        console.log( $(this).prop('checked') );
+        if( $(this).prop('checked') ){
+            $('#name').prop('disabled', false);
+            $('#email').prop('disabled', false);
+            $('#phone').prop('disabled', false);
+        }else{
+            $('#name').val('');
+            $('#email').val('');
+            $('#phone').val('');
+
+            $('#name').prop('disabled', true);
+            $('#email').prop('disabled', true);
+            $('#phone').prop('disabled', true);
+        }
+    });
+    // TODO: Get salesforce url for post
+    $('form').submit(function(event) {
+        
+        $.ajax({
+            type        : 'POST', 
+            url         : 'https://www.globaloria.com', 
+            data        : $(this).serialize(), 
+        })
+            
+            .done(function(data) {
+
+                // Form submission successful, publish the game
+                publish();
+
+            
+            });
+
+        event.preventDefault();
+    });
+
 });
 
 function revertMiniCourse() {
