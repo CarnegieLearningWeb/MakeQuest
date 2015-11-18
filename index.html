@@ -113,21 +113,20 @@
 
     <div id="welcomeModal" class="reveal-modal" data-reveal aria-labelledby="Welcome modal" aria-hidden="true" role="dialog">
         <div style="text-align: center;">
-            <h2>Welcome to <img src="images/GlobaloriaBanner.png" height="60px" width="200px"> !</h2>
+            <h2>Welcome to <img src="images/GlobaloriaBanner.png" height="60px" width="200px"></h2>
         </div>
 
-        <p>"Drag and drop” game-making tools are fun and inspiring… 
-        but seeing and manipulating *real* code prepares you to write your own. 
-        You can do this, even in your very first hour of code!</p>
+        <p>At Globaloria we believe that making games is a fun way to learn. Designing educational games using real coding languages and professional design tools is exciting. Everyone can write real code – it’s fun even in your very first hour.</p>
 
-        <p>In this game for beginning coders, you will edit JavaScript code to defeat the evil villain, 404.
-        Along the way, you’ll learn about important computing concepts like variables and functions.</p>
+        <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
 
-        <p>Ready to go deeper? You can access the full game code in our sandbox, and remix and expand it to create your own game, then publish and share it!</p>
+        <p>Ready to go deeper? Access the full game code in the Globaloria Sandbox, remix and expand it to create your own game, then publish and share it with your friends!</p>
 
-        <p>Teachers, here is a <a href=" http://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> with some ideas for using this activity in your class.</p>
+        <p>Teachers: here is a <a href=" http://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using this activity in your class.</p>
 
-        <p>Close this box to begin!</p>
+        <p>Click up right to close this box to begin. Enjoy!</p>
+
+        <p>Tell us what you think: makequest@globaloria.com</p>
         
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
@@ -135,13 +134,23 @@
 
     <div id="publishModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
         
-        <h2 style="text-align:center;">Publish your game!</h2>
+        <h2 style="text-align:center;">Publish Your Game</h2>
           
 
         <!-- Send form to Salesforce -->
         <form id="publish-form" 
                 action="#" 
                 data-abide>
+
+          <!-- Publishing feedback -->
+          <div>This will generate a unique URL that your can share with friends and family to play your game.</div>
+          <div>The URL will only be displayed once, be sure to write it down.</div>
+          <div>
+            <span id="published" style="display: none;">Published: <a></a></span>
+            <span id="publishing" style="display: none;">Publishing...</span>
+          </div>
+          <!-- <button onclick="publish()">Publish</button> -->
+
 
           <input name="oid" type="hidden" value="00DU0000000LhCA"><br>
           <input name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/"><br>
@@ -170,31 +179,26 @@
             </div>
 
             <div class="large-12 columns">
-              <label for="is-adult">I'm a parent/guardian/teacher. Tell me more <input id="is-adult" name="is-adult" type="checkbox"></label>
+              <label for="is-adult">I'm 13 or older <input id="is-adult" name="is-adult" type="checkbox"></label>
             </div>
           
             <div class="large-12 columns">
-              <label for="name">Name <input id="name" name="name" type="text" disabled></label>
+              <label for="name">First and last name <input id="name" name="name" type="text" disabled></label>
             </div>
             <div class="large-6 columns">
               <label for="email">Email <input id="email" name="email" type="email" disabled></label>
             </div>
             <div class="large-6 columns">
               <label for="phone">Phone <input id="phone" name="phone" type="text" disabled></label>
+            </div>
+
+            <div class="large-12 columns">
+              <label for="comments">Comments <input id="comments" name="comments" type="text"></label>
             </div>    
           </div>
           
   
           <input type="hidden" name="lead_source" value="Inbound Expression of Interest">
-
-          <!-- Publishing feedback -->
-          <p>This will generate a unique URL where friends and family can play your game!</p>
-          <p>The URL will only be displayed once, so be sure to copy it and save it somewhere.</p>
-          <p>
-            <span id="published" style="display: none;">Published: <a></a></span>
-            <span id="publishing" style="display: none;">Publishing...</span>
-          </p>
-          <!-- <button onclick="publish()">Publish</button> -->
 
           <button type="submit">Submit</button>
         </form>
