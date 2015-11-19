@@ -184,6 +184,10 @@ function publish(){
         
         // Replace the form's return URL and submit the form
         $('#publish-form input#retUrl').val( data['published-url'] );
+        
+        // Populate game link for salesforce capture
+        $('#00NU0000005PN7t').val(data['published-url']);
+
         //Unbind form to prevent submit loop
         $('#publish-form').unbind().submit();
 
