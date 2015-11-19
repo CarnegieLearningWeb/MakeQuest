@@ -1,8 +1,9 @@
 function setupLevel() {
   // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
-  //
-  // Move the two lower platforms by changing their x and y position in the code.
+  
+  // Move the two lower platforms by changing their 
+  // x and y position in the code.
   //
   // Use “Reset” to start each level over
   // Use “Run” to see your changes

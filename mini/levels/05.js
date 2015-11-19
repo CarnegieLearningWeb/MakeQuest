@@ -26,7 +26,8 @@ function setupLevel() {
   // Challenge (answer in your head): if using a variable called
   // platformColor can change *all* of the colors in this level… 
   // how do you think you could change all of the platform *sizes*
-  // (length or width) without having to change each individual platform?  
+  // (length or width) without having to change each individual 
+  // platform?  
   // Think you’ve got it? Stay tuned!
   // EDITOR: endCodeFold();
   // EDITOR: endReadOnly();
