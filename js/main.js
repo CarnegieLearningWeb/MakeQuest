@@ -102,25 +102,26 @@ $(document).ready(function() {
         }
     });
     // TODO: Get salesforce url for post
-    $('form').submit(function(event) {
-        
-        $.ajax({
-            type        : 'POST', 
-            url         : 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', 
-            data        : $(this).serialize(), 
-        })
-            
-            .done(function(data) {
+    $('#publish-form').submit(function(event) {
+        console.log("VALIDATING");
+        // Form validation
+        if( $('#school').val() == ""
+            || $('#city').val() == ""
+            || $('#country').val() == ""
+            || $('#state').val() == ""
+            ){
+            console.log("VALIDATION FAILED");
+            return false;
+        }
 
-                // Form submission successful, publish the game
-                publish();
-
-            
-            });
-
+        // Prevent form submission
+        // Publish game and set url as the return parameter for the form.
+        // Submit the form from publish
+        console.log("PUBLISHING");
+        publish();
         event.preventDefault();
+        return false;
     });
-
 });
 
 function revertMiniCourse() {
@@ -179,6 +180,13 @@ function publish(){
           .find('a')
           .attr('href', data['published-url'])
           .text(data['published-url']);
+
+        
+        // Replace the form's return URL and submit the form
+        $('#publish-form input#retUrl').val( data['published-url'] );
+        //Unbind form to prevent submit loop
+        $('#publish-form').unbind().submit();
+
       },
       complete: function() {
         $("#publishing").hide();
