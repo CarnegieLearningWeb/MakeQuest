@@ -81,18 +81,22 @@ $(document).ready(function() {
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 
     // Publishing form submission
-    $('form #is-adult').on('change', function(){
+    //is-adult
+    $('form #00NU0000005PN7j').on('change', function(){
         console.log( $(this).prop('checked') );
         if( $(this).prop('checked') ){
-            $('#name').prop('disabled', false);
+            $('#first_name').prop('disabled', false);
+            $('#last_name').prop('disabled', false);
             $('#email').prop('disabled', false);
             $('#phone').prop('disabled', false);
         }else{
-            $('#name').val('');
+            $('#first_name').val('');
+            $('#last_name').val('');
             $('#email').val('');
             $('#phone').val('');
 
-            $('#name').prop('disabled', true);
+            $('#first_name').prop('disabled', true);
+            $('#last_name').prop('disabled', true);
             $('#email').prop('disabled', true);
             $('#phone').prop('disabled', true);
         }
@@ -102,7 +106,7 @@ $(document).ready(function() {
         
         $.ajax({
             type        : 'POST', 
-            url         : 'https://www.globaloria.com', 
+            url         : 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8', 
             data        : $(this).serialize(), 
         })
             

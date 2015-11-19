@@ -72,27 +72,27 @@
                         </div>
                     </div>
                 </div>
-            	<div class="row">
-            		<div class="large-12 columns margin-left-0 margin-right-0">
+                <div class="row">
+                    <div class="large-12 columns margin-left-0 margin-right-0">
                         <div class="codemirror-editor-container">
                             <!-- JS FOR CODEMIRROR -->
                             <div id="js_editor">
                             </div>
                             <!-- END JS FOR CODEMIRROR -->
                         </div>
-	                </div>
-	            </div>
+                    </div>
+                </div>
             </div>
             <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
-            	<!-- <h2>Game</h2> -->
-            	<!-- LIVE PREVIEW -->
-		        <div class="preview_container">
-		        	<!-- src="project_template/index.html" -->
-		            <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
+                <!-- <h2>Game</h2> -->
+                <!-- LIVE PREVIEW -->
+                <div class="preview_container">
+                    <!-- src="project_template/index.html" -->
+                    <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
 
-		            </iframe>
-		        </div>
-		        <!-- END LIVE PREVIEW -->
+                    </iframe>
+                </div>
+                <!-- END LIVE PREVIEW -->
             </div>
         </div>
 
@@ -139,7 +139,7 @@
 
         <!-- Send form to Salesforce -->
         <form id="publish-form" 
-                action="#" 
+                action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" 
                 data-abide>
 
           <!-- Publishing feedback -->
@@ -157,8 +157,8 @@
         
           <div class="row">
             <div class="large-6 columns">
-              <label for="school">School</label>
-              <input id="school" name="school" type="text" required pattern="[a-zA-Z]+">
+              <label for="00NU0000005PN7e">School</label>
+              <input id="00NU0000005PN7e" name="00NU0000005PN7e" maxlength="150" type="text" required pattern="[a-zA-Z]+">
               <small class="error">This field is required.</small>
             </div>
   
@@ -179,11 +179,14 @@
             </div>
 
             <div class="large-12 columns">
-              <label for="is-adult">I'm 13 or older <input id="is-adult" name="is-adult" type="checkbox"></label>
+              <label for="00NU0000005PN7j">I'm 13 or older <input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox"></label>
             </div>
           
-            <div class="large-12 columns">
-              <label for="name">First and last name <input id="name" name="name" type="text" disabled></label>
+            <div class="large-6 columns">
+              <label for="name">First Name <input id="first_name" name="first_name" type="text" disabled></label>
+            </div>
+            <div class="large-6 columns">
+              <label for="name">Last Name <input id="last_name" name="last_name" type="text" disabled></label>
             </div>
             <div class="large-6 columns">
               <label for="email">Email <input id="email" name="email" type="email" disabled></label>
@@ -193,12 +196,11 @@
             </div>
 
             <div class="large-12 columns">
-              <label for="comments">Comments <input id="comments" name="comments" type="text"></label>
+              <label for="description">Comments <input id="description" name="description" type="text"></label>
             </div>    
           </div>
-          
   
-          <input type="hidden" name="lead_source" value="Inbound Expression of Interest">
+          <input type="hidden" name="lead_source" value="code.globaloria.com Campaign">
 
           <button type="submit">Submit</button>
         </form>
@@ -265,7 +267,7 @@
     <script src="vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
     <script src="vendor/esprima.js"></script>
     <script>
-    	$(document).foundation();
+        $(document).foundation();
 
     </script>
 
