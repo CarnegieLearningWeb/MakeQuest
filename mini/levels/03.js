@@ -1,12 +1,15 @@
 // EDITOR: beginReadOnly();
 function setupLevel() {
   // ***** INSTRUCTIONS *****
+  
+  // Make the platforms bigger by changing their width
+  // and height in the code.
   //
-  // Make the platforms bigger by changing their width and height in the code.
+  // The third number controls width, the last number 
+  // controls height.
   //
-  // The third number controls width, the last number controls height.
-  //
-  // TIP: Your x and y position will be at the center of the platform. 
+  // TIP: Your x and y position will be at the center 
+  // of the platform. 
   //
   // ***** ENTER YOUR CODE BELOW *****
 // EDITOR: endReadOnly();

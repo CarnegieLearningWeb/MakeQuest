@@ -1,7 +1,9 @@
 // ***** INSTRUCTIONS *****
 // Below is the code for the game scene on the right.  
-// Writing code (a.k.a, programming) is how you tell a computer to do something.
-// Lines of code that start with two slashes (like this one) are called “comments”
+// Writing code (a.k.a, programming) is how you tell a 
+// computer to do something.
+// Lines of code that start with two slashes (like this one) 
+// are called “comments”
 // Only humans can read comments - computers can’t see them.
 // EDITOR: beginReadOnly();
 

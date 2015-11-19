@@ -22,8 +22,11 @@ function setupLevel(){
   // EDITOR: beginReadOnly();
   // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
   // ***** CHALLENGE ********
-  //Challenge1 (bronze level) -- Change each platform to a  *different* color.
-  //Challenge 2 (silver level) -- Change each platform to a *square* instead of a rectangle.
+  // Challenge1 (bronze level) 
+  // -- Change each platform to a  *different* color.
+  // Challenge 2 (silver level) 
+  // -- Change each platform to a *square* instead of
+  // a rectangle.
   // EDITOR: endCodeFold('Click here for a CHALLENGE.');
   // EDITOR: endReadOnly();
 
