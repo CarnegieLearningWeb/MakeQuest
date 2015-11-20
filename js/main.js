@@ -169,6 +169,7 @@ function loadMiniCourse(cb){
         var foldedRanges = [];
         var currLineNumber = 0;
         var currIndentation = 0;
+        var editorTooltips = [];
         var editorCommands = {
             markHint: function() {
                 markHints.push(arguments);
@@ -193,6 +194,11 @@ function loadMiniCourse(cb){
             endCodeFold: function() {
                 var currRange = foldedRanges[foldedRanges.length - 1];
                 currRange.end = currLineNumber;
+            },
+
+            insertTooltip: function(){
+                console.log("INSERT TOOLTIP");
+                console.log(arguments);
             }
         };
 

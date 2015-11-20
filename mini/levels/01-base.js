@@ -49,7 +49,3 @@ function base_drawLevel() {
     player.velocity.y = 0;
   }
 }
-
-// Load editor tooltip
-// TODO: load only on first level view
-parent.insertEditoTooltip("Lines that begin with '//' are comments. Read them to find out more about the current level.", 1, 0);
