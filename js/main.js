@@ -69,6 +69,13 @@ $(document).ready(function() {
         $('#signupModal').foundation('reveal', 'close');
     });
 
+    //Remove tooltips from code editor
+    $(document).on('click', 'span.tooltip', function(){
+        Foundation.libs.tooltip.hide( $('#editor-tooltip') );
+        $(this).remove();
+        $('#editor-tooltip').remove();
+    });
+
     $(document).on('click', '#signupButton', function(e) {
         e.preventDefault();
         console.log("signup");
@@ -246,6 +253,7 @@ function loadMiniCourse(cb){
         var foldedRanges = [];
         var currLineNumber = 0;
         var currIndentation = 0;
+        var editorTooltips = [];
         var editorCommands = {
             markHint: function() {
                 markHints.push(arguments);
@@ -270,6 +278,10 @@ function loadMiniCourse(cb){
             endCodeFold: function() {
                 var currRange = foldedRanges[foldedRanges.length - 1];
                 currRange.end = currLineNumber;
+            },
+
+            insertTooltip: function(){
+                editorTooltips.push(arguments);
             }
         };
 
@@ -356,6 +368,10 @@ function loadMiniCourse(cb){
                     };
                 }
             });
+        });
+
+        editorTooltips.forEach(function(arguments){
+            insertEditoTooltip.apply(this, arguments);
         });
 
         cb();
