@@ -197,8 +197,7 @@ function loadMiniCourse(cb){
             },
 
             insertTooltip: function(){
-                console.log("INSERT TOOLTIP");
-                console.log(arguments);
+                editorTooltips.push(arguments);
             }
         };
 
@@ -285,6 +284,10 @@ function loadMiniCourse(cb){
                     };
                 }
             });
+        });
+
+        editorTooltips.forEach(function(arguments){
+            insertEditoTooltip.apply(this, arguments);
         });
 
         cb();
