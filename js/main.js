@@ -159,7 +159,7 @@ function publish(){
     $("#published").hide();
     $("#publishing").fadeIn();
 
-    var baseURL = window.location.hostname == 'code.globaloria.com'
+    var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
                   ? 'http://globaloria.com:8000/'
                   : 'https://hackpub.herokuapp.com/buckets/globaloria/';
 
