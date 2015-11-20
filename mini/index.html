@@ -11,6 +11,10 @@
     <!-- FOUNDATION -->
     <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
 
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/foundation/js/foundation.js"></script>
+    <script type="text/javascript" src="../bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+
     <!-- Need to rebind p5 Play library when restarting p5 -->
     <script type="text/javascript" src="libs/rebind_p5_play.min.js"></script>
 
@@ -113,6 +117,10 @@
         .controls button{
             margin-right: 1rem;
         }
+
+        .joyride-highlight{
+            border: 3px solid red !important;
+        }
     </style>
 </head>
 
@@ -144,6 +152,25 @@
         <div id="p5_canvas"></div>    
     </div>
 
+    <!-- JOYRIDE -->
+    <ol class="joyride-list" data-joyride>
+      <li data-id="previous" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+        <p>Go back and retry any levels</p>
+      </li>
+      <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+        <p>The next level button will show up after your complete the current level.</p>
+      </li>
+      <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Display the game story again</p>
+      </li>
+      <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Go to the sandbox to create your own game</p>
+      </li>
+      <li data-id="defaultCanvas" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
+        <p>Click on the game screen to play your game</p>
+      </li>
+    </ol>
+
     <script src="constants.js"></script>
     <script src="storage.js"></script>
     <script src="game.js"></script>
@@ -153,6 +180,30 @@
     <script src="level-loader.js"></script>
     <script id="published-level-code">
     // PUBLISHER: INSERT LEVEL CODE HERE
+    </script>
+
+    <script>
+        function walkthrough(){
+            $(document).foundation('joyride', 'start', {
+        
+                pre_ride_callback      : function (){
+                                          //Display all buttons for joyride
+                                          $("#previous").css('display', 'block');
+                                          $("#next").css('display', 'block');
+                                        },
+                pre_step_callback      : function (){
+                                          this.$target.addClass('joyride-highlight');
+                                        },
+                post_step_callback     : function (){
+                                          this.$target.removeClass('joyride-highlight');            
+                                        },
+                post_ride_callback     : function (){
+                                            //Display all buttons for joyride
+                                          $("#previous").css('display', 'none');
+                                          $("#next").css('display', 'none');
+                                        }
+              });
+        }
     </script>
 </body>
 

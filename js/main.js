@@ -7,6 +7,36 @@ $(document).ready(function() {
     //Open welcome modal on first load
     $('#welcomeModal').foundation('reveal', 'open');
 
+    // Init joyride after Welcome Modal
+    $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+      
+      $(document).foundation('joyride', 'start', {
+        
+        pre_ride_callback      : function (){
+                                  //Display all buttons for joyride
+                                  $("#revert").css('display', 'block');
+                                  $("#showHints").css('display', 'block');
+                                },
+        pre_step_callback      : function (){
+                                  this.$target.addClass('joyride-highlight');
+                                },
+        post_step_callback     : function (){
+                                  this.$target.removeClass('joyride-highlight');            
+                                },
+        post_ride_callback     : function (){
+                                    //Display all buttons for joyride
+                                  $("#revert").css('display', 'none');
+                                  $("#showHints").css('display', 'none');
+
+                                  // Init iframe's joyride
+                                  document.getElementById('preview').contentWindow.walkthrough()
+                                }
+      });
+
+    });
+
+
+
     var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
 

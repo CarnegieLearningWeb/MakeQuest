@@ -67,7 +67,7 @@
                     <div class="large-12 columns margin-left-0 margin-right-0">
                         <div class="controls">
                             <button id="revert" class="button alert center" onclick="revertMiniCourse()">Reset</button>
-                            <button class="button success center" onclick="refreshPreview()">Run</button>
+                            <button id="run" class="button success center" onclick="refreshPreview()">Run</button>
                             <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
                         </div>
                     </div>
@@ -266,12 +266,28 @@
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
 
+    <!-- JOYRIDE -->
+    <ol class="joyride-list" data-joyride>
+      <li data-id="run" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+        <p>Update the game using your code</p>
+      </li>
+      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+        <p>Go back to the original code</p>
+      </li>
+      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Get help</p>
+      </li>
+      <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+        <p>Write your code</p>
+      </li>
+    </ol>
+
+
     <script src="js/codemirror-editors.js"></script>
     <script src="vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
     <script src="vendor/esprima.js"></script>
     <script>
-        $(document).foundation();
-
+    	$(document).foundation();
     </script>
 
     <script src="js/publish.js"></script>
