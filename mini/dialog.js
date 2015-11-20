@@ -25,7 +25,7 @@ function setupDialogue(){
 	}
 
 	if (currentDialogue) {
-		document.getElementById('showDialogue').style.display = 'inline-block';
+		parent.document.getElementById('showDialogue').style.display = 'inline-block';
 	}
 }
 
