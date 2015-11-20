@@ -145,13 +145,13 @@ function markJsErrorAtLine(line) {
 function refreshPreview() {
   console.log("Refreshing view");
 
-  // Test for custom feedback first and exit if found. 
-  // Errors will be displayed to the user.
-  if( CustomErrors.test() ) return;
-
   // Error feedback fallback
   // TODO: Currently catching errors with esprima and eval.
   var js_content = editor_js.getValue();
+
+  // Test for custom feedback first and exit if found. 
+  // Errors will be displayed to the user.
+  if( CustomErrors.test( js_content ) ) return;
 
   if (typeof(esprima) !== 'undefined') {
     try {

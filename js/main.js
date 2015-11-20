@@ -8,12 +8,13 @@ $(document).ready(function() {
     $('#welcomeModal').foundation('reveal', 'open');
 
     // Init joyride after Welcome Modal
-    $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+    $(document).on('close.fndtn.reveal', '#welcomeModal', function () {
       
       $(document).foundation('joyride', 'start', {
         
         pre_ride_callback      : function (){
                                   //Display all buttons for joyride
+                                  console.log("JOYRIDE START");
                                   $("#revert").css('display', 'block');
                                   $("#showHints").css('display', 'block');
                                 },
@@ -24,15 +25,18 @@ $(document).ready(function() {
                                   this.$target.removeClass('joyride-highlight');            
                                 },
         post_ride_callback     : function (){
+                                console.log("JOYRIDE CLOSED");
                                     //Display all buttons for joyride
                                   $("#revert").css('display', 'none');
                                   $("#showHints").css('display', 'none');
 
                                   // Init iframe's joyride
-                                  document.getElementById('preview').contentWindow.walkthrough()
-                                }
+                                  document.getElementById('preview').contentWindow.walkthrough();
+                                },
       });
-
+    });
+    $(document).on('click', '.joyride-close-tip', function(){
+      console.log(this);
     });
 
 

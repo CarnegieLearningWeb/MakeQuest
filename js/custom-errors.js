@@ -1,7 +1,7 @@
 var CustomErrors = {
   //Main funciton to be called when performing tests
-  test: function(){
-    var code = editor_js.getValue();
+  test: function( code ){
+    // var code = editor_js.getValue();
     tokens = esprima.tokenize( code, {range: true, loc: true} );
 
     // Find all tokens for which we have a custom error checking function
@@ -95,7 +95,7 @@ var CustomErrors = {
 
         this.displayError( err );
         
-        return true;
+        return err;
       }
 
       // If we need a specific value, check it
@@ -110,10 +110,11 @@ var CustomErrors = {
 
         this.displayError( err );
         
-        return true;
+        return err;
       }
     };           
     
+    return false;
   },
 }
 
