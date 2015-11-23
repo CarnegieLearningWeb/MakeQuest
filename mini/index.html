@@ -10,6 +10,9 @@
 
     <!-- FOUNDATION -->
     <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
+  
+    <!-- SOCIAL MEDIA ICONS -->
+    <link rel="stylesheet" href="libs/foundation-icons/foundation-icons.css" />
 
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/foundation/js/foundation.js"></script>
@@ -77,7 +80,7 @@
             text-align: center !important;
         }
 
-        #publishedGameInfo p{
+        #publishedGameInfo div{
             text-align: center;
         }
 
@@ -125,12 +128,39 @@
 </head>
 
 <body data-is-unpublished-game>
+    <!-- Add Social Media -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <style>
+    .social-media-links {
+      line-height: 10px;
+      vertical-align: center;
+    }
+    </style>
+    
     <div class="container">
         <div class="row" id="publishedGameInfo" style="display: none;">
-            <img src="http://code.globaloria.com/images/GlobaloriaBanner.png" height="80px" width="600px">
-            <p>
-                This game was created at <a href="http://www.code.globaloria.com">code.globaloria.com</a>
-            </p>
+
+            <div>
+              <h2><img src="http://code.globaloria.com/images/GlobaloriaBanner.png" height="60px" width="200px"> MakeQuest</h2>
+              <!-- PUBLISHER: INSERT HTML HERE --> created this game playing <a href="http://www.code.globaloria.com" target="_blank">MakeQuest</a> by <a href="globaloria.com" target="_blank">Globaloria</a>
+              <br>
+              <a class="button" href="http://globaloria.com/get-started/" style="position: fixed; background-color: #fb9b3b; bottom: 5px; right: 5px;">Bring Globaloria to your school</a>
+            </div>
+            <div class="social-media-links">
+                <div class="fb-share-button" data-href="" data-layout="button"></div>
+                <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Checkout the game I made playing MakeQuest" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest">Tweet</a>
+            </div>
+
         </div>
         <div class="row">
             <div class="large-12 columns">
@@ -149,8 +179,6 @@
                 <div id="p5_canvas"></div>
             </div>
         </div>
-
-        <div id="p5_canvas"></div>    
     </div>
 
     <!-- JOYRIDE -->
