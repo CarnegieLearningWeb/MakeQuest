@@ -4,6 +4,7 @@ var MinicoursePublisher = (function($) {
   exports.generateHTML = function generateHTML(options, cb) {
     var baseLevel = options.baseLevel;
     var js = options.js;
+    var formInfo = options.formInfo;
     var baseURL = $('<a></a>').attr('href', options.baseURL)[0].href;
     var indexURL = baseURL + 'index.html';
 
@@ -25,6 +26,11 @@ var MinicoursePublisher = (function($) {
           replace(
             '// PUBLISHER: INSERT LEVEL CODE HERE',
             js
+          );
+
+          replace(
+            '<!-- PUBLISHER: INSERT HTML HERE -->',
+            formInfo
           );
 
           replace(
