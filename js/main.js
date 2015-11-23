@@ -34,7 +34,8 @@ $(document).ready(function() {
 
                                   // Init iframe's joyride
                                   // document.getElementById('preview').contentWindow.walkthrough()
-                                }
+                                },
+        abort_on_close           : false,
       });
 
     });
