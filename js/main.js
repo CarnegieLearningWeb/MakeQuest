@@ -8,7 +8,7 @@ $(document).ready(function() {
     $('#welcomeModal').foundation('reveal', 'open');
 
     // Init joyride after Welcome Modal
-    $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+    $(document).on('close.fndtn.reveal', '#welcomeModal', function () {
       
       $(document).foundation('joyride', 'start', {
         
