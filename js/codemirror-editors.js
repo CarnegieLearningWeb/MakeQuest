@@ -151,7 +151,11 @@ function refreshPreview() {
 
   // Test for custom feedback first and exit if found. 
   // Errors will be displayed to the user.
-  if( CustomErrors.test( js_content ) ) return;
+  var err = CustomErrors.test( js_content );
+  if( err ){
+    CustomErrors.displayError(err);
+    return;
+  }
 
   if (typeof(esprima) !== 'undefined') {
     try {
