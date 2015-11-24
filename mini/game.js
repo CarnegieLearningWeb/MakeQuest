@@ -40,7 +40,7 @@ function setup() {
 
 function draw() {
     clear();
-
+    
     if (currentLevel > UNLOCK_GRID_LEVEL) drawGrid();
 
     playerInput();
