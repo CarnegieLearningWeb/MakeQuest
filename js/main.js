@@ -1,6 +1,9 @@
 var maxLevel = gameConstants.MAX_LEVEL;
 
 $(document).ready(function() {
+    // Don't start in sandbox if the page is refreshed
+    storage.set('skipToSandbox', false);
+
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
 
