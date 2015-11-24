@@ -20,10 +20,19 @@ $(document).ready(function() {
                                   $("#next").css('display', 'block');
                                 },
         pre_step_callback      : function (){
-                                  this.$target.addClass('joyride-highlight');
+                                  console.log(this.$target.first().attr('id'));
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().addClass('joyride-highlight');
+                                  }
                                 },
         post_step_callback     : function (){
-                                  this.$target.removeClass('joyride-highlight');            
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().removeClass('joyride-highlight');            
+                                  }
                                 },
         post_ride_callback     : function (){
                                     //Display all buttons for joyride
