@@ -124,7 +124,8 @@ main > .row.border-bottom{
   display: flex;
   justify-content: center;
   min-width: 500px;
-  height: 100%;
+  /*height: 100%;*/
+  height: 500px;
   position: relative;
 }
 
