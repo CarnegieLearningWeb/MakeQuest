@@ -7,6 +7,7 @@
     <!-- FOUNDATION -->
     <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
     <!-- CODEMIRROR -->
     <script type="text/javascript" src="vendor/codemirror/codemirror.js"></script>
@@ -38,7 +39,6 @@
 </head>
 
 <body>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <nav class="menu">
         <a href="http://globaloria.com" target="_blank" style="border-bottom: none">
             <img class="globaloria-logo" src="images/Globaloria_Square_transparent_no_text.png">
@@ -68,7 +68,7 @@
                     <div class="large-12 columns margin-left-0 margin-right-0">
                         <div class="controls">
                             <button id="revert" class="button alert center" onclick="revertMiniCourse()">Reset</button>
-                            <button class="button success center" onclick="refreshPreview()">Run</button>
+                            <button id="run" class="button success center" onclick="refreshPreview()">Run</button>
                             <button id="showHints" class="button info center" onclick="showHints()">Show Hints</button>
                         </div>
                     </div>
@@ -86,6 +86,14 @@
             </div>
             <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
                 <!-- <h2>Game</h2> -->
+                <div class="iframe-controls">
+                    <button id="previous" onclick="document.preview.previousLevel()" style="display: none;">Previous Level</button>
+                    <button id="next" onclick="document.preview.nextLevel()" style="display: none;">Next Level</button>
+                    <button id="showDialogue" onclick="document.preview.showDialogue()" style="display: none;">Story</button>
+                    <button id="skipToSandbox" onclick="document.preview.goToSandbox()" style="display: inline-block;">Skip to sandbox</button>
+                    <button id="backToGame" onclick="document.preview.backToGame()" style="display: none;">Back to game</button>
+                    <button id="publish" onclick="document.preview.publish()" style="display: none;">Share your game</button>
+                </div>
                 <!-- LIVE PREVIEW -->
                 <div class="preview_container">
                     <!-- src="project_template/index.html" -->
@@ -132,7 +140,7 @@
 
                 <p>Click up right to close this box to begin. Enjoy!</p>
 
-                <p>Tell us what you think: <a href="" type="mailto">makequest@globaloria.com</a></p>
+                <p>Tell us what you think: <a href="mailto:makequest@globaloria.com">makequest@globaloria.com</a></p>
             </div>
         </div>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -597,15 +605,49 @@
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
 
+    <!-- JOYRIDE -->
+    <ol class="joyride-list" data-joyride>
+      <li data-id="run" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+        <p>Update the game using your code</p>
+      </li>
+      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+        <p>Go back to the original code</p>
+      </li>
+      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Get help</p>
+      </li>
+      <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+        <p>Write your code</p>
+        <p>*Code in italics cannot be changed</p>
+      </li>
+      <li data-id="previous" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+        <p>Go back and retry any levels</p>
+      </li>
+      <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+        <p>The next level button will show up after you complete the current level.</p>
+      </li>
+      <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Display the game story again</p>
+      </li>
+      <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+        <p>Go to the sandbox to create your own game</p>
+      </li>
+      <li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
+        <p>Click on the game screen to move the hero using the left and right arrow keys</p>
+      </li>
+    </ol>
+
+
     <script src="js/codemirror-editors.js"></script>
     <script src="vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
     <script src="vendor/esprima.js"></script>
     <script>
-        $(document).foundation();
-
+    	$(document).foundation();
     </script>
 
     <script src="js/publish.js"></script>
+    <script src="js/custom-errors.js"></script>
+    <script src="mini/storage.js"></script>
 </body>
 
 </html>

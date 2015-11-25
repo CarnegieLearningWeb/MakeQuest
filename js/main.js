@@ -1,11 +1,58 @@
 var maxLevel = gameConstants.MAX_LEVEL;
 
 $(document).ready(function() {
+    // Don't start in sandbox if the page is refreshed
+    storage.set('skipToSandbox', false);
+
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
 
     //Open welcome modal on first load
     $('#welcomeModal').foundation('reveal', 'open');
+
+    // Init joyride after Welcome Modal
+    $(document).on('close.fndtn.reveal', '#welcomeModal', function () {
+      
+      $(document).foundation('joyride', 'start', {
+        
+        pre_ride_callback      : function (){
+                                  //Display all buttons for joyride
+                                  $("#revert").css('display', 'block');
+                                  $("#showHints").css('display', 'block');
+                                  $("#previous").css('display', 'block');
+                                  $("#next").css('display', 'block');
+                                },
+        pre_step_callback      : function (){
+                                  console.log(this.$target.first().attr('id'));
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().addClass('joyride-highlight');
+                                  }
+                                },
+        post_step_callback     : function (){
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().removeClass('joyride-highlight');            
+                                  }
+                                },
+        post_ride_callback     : function (){
+                                    //Display all buttons for joyride
+                                  $("#revert").css('display', 'none');
+                                  $("#showHints").css('display', 'none');
+                                  $("#previous").css('display', 'none');
+                                  $("#next").css('display', 'none');
+
+                                  // Init iframe's joyride
+                                  // document.getElementById('preview').contentWindow.walkthrough()
+                                },
+        abort_on_close           : false,
+      });
+
+    });
+
+
 
     var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
@@ -37,6 +84,13 @@ $(document).ready(function() {
 
 
         $('#signupModal').foundation('reveal', 'close');
+    });
+
+    //Remove tooltips from code editor
+    $(document).on('click', 'span.tooltip', function(){
+        Foundation.libs.tooltip.hide( $('#editor-tooltip') );
+        $(this).remove();
+        $('#editor-tooltip').remove();
     });
 
     $(document).on('click', '#signupButton', function(e) {
@@ -221,6 +275,7 @@ function loadMiniCourse(cb){
         var foldedRanges = [];
         var currLineNumber = 0;
         var currIndentation = 0;
+        var editorTooltips = [];
         var editorCommands = {
             markHint: function() {
                 markHints.push(arguments);
@@ -245,6 +300,10 @@ function loadMiniCourse(cb){
             endCodeFold: function() {
                 var currRange = foldedRanges[foldedRanges.length - 1];
                 currRange.end = currLineNumber;
+            },
+
+            insertTooltip: function(){
+                editorTooltips.push(arguments);
             }
         };
 
@@ -331,6 +390,10 @@ function loadMiniCourse(cb){
                     };
                 }
             });
+        });
+
+        editorTooltips.forEach(function(arguments){
+            insertEditoTooltip.apply(this, arguments);
         });
 
         cb();
