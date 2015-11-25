@@ -194,9 +194,9 @@ function publish(){
     baseURL: './mini/',
     baseLevel: maxLevel,
     js: editor_js.getValue(),
-    formInfo: '<span id="author_name">'+ $('#author_name').val().charAt(0).toUpperCase() + $('#author_name').val().slice(1) +'</span> from <span id="school">'+$('#00NU0000005PN7e').val()+'</span>'
+    formInfo: '<span id="author_name">'+ $('#author_name').val().charAt(0).toUpperCase() + $('#author_name').val().slice(1) +'</span> from <span id="city">'+$('#city').val()+'</span>'
               +'<span id="grade" style="display: none;">'+$('#grade').val()+'</span>'
-              +'<span id="city" style="display: none;">'+$('#city').val()+'</span>'
+              +'<span id="school" style="display: none;">'+$('#00NU0000005PN7e').val()+'</span>'
               +'<span id="state" style="display: none;">'+$('#state').val()+'</span>'
               +'<span id="country" style="display: none;">'+$('#country').val()+'</span>'
   }, function(err, html) {
