@@ -151,43 +151,97 @@
         
         <h2 style="text-align:center;">Publish Your Game</h2>
           
-
         <!-- Send form to Salesforce -->
         <form id="publish-form" method="POST" 
                 action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" 
                 data-abide>
-
-          <!-- Publishing feedback -->
-          <div>This will generate a unique URL that your can share with friends and family to play your game.</div>
-          <div>The URL will only be displayed once, be sure to write it down.</div>
-          <div>
-            <span id="published" style="display: none;">Published: <a></a></span>
-            <span id="publishing" style="display: none;">Publishing...</span>
-          </div>
-          <!-- <button onclick="publish()">Publish</button> -->
-
 
           <input name="oid" type="hidden" value="00DU0000000LhCA"><br>
           <input id="retUrl" name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/"><br>
         
           <div class="row">
 
-            <div class="large-6 columns">
+            <div class="large-4 columns">
               <label for="author_name">Name <input id="author_name" name="author_name" type="text" required pattern="[a-zA-Z]+"></label>
               <small class="error">This field is required.</small>
             </div>
-            <div class="large-6 columns">
+            <div class="large-4 columns">
               <label for="age">Age <input id="age" name="age" type="text" required></label>
               <small class="error">This field is required.</small>
             </div>
 
-            <div class="large-6 columns">
+            <div class="large-4 columns">
               <label for="00NU0000005PN7e">School</label>
               <input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">
               <small class="error">This field is required.</small>
             </div>
   
-            <div class="large-6 columns">
+            <div class="large-4 columns">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
+              <small class="error">This field is required.</small>
+            </div>
+
+            <div class="large-4 columns">
+              <label for="state">State/Province</label
+              ><input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">
+              <datalist id="states-list">
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>District Of Columbia</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachusetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+              </datalist>
+              <small class="error">This field is required.</small>
+            </div>
+
+            <div class="large-4 columns">
               <label for="country">Country</label>
               <input id="country" list="countries-list" name="country" type="text" required pattern="[a-zA-Z]+">
               <datalist id="countries-list">
@@ -444,70 +498,6 @@
               <small class="error">This field is required.</small>
             </div>
 
-            <div class="large-6 columns">
-              <label for="state">State/Province</label
-              ><input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">
-              <datalist id="states-list">
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Arizona</option>
-                <option>Arkansas</option>
-                <option>California</option>
-                <option>Colorado</option>
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>District Of Columbia</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-                <option>Indiana</option>
-                <option>Iowa</option>
-                <option>Kansas</option>
-                <option>Kentucky</option>
-                <option>Louisiana</option>
-                <option>Maine</option>
-                <option>Maryland</option>
-                <option>Massachusetts</option>
-                <option>Michigan</option>
-                <option>Minnesota</option>
-                <option>Mississippi</option>
-                <option>Missouri</option>
-                <option>Montana</option>
-                <option>Nebraska</option>
-                <option>Nevada</option>
-                <option>New Hampshire</option>
-                <option>New Jersey</option>
-                <option>New Mexico</option>
-                <option>New York</option>
-                <option>North Carolina</option>
-                <option>North Dakota</option>
-                <option>Ohio</option>
-                <option>Oklahoma</option>
-                <option>Oregon</option>
-                <option>Pennsylvania</option>
-                <option>Rhode Island</option>
-                <option>South Carolina</option>
-                <option>South Dakota</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Utah</option>
-                <option>Vermont</option>
-                <option>Virginia</option>
-                <option>Washington</option>
-                <option>West Virginia</option>
-                <option>Wisconsin</option>
-                <option>Wyoming</option>
-              </datalist>
-              <small class="error">This field is required.</small>
-            </div>
-            
-            <div class="large-6 columns">
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
-              <small class="error">This field is required.</small>
-            </div>
 
             <div class="large-12 columns">
               <span>I'm a: </span>
@@ -518,7 +508,7 @@
             </div>
 
             <div class="large-12 columns">
-              <label for="description">Comments <input id="description" name="description" type="text"></label>
+              <label for="feedback">Feedback (private) <input id="feedback" name="feedback" type="text"></label>
             </div>    
           
           <!-- Contact information -->
@@ -543,6 +533,14 @@
           <input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">
           
           <input type="hidden" name="lead_source" value="code.globaloria.com Campaign">
+
+          <!-- Publishing feedback -->
+          <div>Once you click Publish you will be redirected to a new page with your published game.<br></div>
+          <div>
+            <span id="published" style="display: none;">Published: <a></a></span>
+            <span id="publishing" style="display: none;">Publishing...</span>
+          </div>
+          <!-- <button onclick="publish()">Publish</button> -->
 
           <button type="submit">Submit</button>
         </form>
@@ -607,29 +605,29 @@
 
     <!-- JOYRIDE -->
     <ol class="joyride-list" data-joyride>
-      <li data-id="run" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+      <li data-id="run" data-text="Next" data-options="tip_location: right; prev_button: false; tip_animation:fade">
         <p>Update the game using your code</p>
       </li>
-      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
         <p>Go back to the original code</p>
       </li>
-      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
         <p>Get help</p>
       </li>
       <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
         <p>Write your code</p>
         <p>*Code in italics cannot be changed</p>
       </li>
-      <li data-id="previous" data-text="Next" data-options="tip_location: bottom; prev_button: false; tip_animation:fade">
+      <li data-id="previous" data-text="Next" data-options="tip_location: left; prev_button: false; tip_animation:fade">
         <p>Go back and retry any levels</p>
       </li>
-      <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: bottom; tip_animation:fade">
+      <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: left; tip_animation:fade">
         <p>The next level button will show up after you complete the current level.</p>
       </li>
-      <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+      <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
         <p>Display the game story again</p>
       </li>
-      <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:bottom; tip_animation:fade">
+      <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade;">
         <p>Go to the sandbox to create your own game</p>
       </li>
       <li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">

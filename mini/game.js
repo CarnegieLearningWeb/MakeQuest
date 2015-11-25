@@ -189,8 +189,10 @@ function levelComplete(){
     textAlign(CENTER);
     text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, GOAL_REACHED_BOX_WIDTH, GOAL_REACHED_BOX_HEIGHT);
     
-    fill('orange');
-    text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2);
+    if( currentLevel < maxLevel ){
+        fill('orange');
+        text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2);
+    }
 
     //Reset rectMode back to default
     rectMode(CORNER);

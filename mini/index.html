@@ -3,8 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta property="og:url"           content="http://www.your-domain.com/alpgha.com/asas/asas" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Globaloria MakeQuest" />
+    <meta property="og:description"   content="Learning to code: Play the game I made with MakeQuest!" />
+    <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
+
     <!-- PUBLISHER: INSERT BASE HREF TAG HERE -->
-    <title>Game</title>
+    <title>Globaloria MakeQuest</title>
     <script src="libs/p5.js"></script>
     <script src="libs/p5.play.js"></script>
 
@@ -144,23 +150,38 @@
     }
     </style>
     
+
     <div class="container">
-        <div class="row" id="publishedGameInfo" style="display: none;">
-
-            <div>
-              <h2><img src="http://code.globaloria.com/images/GlobaloriaBanner.png" height="60px" width="200px"> MakeQuest</h2>
-              <!-- PUBLISHER: INSERT HTML HERE --> created this game playing <a href="http://www.code.globaloria.com" target="_blank">MakeQuest</a> by <a href="globaloria.com" target="_blank">Globaloria</a>
-              <br>
-              <a class="button" href="http://globaloria.com/get-started/" style="position: fixed; background-color: #fb9b3b; bottom: 5px; right: 5px;">Bring Globaloria to your school</a>
-            </div>
-            <div class="social-media-links">
-                <div class="fb-share-button" data-href="" data-layout="button"></div>
-                <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Checkout the game I made playing MakeQuest" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest">Tweet</a>
-            </div>
-
-        </div>
         <div class="row">
-            <div class="large-12 columns">
+            
+            <div class="large-4 columns" id="publishedGameInfo" style="display: none;">
+                <div style="margin-top: 3rem">
+                  <div style="text-align: center;">
+                    <h3>Globaloria</h3>
+                    <a href="http://www.globaloria.com" target="_blank"><img src="http://www.code.globaloria.com/images/GlobaloriaG.png" height="30px" width="100px"></a>
+                    <h3>MakeQuest</h3>
+                  </div>
+                  <!-- PUBLISHER: INSERT HTML HERE --> created this game.
+                  <br>
+                  Make your own game <a href="http://www.code.globaloria.com" target="_blank">here</a>
+                  <br>
+
+                  <div class="social-media-links">
+                      <div class="fb-share-button" data-layout="button"></div>
+                      <script type="text/javascript">
+                        $(document).on('ready', function($){
+                            $('.fb-share-button').attr('data-href', window.location.href);
+                        });
+                      </script>
+                      <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Learning to code: Play the game I made with MakeQuest!" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest,hourofcode,csedweek">Tweet</a>
+                  </div>
+                  <br>
+                  <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a>
+                </div>
+            </div>
+
+
+            <div class="large-8 columns">
                 <div class="controls">
                     <button id="previous" onclick="previousLevel()" style="display: none;">Previous Level</button>
                     <button id="next" onclick="nextLevel()" style="display: none;">Next Level</button>
@@ -169,13 +190,16 @@
                     <button id="backToGame" onclick="backToGame()" style="display: none;">Back to game</button>
                     <button id="publish" onclick="publish()" style="display: none;">Share your game</button>
                 </div>
+                <div class="large-12 columns margin-left-0 margin-right-0">
+                    <div id="p5_canvas"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="large-12 columns margin-left-0 margin-right-0">
                 <div id="p5_canvas"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- JOYRIDE -->

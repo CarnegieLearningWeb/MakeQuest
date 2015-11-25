@@ -12,6 +12,10 @@ if( skipToSandbox ){
   parent.document.getElementById('skipToSandbox').style.display = 'none';
   parent.document.getElementById('backToGame').style.display = 'inline-block';
   parent.document.getElementById('publish').style.display = 'inline-block';
+}else{
+  parent.document.getElementById('skipToSandbox').style.display = 'inline-block';
+  parent.document.getElementById('backToGame').style.display = 'none';
+  parent.document.getElementById('publish').style.display = 'none';
 }
 
 if (document.body.hasAttribute('data-published-game-base-level')) {
@@ -38,10 +42,14 @@ currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/'
 
 if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
   parent.document.getElementById('previous').style.display = 'inline-block';
+}else{
+  parent.document.getElementById('previous').style.display = 'none';
 }
 
-if(currentLevel < maxLevelUnlocked && !skipToSandbox){
+if(currentLevel < maxLevelUnlocked){
 	showNextLevelButton();
+}else{
+  parent.document.getElementById('next').style.display = 'none'; 
 }
 
 function publish(){
@@ -68,7 +76,7 @@ function backToGame(){
 }
 
 function showNextLevelButton() {
-  if (isPublishedGame || currentLevel == maxLevel) return;
+  if (isPublishedGame || currentLevel == maxLevel || skipToSandbox) return;
   parent.document.getElementById('next').style.display = 'inline-block';
 }
 

@@ -160,8 +160,8 @@ function getLevelDialogue() {
       // the message your players will see.
       textColor: "white",
       // To have text start in a new line use \n
-      // Notice how we skip one line at the beginning (\n), and two lines 
-      // later on (\n\n)
+      // Notice how we skip one line at the beginning (\n),
+      // and two lines later on (\n\n)
       text: "\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!"
 // EDITOR: beginReadOnly();
     },
