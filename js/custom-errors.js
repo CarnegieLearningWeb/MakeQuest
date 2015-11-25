@@ -70,7 +70,8 @@ var CustomErrors = {
          ]
     }
 
-    var test = ( currentLevel < 4 ) ? tests.fourArgs : tests.fiveArgs;
+    // Only two levels require the test with 4 arguments
+    var test = ( currentLevel > 1 && currentLevel < 4 ) ? tests.fourArgs : tests.fiveArgs;
 
   
     for (var j = 0; j < test.length; j++) {
