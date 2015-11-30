@@ -225,14 +225,10 @@ function createPlatform(x, y, width, height, col) {
     platform.shapeColor = colorObj;
 
     platformImage = loadImage("images/star.png");
-    // platformImage.resize(30,30);
-    
     platform.addImage(platformImage);
-    console.log(platform);
-    platform.resize(120, 20);
-    // platform.scale = 0.5;
-    // platform.animation.images[0].resize(30, 30);
     
+    // Pass width and height to the resize funciton in p5 play
+    platform.resize(width, height);
 
     platforms.add(platform);
     return platform;

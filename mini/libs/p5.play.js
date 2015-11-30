@@ -1352,18 +1352,18 @@ function Sprite(_x, _y, _w, _h) {
       ellipseMode(CENTER);
       imageMode(CENTER);
 
-      translate(this.position.x, this.position.y);
-      scale(this.scale*dirX, this.scale*dirY);
-      rotate(radians(this.rotation));
-      
       // Use new resize function
       console.log(this);
       if(this.resizeX && this.resizeY){
-        this.animation.images[0].resize(this.resizeX, this.resizeY);  
+        // To avoid collisions between resize and scale, reset scale to 1 whenever resize is used
+        this.scale = 1;
+        this.animation.images[ this.animation.getFrame() ].resize(this.resizeX, this.resizeY);  
       }
       
-
-
+      translate(this.position.x, this.position.y);
+      scale(this.scale*dirX, this.scale*dirY);
+      rotate(radians(this.rotation));
+    
       this.draw();
       //draw debug info
       pop();
