@@ -10,7 +10,7 @@
 function setupLevel() {
   platformHeight = 10;
 
-  playerImage = loadImage("images/heroD.png");
+  playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
   player.addImage(playerImage);
 
   createPlatform(180, 320, 80, platformHeight, 'blue');

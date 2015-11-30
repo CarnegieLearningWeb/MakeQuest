@@ -22,6 +22,8 @@ function setup() {
 
     setupDialogue();
 
+    backgroundImage = loadImage("images/MakeQuestAssets/Background_1CS.png");
+
     goalReached = false;
     goal = createSprite(600, 40, 30, 30);
     goal.shapeColor = 'yellow';
@@ -40,7 +42,7 @@ function setup() {
 
 function draw() {
     clear();
-    
+    image(backgroundImage, 0, 0);
     if (currentLevel > UNLOCK_GRID_LEVEL) drawGrid();
 
     playerInput();
