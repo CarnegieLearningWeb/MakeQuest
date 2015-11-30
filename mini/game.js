@@ -223,6 +223,17 @@ function createPlatform(x, y, width, height, col) {
         throw new Error('Invalid color: ' + col);
 
     platform.shapeColor = colorObj;
+
+    platformImage = loadImage("images/star.png");
+    // platformImage.resize(30,30);
+    
+    platform.addImage(platformImage);
+    console.log(platform);
+    platform.resize(120, 20);
+    // platform.scale = 0.5;
+    // platform.animation.images[0].resize(30, 30);
+    
+
     platforms.add(platform);
     return platform;
 }

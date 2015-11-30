@@ -1329,6 +1329,14 @@ function Sprite(_x, _y, _w, _h) {
 
 
   /**
+   * Resize images to custom dimensions
+   */
+  this.resize = function(width, height){
+    this.resizeX = width;
+    this.resizeY = height;
+  }
+
+  /**
   * Manages the positioning, scale and rotation of the sprite
   * Called automatically, it should not be overridden
   */
@@ -1347,6 +1355,15 @@ function Sprite(_x, _y, _w, _h) {
       translate(this.position.x, this.position.y);
       scale(this.scale*dirX, this.scale*dirY);
       rotate(radians(this.rotation));
+      
+      // Use new resize function
+      console.log(this);
+      if(this.resizeX && this.resizeY){
+        this.animation.images[0].resize(this.resizeX, this.resizeY);  
+      }
+      
+
+
       this.draw();
       //draw debug info
       pop();
