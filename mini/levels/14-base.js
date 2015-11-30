@@ -32,4 +32,6 @@ function base_setupLevel() {
   createPlatform(40, 450, platformWidth, platformHeight, platformColor);
   createPlatform(220, 450, platformWidth, platformHeight, platformColor);
   createPlatform(400, 450, platformWidth, platformHeight, platformColor);
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png");
 }

@@ -24,6 +24,8 @@ function base_getLevelDialogue() {
 function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png");
 }
 
 function base_drawLevel() {

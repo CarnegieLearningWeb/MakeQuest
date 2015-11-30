@@ -8,13 +8,14 @@ var PLAYER_START_Y = 300;
 
 var GOAL_REACHED_TEXT = "Goal reached!";
 var GOAL_REACHED_BOX_WIDTH = 400;
-var GOAL_REACHED_BOX_HEIGHT = 100;
+var GOAL_REACHED_BOX_HEIGHT = 160;
+var GOAL_REACHED_BOX_GUTTER = 7;
 
 var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 1;
 
-var player, particles, platforms, goalReached, autoAdvanceToNextLevel;
+var player, particles, platforms, goalReached, levelCompleteImage, autoAdvanceToNextLevel;
 
 function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
@@ -33,6 +34,9 @@ function setup() {
 
     player = createSprite(PLAYER_START_X, PLAYER_START_Y, 20, 20);
     player.shapeColor = 'Aqua';
+
+    playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
+    player.addImage(playerImage);
 
     autoAdvanceToNextLevel = 0;
 
@@ -167,7 +171,7 @@ function levelComplete(){
     }
 
     rectMode(CENTER);
-    strokeWeight(7);
+    strokeWeight(GOAL_REACHED_BOX_GUTTER);
     stroke(36,164,205);
     fill('#0B6481');
 
@@ -185,15 +189,23 @@ function levelComplete(){
 
     }
 
-    rect( WIDTH/2, HEIGHT/2, 420, 120 );
+    rect( WIDTH/2, HEIGHT/2, GOAL_REACHED_BOX_WIDTH, GOAL_REACHED_BOX_HEIGHT );
     noStroke();
     fill('white');
     textAlign(CENTER);
-    text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2, GOAL_REACHED_BOX_WIDTH, GOAL_REACHED_BOX_HEIGHT);
+    text(GOAL_REACHED_TEXT, WIDTH / 2, HEIGHT / 2 + GOAL_REACHED_BOX_GUTTER, GOAL_REACHED_BOX_WIDTH, GOAL_REACHED_BOX_HEIGHT);
     
+    // Show level complete item from level file
+    // image(levelCompleteImage, WIDTH / 2, HEIGHT / 2 + GOAL_REACHED_BOX_GUTTER + GOAL_REACHED_BOX_HEIGHT);
+    if(levelCompleteImage){
+        image(levelCompleteImage, 300, HEIGHT / 2);
+    }else{
+        console.log("ERROR: Set unlocked item image");
+    }
+
     if( currentLevel < maxLevel ){
         fill('orange');
-        text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2);
+        text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
     }
 
     //Reset rectMode back to default

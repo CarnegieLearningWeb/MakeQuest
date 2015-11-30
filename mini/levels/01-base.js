@@ -42,6 +42,8 @@ function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
   goal.shapeColor = 'yellow';
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png");
 }
 
 function base_drawLevel() {

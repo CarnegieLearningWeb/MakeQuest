@@ -35,6 +35,8 @@ function base_setupLevel() {
   platformHeight = 20;
 
   platform1 = createPlatform(120, 460, platformWidth, platformHeight, "orange");
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png");
 }
 
 function base_drawLevel() {

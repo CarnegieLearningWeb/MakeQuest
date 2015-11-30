@@ -16,6 +16,7 @@ function base_getLevelDialogue() {
 }
 
 function base_setupLevel() {
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
 }
 
 function base_drawLevel() {
