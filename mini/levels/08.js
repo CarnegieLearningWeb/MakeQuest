@@ -12,4 +12,16 @@ function setupLevel() {
   // EDITOR: endReadOnly();
   createPlatform(0, 0, 0, 0, 'red');
   createPlatform(0, 0, 0, 0, 'red');
+
+  // EDITOR: beginCodeFold('Click here for an example.');
+  // ******See Example Below******:
+  //
+  //   createPlatform(40, 100, 100, 30, 'magenta');
+  //                  ^   ^    ^    ^    ^                     
+  //                  |   |    |    |    color                     
+  //                  |   |    |    height                                      
+  //                  |   |    width
+  //                  |   y-position
+  //                  x-position
+  // EDITOR: endCodeFold();
 }

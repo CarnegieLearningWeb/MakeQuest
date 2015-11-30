@@ -10,4 +10,15 @@ function setupLevel() {
   createPlatform(40, 100, 80, 20, 'blue');
   // EDITOR: endReadOnly();
   
+  // EDITOR: beginCodeFold('Click here for an example.');
+  // ******See Example Below******:
+  //
+  //   createPlatform(40, 100, 100, 30, 'orange');
+  //                  ^   ^    ^    ^    ^                     
+  //                  |   |    |    |    color                     
+  //                  |   |    |    height                                      
+  //                  |   |    width
+  //                  |   y-position
+  //                  x-position
+  // EDITOR: endCodeFold();
 }
