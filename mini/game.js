@@ -42,10 +42,13 @@ function setup() {
 
     base_setupLevel();
     setupLevel();
+
+    document.getElementById('current-level-text').innerHTML = CURRENT_LEVEL_TEXT;
 }
 
 function draw() {
     clear();
+
     image(backgroundImage, 0, 0);
     if (currentLevel > UNLOCK_GRID_LEVEL) drawGrid();
 
@@ -64,12 +67,12 @@ function draw() {
     base_drawLevel();
     drawLevel();
 
-    // Move text to the bottom so it doesn't get obscured by objects
     fill("yellow");
     noStroke();
     textSize(18);
     textFont(pixelFont);
-    text(CURRENT_LEVEL_TEXT, 50, 50);
+    // Move current level text outside of the canvas
+    // text(CURRENT_LEVEL_TEXT, 50, 50);
 
     if (goalReached) {
         levelComplete();

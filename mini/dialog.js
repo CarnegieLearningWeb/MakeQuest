@@ -31,6 +31,11 @@ function setupDialogue(){
 
 function drawDialogue(){
 	if(dialogueOn && currentDialogue){
+		
+		var overlayColor = color(0, 0, 0, 102);
+		fill(overlayColor);
+		rect(0, 0, WIDTH, HEIGHT);
+    
 		rectMode(CENTER);
 
 		// Build 'Story' Dialogue box for text
