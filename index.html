@@ -162,7 +162,7 @@
           <div class="row">
 
             <div class="large-4 columns">
-              <label for="author_name">Name <input id="author_name" name="author_name" type="text" required pattern="[a-zA-Z]+"></label>
+              <label for="first_name">Name <input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+"></label>
               <small class="error">This field is required.</small>
             </div>
             <div class="large-4 columns">
@@ -501,14 +501,14 @@
 
             <div class="large-12 columns">
               <span>I'm a: </span>
-              <label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student <input id="isStudent" name="isStudent" type="checkbox"></label>
-              <label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher <input id="isTeacher" name="isTeacher" type="checkbox"></label>
-              <label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent <input id="isParent" name="isParent" type="checkbox"></label>
-              <label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator <input id="isAdministrator" name="isAdministrator" type="checkbox"></label>
+              <label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student <input id="isStudent" value="Student" name="isStudent" type="checkbox"></label>
+              <label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher <input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox"></label>
+              <label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent <input id="isParent" value="Parent" name="isParent" type="checkbox"></label>
+              <label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator <input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox"></label>
             </div>
 
             <div class="large-12 columns">
-              <label for="feedback">Feedback (private) <input id="feedback" name="feedback" type="text"></label>
+              <label for="description">Feedback (private) <input id="description" name="description" type="text"></label>
             </div>    
           
           <!-- Contact information -->
@@ -529,6 +529,9 @@
             </div>
           </div>
   
+            <!-- Role: summary of I'm a: -->
+          <input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">
+
             <!-- Game Link Field-->
           <input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">
           
