@@ -247,6 +247,15 @@ function publish(){
         // Populate game link for salesforce capture
         $('#00NU0000005PN7t').val(data['published-url']);
 
+        // Populate the role field for salesforce
+        var role = [];
+        if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
+        if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
+        if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
+        if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
+                    
+        $('#00NU0000005Ph2K').val( role.join(',') );
+
         //Unbind form to prevent submit loop
         $('#publish-form').unbind().submit();
 
