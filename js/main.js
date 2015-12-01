@@ -140,17 +140,17 @@ $(document).ready(function() {
         console.log( $(this).prop('checked') );
         if( $(this).prop('checked') ){
             $('#first_name').prop('disabled', false);
-            $('#last_name').prop('disabled', false);
+            // $('#last_name').prop('disabled', false);
             $('#email').prop('disabled', false);
             $('#phone').prop('disabled', false);
         }else{
             $('#first_name').val('');
-            $('#last_name').val('');
+            // $('#last_name').val('');
             $('#email').val('');
             $('#phone').val('');
 
             $('#first_name').prop('disabled', true);
-            $('#last_name').prop('disabled', true);
+            // $('#last_name').prop('disabled', true);
             $('#email').prop('disabled', true);
             $('#phone').prop('disabled', true);
         }
@@ -194,7 +194,7 @@ function publish(){
     baseURL: './mini/',
     baseLevel: maxLevel,
     js: editor_js.getValue(),
-    formInfo: '<span id="author_name">'+ $('#author_name').val().charAt(0).toUpperCase() + $('#author_name').val().slice(1) +'</span> from <span id="city">'+$('#city').val()+'</span>'
+    formInfo: '<span id="first_name">'+ $('#first_name').val().charAt(0).toUpperCase() + $('#first_name').val().slice(1) +'</span> from <span id="city">'+$('#city').val()+'</span>'
               +'<span id="grade" style="display: none;">'+$('#grade').val()+'</span>'
               +'<span id="school" style="display: none;">'+$('#00NU0000005PN7e').val()+'</span>'
               +'<span id="state" style="display: none;">'+$('#state').val()+'</span>'
