@@ -15,10 +15,7 @@ function setupLevel (){
   
   // ***** INSTRUCTIONS *****
   //
-  // Update the platforms to move slower so you can reach the goal. 
-  // Make platform2 move at a speed of 0.6 units or less
-  // and platform3 at a speed of 0.3 units or less. 
-  // We already updated the code for platform1 for you
+  // Update the speed of platforms 2 and 3 to move slower so you can reach the goal. 
   //
   // ***** ENTER YOUR CODE BELOW *****
   

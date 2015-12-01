@@ -1,7 +1,7 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 280;
 
-GOAL_REACHED_TEXT = "Congratulations, a Codo Stick Acquired!";
+GOAL_REACHED_TEXT = "Congratulations, Codo Stick Acquired!";
 CURRENT_LEVEL_TEXT = "Falling Blocks";
 
 function base_getLevelDialogue() {
@@ -23,7 +23,7 @@ function base_getLevelDialogue() {
 
 function base_setupLevel() {
   goal.position.x = 600;
-  goal.position.y = 440;
+  goal.position.y = 420;
 
   goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
   goal.addImage(goalImage);

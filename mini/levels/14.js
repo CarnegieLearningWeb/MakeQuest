@@ -9,7 +9,7 @@ function drawLevel() {
   // 
   // ***** ENTER YOUR CODE BELOW *****
   
-    makePlayerJump( 0 );
+    makePlayerJump( 1 );
   
   // EDITOR: beginReadOnly();
   }

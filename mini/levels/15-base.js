@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Here it is, the doorstep of doom, the threshold of terror, the spinning color wheel of… what that’s something else.  We are at the 404’s dungeon entrance, let’s reach the vault and release coding back into the world!",
+      text: "Here it is, the doorstep of doom, the threshold of terror, the spinning color wheel of… what that’s something else.  We are face to face with 404, defeat him with one mighty jump and release coding back into the world!",
     },
     {
       character: "heroA",
@@ -26,7 +26,7 @@ function base_setupLevel() {
   goal.position.x = 550;
   goal.position.y = 440;
 
-  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
   goal.addImage(goalImage);
   
   platformWidth = 80;
