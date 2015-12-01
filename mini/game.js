@@ -237,6 +237,13 @@ function createPlatform(x, y, width, height, col) {
         throw new Error('Invalid color: ' + col);
 
     platform.shapeColor = colorObj;
+
+    platformImage = loadImage("images/star.png");
+    platform.addImage(platformImage);
+    
+    // Pass width and height to the resize funciton in p5 play
+    platform.resize(width, height);
+
     platforms.add(platform);
     return platform;
 }
