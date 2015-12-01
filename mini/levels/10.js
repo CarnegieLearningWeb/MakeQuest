@@ -1,8 +1,4 @@
-function setupLevel() {
-  // EDITOR: beginReadOnly();
-  createPlatform(40, 100, 80, 20, "orange");
-  // EDITOR: endReadOnly();
-  
+function setupLevel() {  
   // ***** INSTRUCTIONS *****
   //
   // Add as many platforms as you need to reach the goal.
@@ -11,10 +7,16 @@ function setupLevel() {
   // all your platforms. 
   // 
   // ***** ENTER YOUR CODE BELOW *****
-  
   platformWidth = 80;
   platformHeight = 20;
   platformColor = "orange";
+
+  // EDITOR: beginReadOnly();
+  // The line of code below creates the platform you are standing on
+  createPlatform(40, 100, platformWidth, platformHeight, platformColor);
+  // EDITOR: endReadOnly();
+  // 
+  // Use the previous line of code as reference to create your own
 
   // EDITOR: beginCodeFold('Click here for an example.');
   // ******See Example Below******:

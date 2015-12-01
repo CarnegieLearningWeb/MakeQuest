@@ -1,7 +1,7 @@
 PLAYER_START_X = 120;
 PLAYER_START_Y = 420;
 
-GOAL_REACHED_TEXT = "Congratulations, Remote Control Instruction Manual Unlocked!";
+GOAL_REACHED_TEXT = "Remote Control Instruction Manual Unlocked!";
 CURRENT_LEVEL_TEXT = "Change Direction";
 
 function base_getLevelDialogue() {
@@ -31,10 +31,15 @@ function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
 
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
   platformWidth = 120;
   platformHeight = 20;
 
   platform1 = createPlatform(120, 460, platformWidth, platformHeight, "orange");
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png");
 }
 
 function base_drawLevel() {

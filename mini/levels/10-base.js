@@ -24,6 +24,11 @@ function base_getLevelDialogue() {
 function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
+
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png");
 }
 
 function base_drawLevel() {

@@ -1,7 +1,7 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, mysterious watch alters appearance!";
+GOAL_REACHED_TEXT = "The mysterious watch alters appearance!";
 CURRENT_LEVEL_TEXT = "Write Your Own Platform Code";
 
 function base_getLevelDialogue() {
@@ -24,6 +24,11 @@ function base_getLevelDialogue() {
 function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
+
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png");
 }
 
 function base_drawLevel() {

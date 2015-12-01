@@ -4,7 +4,6 @@
 // Like all computers, 404 can’t see comments.
 // Practice typing a comment on the next line, so we know 
 // you’re really human!
-// EDITOR: insertTooltip("Lines that begin with '//' are comments and can't be read by the computer.", 4, 0);
 
 
 // Use the arrow keys to move left and right. 

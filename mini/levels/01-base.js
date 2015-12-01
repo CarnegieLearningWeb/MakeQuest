@@ -40,8 +40,13 @@ function base_setupLevel() {
   var platform1 = createPlatform(WIDTH/2, 460, 640, 10);
   platform1.shapeColor = 'green';
   goal.position.x = 600;
-  goal.position.y = 440;
+  goal.position.y = 420;
   goal.shapeColor = 'yellow';
+
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png");
 }
 
 function base_drawLevel() {

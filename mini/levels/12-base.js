@@ -1,7 +1,7 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 80;
 
-GOAL_REACHED_TEXT = "Congratulations, Remote Control Advanced Settings Unlocked!";
+GOAL_REACHED_TEXT = "Remote Control Advanced Settings Unlocked!";
 CURRENT_LEVEL_TEXT = "Slow the Platforms";
 
 function base_getLevelDialogue() {
@@ -25,8 +25,13 @@ function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
 
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
   platformWidth = 120;
   platformHeight = 20;
+
+  levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png");
 }
 
 function base_drawLevel() {

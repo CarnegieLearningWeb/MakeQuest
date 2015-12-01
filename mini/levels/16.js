@@ -42,7 +42,16 @@ function setupLevel() {
   PLAYER_START_Y = 100;
 
   // This code loads the image for your player.
-  playerImage = loadImage("images/heroD.png");
+  // You can uncomment (remove the '//') from any line to choose a different image
+  playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_P_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/PolarBear_F_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/PolarBear_P_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_F_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_P_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/GraceHopper_F_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/GraceHopper_P_60.png");
+
   player.addImage(playerImage);
 
   // This VARIABLE controls the height of all platforms on screen.
@@ -80,7 +89,20 @@ function setupLevel() {
   goal.position.y = 150;
 
   // This code loads the image for your goal.
+  // You can uncomment (remove the '//') from any line to choose a different image
   goalImage = loadImage("images/star.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+
+  // Choose an enemy to defeat as your goal
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_P_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_P_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_F_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_P_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/OilBarrel_F_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/OilBarrel_P_60.png");
+
   goal.addImage(goalImage);
 // EDITOR: beginReadOnly();
 }
@@ -170,7 +192,7 @@ function getLevelDialogue() {
       image: heroAPic,
 // EDITOR: endReadOnly();
       textColor: "white",
-      text: "\nThanks for coding!"
+      text: "\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
 // EDITOR: beginReadOnly();
     }
   ];
