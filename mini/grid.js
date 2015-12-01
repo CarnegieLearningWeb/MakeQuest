@@ -1,6 +1,6 @@
 function drawGrid() {
     textSize(12);
-    fill('black');
+    fill('white');
     for (var i = 40; i < WIDTH; i += 40) {
         line(0, i, 20, i);
         line(i, 0, i, 20);

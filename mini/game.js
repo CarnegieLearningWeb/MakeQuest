@@ -23,7 +23,7 @@ function setup() {
 
     setupDialogue();
 
-    backgroundImage = loadImage("images/MakeQuestAssets/Background_1CS.png");
+    backgroundImage = loadImage("images/MakeQuestAssets/Background_1CS_Subdued.png");
 
     goalReached = false;
     goal = createSprite(600, 40, 30, 30);
@@ -64,8 +64,8 @@ function draw() {
     base_drawLevel();
     drawLevel();
 
-    // Move text to the bottom so it doesn't get hidden by objects
-    fill("#0b6481");
+    // Move text to the bottom so it doesn't get obscured by objects
+    fill("yellow");
     noStroke();
     textSize(18);
     textFont(pixelFont);
@@ -198,7 +198,7 @@ function levelComplete(){
     // Show level complete item from level file
     // image(levelCompleteImage, WIDTH / 2, HEIGHT / 2 + GOAL_REACHED_BOX_GUTTER + GOAL_REACHED_BOX_HEIGHT);
     if(levelCompleteImage){
-        image(levelCompleteImage, 300, HEIGHT / 2);
+        image(levelCompleteImage, 300, HEIGHT / 2 - 20);
     }else{
         console.log("ERROR: Set unlocked item image");
     }
@@ -237,6 +237,10 @@ function createPlatform(x, y, width, height, col) {
         throw new Error('Invalid color: ' + col);
 
     platform.shapeColor = colorObj;
+
+    // Store original coords to reset moving platforms
+    platform.initX = x;
+    platform.initY = y;
 
     platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_CS.png");
     platform.addImage(platformImage);
@@ -283,6 +287,12 @@ function resetOnGameOver() {
     if (player.position.y > HEIGHT + 20) {
         player.position.x = PLAYER_START_X;
         player.position.y = PLAYER_START_Y;
+
+        // Reset moving platforms
+        platforms.forEach( function(platform){
+          platform.position.x = platform.initX;
+          platform.position.y = platform.initY;
+        });
     }
 }
 

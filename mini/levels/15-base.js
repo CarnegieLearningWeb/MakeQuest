@@ -26,6 +26,9 @@ function base_setupLevel() {
   goal.position.x = 550;
   goal.position.y = 440;
 
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
   platformWidth = 80;
   platformHeight = 20;
   

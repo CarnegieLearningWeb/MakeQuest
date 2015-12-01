@@ -1,7 +1,7 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, the mysterious watch glows brighter!";
+GOAL_REACHED_TEXT = "The mysterious watch glows brighter!";
 CURRENT_LEVEL_TEXT = "Make 2 platforms";
 
 function base_getLevelDialogue() {
@@ -40,6 +40,9 @@ function base_setupLevel() {
   goal.position.x = 600;
   goal.position.y = 440;
 
+  goalImage = loadImage("images/MakeQuestAssets/Portal_60.png");
+  goal.addImage(goalImage);
+  
   levelCompleteImage = loadImage("images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png");
 }
 

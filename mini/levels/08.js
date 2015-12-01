@@ -10,8 +10,8 @@ function setupLevel() {
   // EDITOR: beginReadOnly();
   createPlatform(40, 100, 80, 20, 'orange');
   // EDITOR: endReadOnly();
-  createPlatform(0, 0, 0, 0, 'red');
-  createPlatform(0, 0, 0, 0, 'red');
+  createPlatform(400, 60, 40, 40, 'red');
+  createPlatform(60, 400, 40, 40, 'red');
 
   // EDITOR: beginCodeFold('Click here for an example.');
   // ******See Example Below******:
