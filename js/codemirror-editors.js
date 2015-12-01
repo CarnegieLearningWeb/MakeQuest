@@ -201,6 +201,9 @@ function refreshPreview() {
 }
 
 function insertEditoTooltip(text, line, ch){
+  // **** EXAMPLE USE *****:
+  // EDITOR: insertTooltip("Lines that begin with '//' are comments and can't be read by the computer.", 4, 0);
+  
   // Create a new tooltip
   // Updating the title property of the tooltip is problematic after foundation,
   // so we create a new one every time. We also delete the tooltip when its clicked to close.
