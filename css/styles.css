@@ -103,8 +103,29 @@ main > .row.border-bottom{
   /*Copying iframe styles*/
   padding: 10px 20px;
   font-size: .8rem;
-  border: 3px solid rgba(12, 111, 143, 1);
-  color: rgba(12, 111, 143, 1);
+  /*border: 3px solid rgba(12, 111, 143, 1);
+  color: rgba(12, 111, 143, 1);*/
+}
+
+#run {
+    background-color: #38b333;
+    /*border: 3px solid rgba(232,74,93, 1);*/
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+#revert {
+    background-color: #c83f1b;
+    /*border: 3px solid rgba(232,74,93, 1);*/
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+#showHints {
+    background-color: #0b6481;
+    /*border: 3px solid rgba(232,74,93, 1);*/
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .globaloria-logo {
@@ -142,30 +163,38 @@ main > .row.border-bottom{
 
 .iframe-controls #previous,
 .iframe-controls #next {
-    background-color: rgba(239, 239, 239, 0.6);
-    background-color: rgba(160,211,232, .5);
-    border: 3px solid rgba(12, 111, 143, 1);
-    color: rgba(12, 111, 143, 1);
+    /*background-color: rgba(239, 239, 239, 0.6);*/
+    background-color: #24a4cd;
+    /*border: 3px solid rgba(12, 111, 143, 1);*/
+    color: #ffffff;
 }
 
 .iframe-controls #showDialogue {
-    background-color: rgba(232,74,93, 1);
-    border: 3px solid rgba(232,74,93, 1);
+    background-color: #c83f1b;
+    /*border: 3px solid rgba(232,74,93, 1);*/
     color: #ffffff;
     letter-spacing: 1px;
 }
 
-.iframe-controls #skipToSandbox,
+
+
+.iframe-controls #skipToSandbox {
+    background-color: #fbb800;
+    /*border: 3px solid rgba(230,96,0, 1);*/
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
 .iframe-controls #backToGame {
-    background-color: rgba(255,121,26, 1);
-    border: 3px solid rgba(230,96,0, 1);
+    background-color: #fb9b3b;
+    /*border: 3px solid rgba(230,96,0, 1);*/
     color: #ffffff;
     letter-spacing: 1px;
 }
 
 .iframe-controls #publish {
-    /*background-color: rgba(255,121,26, 1);
-    border: 3px solid rgba(230,96,0, 1);*/
+    background-color: #7b50bd;
+    /*border: 3px solid rgba(230,96,0, 1);*/
     color: #ffffff;
     letter-spacing: 1px;
 }
