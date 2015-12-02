@@ -2,53 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Globaloria Mini-Course Prototype</title>
-    <!-- FOUNDATION -->
-    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
-    <!-- CODEMIRROR -->
-    <script type="text/javascript" src="vendor/codemirror/codemirror.js"></script>
-    <script type="text/javascript" src="vendor/codemirror/javascript.js"></script>
-    <script type="text/javascript" src="vendor/codemirror/foldcode.js"></script>
-    <script type="text/javascript" src="vendor/codemirror/foldgutter.js"></script>
-    <link rel="stylesheet" href="css/codemirror_editors.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="vendor/codemirror/codemirror.css">
-    <link rel="stylesheet" href="vendor/codemirror/themes/monokai.css">
-    <link rel="stylesheet" href="vendor/codemirror/foldgutter.css">
+  <meta charset="UTF-8">
+  <title>Globaloria Mini-Course Prototype</title>
+  <!-- FOUNDATION -->
+  <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
+  <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+  <!-- CODEMIRROR -->
+  <script type="text/javascript" src="vendor/codemirror/codemirror.js"></script>
+  <script type="text/javascript" src="vendor/codemirror/javascript.js"></script>
+  <script type="text/javascript" src="vendor/codemirror/foldcode.js"></script>
+  <script type="text/javascript" src="vendor/codemirror/foldgutter.js"></script>
+  <link rel="stylesheet" href="css/codemirror_editors.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="vendor/codemirror/codemirror.css">
+  <link rel="stylesheet" href="vendor/codemirror/themes/monokai.css">
+  <link rel="stylesheet" href="vendor/codemirror/foldgutter.css">
+  <!-- FIREBASE -->
+  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="mini/constants.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    <!-- FIREBASE -->
-    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-    <script src="js/firebase.js"></script>
-
-    <script src="mini/constants.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-69590227-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+  ga('create', 'UA-69590227-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 </head>
 
 <body>
-    <nav class="menu">
-        <a href="http://globaloria.com" target="_blank" style="border-bottom: none">
-            <img class="globaloria-logo" src="images/Globaloria_Square_transparent_no_text.png">
-            <span style="color: white; margin-left: 1rem;">MakeQuest</span>
-        </a>
-
-        <!-- LINK TO CODE.ORG CERTIFICATE -->
-        <a href="http://www.code.org/api/hour/finish" style="float: right; color: white; margin-right: 1rem; font-size: 12px;">I’m finished with my Hour of Code</a>
-
-        <!-- <ul class="inline-list">
+  <nav class="menu">
+    <a href="http://globaloria.com" target="_blank" style="border-bottom: none">
+      <img class="globaloria-logo" src="images/Globaloria_Square_transparent_no_text.png">
+      <span style="color: white; margin-left: 1rem;">MakeQuest</span>
+    </a>
+    <!-- LINK TO CODE.ORG CERTIFICATE -->
+    <a href="http://www.code.org/api/hour/finish" style="float: right; color: white; margin-right: 1rem; font-size: 12px;">I’m finished with my Hour of Code</a>
+    <!-- <ul class="inline-list">
             <li><a href="#">Home</a></li>
             <li class="active"><a href="#">Project</a></li>
             <li><a href="#">Topic</a></li>
@@ -58,600 +60,581 @@
             <li> href="#" data-reveal-id="signupModal">Signup</a></li>
         </ul>
         <a class="account hide-for-medium-up" href="#" data-reveal-id="signupModal"><i class="fi-unlock"></i></a> -->
-    </nav>
-    <main class="sidebar-border">
-        <div class="row border-bottom" data-equalizer>
-
-
-            <div class="medium-12 large-6 columns border-right" data-equalizer-watch>
-                <div class="row">
-                    <div class="large-12 columns margin-left-0 margin-right-0">
-                        <div class="controls">
-                            <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button>
-                            <button id="run" class="button center" onclick="refreshPreview()">Run</button>
-                            <button id="showHints" class="button center" onclick="showHints()">Show Hints</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="large-12 columns margin-left-0 margin-right-0">
-                        <div class="codemirror-editor-container">
-                            <!-- JS FOR CODEMIRROR -->
-                            <div id="js_editor">
-                            </div>
-                            <!-- END JS FOR CODEMIRROR -->
-                        </div>
-                    </div>
-                </div>
+  </nav>
+  <main class="sidebar-border">
+    <div class="row border-bottom" data-equalizer>
+      <div class="medium-12 large-6 columns border-right" data-equalizer-watch>
+        <div class="row">
+          <div class="large-12 columns margin-left-0 margin-right-0">
+            <div class="controls">
+              <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button>
+              <button id="run" class="button center" onclick="refreshPreview()">Run</button>
+              <button id="showHints" class="button center" onclick="showHints()">Show Hints</button>
             </div>
-            <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
-                <!-- <h2>Game</h2> -->
-                <div class="iframe-controls">
-                    <button id="previous" onclick="document.preview.previousLevel()" style="display: none;">Previous Level</button>
-                    <button id="next" onclick="document.preview.nextLevel()" style="display: none;">Next Level</button>
-                    <button id="showDialogue" onclick="document.preview.showDialogue()" style="display: none;">Story</button>
-                    <button id="skipToSandbox" onclick="document.preview.goToSandbox()" style="display: inline-block;">Skip to sandbox</button>
-                    <button id="backToGame" onclick="document.preview.backToGame()" style="display: none;">Back to game</button>
-                    <button id="publish" onclick="document.preview.publish()" style="display: none;">Share your game</button>
-                </div>
-                <!-- LIVE PREVIEW -->
-                <div class="preview_container">
-                    <!-- src="project_template/index.html" -->
-                    <iframe name = "preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
-
-                    </iframe>
-                </div>
-                <!-- END LIVE PREVIEW -->
-            </div>
+          </div>
         </div>
-
-    </main>
-
-    <!-- error modal -->
-    <div id="errorModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
-        <h2>Fix a bug!</h2>
-        <p class="error-text">Error text</p>
-        <!-- <div class="row">
+        <div class="row">
+          <div class="large-12 columns margin-left-0 margin-right-0">
+            <div class="codemirror-editor-container">
+              <!-- JS FOR CODEMIRROR -->
+              <div id="js_editor">
+              </div>
+              <!-- END JS FOR CODEMIRROR -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
+        <!-- <h2>Game</h2> -->
+        <div class="iframe-controls">
+          <button id="previous" onclick="document.preview.previousLevel()" style="display: none;">Previous Level</button>
+          <button id="next" onclick="document.preview.nextLevel()" style="display: none;">Next Level</button>
+          <button id="showDialogue" onclick="document.preview.showDialogue()" style="display: none;">Story</button>
+          <button id="skipToSandbox" onclick="document.preview.goToSandbox()" style="display: inline-block;">Skip to sandbox</button>
+          <button id="backToGame" onclick="document.preview.backToGame()" style="display: none;">Back to game</button>
+          <button id="publish" onclick="document.preview.publish()" style="display: none;">Share your game</button>
+        </div>
+        <!-- LIVE PREVIEW -->
+        <div class="preview_container">
+          <!-- src="project_template/index.html" -->
+          <iframe name="preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
+          </iframe>
+        </div>
+        <!-- END LIVE PREVIEW -->
+      </div>
+    </div>
+  </main>
+  <!-- error modal -->
+  <div id="errorModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
+    <h2>Fix a bug!</h2>
+    <p class="error-text">Error text</p>
+    <!-- <div class="row">
             <div class="large-6 columns auth-plain">
                 
             </div>
         </div> -->
-        <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    </div>
-
-    <div id="welcomeModal" class="reveal-modal" data-reveal aria-labelledby="Welcome modal" aria-hidden="true" role="dialog">
-        <div class="row">
-            <div class="large-4 columns">
-                <div style="text-align: center;">
-                    <h1>Globaloria</h1>
-                    <img src="images/GlobaloriaG.png" height="60px" width="200px">
-                    <h2>MakeQuest</h2>
-                </div>
-            </div>
-            <div class="large-8 columns">
-                <p>At Globaloria we believe that making games is a fun way to learn. Designing educational games using real coding languages and professional design tools is exciting. Everyone can write real code – it’s fun even in your very first hour.</p>
-
-                <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
-
-                <p>Ready to go deeper? Access the full game code in the Globaloria Sandbox, remix and expand it to create your own game, then publish and share it with your friends!</p>
-
-                <p>Teachers: here is a <a href=" http://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
-
-                <p>Click up right to close this box to begin. Enjoy!</p>
-
-                <p>Tell us what you think: <a href="mailto:makequest@globaloria.com">makequest@globaloria.com</a></p>
-            </div>
+    <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+  <div id="welcomeModal" class="reveal-modal" data-reveal aria-labelledby="Welcome modal" aria-hidden="true" role="dialog">
+    <div class="row">
+      <div class="large-4 columns">
+        <div style="text-align: center;">
+          <h1>Globaloria</h1>
+          <img src="images/GlobaloriaG.png" height="60px" width="200px">
+          <h2>MakeQuest</h2>
         </div>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div>
+      <div class="large-8 columns">
+        <p>At Globaloria we believe that making games is a fun way to learn. Designing educational games using real coding languages and professional design tools is exciting. Everyone can write real code – it’s fun even in your very first hour.</p>
+        <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
+        <p>Ready to go deeper? Access the full game code in the Globaloria Sandbox, remix and expand it to create your own game, then publish and share it with your friends!</p>
+        <p>Teachers: here is a <a href=" http://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
+        <p>Click up right to close this box to begin. Enjoy!</p>
+        <p>Tell us what you think: <a href="mailto:makequest@globaloria.com">makequest@globaloria.com</a></p>
+      </div>
     </div>
-
-
-    <div id="publishModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
-        
-        <h2 style="text-align:center;">Publish Your Game</h2>
-          
-        <!-- Send form to Salesforce -->
-        <form id="publish-form" method="POST" 
-                action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" 
-                data-abide>
-
-          <input name="oid" type="hidden" value="00DU0000000LhCA"><br>
-          <input id="retUrl" name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/"><br>
-        
-          <div class="row">
-
-            <div class="large-4 columns">
-              <label for="first_name">Name <input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+"></label>
-              <small class="error">This field is required.</small>
-            </div>
-            <div class="large-4 columns">
-              <label for="00NU0000005Ph4g">Age <input id="00NU0000005Ph4g" name="00NU0000005Ph4g" type="text" required></label>
-              <small class="error">This field is required.</small>
-            </div>
-
-            <div class="large-4 columns">
-              <label for="00NU0000005PN7e">School</label>
-              <input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">
-              <small class="error">This field is required.</small>
-            </div>
-  
-            <div class="large-4 columns">
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
-              <small class="error">This field is required.</small>
-            </div>
-
-            <div class="large-4 columns">
-              <label for="state">State/Province</label
-              ><input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">
-              <datalist id="states-list">
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Arizona</option>
-                <option>Arkansas</option>
-                <option>California</option>
-                <option>Colorado</option>
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>District Of Columbia</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-                <option>Indiana</option>
-                <option>Iowa</option>
-                <option>Kansas</option>
-                <option>Kentucky</option>
-                <option>Louisiana</option>
-                <option>Maine</option>
-                <option>Maryland</option>
-                <option>Massachusetts</option>
-                <option>Michigan</option>
-                <option>Minnesota</option>
-                <option>Mississippi</option>
-                <option>Missouri</option>
-                <option>Montana</option>
-                <option>Nebraska</option>
-                <option>Nevada</option>
-                <option>New Hampshire</option>
-                <option>New Jersey</option>
-                <option>New Mexico</option>
-                <option>New York</option>
-                <option>North Carolina</option>
-                <option>North Dakota</option>
-                <option>Ohio</option>
-                <option>Oklahoma</option>
-                <option>Oregon</option>
-                <option>Pennsylvania</option>
-                <option>Rhode Island</option>
-                <option>South Carolina</option>
-                <option>South Dakota</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Utah</option>
-                <option>Vermont</option>
-                <option>Virginia</option>
-                <option>Washington</option>
-                <option>West Virginia</option>
-                <option>Wisconsin</option>
-                <option>Wyoming</option>
-              </datalist>
-              <small class="error">This field is required.</small>
-            </div>
-
-            <div class="large-4 columns">
-              <label for="country">Country</label>
-              <input id="country" list="countries-list" name="country" type="text" required pattern="[a-zA-Z]+">
-              <datalist id="countries-list">
-                <option>Afghanistan</option>
-                <option>Åland Islands</option>
-                <option>Albania</option>
-                <option>Algeria</option>
-                <option>American Samoa</option>
-                <option>Andorra</option>
-                <option>Angola</option>
-                <option>Anguilla</option>
-                <option>Antarctica</option>
-                <option>Antigua and Barbuda</option>
-                <option>Argentina</option>
-                <option>Armenia</option>
-                <option>Aruba</option>
-                <option>Australia</option>
-                <option>Austria</option>
-                <option>Azerbaijan</option>
-                <option>Bahamas</option>
-                <option>Bahrain</option>
-                <option>Bangladesh</option>
-                <option>Barbados</option>
-                <option>Belarus</option>
-                <option>Belgium</option>
-                <option>Belize</option>
-                <option>Benin</option>
-                <option>Bermuda</option>
-                <option>Bhutan</option>
-                <option>Bolivia, Plurinational State of</option>
-                <option>Bonaire, Sint Eustatius and Saba</option>
-                <option>Bosnia and Herzegovina</option>
-                <option>Botswana</option>
-                <option>Bouvet Island</option>
-                <option>Brazil</option>
-                <option>British Indian Ocean Territory</option>
-                <option>Brunei Darussalam</option>
-                <option>Bulgaria</option>
-                <option>Burkina Faso</option>
-                <option>Burundi</option>
-                <option>Cambodia</option>
-                <option>Cameroon</option>
-                <option>Canada</option>
-                <option>Cape Verde</option>
-                <option>Cayman Islands</option>
-                <option>Central African Republic</option>
-                <option>Chad</option>
-                <option>Chile</option>
-                <option>China</option>
-                <option>Christmas Island</option>
-                <option>Cocos (Keeling) Islands</option>
-                <option>Colombia</option>
-                <option>Comoros</option>
-                <option>Congo</option>
-                <option>Congo, the Democratic Republic of the</option>
-                <option>Cook Islands</option>
-                <option>Costa Rica</option>
-                <option>Côte d'Ivoire</option>
-                <option>Croatia</option>
-                <option>Cuba</option>
-                <option>Curaçao</option>
-                <option>Cyprus</option>
-                <option>Czech Republic</option>
-                <option>Denmark</option>
-                <option>Djibouti</option>
-                <option>Dominica</option>
-                <option>Dominican Republic</option>
-                <option>Ecuador</option>
-                <option>Egypt</option>
-                <option>El Salvador</option>
-                <option>Equatorial Guinea</option>
-                <option>Eritrea</option>
-                <option>Estonia</option>
-                <option>Ethiopia</option>
-                <option>Falkland Islands (Malvinas)</option>
-                <option>Faroe Islands</option>
-                <option>Fiji</option>
-                <option>Finland</option>
-                <option>France</option>
-                <option>French Guiana</option>
-                <option>French Polynesia</option>
-                <option>French Southern Territories</option>
-                <option>Gabon</option>
-                <option>Gambia</option>
-                <option>Georgia</option>
-                <option>Germany</option>
-                <option>Ghana</option>
-                <option>Gibraltar</option>
-                <option>Greece</option>
-                <option>Greenland</option>
-                <option>Grenada</option>
-                <option>Guadeloupe</option>
-                <option>Guam</option>
-                <option>Guatemala</option>
-                <option>Guernsey</option>
-                <option>Guinea</option>
-                <option>Guinea-Bissau</option>
-                <option>Guyana</option>
-                <option>Haiti</option>
-                <option>Heard Island and McDonald Islands</option>
-                <option>Holy See (Vatican City State)</option>
-                <option>Honduras</option>
-                <option>Hong Kong</option>
-                <option>Hungary</option>
-                <option>Iceland</option>
-                <option>India</option>
-                <option>Indonesia</option>
-                <option>Iran, Islamic Republic of</option>
-                <option>Iraq</option>
-                <option>Ireland</option>
-                <option>Isle of Man</option>
-                <option>Israel</option>
-                <option>Italy</option>
-                <option>Jamaica</option>
-                <option>Japan</option>
-                <option>Jersey</option>
-                <option>Jordan</option>
-                <option>Kazakhstan</option>
-                <option>Kenya</option>
-                <option>Kiribati</option>
-                <option>Korea, Democratic People's Republic of</option>
-                <option>Korea, Republic of</option>
-                <option>Kuwait</option>
-                <option>Kyrgyzstan</option>
-                <option>Lao People's Democratic Republic</option>
-                <option>Latvia</option>
-                <option>Lebanon</option>
-                <option>Lesotho</option>
-                <option>Liberia</option>
-                <option>Libya</option>
-                <option>Liechtenstein</option>
-                <option>Lithuania</option>
-                <option>Luxembourg</option>
-                <option>Macao</option>
-                <option>Macedonia, the former Yugoslav Republic of</option>
-                <option>Madagascar</option>
-                <option>Malawi</option>
-                <option>Malaysia</option>
-                <option>Maldives</option>
-                <option>Mali</option>
-                <option>Malta</option>
-                <option>Marshall Islands</option>
-                <option>Martinique</option>
-                <option>Mauritania</option>
-                <option>Mauritius</option>
-                <option>Mayotte</option>
-                <option>Mexico</option>
-                <option>Micronesia, Federated States of</option>
-                <option>Moldova, Republic of</option>
-                <option>Monaco</option>
-                <option>Mongolia</option>
-                <option>Montenegro</option>
-                <option>Montserrat</option>
-                <option>Morocco</option>
-                <option>Mozambique</option>
-                <option>Myanmar</option>
-                <option>Namibia</option>
-                <option>Nauru</option>
-                <option>Nepal</option>
-                <option>Netherlands</option>
-                <option>New Caledonia</option>
-                <option>New Zealand</option>
-                <option>Nicaragua</option>
-                <option>Niger</option>
-                <option>Nigeria</option>
-                <option>Niue</option>
-                <option>Norfolk Island</option>
-                <option>Northern Mariana Islands</option>
-                <option>Norway</option>
-                <option>Oman</option>
-                <option>Pakistan</option>
-                <option>Palau</option>
-                <option>Palestinian Territory, Occupied</option>
-                <option>Panama</option>
-                <option>Papua New Guinea</option>
-                <option>Paraguay</option>
-                <option>Peru</option>
-                <option>Philippines</option>
-                <option>Pitcairn</option>
-                <option>Poland</option>
-                <option>Portugal</option>
-                <option>Puerto Rico</option>
-                <option>Qatar</option>
-                <option>Réunion</option>
-                <option>Romania</option>
-                <option>Russian Federation</option>
-                <option>Rwanda</option>
-                <option>Saint Barthélemy</option>
-                <option>Saint Helena, Ascension and Tristan da Cunha</option>
-                <option>Saint Kitts and Nevis</option>
-                <option>Saint Lucia</option>
-                <option>Saint Martin (French part)</option>
-                <option>Saint Pierre and Miquelon</option>
-                <option>Saint Vincent and the Grenadines</option>
-                <option>Samoa</option>
-                <option>San Marino</option>
-                <option>Sao Tome and Principe</option>
-                <option>Saudi Arabia</option>
-                <option>Senegal</option>
-                <option>Serbia</option>
-                <option>Seychelles</option>
-                <option>Sierra Leone</option>
-                <option>Singapore</option>
-                <option>Sint Maarten (Dutch part)</option>
-                <option>Slovakia</option>
-                <option>Slovenia</option>
-                <option>Solomon Islands</option>
-                <option>Somalia</option>
-                <option>South Africa</option>
-                <option>South Georgia and the South Sandwich Islands</option>
-                <option>South Sudan</option>
-                <option>Spain</option>
-                <option>Sri Lanka</option>
-                <option>Sudan</option>
-                <option>Suriname</option>
-                <option>Svalbard and Jan Mayen</option>
-                <option>Swaziland</option>
-                <option>Sweden</option>
-                <option>Switzerland</option>
-                <option>Syrian Arab Republic</option>
-                <option>Taiwan, Province of China</option>
-                <option>Tajikistan</option>
-                <option>Tanzania, United Republic of</option>
-                <option>Thailand</option>
-                <option>Timor-Leste</option>
-                <option>Togo</option>
-                <option>Tokelau</option>
-                <option>Tonga</option>
-                <option>Trinidad and Tobago</option>
-                <option>Tunisia</option>
-                <option>Turkey</option>
-                <option>Turkmenistan</option>
-                <option>Turks and Caicos Islands</option>
-                <option>Tuvalu</option>
-                <option>Uganda</option>
-                <option>Ukraine</option>
-                <option>United Arab Emirates</option>
-                <option>United Kingdom</option>
-                <option>United States</option>
-                <option>United States Minor Outlying Islands</option>
-                <option>Uruguay</option>
-                <option>Uzbekistan</option>
-                <option>Vanuatu</option>
-                <option>Venezuela, Bolivarian Republic of</option>
-                <option>Viet Nam</option>
-                <option>Virgin Islands, British</option>
-                <option>Virgin Islands, U.S.</option>
-                <option>Wallis and Futuna</option>
-                <option>Western Sahara</option>
-                <option>Yemen</option>
-                <option>Zambia</option>
-                <option>Zimbabwe</option>
-              </datalist>
-              <small class="error">This field is required.</small>
-            </div>
-
-
-            <div class="large-12 columns">
-              <span>I'm a: </span>
-              <label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student <input id="isStudent" value="Student" name="isStudent" type="checkbox"></label>
-              <label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher <input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox"></label>
-              <label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent <input id="isParent" value="Parent" name="isParent" type="checkbox"></label>
-              <label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator <input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox"></label>
-            </div>
-
-            <div class="large-12 columns">
-              <label for="description">Feedback (private) <input id="description" name="description" type="text"></label>
-            </div>    
-          
-          <!-- Contact information -->
-            <div class="large-12 columns">
-              <input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox" value="1"> <label for="00NU0000005PN7j">I'm 18 or older and would like a full Globaloria demo</label> 
-            </div>
-            <!-- <div class="large-6 columns">
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+  <div id="publishModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
+    <!-- Send form to Salesforce -->
+    <form id="publish-form" method="POST" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" data-abide>
+      <h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publish Your Game</h2>
+      <input name="oid" type="hidden" value="00DU0000000LhCA">
+      <input id="retUrl" name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/">
+      <div class="row">
+        <div class="large-4 columns">
+          <label for="first_name">Name
+            <input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">
+          </label>
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-4 columns">
+          <label for="00NU0000005Ph4g">Age
+            <input id="00NU0000005Ph4g" name="00NU0000005Ph4g" type="text" required>
+          </label>
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-4 columns">
+          <label for="00NU0000005PN7e">School</label>
+          <input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-4 columns">
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-4 columns">
+          <label for="state">State/Province</label>
+          <input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">
+          <datalist id="states-list">
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>District Of Columbia</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </datalist>
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-4 columns">
+          <label for="country">Country</label>
+          <input id="country" list="countries-list" name="country" type="text" required pattern="[a-zA-Z]+">
+          <datalist id="countries-list">
+            <option>Afghanistan</option>
+            <option>Åland Islands</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>American Samoa</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Anguilla</option>
+            <option>Antarctica</option>
+            <option>Antigua and Barbuda</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Aruba</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaijan</option>
+            <option>Bahamas</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin</option>
+            <option>Bermuda</option>
+            <option>Bhutan</option>
+            <option>Bolivia, Plurinational State of</option>
+            <option>Bonaire, Sint Eustatius and Saba</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Bouvet Island</option>
+            <option>Brazil</option>
+            <option>British Indian Ocean Territory</option>
+            <option>Brunei Darussalam</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option>Canada</option>
+            <option>Cape Verde</option>
+            <option>Cayman Islands</option>
+            <option>Central African Republic</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Christmas Island</option>
+            <option>Cocos (Keeling) Islands</option>
+            <option>Colombia</option>
+            <option>Comoros</option>
+            <option>Congo</option>
+            <option>Congo, the Democratic Republic of the</option>
+            <option>Cook Islands</option>
+            <option>Costa Rica</option>
+            <option>Côte d'Ivoire</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Curaçao</option>
+            <option>Cyprus</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Dominican Republic</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Equatorial Guinea</option>
+            <option>Eritrea</option>
+            <option>Estonia</option>
+            <option>Ethiopia</option>
+            <option>Falkland Islands (Malvinas)</option>
+            <option>Faroe Islands</option>
+            <option>Fiji</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>French Guiana</option>
+            <option>French Polynesia</option>
+            <option>French Southern Territories</option>
+            <option>Gabon</option>
+            <option>Gambia</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Gibraltar</option>
+            <option>Greece</option>
+            <option>Greenland</option>
+            <option>Grenada</option>
+            <option>Guadeloupe</option>
+            <option>Guam</option>
+            <option>Guatemala</option>
+            <option>Guernsey</option>
+            <option>Guinea</option>
+            <option>Guinea-Bissau</option>
+            <option>Guyana</option>
+            <option>Haiti</option>
+            <option>Heard Island and McDonald Islands</option>
+            <option>Holy See (Vatican City State)</option>
+            <option>Honduras</option>
+            <option>Hong Kong</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Iran, Islamic Republic of</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Isle of Man</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jersey</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kiribati</option>
+            <option>Korea, Democratic People's Republic of</option>
+            <option>Korea, Republic of</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Lao People's Democratic Republic</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Lesotho</option>
+            <option>Liberia</option>
+            <option>Libya</option>
+            <option>Liechtenstein</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Macao</option>
+            <option>Macedonia, the former Yugoslav Republic of</option>
+            <option>Madagascar</option>
+            <option>Malawi</option>
+            <option>Malaysia</option>
+            <option>Maldives</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Marshall Islands</option>
+            <option>Martinique</option>
+            <option>Mauritania</option>
+            <option>Mauritius</option>
+            <option>Mayotte</option>
+            <option>Mexico</option>
+            <option>Micronesia, Federated States of</option>
+            <option>Moldova, Republic of</option>
+            <option>Monaco</option>
+            <option>Mongolia</option>
+            <option>Montenegro</option>
+            <option>Montserrat</option>
+            <option>Morocco</option>
+            <option>Mozambique</option>
+            <option>Myanmar</option>
+            <option>Namibia</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Netherlands</option>
+            <option>New Caledonia</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>Niue</option>
+            <option>Norfolk Island</option>
+            <option>Northern Mariana Islands</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Palau</option>
+            <option>Palestinian Territory, Occupied</option>
+            <option>Panama</option>
+            <option>Papua New Guinea</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Pitcairn</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Puerto Rico</option>
+            <option>Qatar</option>
+            <option>Réunion</option>
+            <option>Romania</option>
+            <option>Russian Federation</option>
+            <option>Rwanda</option>
+            <option>Saint Barthélemy</option>
+            <option>Saint Helena, Ascension and Tristan da Cunha</option>
+            <option>Saint Kitts and Nevis</option>
+            <option>Saint Lucia</option>
+            <option>Saint Martin (French part)</option>
+            <option>Saint Pierre and Miquelon</option>
+            <option>Saint Vincent and the Grenadines</option>
+            <option>Samoa</option>
+            <option>San Marino</option>
+            <option>Sao Tome and Principe</option>
+            <option>Saudi Arabia</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Seychelles</option>
+            <option>Sierra Leone</option>
+            <option>Singapore</option>
+            <option>Sint Maarten (Dutch part)</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Solomon Islands</option>
+            <option>Somalia</option>
+            <option>South Africa</option>
+            <option>South Georgia and the South Sandwich Islands</option>
+            <option>South Sudan</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Suriname</option>
+            <option>Svalbard and Jan Mayen</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syrian Arab Republic</option>
+            <option>Taiwan, Province of China</option>
+            <option>Tajikistan</option>
+            <option>Tanzania, United Republic of</option>
+            <option>Thailand</option>
+            <option>Timor-Leste</option>
+            <option>Togo</option>
+            <option>Tokelau</option>
+            <option>Tonga</option>
+            <option>Trinidad and Tobago</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Turkmenistan</option>
+            <option>Turks and Caicos Islands</option>
+            <option>Tuvalu</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>United States Minor Outlying Islands</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Vanuatu</option>
+            <option>Venezuela, Bolivarian Republic of</option>
+            <option>Viet Nam</option>
+            <option>Virgin Islands, British</option>
+            <option>Virgin Islands, U.S.</option>
+            <option>Wallis and Futuna</option>
+            <option>Western Sahara</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+          </datalist>
+          <small class="error">This field is required.</small>
+        </div>
+        <div class="large-12 columns">
+          <span>I'm a: </span>
+          <label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student
+            <input id="isStudent" value="Student" name="isStudent" type="checkbox">
+          </label>
+          <label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher
+            <input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox">
+          </label>
+          <label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent
+            <input id="isParent" value="Parent" name="isParent" type="checkbox">
+          </label>
+          <label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator
+            <input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox">
+          </label>
+        </div>
+        <div class="large-12 columns">
+          <label for="description">Feedback (private)
+            <input id="description" name="description" type="text">
+          </label>
+        </div>
+        <!-- Contact information -->
+        <div class="large-12 columns">
+          <input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox" value="1">
+          <label for="00NU0000005PN7j">I'm 18 or older and would like a full Globaloria demo</label>
+        </div>
+        <!-- <div class="large-6 columns">
               <label for="first_name">First Name <input id="first_name" name="first_name" type="text" disabled></label>
             </div>
             <div class="large-6 columns">
               <label for="last_name">Last Name <input id="last_name" name="last_name" type="text" disabled></label>
             </div> -->
-            <div class="large-6 columns">
-              <label for="email">Email <input id="email" name="email" type="email" disabled></label>
-            </div>
-            <div class="large-6 columns">
-              <label for="phone">Phone <input id="phone" name="phone" type="text" disabled></label>
-            </div>
-          </div>
-  
-            <!-- Role: summary of I'm a: -->
-          <input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">
-
-            <!-- Game Link Field-->
-          <input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">
-          
-          <input type="hidden" name="lead_source" value="code.globaloria.com Campaign">
-
-          <!-- Publishing feedback -->
-          <div>
-            <span id="published" style="display: none;">Published: <a></a></span>
-            <span id="publishing" style="display: none;">Publishing...</span>
-          </div>
-          <!-- <button onclick="publish()">Publish</button> -->
-
-          <button type="submit">Publish</button>
-        </form>
-        
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    </div>
-
-    <!-- modal content -->
-    <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="login or sign up" aria-hidden="true" role="dialog">
-        <div class="row">
-            <div class="large-6 columns auth-plain">
-                <div class="signup-panel left-solid">
-                    <p class="welcome">Registered Users</p>
-                    <form>
-                        <div class="row collapse">
-                            <div class="small-2  columns">
-                                <span class="prefix"><i class="fi-torso-female"></i></span>
-                            </div>
-                            <div class="small-10  columns">
-                                <input id="sign_in_email" type="text" placeholder="email">
-                            </div>
-                        </div>
-                        <div class="row collapse">
-                            <div class="small-2 columns ">
-                                <span class="prefix"><i class="fi-lock"></i></span>
-                            </div>
-                            <div class="small-10 columns ">
-                                <input id="sign_in_password" type="password" placeholder="password">
-                            </div>
-                        </div>
-                    </form>
-                    <a id="loginButton" href="#" class="button ">Log In</a>
-                </div>
-            </div>
-            <div class="large-6 columns auth-plain">
-                <div class="signup-panel newusers">
-                    <p class="welcome">Signup</p>
-                    <form>
-                        <div class="row collapse">
-                            <div class="small-2  columns">
-                                <span class="prefix"><i class="fi-torso-female"></i></span>
-                            </div>
-                            <div class="small-10  columns">
-                                <input id="sign_up_email" type="text" placeholder="email">
-                            </div>
-                        </div>
-                        <div class="row collapse">
-                            <div class="small-2 columns ">
-                                <span class="prefix"><i class="fi-lock"></i></span>
-                            </div>
-                            <div class="small-10 columns ">
-                                <input id="sign_up_password" type="password" placeholder="password">
-                            </div>
-                        </div>
-                    </form>
-                    <a id="signupButton" href="#" class="button ">Sign Up</a></br>
-                </div>
-            </div>
+        <div class="large-6 columns">
+          <label for="email">Email
+            <input id="email" name="email" type="email" disabled>
+          </label>
         </div>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        <div class="large-6 columns">
+          <label for="phone">Phone
+            <input id="phone" name="phone" type="text" disabled>
+          </label>
+        </div>
+        <!-- Role: summary of I'm a: -->
+        <input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">
+        <!-- Game Link Field-->
+        <input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">
+        <input type="hidden" name="lead_source" value="code.globaloria.com Campaign">
+        <!-- Publishing feedback -->
+        <div class="large-12 columns">
+          <span id="published" style="display: none;">Published: <a></a></span>
+          <span id="publishing" style="display: none;">Publishing...</span>
+          <br>
+          <!-- <button onclick="publish()">Publish</button> -->
+          <button type="submit">Publish</button>
+        </div>
+      </div>
+    </form>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+  <!-- modal content -->
+  <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="login or sign up" aria-hidden="true" role="dialog">
+    <div class="row">
+      <div class="large-6 columns auth-plain">
+        <div class="signup-panel left-solid">
+          <p class="welcome">Registered Users</p>
+          <form>
+            <div class="row collapse">
+              <div class="small-2  columns">
+                <span class="prefix"><i class="fi-torso-female"></i></span>
+              </div>
+              <div class="small-10  columns">
+                <input id="sign_in_email" type="text" placeholder="email">
+              </div>
+            </div>
+            <div class="row collapse">
+              <div class="small-2 columns ">
+                <span class="prefix"><i class="fi-lock"></i></span>
+              </div>
+              <div class="small-10 columns ">
+                <input id="sign_in_password" type="password" placeholder="password">
+              </div>
+            </div>
+          </form>
+          <a id="loginButton" href="#" class="button ">Log In</a>
+        </div>
+      </div>
+      <div class="large-6 columns auth-plain">
+        <div class="signup-panel newusers">
+          <p class="welcome">Signup</p>
+          <form>
+            <div class="row collapse">
+              <div class="small-2  columns">
+                <span class="prefix"><i class="fi-torso-female"></i></span>
+              </div>
+              <div class="small-10  columns">
+                <input id="sign_up_email" type="text" placeholder="email">
+              </div>
+            </div>
+            <div class="row collapse">
+              <div class="small-2 columns ">
+                <span class="prefix"><i class="fi-lock"></i></span>
+              </div>
+              <div class="small-10 columns ">
+                <input id="sign_up_password" type="password" placeholder="password">
+              </div>
+            </div>
+          </form>
+          <a id="signupButton" href="#" class="button ">Sign Up</a></br>
+        </div>
+      </div>
     </div>
-
-    <!-- JOYRIDE -->
-    <ol class="joyride-list" data-joyride>
-      <li data-text="Next" data-options="prev_button: false; tip_animation:fade">
-        <p>Let's take a quick tour through your coding environment.</p>
-        <p>You can skip this at any time.</p>
-      </li>    
-      <li data-id="run" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-        <p>Update the game using your code</p>
-      </li>
-      <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-        <p>Go back to the original code</p>
-      </li>
-      <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
-        <p>Get help</p>
-      </li>
-      <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
-        <p>Write your code</p>
-        <p>*Code in italics cannot be changed</p>
-      </li>
-      <li data-id="previous" data-text="Next" data-options="tip_location: left; prev_button: false; tip_animation:fade">
-        <p>Go back and retry any levels</p>
-      </li>
-      <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: left; tip_animation:fade">
-        <p>The next level button will show up after you complete the current level.</p>
-      </li>
-      <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
-        <p>Display the game story again</p>
-      </li>
-      <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade;">
-        <p>Go to the sandbox to create your own game</p>
-      </li>
-      <li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
-        <p>Click on the game screen to move the hero using the left and right arrow keys</p>
-      </li>
-    </ol>
-
-
-    <script src="js/codemirror-editors.js"></script>
-    <script src="vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
-    <script src="vendor/esprima.js"></script>
-    <script>
-    	$(document).foundation();
-    </script>
-
-    <script src="js/publish.js"></script>
-    <script src="js/custom-errors.js"></script>
-    <script src="mini/storage.js"></script>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+  <!-- JOYRIDE -->
+  <ol class="joyride-list" data-joyride>
+    <li data-text="Next" data-options="prev_button: false; tip_animation:fade">
+      <p>Let's take a quick tour through your coding environment.</p>
+      <p>You can skip this at any time.</p>
+    </li>
+    <li data-id="run" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
+      <p>Update the game using your code</p>
+    </li>
+    <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
+      <p>Go back to the original code</p>
+    </li>
+    <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+      <p>Get help</p>
+    </li>
+    <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+      <p>Write your code</p>
+      <p>*Code in italics cannot be changed</p>
+    </li>
+    <li data-id="previous" data-text="Next" data-options="tip_location: left; prev_button: false; tip_animation:fade">
+      <p>Go back and retry any levels</p>
+    </li>
+    <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: left; tip_animation:fade">
+      <p>The next level button will show up after you complete the current level.</p>
+    </li>
+    <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
+      <p>Display the game story again</p>
+    </li>
+    <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade;">
+      <p>Go to the sandbox to create your own game</p>
+    </li>
+    <li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
+      <p>Click on the game screen to move the hero using the left and right arrow keys</p>
+    </li>
+  </ol>
+  <script src="js/codemirror-editors.js"></script>
+  <script src="vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
+  <script src="vendor/esprima.js"></script>
+  <script>
+  $(document).foundation();
+  </script>
+  <script src="js/publish.js"></script>
+  <script src="js/custom-errors.js"></script>
+  <script src="mini/storage.js"></script>
 </body>
 
 </html>

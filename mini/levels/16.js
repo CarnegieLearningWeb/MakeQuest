@@ -104,6 +104,15 @@ function setupLevel() {
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/OilBarrel_P_60.png");
 
   goal.addImage(goalImage);
+
+  // This code loads the image for the background.
+  // You can uncomment (remove the '//') from any line to choose a different image
+  backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
+  // backgroundImage = loadImage("images/MakeQuestAssets/Background_2.png");
+  // backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
+  // backgroundImage = loadImage("images/MakeQuestAssets/Background_4.png");
+  
+  
 // EDITOR: beginReadOnly();
 }
 // EDITOR: endReadOnly();

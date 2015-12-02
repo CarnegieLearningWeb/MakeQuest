@@ -23,7 +23,7 @@ function setup() {
 
     setupDialogue();
 
-    backgroundImage = loadImage("images/MakeQuestAssets/Background_1CS_Subdued.png");
+    backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
 
     goalReached = false;
     goal = createSprite(600, 40, 30, 30);
