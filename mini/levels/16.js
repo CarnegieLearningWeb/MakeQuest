@@ -59,6 +59,13 @@ function setupLevel() {
   // existing platforms, or create new platforms.
   platformHeight = 10;
 
+  // This code loads the image for your platforms.
+  // You can uncomment (remove the '//') from any line to choose a different image
+  platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_1.png");
+  // platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_2.png");
+  // platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_3.png");
+  // platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_4.png");
+
   // These code creates all the platforms in the game
   // Some platforms are stored in VARIABLES like 'platform1'
   // so that we can modify them later by name

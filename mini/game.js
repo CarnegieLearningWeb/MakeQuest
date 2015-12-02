@@ -15,7 +15,7 @@ var CURRENT_LEVEL_TEXT = "TODO: Set CURRENT_LEVEL_TEXT for this level!";
 
 var UNLOCK_GRID_LEVEL = 1;
 
-var player, particles, platforms, goalReached, levelCompleteImage, autoAdvanceToNextLevel;
+var player, particles, platforms, goalReached, platformImage, levelCompleteImage, autoAdvanceToNextLevel;
 
 function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
@@ -245,7 +245,8 @@ function createPlatform(x, y, width, height, col) {
     platform.initX = x;
     platform.initY = y;
 
-    platformImage = loadImage("images/MakeQuestAssets/Platforms/Platform_CS.png");
+    // Default to platform 1 or whatever players choose in the sandbox level
+    platformImage = platformImage || loadImage("images/MakeQuestAssets/Platforms/Platform_1.png");
     platform.addImage(platformImage);
     
     // Pass width and height to the resize funciton in p5 play
