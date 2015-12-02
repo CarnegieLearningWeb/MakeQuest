@@ -245,43 +245,46 @@ function createPlatform(x, y, width, height, col) {
     platform.initX = x;
     platform.initY = y;
 
-    // Default to platform 1 or whatever players choose in the sandbox level
-    platformImage = platformImage || loadImage("images/MakeQuestAssets/Platforms/Platform_1.png");
-    platform.addImage(platformImage);
+    // // TODO:
+    // // ********* FIX ADDING PLATFORM IMAGE ***********************
+    // // Default to platform 1 or whatever players choose in the sandbox level
+    // platformImage = platformImage || loadImage("images/MakeQuestAssets/Platforms/Platform_1.png");
+    // platform.addImage(platformImage);
     
-    // Pass width and height to the resize funciton in p5 play
-    // platform.resize(width, height);
-    platform.resizeX = width;
-    platform.resizeY = height;
+    // // Pass width and height to the resize funciton in p5 play
+    // // platform.resize(width, height);
+    // platform.resizeX = width;
+    // platform.resizeY = height;
 
-    // Override platform's draw
-    platform.draw = function()
-    {
-      if(platform.resizeX && platform.resizeY){
-        // To avoid collisions between resize and scale, reset scale to 1 whenever resize is used
-        platform.scale = 1;
-        platform.animation.images[ this.animation.getFrame() ].resize(platform.resizeX, platform.resizeY);  
-      }
+    // // Override platform's draw
+    // platform.draw = function()
+    // {
+    //   if(platform.resizeX && platform.resizeY){
+    //     // To avoid collisions between resize and scale, reset scale to 1 whenever resize is used
+    //     platform.scale = 1;
+    //     platform.animation.images[ this.animation.getFrame() ].resize(platform.resizeX, platform.resizeY);  
+    //   }
 
-      // Tint with the passed in or default colour
-      tint(this.shapeColor);
+    //   // Tint with the passed in or default colour
+    //   tint(this.shapeColor);
 
-      image(platform.animation.images[0]);
+    //   image(platform.animation.images[0]);
 
-      // Default sprite behavior:
-      // if(currentAnimation != "" && animations != null)
-      // {
-      //   if(animations[currentAnimation] != null)
-      //     animations[currentAnimation].draw(0,0,0);
-      // }
-      // else
-      // {
-      //   noStroke();
-      //   fill(this.shapeColor);
-      //   rect(0, 0, this.width, this.height);
-      // }
-    }
-    console.log(platform);
+    //   // Default sprite behavior:
+    //   // if(currentAnimation != "" && animations != null)
+    //   // {
+    //   //   if(animations[currentAnimation] != null)
+    //   //     animations[currentAnimation].draw(0,0,0);
+    //   // }
+    //   // else
+    //   // {
+    //   //   noStroke();
+    //   //   fill(this.shapeColor);
+    //   //   rect(0, 0, this.width, this.height);
+    //   // }
+    // }
+    // console.log(platform);
+    // // ********* FIX ADDING PLATFORM IMAGE ***********************
 
     platforms.add(platform);
     return platform;
