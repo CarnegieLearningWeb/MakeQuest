@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nUsethe remote control to make the blocks fall slower...or maybe there is another way?"
+      text: "\nUse the remote control to make the blocks fall slower...or maybe there is another way?"
     }
   ];
 }
