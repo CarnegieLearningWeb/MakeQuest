@@ -2,7 +2,19 @@ var CustomErrors = {
   //Main funciton to be called when performing tests
   test: function(){
     var code = editor_js.getValue();
-    tokens = esprima.tokenize( code, {range: true, loc: true} );
+
+    try{
+      tokens = esprima.tokenize( code, {range: true, loc: true} );
+    }catch(e){
+      // If tokenize files we won't have tokens to loop through. Throw back whatever error we got
+      console.log("ERROR TOKENIZING");
+      console.log(e);
+
+      var msg = e.description == "Unexpected token ILLEGAL" ? "It looks like you have a typo. Make sure your STRINGS have an opening ' and a closing ' " : e.description;
+      this.displayError( e.lineNumber, msg );
+      //Break as soon as we find an error to provide errors one at a time
+      return true;
+    }
 
     // Find all tokens for which we have a custom error checking function
     for (var i = 0; i < tokens.length; i++) {
@@ -21,11 +33,10 @@ var CustomErrors = {
     
   },
 
-  displayError: function(err){
-    debug2 = err;
-    markJsErrorAtLine( err.token.loc.start.line );
+  displayError: function(location, message){
+    markJsErrorAtLine( location );
 
-    $('#errorModal p.error-text').text( err.errMsg );
+    $('#errorModal p.error-text').text( message );
     $('#errorModal').foundation('reveal', 'open');
   },
 
@@ -94,7 +105,7 @@ var CustomErrors = {
           errMsg: test[j].errorMsg
         };
 
-        this.displayError( err );
+        this.displayError( err.token.loc.start.line, err.errMsg );
         
         return true;
       }
@@ -109,7 +120,7 @@ var CustomErrors = {
           errMsg: test[j].errorMsg
         };
 
-        this.displayError( err );
+        this.displayError( err.token.loc.start.line, err.errMsg );
         
         return true;
       }
