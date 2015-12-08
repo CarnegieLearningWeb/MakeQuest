@@ -395,6 +395,9 @@ function loadMiniCourse(cb){
 
         cb();
     });
+
+    // Reload the iframe to keep in sync:
+    document.getElementById('preview').contentDocument.location.reload();
 }
 
 function showHints() {
