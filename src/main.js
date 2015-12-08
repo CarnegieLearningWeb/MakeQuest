@@ -411,6 +411,9 @@ function loadCurrentUserProject(){
 
 function nextLevel(){
     currentLevel == maxLevel ? maxLevel : currentLevel++;
+    // Why wasn't storage being set here? If we set currentLevel here and reload iframe from loadMiniCourse, sync should work
+    storage.set('currentLevel', currentLevel);
+
     //Update iframe source
     // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
     // $instructions.find("h3").text(instructions["level"+currentLevel].title);
@@ -420,7 +423,9 @@ function nextLevel(){
 
 function prevLevel(){
     currentLevel == 1 ? 1 : currentLevel--;
-    
+    // Same as nextLevel()
+    storage.set('currentLevel', currentLevel);
+
     //Update iframe source
     // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
     // $instructions.find("h3").text(instructions["level"+currentLevel].title);
