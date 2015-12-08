@@ -31,8 +31,8 @@ gulp.task('uglify-vendor' , function uglifyTask() {
 
   return gulp.src('vendor/**/*.js')
     .pipe(uglify)
-    .pipe(concat('uglified.js'))
+    .pipe(concat('uglified-vendor.js'))
     .pipe(gulp.dest('dist/vendor'));
 });
 
-gulp.task('default', ['uglify-vendor']);
+gulp.task('default', ['uglify', 'uglify-vendor']);
