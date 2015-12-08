@@ -20,6 +20,20 @@ gulp.task('uglify' , function uglifyTask() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('uglify-mini' , function uglifyTask() {
+
+  var uglify = map(function (buff, filename) {
+    var u = UglifyJS.minify(filename, {
+      // specify `UglifyJS` options here
+    });
+    return u.code;
+  });
+
+  return gulp.src('mini/src/**/*.js')
+    .pipe(uglify)
+    .pipe(gulp.dest('mini/dist'));
+});
+
 gulp.task('uglify-vendor' , function uglifyTask() {
 
   var uglify = map(function (buff, filename) {
@@ -47,6 +61,10 @@ gulp.task('compress', function() {
   gulp.src('mini/libs/*.js')
   .pipe(gzip())
   .pipe(gulp.dest('mini/libs'));
+
+  gulp.src('mini/dist/*.js')
+  .pipe(gzip())
+  .pipe(gulp.dest('mini/dist'));
 });
 
-gulp.task('default', ['uglify', 'uglify-vendor']);
+gulp.task('default', ['uglify', 'uglify-mini', 'uglify-vendor']);
