@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var UglifyJS = require('uglify-js');
 var map = require('vinyl-map');
 var concat = require('gulp-concat');
+var gzip = require('gulp-gzip');
 
 gulp.task('uglify' , function uglifyTask() {
 
@@ -16,7 +17,6 @@ gulp.task('uglify' , function uglifyTask() {
 
   return gulp.src('src/**/*.js')
     .pipe(uglify)
-    .pipe(concat('uglified.js'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -33,6 +33,16 @@ gulp.task('uglify-vendor' , function uglifyTask() {
     .pipe(uglify)
     .pipe(concat('uglified-vendor.js'))
     .pipe(gulp.dest('dist/vendor'));
+});
+
+gulp.task('compress', function() {
+  gulp.src('dist/*.js')
+  .pipe(gzip())
+  .pipe(gulp.dest('dist'));
+
+  gulp.src('dist/vendor/*.js')
+  .pipe(gzip())
+  .pipe(gulp.dest('dist/vendor'));
 });
 
 gulp.task('default', ['uglify', 'uglify-vendor']);
