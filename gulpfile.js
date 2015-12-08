@@ -43,6 +43,10 @@ gulp.task('compress', function() {
   gulp.src('dist/vendor/*.js')
   .pipe(gzip())
   .pipe(gulp.dest('dist/vendor'));
+
+  gulp.src('mini/libs/*.js')
+  .pipe(gzip())
+  .pipe(gulp.dest('mini/libs'));
 });
 
 gulp.task('default', ['uglify', 'uglify-vendor']);
