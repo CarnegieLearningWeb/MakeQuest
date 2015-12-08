@@ -1,0 +1,1 @@
+function drawGrid(){textSize(12),fill("white");for(var t=40;t<WIDTH;t+=40)line(0,t,20,t),line(t,0,t,20);for(var t=40;t<WIDTH;t+=80)text(t,20,t),text(t,t,30)}
