@@ -35,4 +35,4 @@ gulp.task('uglify-vendor' , function uglifyTask() {
     .pipe(gulp.dest('dist/vendor'));
 });
 
-gulp.task('default', ['uglify']);
+gulp.task('default', ['uglify-vendor']);
