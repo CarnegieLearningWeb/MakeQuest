@@ -277,7 +277,7 @@ function loadMiniCourse(cb){
         zeroPaddedLevel = maxLevel;
     }
 
-    $.get('mini/levels/' + zeroPaddedLevel + '.js?cacheBust=' + Date.now(), function(data) {
+    $.get('mini/levels/' + zeroPaddedLevel + '.js', function(data) {
         var markHints = [];
         var readOnlyTokens = [];
         var readOnlyRanges = [];
