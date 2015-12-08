@@ -10,11 +10,11 @@ var editor_js = CodeMirror($('#js_editor')[0], {
 });
 
 editor_js.on('changes', function() {
-  if (editor_js.getValue() === originalEditorContent) {
-    $("#revert").hide();
-  } else {
-    $("#revert").show();
-  }
+  // if (editor_js.getValue() === originalEditorContent) {
+  //   $("#revert").hide();
+  // } else {
+  //   $("#revert").show();
+  // }
 });
 
 function markHint(/* esprima token match pattern ... */) {

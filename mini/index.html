@@ -156,8 +156,8 @@
                       <div class="fb-share-button" data-layout="button"></div>
                       <script>
                         // Only load social media on published games
-                        console.log( $('body').attr('data-published-game-base-level') ? "PUBLISHED" : "UNPLUBLISHED");
-                        if( $('body').attr('data-published-game-base-level') ){
+                        console.log( document.body.hasAttribute('data-published-game-base-level') ? "PUBLISHED" : "UNPLUBLISHED");
+                        if( document.body.hasAttribute('data-published-game-base-level') ){
                             // Facebook
                             (function(d, s, id) {
                               var js, fjs = d.getElementsByTagName(s)[0];
