@@ -402,9 +402,9 @@ function showHints() {
     $("#showHints").fadeOut();
 }
 
-// function loadCurrentUserProject(){
-//     loadMiniCourse();
-// }
+function loadCurrentUserProject(){
+    loadMiniCourse();
+}
 
 function nextLevel(){
     currentLevel == maxLevel ? maxLevel : currentLevel++;
