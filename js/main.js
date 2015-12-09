@@ -407,6 +407,10 @@ function loadMiniCourse(cb){
 
         cb();
     });
+    
+    // Set session storage and reload the iframe to be synched
+    storage.set('currentLevel', currentLevel);
+    document.getElementById('preview').contentWindow.location.reload();
 }
 
 function showHints() {
@@ -483,6 +487,7 @@ function saveProject(){
 
 function nextLevel(){
     currentLevel == maxLevel ? maxLevel : currentLevel++;
+    
     //Update iframe source
     // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
     // $instructions.find("h3").text(instructions["level"+currentLevel].title);
