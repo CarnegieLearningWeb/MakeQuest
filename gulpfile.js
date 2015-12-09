@@ -29,24 +29,15 @@ gulp.task('compress', function() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist'));
 
-    /**** Vendor fodler *****/
+    /**** VENDOR *****/
+    // js
     gulp.src('./vendor/**/*.js', {base: './'})
     .pipe(uglify())
     .pipe(gulp.dest('./dist'));
-
-    /**** Compress bower_components *****/
-    // Foundation
-    gulp.src('./bower_components/foundation/js/foundation.min.js', {base: './'})
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist'));
-
-    // jQuery
-    gulp.src('./bower_components/jquery/dist/jquery.min.js', {base: './'})
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist'));
-
-    // Modernizr
-    gulp.src('./bower_components/modernizr/modernizr.js', {base: './'})
-    .pipe(uglify())
+    // css
+    gulp.src('./vendor/**/*.css', {base: './'})
+    .pipe(sourcemaps.init())
+    .pipe(minifyCss())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist'));
 });
