@@ -32,7 +32,9 @@ gulp.task('compress', function() {
     /**** VENDOR *****/
     // js
     gulp.src('./vendor/**/*.js', {base: './'})
+    .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist'));
     // css
     gulp.src('./vendor/**/*.css', {base: './'})
