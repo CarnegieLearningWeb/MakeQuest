@@ -17,7 +17,7 @@ $(document).ready(function() {
         
         pre_ride_callback      : function (){
                                   //Display all buttons for joyride
-                                  $("#revert").css('display', 'block');
+                                  // $("#revert").css('display', 'block');
                                   $("#showHints").css('display', 'block');
                                   $("#previous").css('display', 'block');
                                   $("#next").css('display', 'block');
@@ -39,7 +39,7 @@ $(document).ready(function() {
                                 },
         post_ride_callback     : function (){
                                     //Display all buttons for joyride
-                                  $("#revert").css('display', 'none');
+                                  // $("#revert").css('display', 'none');
                                   $("#showHints").css('display', 'none');
                                   $("#previous").css('display', 'none');
                                   $("#next").css('display', 'none');
@@ -407,6 +407,10 @@ function loadMiniCourse(cb){
 
         cb();
     });
+    
+    // Set session storage and reload the iframe to be synched
+    storage.set('currentLevel', currentLevel);
+    document.getElementById('preview').contentWindow.location.reload();
 }
 
 function showHints() {
@@ -483,6 +487,7 @@ function saveProject(){
 
 function nextLevel(){
     currentLevel == maxLevel ? maxLevel : currentLevel++;
+    
     //Update iframe source
     // $('iframe#preview').attr('src', 'project_template/index'+currentLevel+'.html');
     // $instructions.find("h3").text(instructions["level"+currentLevel].title);

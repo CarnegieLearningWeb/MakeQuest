@@ -11,15 +11,15 @@
 
     <!-- PUBLISHER: INSERT BASE HREF TAG HERE -->
     <title>Globaloria MakeQuest</title>
-    <script src="libs/p5.js"></script>
-    <script src="libs/p5.play.js"></script>
+    <script src="../dist/vendor/p5.js"></script>
+    <script src="../dist/vendor/p5.play.js"></script>
 
     <!-- FOUNDATION -->
     <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
 
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../bower_components/foundation/js/foundation.js"></script>
-    <script type="text/javascript" src="../bower_components/foundation/js/foundation/foundation.joyride.js"></script>
+    <script type="text/javascript" src="../bower_components/foundation/js/foundation.min.js"></script>
+    <!-- <script type="text/javascript" src="../bower_components/foundation/js/foundation/foundation.joyride.js"></script> -->
 
     <!-- Need to rebind p5 Play library when restarting p5 -->
     <script type="text/javascript" src="libs/rebind_p5_play.min.js"></script>
@@ -133,16 +133,6 @@
 <body data-is-unpublished-game>
     <!-- Add Social Media -->
     <div id="fb-root"></div>
-    <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <style>
     .social-media-links {
       line-height: 10px;
@@ -164,10 +154,27 @@
                   <p><!-- PUBLISHER: INSERT HTML HERE --> created this game.</p>
                   <div class="social-media-links">
                       <div class="fb-share-button" data-layout="button"></div>
-                      <script type="text/javascript">
-                        $(document).on('ready', function($){
-                            $('.fb-share-button').attr('data-href', window.location.href);
-                        });
+                      <script>
+                        // Only load social media on published games
+                        console.log( document.body.hasAttribute('data-published-game-base-level') ? "PUBLISHED" : "UNPLUBLISHED");
+                        if( document.body.hasAttribute('data-published-game-base-level') ){
+                            // Facebook
+                            (function(d, s, id) {
+                              var js, fjs = d.getElementsByTagName(s)[0];
+                              if (d.getElementById(id)) return;
+                              js = d.createElement(s); js.id = id;
+                              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+                              fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+
+                            // Update facebook src 
+                            $(document).on('ready', function(){
+                                $('.fb-share-button').attr('data-href', window.location.href);
+                            });
+
+                            // Twitter
+                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                        }
                       </script>
                       <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Learning to code: Play the game I made with MakeQuest!" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest,hourofcode,csedweek">Tweet</a>
                   </div>
