@@ -314,6 +314,16 @@ function playerInput() {
     if (keyIsDown(RIGHT_ARROW)) {
         player.position.x = player.position.x + 5;
     }
+
+    // Touch input
+    if( touchIsDown ){
+      if( touchX < WIDTH/2 ){
+        player.position.x = player.position.x - 5;   
+      }
+      if( touchX > WIDTH/2 ){
+        player.position.x = player.position.x + 5;
+      }
+    }
 }
 
 function mouseClicked() {
