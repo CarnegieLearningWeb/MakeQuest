@@ -17,7 +17,6 @@ $(document).ready(function() {
         
         pre_ride_callback      : function (){
                                   //Display all buttons for joyride
-                                  // $("#revert").css('display', 'block');
                                   $("#showHints").css('display', 'block');
                                   $("#previous").css('display', 'block');
                                   $("#next").css('display', 'block');
@@ -38,18 +37,17 @@ $(document).ready(function() {
                                   }
                                 },
         post_ride_callback     : function (){
+                                console.log("JOYRIDE CLOSED");
                                     //Display all buttons for joyride
-                                  // $("#revert").css('display', 'none');
                                   $("#showHints").css('display', 'none');
                                   $("#previous").css('display', 'none');
                                   $("#next").css('display', 'none');
-
-                                  // Init iframe's joyride
-                                  // document.getElementById('preview').contentWindow.walkthrough()
                                 },
-        abort_on_close           : false,
+        abort_on_close           : false
       });
-
+    });
+    $(document).on('click', '.joyride-close-tip', function(){
+      console.log(this);
     });
 
 
