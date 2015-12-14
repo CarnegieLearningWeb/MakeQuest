@@ -63,7 +63,7 @@ function goToSandbox(){
     //Don't use nextLevel, we need to preserve currentLevel.
     window.location.reload();
 
-    parent.loadCurrentUserProject();
+    parent.loadMiniCourse();
 }
 
 function backToGame(){
@@ -72,7 +72,7 @@ function backToGame(){
   
   window.location.reload();
 
-  parent.loadCurrentUserProject();
+  parent.loadMiniCourse();
 }
 
 function showNextLevelButton() {
