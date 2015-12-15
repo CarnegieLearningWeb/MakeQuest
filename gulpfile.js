@@ -18,9 +18,10 @@ gulp.task('compress', function() {
     /**** APP JS *****/    
     gulp.src('./js/**/*.js', {base: './'})
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(uglify()).on('error', errorHandler)
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist'));
+
 
     /**** CSS *****/    
     gulp.src('./css/**/*.css', {base: './'})
@@ -43,3 +44,12 @@ gulp.task('compress', function() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist'));
 });
+
+// DEFAULT task
+gulp.task('default', ['compress']);
+
+// Handle the error
+function errorHandler (error) {
+  console.log(error.toString());
+  this.emit('end');
+}
