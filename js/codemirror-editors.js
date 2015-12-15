@@ -175,10 +175,10 @@ function refreshPreview() {
      console.log("Eval js");
      console.log(js_content);
       //Eval the code to overwrite existing function. Access the iframe by name
-    preview.eval(js_content + '//# sourceURL=user-level.js');
-    preview.remove();
-    preview.p5PlayRebind();
-    preview.eval("new p5();");
+    document.getElementById('preview').contentWindow.eval(js_content + '//# sourceURL=user-level.js');
+    document.getElementById('preview').contentWindow.remove();
+    document.getElementById('preview').contentWindow.p5PlayRebind();
+    document.getElementById('preview').contentWindow.eval("new p5();");
   } catch (err) {
     StackTrace.fromError(err, {
       offline: true,
