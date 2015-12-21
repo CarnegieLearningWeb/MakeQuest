@@ -258,12 +258,39 @@ function loadMiniCourse(cb){
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
 
-    // Skip to sandbox
-    if( window.sessionStorage['skipToSandbox'] == "true" ){
-        zeroPaddedLevel = maxLevel;
+    var remixUrl = window.location.href.match(/remix=(.+)/);
+    if(remixUrl){
+        storage.set('skipToSandbox', 'true');
+
+        // Pull game from dev or live
+        // if(window.location.href.match(/code.globaloria.com/)){
+            codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
+        // }else{
+        //     codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
+        // }
+        
+    }else{
+        // Skip to sandbox
+        if( storage.get('skipToSandbox') == 'true' ){
+            zeroPaddedLevel = maxLevel;
+        }
+
+        var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
     }
 
-    $.get('mini/levels/' + zeroPaddedLevel + '.js', function(data) {
+    $.get(codeUrl, function(data) {
+        // Extract editor code from the published HTML document
+        if(remixUrl){
+            debug2 = data;
+            var remixCode = data.match(/<script id="published-level-code">([\s\S])+?<\/script>/g);
+            if(remixCode){
+                // Data should only be the editor specific code (i.e. the captured group)
+                data = remixCode[0].replace('<script id="published-level-code">', '').replace('</script>', '');
+                console.log("NEW DATA");
+                console.log(data);
+            }
+        }
+
         var markHints = [];
         var readOnlyTokens = [];
         var readOnlyRanges = [];
