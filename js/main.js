@@ -1,8 +1,13 @@
 var maxLevel = gameConstants.MAX_LEVEL;
+// Check if we're accessing a remix url, if so, store the url for later use
+var remixUrl = window.location.href.match(/remix=(.+)/);
 
 $(document).ready(function() {
-    // Don't start in sandbox if the page is refreshed
+    // Don't start in sandbox if the page is refreshed and we're not in remix mode
     storage.set('skipToSandbox', false);
+    if(remixUrl){
+        storage.set('skipToSandbox', true);
+    }
 
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
@@ -262,24 +267,21 @@ function loadMiniCourse(cb){
     console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
 
-    var remixUrl = window.location.href.match(/remix=(.+)/);
-    if(remixUrl){
-        storage.set('skipToSandbox', 'true');
+    // Skip to sandbox
+    if( storage.get('skipToSandbox') == 'true' ){
+        zeroPaddedLevel = maxLevel;
+    }
 
+    var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
+
+    // Load remix code for sandbox when available
+    if( remixUrl && storage.get('skipToSandbox') == 'true' ){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
         // if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
         // }else{
         //     codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
-        // }
-        
-    }else{
-        // Skip to sandbox
-        if( storage.get('skipToSandbox') == 'true' ){
-            zeroPaddedLevel = maxLevel;
-        }
-
-        var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
+        // }    
     }
 
     $.get(codeUrl, function(data) {
