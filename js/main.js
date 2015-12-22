@@ -172,6 +172,10 @@ function publishPrompt(){
   $('#publishModal').foundation('reveal', 'open');
 }
 
+function undo(){
+    editor_js.undo();
+}
+
 function publish(){
   console.log("PARENT PUBLISH");
   
