@@ -179,7 +179,7 @@
                   </div>
                   <br>
                   <p>
-                  <a href="http://www.code.globaloria.com" target="_blank">Make your own game</a> or visit our <a href="http://globaloria.com/game-gallery/" target="_blank">Game Gallery</a> and play the games students have made with the full Globaloria experience.
+                  <a id="remix" href="">Remix this game</a>, <a href="http://www.code.globaloria.com" target="_blank">make your own</a> or visit our <a href="http://globaloria.com/game-gallery/" target="_blank">Game Gallery</a> and play the games students have made with the full Globaloria experience.
                   </p>
                   <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a>
                 </div>
@@ -239,27 +239,13 @@
     </script>
 
     <script>
-        function walkthrough(){
-            $(document).foundation('joyride', 'start', {
-        
-                pre_ride_callback      : function (){
-                                          //Display all buttons for joyride
-                                          $("#previous").css('display', 'block');
-                                          $("#next").css('display', 'block');
-                                        },
-                pre_step_callback      : function (){
-                                          this.$target.addClass('joyride-highlight');
-                                        },
-                post_step_callback     : function (){
-                                          this.$target.removeClass('joyride-highlight');            
-                                        },
-                post_ride_callback     : function (){
-                                            //Display all buttons for joyride
-                                          $("#previous").css('display', 'none');
-                                          $("#next").css('display', 'none');
-                                        }
-              });
-        }
+        // Insert remix url
+        var baseRemixUrl = 'http://code.globaloria.com';
+        var url = document.createElement("a");
+        url.href = window.location.href;
+
+        var remixUrl = baseRemixUrl + url.pathname.replace('/', '?remix=');
+        $('#remix').attr('href', remixUrl);
     </script>
 </body>
 

@@ -262,7 +262,7 @@ function loadMiniCourse(cb){
     if(remixUrl){
         storage.set('skipToSandbox', 'true');
 
-        // Pull game from dev or live
+        // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
         // if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
         // }else{
