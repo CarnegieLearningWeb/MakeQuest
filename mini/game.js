@@ -70,7 +70,7 @@ function draw() {
     fill("yellow");
     noStroke();
     textSize(18);
-    textFont(pixelFont);
+    // textFont(pixelFont);
     // Move current level text outside of the canvas
     // text(CURRENT_LEVEL_TEXT, 50, 50);
 
