@@ -65,6 +65,7 @@
         <div class="row">
           <div class="large-12 columns margin-left-0 margin-right-0">
             <div class="controls">
+              <button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>
               <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button>
               <button id="undo" class="button center" onclick="undo()">Undo</button>
               <button id="run" class="button center" onclick="refreshPreview()">Run</button>
@@ -543,6 +544,120 @@
     </form>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
+
+  <style type="text/css">
+    .flex-header-container{
+      display: flex;
+      justify-content: center;
+    }
+
+    .flex-button-container{
+      display: flex;
+      justify-content: flex-start;
+      flex-flow: nowrap;
+      overflow: auto;
+      /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
+    }
+
+    .flex-item {
+      /*border: 2px solid red;*/
+      width: 400px;
+      margin-left: 1em;
+      
+      color: black;
+      text-align: center;
+      
+      align-self: stretch;
+      font-size: 10px;
+      display: flex;
+      flex-flow: column;
+      flex-shrink: 0;
+      justify-content: flex-end;
+    }
+
+    #levelSelectMenuModal{
+      overflow: hidden;
+    }
+  </style>
+  <div id="levelSelectMenuModal" class="reveal-modal" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
+    <div class="flex-header-container">
+      <h3>Level Select</h3>
+    </div>
+    <div class="flex-button-container">
+        <div class="flex-item">
+          <p>The world of code</p>
+          <p>Learn to play the game by moving around with the arrow keys.</p>
+          <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
+        </div>
+        <div class="flex-item">
+          <p>Secret Communication with Comments</p>
+          <p>Learn about comments</p>
+          <button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>
+        </div>
+        <div class="flex-item">
+          <p>Master the Coordinate Plane</p>
+          <button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>
+        </div>
+        <div class="flex-item">
+          <p>Resize the Platforms</p>
+          <button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>
+        </div>
+        <div class="flex-item">
+          <p>Recolor the Platforms</p>
+          <button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>
+        </div>
+        <div class="flex-item">
+          <p>Use Variables</p>
+          <button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>
+        </div>
+        <div class="flex-item">
+          <p>Change Two Variables</p>
+          <button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>
+        </div>
+        <div class="flex-item">
+          <p>Change Three Variables</p>
+          <button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>
+        </div>
+        <div class="flex-item">
+          <p>Make 2 platforms</p>
+          <button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>
+        </div>
+        <div class="flex-item">
+          <p>Write Your Own Platform Code</p>
+          <button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>
+        </div>
+        <div class="flex-item">
+          <p>Write Code with Variables</p>
+          <button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>
+        </div>
+        <div class="flex-item">
+          <p>Change Direction</p>
+          <button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>
+        </div>
+        <div class="flex-item">
+          <p>Slow the Platforms</p>
+          <button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>
+        </div>
+        <div class="flex-item">
+          <p>Falling Blocks</p>
+          <button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>
+        </div>
+        <div class="flex-item">
+          <p>Learn to Jump</p>
+          <button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>
+        </div>
+        <div class="flex-item">
+          <p>Save the World of Code</p>
+          <button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>
+        </div>
+        <div class="flex-item">
+          <p>Build your own game</p>
+          <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')">Sandbox</button>
+        </div>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
   <!-- modal content -->
   <div id="signupModal" class="reveal-modal" data-reveal aria-labelledby="login or sign up" aria-hidden="true" role="dialog">
     <div class="row">

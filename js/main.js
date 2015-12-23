@@ -56,7 +56,6 @@ $(document).ready(function() {
     });
 
 
-
     var startLevel = 0;
     var debugLevel = window.location.search.match(/debugLevel=(\d+)/);
 
@@ -71,23 +70,6 @@ $(document).ready(function() {
     currentLevel = startLevel;
 
     $instructions = $("#instructions");
-
-    $(document).on('click', '#loginButton', function(e) {
-        e.preventDefault();
-        console.log("login");
-        console.log(this);
-
-        var email = document.getElementById('sign_in_email').value;
-        var password = document.getElementById('sign_in_password').value;
-        authWithPassword({
-            email: email,
-            password: password
-        }, authHandler);
-
-
-
-        $('#signupModal').foundation('reveal', 'close');
-    });
 
     //Remove tooltips from code editor
     $(document).on('click', 'span.tooltip', function(){
@@ -168,6 +150,21 @@ $(document).ready(function() {
         return false;
     });
 });
+
+function levelSelectMenu(){
+  $('#levelSelectMenuModal').foundation('reveal', 'open');  
+}
+
+function skipToLevel(level){
+    if(level == 'sandbox'){
+        storage.set('skipToSandbox', true);
+        loadMiniCourse();
+        return;
+    }
+
+    currentLevel = level;
+    loadMiniCourse();
+}
 
 function revertMiniCourse() {
     loadMiniCourse(refreshPreview);
