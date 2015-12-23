@@ -4,7 +4,7 @@ function setupDialogue(){
 	dialogueGutter = 20;
 	dialoguePicWidth = 64;
 	dialoguePicX = WIDTH - dialoguePicWidth - dialogueGutter;
-	pixelFont = loadFont('c64-pixelized.otf');
+	// pixelFont = loadFont('c64-pixelized.otf');
 	//Need a text height + "next" text to fit inside the BoxHeight
 	dialogueFontSize = 18;
 	dialogueBoxHeight = 218;
@@ -47,7 +47,7 @@ function drawDialogue(){
 		noStroke();
 		fill( currentDialogue[dialogueIndex].textColor );
 	    textSize( dialogueFontSize );
-	    textFont(pixelFont);
+	    // textFont(pixelFont);
 
 	    rectMode(CORNER);
 	    text( currentDialogue[dialogueIndex].text,
