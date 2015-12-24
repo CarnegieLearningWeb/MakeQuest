@@ -66,7 +66,7 @@
           <div class="large-12 columns margin-left-0 margin-right-0">
             <div class="controls">
               <button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>
-              <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button>
+              <!-- <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button> -->
               <button id="undo" class="button center" onclick="undo()">Undo</button>
               <button id="run" class="button center" onclick="refreshPreview()">Run</button>
               <button id="showHints" class="button center" onclick="showHints()">Show Hints</button>
@@ -87,10 +87,10 @@
       <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
         <!-- <h2>Game</h2> -->
         <div class="iframe-controls">
-          <button id="previous" onclick="document.getElementById('preview').contentWindow.previousLevel()" style="display: none;">Previous Level</button>
-          <button id="next" onclick="document.getElementById('preview').contentWindow.nextLevel()" style="display: none;">Next Level</button>
+          <!-- <button id="previous" onclick="document.getElementById('preview').contentWindow.previousLevel()" style="display: none;">Previous Level</button>
+          <button id="next" onclick="document.getElementById('preview').contentWindow.nextLevel()" style="display: none;">Next Level</button> -->
           <button id="showDialogue" onclick="document.getElementById('preview').contentWindow.showDialogue()" style="display: none;">Story</button>
-          <button id="skipToSandbox" onclick="document.getElementById('preview').contentWindow.goToSandbox()" style="display: inline-block;">Skip to sandbox</button>
+          <!-- <button id="skipToSandbox" onclick="document.getElementById('preview').contentWindow.goToSandbox()" style="display: inline-block;">Skip to sandbox</button> -->
           <button id="backToGame" onclick="document.getElementById('preview').contentWindow.backToGame()" style="display: none;">Back to game</button>
           <button id="publish" onclick="document.getElementById('preview').contentWindow.publish()" style="display: none;">Share your game</button>
         </div>
@@ -581,78 +581,108 @@
   </style>
   <div id="levelSelectMenuModal" class="reveal-modal" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
     <div class="flex-header-container">
-      <h3>Level Select</h3>
+      <h3 style="color: #0b6481;">Level Select</h3>
     </div>
     <div class="flex-button-container">
         <div class="flex-item">
-          <p>The world of code</p>
-          <p>Learn to play the game by moving around with the arrow keys.</p>
+          <p style="color: #c83f1b;">The world of code</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>
+          <p><em>Learn to play the game by moving around with the arrow keys.</em></p>
           <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
         </div>
         <div class="flex-item">
           <p>Secret Communication with Comments</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>
           <p>Learn about comments</p>
           <button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>
         </div>
         <div class="flex-item">
           <p>Master the Coordinate Plane</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>
         </div>
         <div class="flex-item">
           <p>Resize the Platforms</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>
         </div>
         <div class="flex-item">
           <p>Recolor the Platforms</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>
         </div>
         <div class="flex-item">
           <p>Use Variables</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>
         </div>
         <div class="flex-item">
           <p>Change Two Variables</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>
         </div>
         <div class="flex-item">
           <p>Change Three Variables</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>
         </div>
         <div class="flex-item">
           <p>Make 2 platforms</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>
         </div>
         <div class="flex-item">
           <p>Write Your Own Platform Code</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>
         </div>
         <div class="flex-item">
           <p>Write Code with Variables</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>
         </div>
         <div class="flex-item">
           <p>Change Direction</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>
         </div>
         <div class="flex-item">
           <p>Slow the Platforms</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>
         </div>
         <div class="flex-item">
           <p>Falling Blocks</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>
         </div>
         <div class="flex-item">
           <p>Learn to Jump</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>
         </div>
         <div class="flex-item">
           <p>Save the World of Code</p>
+          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>
+          <p>Learn about comments</p>
           <button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>
         </div>
         <div class="flex-item">
           <p>Build your own game</p>
-          <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')">Sandbox</button>
+          <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
         </div>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>

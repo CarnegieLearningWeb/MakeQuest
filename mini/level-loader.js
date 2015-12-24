@@ -9,11 +9,11 @@ var isPublishedGame = false;
 
 if( skipToSandbox ){
   currentLevel = maxLevel;
-  parent.document.getElementById('skipToSandbox').style.display = 'none';
+  // parent.document.getElementById('skipToSandbox').style.display = 'none';
   parent.document.getElementById('backToGame').style.display = 'inline-block';
   parent.document.getElementById('publish').style.display = 'inline-block';
 }else{
-  parent.document.getElementById('skipToSandbox').style.display = 'inline-block';
+  // parent.document.getElementById('skipToSandbox').style.display = 'inline-block';
   parent.document.getElementById('backToGame').style.display = 'none';
   parent.document.getElementById('publish').style.display = 'none';
 }
@@ -40,17 +40,17 @@ currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/'
 
 
 
-if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
-  parent.document.getElementById('previous').style.display = 'inline-block';
-}else{
-  parent.document.getElementById('previous').style.display = 'none';
-}
+// if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
+//   parent.document.getElementById('previous').style.display = 'inline-block';
+// }else{
+//   parent.document.getElementById('previous').style.display = 'none';
+// }
 
-if(currentLevel < maxLevelUnlocked){
-	showNextLevelButton();
-}else{
-  parent.document.getElementById('next').style.display = 'none'; 
-}
+// if(currentLevel < maxLevelUnlocked){
+// 	showNextLevelButton();
+// }else{
+//   parent.document.getElementById('next').style.display = 'none'; 
+// }
 
 function publish(){
   parent.publishPrompt();
@@ -77,7 +77,7 @@ function backToGame(){
 
 function showNextLevelButton() {
   if (isPublishedGame || currentLevel == maxLevel || skipToSandbox) return;
-  parent.document.getElementById('next').style.display = 'inline-block';
+  // parent.document.getElementById('next').style.display = 'inline-block';
 }
 
 function previousLevel() {

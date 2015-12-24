@@ -156,6 +156,8 @@ function levelSelectMenu(){
 }
 
 function skipToLevel(level){
+    $('#levelSelectMenuModal').foundation('reveal', 'close');
+
     if(level == 'sandbox'){
         storage.set('skipToSandbox', true);
         loadMiniCourse();
