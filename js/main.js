@@ -212,9 +212,13 @@ function publish(){
     $("#published").hide();
     $("#publishing").fadeIn();
 
+    // Publish everything to mycode until we have a second bucket with CORS enabled
+    // var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
+    //               ? 'http://globaloria.com:8000/'
+    //               : 'https://hackpub.herokuapp.com/buckets/globaloria/';
     var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
                   ? 'http://globaloria.com:8000/'
-                  : 'https://hackpub.herokuapp.com/buckets/globaloria/';
+                  : 'http://globaloria.com:8000/';
 
     $.ajax({
       type: 'POST',
