@@ -285,11 +285,13 @@ function loadMiniCourse(cb){
     // Load remix code for sandbox when available
     if( remixUrl && storage.get('skipToSandbox') == 'true' ){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
-        // if(window.location.href.match(/code.globaloria.com/)){
+        if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
-        // }else{
-        //     codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
-        // }    
+        }else if(window.location.href.match(/makequest.globaloria.com/)){
+            codeUrl = 'http://mymakequest.globaloria.com/'+remixUrl[1];
+        else{
+            codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
+        }    
     }
 
     $.get(codeUrl, function(data) {
