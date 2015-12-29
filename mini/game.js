@@ -225,6 +225,9 @@ function mouseClickedLevelComplete() {
 }
 
 function makePlayerJump(force) {
+    if(force > 20){
+        force = 20;
+    }
     player.setSpeed(force, 270);
 }
 

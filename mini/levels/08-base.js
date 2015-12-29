@@ -19,7 +19,7 @@ function base_getLevelDialogue() {
       text: "It says:\n\n"
             +"createPlatform(x,y,width,height,color);\n"
             +"example:\n"
-            +"createPlatform(0, 0, 0, 0, ‘red’);"
+            +"createPlatform(100, 200, 80, 20, ‘blue);"
     },
     {
       character: "heroA",

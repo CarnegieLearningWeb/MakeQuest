@@ -216,10 +216,15 @@ function publish(){
     // var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
     //               ? 'http://globaloria.com:8000/'
     //               : 'https://hackpub.herokuapp.com/buckets/globaloria/';
-    var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
-                  ? 'http://globaloria.com:8000/'
-                  : 'http://globaloria.com:8000/';
-
+    var baseURL;
+    if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
+        baseURL = 'http://globaloria.com:8000/';
+    }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
+        baseURL = 'http://globaloria.com:8001/';
+    }else{
+        baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
+    }
+    
     $.ajax({
       type: 'POST',
       url: baseURL + 'publish',
