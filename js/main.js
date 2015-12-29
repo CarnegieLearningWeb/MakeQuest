@@ -289,9 +289,9 @@ function loadMiniCourse(cb){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
         }else if(window.location.href.match(/makequest.globaloria.com/)){
             codeUrl = 'http://mymakequest.globaloria.com/'+remixUrl[1];
-        else{
+        }else{
             codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
-        }    
+        }
     }
 
     $.get(codeUrl, function(data) {
