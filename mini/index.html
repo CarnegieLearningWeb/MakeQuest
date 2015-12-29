@@ -240,7 +240,12 @@
 
     <script>
         // Insert remix url
-        var baseRemixUrl = 'http://code.globaloria.com';
+        // var baseRemixUrl = 'http://code.globaloria.com';
+        
+        // Where was the game published from
+        var sourceUrl = document.getElementsByTagName('base')[0].href;
+        var baseRemixUrl = sourceUrl.replace('/mini/', '');
+
         var url = document.createElement("a");
         url.href = window.location.href;
 
