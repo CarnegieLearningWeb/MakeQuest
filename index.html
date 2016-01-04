@@ -546,7 +546,7 @@
   </div>
 
   <style type="text/css">
-    .flex-header-container{
+    /*.flex-header-container{
       display: flex;
       justify-content: center;
     }
@@ -554,15 +554,16 @@
     .flex-button-container{
       display: flex;
       justify-content: flex-start;
-      flex-flow: nowrap;
-      overflow: auto;
+      flex-flow: column;
+      justify-content: space-around;
+      /*overflow: auto;*/
       /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
     }
 
     .flex-item {
       /*border: 2px solid red;*/
-      width: 300px;
-      margin-left: 1em;
+      /*width: 300px;*/
+      /*margin-left: 1em;*/
       
       color: black;
       text-align: center;
@@ -570,10 +571,9 @@
       align-self: stretch;
       font-size: 10px;
       display: flex;
-      flex-flow: column;
-      flex-shrink: 0;
-      justify-content: flex-end;
-    }
+      align-items: center;
+      justify-content: space-around;
+    }*/
 
     #levelSelectMenuModal{
       overflow: hidden;
@@ -591,108 +591,244 @@
     <div class="flex-header-container">
       <h3 style="color: #0b6481;">Level Select</h3>
     </div>
-    <div class="flex-button-container">
-        <div class="flex-item">
-          <p>The world of code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>
-          <p class="levelDescription">Learn to play the game by moving around with the arrow keys.</p>
-          <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
+    <div class="row">
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
+          </div>
+          <div class="large-3 columns">
+            <p>The world of code</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Learn to play the game by moving around with the arrow keys.</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Secret Communication with Comments</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>
-          <p class="levelDescription">Learn about comments</p>
-          <button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Secret Communication with Comments</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Learn about comments</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Master the Coordinate Plane</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>
-          <p class="levelDescription">Learn how to position objects in the game</p>
-          <button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Master the Coordinate Plane</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Learn how to position objects in the game</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Resize the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>
-          <p class="levelDescription">Change the shape and size of the platforms</p>
-          <button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Resize the Platforms</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Change the shape and size of the platforms</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Recolor the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Introduction to colors in code</p>
-          <button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Recolor the Platforms</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Introduction to colors in code</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Use Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Learn about variables</p>
-          <button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Use Variables</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Learn about variables</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Change Two Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">Practice using variables</p>
-          <button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Change Two Variables</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Practice using variables</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Change Three Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Practice using variables</p>
-          <button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Change Three Variables</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Practice using variables</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Make 2 platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Introduction to functions</p>
-          <button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Make 2 platforms</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Introduction to functions</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Write Your Own Platform Code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">Write a function on your own</p>
-          <button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Write Your Own Platform Code</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Write a function on your own</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Write Code with Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Combine your knowledge about functions and variables</p>
-          <button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Write Code with Variables</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Combine your knowledge about functions and variables</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Change Direction</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Play with platform movement</p>
-          <button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Change Direction</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Play with platform movement</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Slow the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">More on platform movement</p>
-          <button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Slow the Platforms</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">More on platform movement</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Falling Blocks</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Puzzle solving</p>
-          <button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Falling Blocks</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Puzzle solving</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Learn to Jump</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Manipulate simple physics</p>
-          <button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Learn to Jump</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Manipulate simple physics</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Save the World of Code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>
-          <p class="levelDescription">Finish the game</p>
-          <button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Save the World of Code</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Finish the game</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Build your own game</p>
-          <div style="text-align: center;"><img src="/mini/images/star.png" width="160px"></div>
-          <p class="levelDescription">Use all your new knowledge and more to make your own game</p>
-          <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
+        <div class="row">
+          <div class="large-2 columns">
+            <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
+          </div>
+          <div class="large-3 columns">
+            <p>Build your own game</p>
+          </div>
+          <div class="large-4 columns">
+            <p class="levelDescription">Use all your new knowledge and more to make your own game</p>
+          </div>
+          <div class="large-3 columns">
+            <div style="text-align: center;"><img src="/mini/images/star.png" width="160px"></div>
+          </div>
         </div>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>

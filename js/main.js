@@ -103,7 +103,7 @@ $(document).ready(function() {
         logout();
     });
 
-    loadMiniCourse();
+    loadMiniCourse(refreshPreview);
     //Set iframe to right level
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 
@@ -434,6 +434,7 @@ function loadMiniCourse(cb){
             insertEditoTooltip.apply(this, arguments);
         });
 
+        refreshPreview();
         cb();
     });
     
