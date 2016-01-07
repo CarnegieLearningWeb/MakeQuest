@@ -266,7 +266,8 @@ function publish(){
           .attr('href', data['published-url'])
           .text(data['published-url']);
 
-
+        // Disable Publish button to avoid publishing spam
+        $('button[type="submit"]').attr('disabled', 'disabled');
 
         // code.globaloria.com ONLY
         // // Replace the form's return URL and submit the form
