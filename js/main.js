@@ -20,7 +20,9 @@ $(document).ready(function() {
     
     //Open walkthrough on first load
     // makequest.globaloria.com only
-    startWalkthrough();
+    if( !remixUrl ){
+        startWalkthrough();
+    }
 
 
 
