@@ -575,10 +575,6 @@
       justify-content: space-around;
     }*/
 
-    #levelSelectMenuModal{
-      overflow: hidden;
-    }
-
     .flex-button-container .flex-item p:first-child{
       color: #fbb800;
     }
@@ -587,11 +583,11 @@
        font-style: italic;
     }
   </style>
-  <div id="levelSelectMenuModal" class="reveal-modal" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
+  <div id="levelSelectMenuModal" class="reveal-modal medium" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
     <div class="flex-header-container">
       <h3 style="color: #0b6481;">Level Select</h3>
     </div>
-    <div class="row">
+    <div id="levelSelectMenuItems" class="row" style="max-height: 400px; overflow: scroll;">
         <div class="row">
           <div class="large-2 columns">
             <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
@@ -891,6 +887,7 @@
   <!-- JOYRIDE -->
   <ol class="joyride-list" data-joyride>
     <li data-text="Next" data-options="prev_button: false; tip_animation:fade">
+      <p>Welcome to MakeQuest!</p>
       <p>Let's take a quick tour through your coding environment.</p>
       <p>You can skip this at any time.</p>
     </li>
@@ -906,9 +903,9 @@
     <!-- <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
       <p>Go back to the original code</p>
     </li> -->
-    <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
+    <!-- <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
       <p>Get help</p>
-    </li>
+    </li> -->
     <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
       <p>Write your code</p>
       <p>*Code in italics cannot be changed</p>

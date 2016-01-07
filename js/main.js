@@ -12,44 +12,24 @@ $(document).ready(function() {
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
 
+    
+
     //Open welcome modal on first load
-    $('#welcomeModal').foundation('reveal', 'open');
+    // code.globaloria.com only
+    // $('#welcomeModal').foundation('reveal', 'open');
+    
+    //Open walkthrough on first load
+    // makequest.globaloria.com only
+    startWalkthrough();
+
+
+
 
     // Init joyride after Welcome Modal
     $(document).on('close.fndtn.reveal', '#welcomeModal', function () {
       
-      $(document).foundation('joyride', 'start', {
-        
-        pre_ride_callback      : function (){
-                                  //Display all buttons for joyride
-                                  $("#showHints").css('display', 'block');
-                                  $("#previous").css('display', 'block');
-                                  $("#next").css('display', 'block');
-                                },
-        pre_step_callback      : function (){
-                                  console.log(this.$target.first().attr('id'));
-                                  if(this.$target.first().attr('id') == "preview"){
-                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
-                                  }else{
-                                    this.$target.first().addClass('joyride-highlight');
-                                  }
-                                },
-        post_step_callback     : function (){
-                                  if(this.$target.first().attr('id') == "preview"){
-                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
-                                  }else{
-                                    this.$target.first().removeClass('joyride-highlight');            
-                                  }
-                                },
-        post_ride_callback     : function (){
-                                console.log("JOYRIDE CLOSED");
-                                    //Display all buttons for joyride
-                                  $("#showHints").css('display', 'none');
-                                  $("#previous").css('display', 'none');
-                                  $("#next").css('display', 'none');
-                                },
-        abort_on_close           : false
-      });
+        startWalkthrough();
+      
     });
     $(document).on('click', '.joyride-close-tip', function(){
       console.log(this);
@@ -104,6 +84,14 @@ $(document).ready(function() {
     });
 
     loadMiniCourse(refreshPreview);
+
+    // Fix this ugly hack so that the game is displayed correctly when remixing.
+    // Currently have to hit Run when opening for Remix or use this timeout call: 
+    setTimeout(function(){
+        console.log("REFRESH 2000");
+        refreshPreview();
+    }, 2000);
+
     //Set iframe to right level
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 
@@ -150,6 +138,41 @@ $(document).ready(function() {
         return false;
     });
 });
+
+function startWalkthrough(){
+    $(document).foundation('joyride', 'start', {
+        
+        pre_ride_callback      : function (){
+                                  //Display all buttons for joyride
+                                  $("#showHints").css('display', 'block');
+                                  $("#previous").css('display', 'block');
+                                  $("#next").css('display', 'block');
+                                },
+        pre_step_callback      : function (){
+                                  console.log(this.$target.first().attr('id'));
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().addClass('joyride-highlight');
+                                  }
+                                },
+        post_step_callback     : function (){
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().removeClass('joyride-highlight');            
+                                  }
+                                },
+        post_ride_callback     : function (){
+                                console.log("JOYRIDE CLOSED");
+                                    //Display all buttons for joyride
+                                  $("#showHints").css('display', 'none');
+                                  $("#previous").css('display', 'none');
+                                  $("#next").css('display', 'none');
+                                },
+        abort_on_close           : false
+      });
+}
 
 function levelSelectMenu(){
   $('#levelSelectMenuModal').foundation('reveal', 'open');  
@@ -434,7 +457,6 @@ function loadMiniCourse(cb){
             insertEditoTooltip.apply(this, arguments);
         });
 
-        refreshPreview();
         cb();
     });
     
