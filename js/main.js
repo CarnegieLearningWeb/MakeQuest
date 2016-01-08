@@ -313,6 +313,9 @@ function loadMiniCourse(cb){
     // Skip to sandbox
     if( storage.get('skipToSandbox') == 'true' ){
         zeroPaddedLevel = maxLevel;
+        $("#levelMenu").css('display', 'none');
+    }else{
+        $("#levelMenu").css('display', 'block');
     }
 
     var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
