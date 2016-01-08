@@ -25,8 +25,12 @@ function setupLevel() {
 
   // Change the text between quotation marks "" 
   // to make it your own.
-  GOAL_REACHED_TEXT = "Change this text, this is YOUR world!";
+  GOAL_REACHED_TEXT = "\n\nThank you for playing MakeQuest! \nChange this text, this is YOUR world!";
   CURRENT_LEVEL_TEXT = "My world of code";
+  STORY_TEXT = [
+"\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!",
+"\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
+];
 
   // These variables are used to tell the platforms which 
   // way to move.
@@ -177,33 +181,20 @@ function drawLevel() {
 }
 // EDITOR: endReadOnly();
 
-// The getLevelDialogue function draws the game's story
-// when the game starts and every time a player clicks
-// on the Story button
-// EDITOR: beginReadOnly();
+// *** THIS IS AN ADVANCED TOPIC ***
+// The getLevelDialogue transforms your STORY_TEXT into
+// a collection of special objects so that the game
+// can display your text properly
 function getLevelDialogue() {
-  return [
-    {
-      character: "heroA",
-      image: heroAPic,
-// EDITOR: endReadOnly();
-      // You can change the color for the text as well as
-      // the message your players will see.
-      textColor: "white",
-      // To have text start in a new line use \n
-      // Notice how we skip one line at the beginning (\n),
-      // and two lines later on (\n\n)
-      text: "\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!"
-// EDITOR: beginReadOnly();
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-// EDITOR: endReadOnly();
-      textColor: "white",
-      text: "\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
-// EDITOR: beginReadOnly();
-    }
-  ];
-// EDITOR: endReadOnly();
+  var dialogue = [];
+
+  for (var i = 0; i < STORY_TEXT.length; i++) {
+    dialogue[i] = {
+        textColor: "white",
+        text: STORY_TEXT[i]
+      };
+  };
+
+  return dialogue;
+
 }

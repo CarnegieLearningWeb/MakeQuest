@@ -157,6 +157,7 @@
                         // Only load social media on published games
                         console.log( document.body.hasAttribute('data-published-game-base-level') ? "PUBLISHED" : "UNPLUBLISHED");
                         if( document.body.hasAttribute('data-published-game-base-level') ){
+
                             // Facebook
                             (function(d, s, id) {
                               var js, fjs = d.getElementsByTagName(s)[0];
@@ -181,7 +182,42 @@
                   <p>
                   <a id="remix" href="">Remix this game</a>, <a href="http://www.code.globaloria.com" target="_blank">make your own</a> or visit our <a href="http://globaloria.com/game-gallery/" target="_blank">Game Gallery</a> and play the games students have made with the full Globaloria experience.
                   </p>
-                  <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a>
+
+                  <!-- code.globaloria.com ONLY -->
+                  <!-- <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a> -->
+
+                  <!-- code.globaloria.com ONLY -->
+                  <p style="font-size: 11px;">URL: <span class="copyurl-text"></span></p>
+                  <p><button class="copyurl-button">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied</span></p>
+                    <script>
+                        // Copy URL
+                        // Update copy url text
+                            $(document).on('ready', function(){
+                                $('.copyurl-text').text(window.location.href);
+                            });
+
+                            
+                            var copyUrlBtn = document.querySelector('.copyurl-button');  
+                            copyUrlBtn.addEventListener('click', function(event) {  
+                              var url = document.querySelector('.copyurl-text');  
+                              var range = document.createRange();  
+                              range.selectNode(url);  
+                              window.getSelection().addRange(range);  
+
+                              try {  
+                                var successful = document.execCommand('copy');  
+                                var msg = successful ? 'successful' : 'unsuccessful';  
+                                document.getElementById('copy-ulr-success').style.display = 'inline-block';
+                                console.log('Copy url command was ' + msg);  
+                              } catch(err) {  
+                                document.getElementById('copy-ulr-success').style.display = 'none';
+                                console.log('Oops, unable to copy');  
+                                alert("Please copy this URL: " + window.location.href);
+                              }  
+
+                              window.getSelection().removeAllRanges();  
+                            });
+                    </script>
                 </div>
             </div>
 

@@ -21,8 +21,6 @@ function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
     myCanvas.parent('p5_canvas');
 
-    setupDialogue();
-
     backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
 
     goalReached = false;
@@ -42,6 +40,7 @@ function setup() {
 
     base_setupLevel();
     setupLevel();
+    setupDialogue();
 
     document.getElementById('current-level-text').innerHTML = CURRENT_LEVEL_TEXT;
 }
