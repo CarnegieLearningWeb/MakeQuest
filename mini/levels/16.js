@@ -73,10 +73,10 @@ function setupLevel() {
   platform2 = createPlatform(180, 320, 80, platformHeight, 'blue');
   platform3 = createPlatform(150, 460, 130, platformHeight, 'magenta');
   platform4 = createPlatform(350, 460, 20, platformHeight, 'magenta');
-  createPlatform(450, 460, 20, platformHeight, 'magenta');
-  createPlatform(500, 390, 40, platformHeight, 'pink');
-  createPlatform(600, 320, 40, platformHeight, 'pink');
-  createPlatform(350, 260, 80, platformHeight, 'orange');
+  platform5 = createPlatform(450, 460, 20, platformHeight, 'magenta');
+  platform6 = createPlatform(500, 390, 40, platformHeight, 'pink');
+  platform7 = createPlatform(600, 320, 40, platformHeight, 'pink');
+  platform8 = createPlatform(350, 260, 80, platformHeight, 'orange');
   // Add more platforms here or change the ones above
   
 
@@ -180,21 +180,3 @@ function drawLevel() {
 // EDITOR: beginReadOnly();
 }
 // EDITOR: endReadOnly();
-
-// *** THIS IS AN ADVANCED TOPIC ***
-// The getLevelDialogue transforms your STORY_TEXT into
-// a collection of special objects so that the game
-// can display your text properly
-function getLevelDialogue() {
-  var dialogue = [];
-
-  for (var i = 0; i < STORY_TEXT.length; i++) {
-    dialogue[i] = {
-        textColor: "white",
-        text: STORY_TEXT[i]
-      };
-  };
-
-  return dialogue;
-
-}
