@@ -1,5 +1,8 @@
+// ***** 14. Falling Blocks *****
+
+// EDITOR: beginReadOnly();
 function setupLevel (){
-  // EDITOR: beginReadOnly();
+
   FACE_RIGHT = 0;
   FACE_LEFT = 180;
   FACE_DOWN = 90;

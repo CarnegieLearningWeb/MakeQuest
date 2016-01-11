@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, Hex Code Unscrambler Unlocked!";
-CURRENT_LEVEL_TEXT = "Resize the Platforms";
+CURRENT_LEVEL_TEXT = "4. Resize the Platforms";
 
 function base_getLevelDialogue() {
   return [

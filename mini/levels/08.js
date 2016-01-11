@@ -1,4 +1,8 @@
+// ***** 9. Make 2 platforms *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {
+// EDITOR: endReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Fix the values for the last two platforms.

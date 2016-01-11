@@ -1,4 +1,8 @@
+// ***** 8. Change Three Variables *****
+
+// EDITOR: beginReadOnly();
 function setupLevel(){
+// EDITOR: endReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Update the number in the platformWidth VARIABLE to change

@@ -1,3 +1,5 @@
+// ***** 4. Resize the Platforms *****
+
 // EDITOR: beginReadOnly();
 function setupLevel() {
   // ***** INSTRUCTIONS *****

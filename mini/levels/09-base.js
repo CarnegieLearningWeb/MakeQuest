@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "The mysterious watch alters appearance!";
-CURRENT_LEVEL_TEXT = "Write Your Own Platform Code";
+CURRENT_LEVEL_TEXT = "10. Write Your Own Platform Code";
 
 function base_getLevelDialogue() {
   return [

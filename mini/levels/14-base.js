@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 380;
 
 GOAL_REACHED_TEXT = "Codo Stick at maximum power!";
-CURRENT_LEVEL_TEXT = "Learn to Jump";
+CURRENT_LEVEL_TEXT = "15. Learn to Jump";
 
 function base_getLevelDialogue() {
   return [

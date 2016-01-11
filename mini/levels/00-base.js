@@ -2,7 +2,7 @@ PLAYER_START_X = 100;
 PLAYER_START_Y = 400;
 
 GOAL_REACHED_TEXT = "Oh...no… 4...0...4…";
-CURRENT_LEVEL_TEXT = "The world of code";
+CURRENT_LEVEL_TEXT = "1. The world of code";
 
 function base_getLevelDialogue() {
   return [

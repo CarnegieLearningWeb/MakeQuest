@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "The mysterious watch glows brighter!";
-CURRENT_LEVEL_TEXT = "Make 2 platforms";
+CURRENT_LEVEL_TEXT = "9. Make 2 platforms";
 
 function base_getLevelDialogue() {
   return [

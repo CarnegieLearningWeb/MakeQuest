@@ -1,3 +1,5 @@
+// ***** 2. Secret Communication with Comments *****
+
 // Hey Humans, look here!
 // Read the code comments on each game level for secret
 // instructions.

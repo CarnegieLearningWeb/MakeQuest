@@ -2,7 +2,7 @@ PLAYER_START_X = 120;
 PLAYER_START_Y = 380;
 
 GOAL_REACHED_TEXT = "OH EM GEE!!! You did it! You are truly among the Globalorians!";
-CURRENT_LEVEL_TEXT = "Save the World of Code";
+CURRENT_LEVEL_TEXT = "16. Save the World of Code";
 
 function base_getLevelDialogue() {
   return [

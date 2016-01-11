@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = " Congratulations, V.E.S.T. has reached full power!";
-CURRENT_LEVEL_TEXT = "Change Two Variables";
+CURRENT_LEVEL_TEXT = "7. Change Two Variables";
 
 function base_getLevelDialogue() {
   return [

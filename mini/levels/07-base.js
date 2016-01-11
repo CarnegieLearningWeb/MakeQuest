@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "A mysterious watch has appeared!";
-CURRENT_LEVEL_TEXT = "Change Three Variables";
+CURRENT_LEVEL_TEXT = "8. Change Three Variables";
 
 function base_getLevelDialogue() {
   return [

@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, Size Modification Unlocked!";
-CURRENT_LEVEL_TEXT = "Master the coordinate plane";
+CURRENT_LEVEL_TEXT = "3. Master the coordinate plane";
 
 function base_getLevelDialogue() {
   return [

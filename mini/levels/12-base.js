@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 80;
 
 GOAL_REACHED_TEXT = "Remote Control Advanced Settings Unlocked!";
-CURRENT_LEVEL_TEXT = "Slow the Platforms";
+CURRENT_LEVEL_TEXT = "13. Slow the Platforms";
 
 function base_getLevelDialogue() {
   return [

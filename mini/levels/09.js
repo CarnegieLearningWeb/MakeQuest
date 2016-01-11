@@ -1,4 +1,8 @@
+// ***** 10. Write Your Own Platform Code *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {
+// EDITOR: endReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Write the code to create two new platforms.

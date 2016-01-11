@@ -1,3 +1,5 @@
+// ***** 1. The world of code *****
+
 // ***** INSTRUCTIONS *****
 // Below is the code for the game scene on the right.  
 // Writing code (a.k.a, programming) is how you tell a 

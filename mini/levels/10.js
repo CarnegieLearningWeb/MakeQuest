@@ -1,4 +1,8 @@
+// ***** 11. Write Code with Variables *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {  
+// EDITOR: endReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Add as many platforms as you need to reach the goal.

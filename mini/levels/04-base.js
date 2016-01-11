@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, V.E.S.T Discovered!";
-CURRENT_LEVEL_TEXT = "Recolor the Platforms";
+CURRENT_LEVEL_TEXT = "5. Recolor the Platforms";
 
 function base_getLevelDialogue() {
   return [

@@ -1,5 +1,7 @@
+// ***** 3. Master the coordinate plane *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {
-  // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
   
   // Move the two lower platforms by changing their 

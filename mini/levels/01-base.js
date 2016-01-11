@@ -1,5 +1,5 @@
 GOAL_REACHED_TEXT = "CoordinateVision unlocked!!!";
-CURRENT_LEVEL_TEXT = "Secret Communication with Comments";
+CURRENT_LEVEL_TEXT = "2. Secret Communication with Comments";
 
 function base_getLevelDialogue() {
   return [

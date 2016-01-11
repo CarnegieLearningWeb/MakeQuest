@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 280;
 
 GOAL_REACHED_TEXT = "Congratulations, Codo Stick Acquired!";
-CURRENT_LEVEL_TEXT = "Falling Blocks";
+CURRENT_LEVEL_TEXT = "14. Falling Blocks";
 
 function base_getLevelDialogue() {
   return [
