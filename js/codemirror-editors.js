@@ -207,6 +207,10 @@ function refreshPreview() {
       $('#errorModal').foundation('reveal', 'open');
       // alert("Make sure you've defined your variable before trying to use it");
   }
+
+  // Give focus to game
+  $('#preview').focus();
+  $('#preview').contents().find('canvas').focus();
 }
 
 function insertEditoTooltip(text, line, ch){
