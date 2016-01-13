@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Wow, your V.E.S.T. gained even more storage capacity.  Now you can change two variables at once, like color and length. Recolor and Resize the platforms by changing the platformWidth and platformColor variables and reach the goal!",
+      text: "\nWow, your V.E.S.T. gained even more storage capacity.  Now you can change two variables at once, like color and length. Recolor and Resize the platforms by changing the platformWidth and platformColor variables and reach the goal!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Your are one step closer to stopping the 404...",
+      text: "\nYour are one step closer to stopping the 404...",
     },
   ];
 }

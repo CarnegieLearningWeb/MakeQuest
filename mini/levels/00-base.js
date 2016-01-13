@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Welcome to MakeQuest\nEnter the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
+      text: "\nWelcome to MakeQuest\n\nEnter the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
     }
   ];
 }

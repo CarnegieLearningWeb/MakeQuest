@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Wow, the instruction manual helps a lot! You can use it to change the speed of the platforms. \nMake the numbers smaller and use the platforms to reach the goal before it’s too late.",
+      text: "\nWow, the instruction manual helps a lot! You can use it to change the speed of the platforms. \nMake the numbers smaller and use the platforms to reach the goal before it’s too late.",
     },
     {
       character: "heroA",

@@ -6,6 +6,7 @@
 // Like all computers, 404 can’t see comments.
 // Practice typing a comment on the next line, so we know 
 // you’re really human!
+// Remember: comments start with '//'
 
 
 // Use the arrow keys to move left and right. 

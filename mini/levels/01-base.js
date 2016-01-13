@@ -7,7 +7,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nOh no, our code is broken! The Vile 404 has corrupted all the world’s code, giving him infinite power and control over reality!",
+      text: "\nOh no, our code is broken! \n\nThe Vile 404 has corrupted all the world’s code, giving him infinite power and control over reality!",
     },
     {
       character: "heroA",

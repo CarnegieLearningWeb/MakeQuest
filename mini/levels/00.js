@@ -1,6 +1,9 @@
 // ***** 1. The world of code *****
 
 // ***** INSTRUCTIONS *****
+// Click on the game scene to the right to start playing
+// and unlock the power to edit this code
+// 
 // Below is the code for the game scene on the right.  
 // Writing code (a.k.a, programming) is how you tell a 
 // computer to do something.

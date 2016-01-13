@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "The watch changed again? It must think you are ready! Now the platforms will behave according to the variables. You will have to use the coordinate planes if you want to become a platform creation master.",
+      text: "\nThe watch changed again? It must think you are ready! Now the platforms will behave according to the variables. You will have to use the coordinate planes if you want to become a platform creation master.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Create as many platforms as you need to reach the goal. I bet you could even make a staircase if you wanted..."
+      text: "\nCreate as many platforms as you need to reach the goal. I bet you could even make a staircase if you wanted..."
     }
   ];
 }
