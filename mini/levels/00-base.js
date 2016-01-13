@@ -1,5 +1,5 @@
 PLAYER_START_X = 100;
-PLAYER_START_Y = 400;
+PLAYER_START_Y = 320;
 
 GOAL_REACHED_TEXT = "Oh...no… 4...0...4…";
 CURRENT_LEVEL_TEXT = "1. The world of code";
