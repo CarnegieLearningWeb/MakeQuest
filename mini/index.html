@@ -179,16 +179,23 @@
                       <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Learning to code: Play the game I made with MakeQuest!" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest,hourofcode,csedweek">Tweet</a>
                   </div>
                   <br>
-                  <p>
+
+                  <!-- code.globaloria.com ONLY -->
+                  <!-- <p>
                   <a id="remix" href="">Remix this game</a>, <a href="http://www.code.globaloria.com" target="_blank">make your own</a> or visit our <a href="http://globaloria.com/game-gallery/" target="_blank">Game Gallery</a> and play the games students have made with the full Globaloria experience.
+                  </p> -->
+
+                  <!-- makequest.globaloria.com ONLY -->
+                  <p>
+                  <a id="remix" href="">Remix this game</a>, or play <a href="http://www.code.globaloria.com" target="_blank">MakeQuest</a>
                   </p>
 
                   <!-- code.globaloria.com ONLY -->
                   <!-- <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a> -->
 
-                  <!-- code.globaloria.com ONLY -->
-                  <p style="font-size: 11px;">URL: <span class="copyurl-text"></span></p>
-                  <p><button class="copyurl-button">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied</span></p>
+                  <!-- makequest.globaloria.com ONLY -->
+                  <p>Copy your URL: <br><span style="font-size: 11px;" class="copyurl-text"></span></p>
+                  <!-- <p><button class="copyurl-button">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied</span></p> -->
                     <script>
                         // Copy URL
                         // Update copy url text
@@ -196,34 +203,34 @@
                                 $('.copyurl-text').text(window.location.href);
                             });
 
-                            
-                            var copyUrlBtn = document.querySelector('.copyurl-button');  
-                            copyUrlBtn.addEventListener('click', function(event) {  
-                              var url = document.querySelector('.copyurl-text');  
-                              var range = document.createRange();  
-                              range.selectNode(url);  
-                              window.getSelection().addRange(range);  
+                            // Implement Copy URL function (the copy API has varied support and testing has proven the code to be brittle)
+                            // var copyUrlBtn = document.querySelector('.copyurl-button');  
+                            // copyUrlBtn.addEventListener('click', function(event) {  
+                            //   var url = document.querySelector('.copyurl-text');  
+                            //   var range = document.createRange();  
+                            //   range.selectNode(url);  
+                            //   window.getSelection().addRange(range);  
 
-                              try {  
-                                var successful = document.execCommand('copy');  
-                                var msg = successful ? 'successful' : 'unsuccessful';  
-                                document.getElementById('copy-ulr-success').style.display = 'inline-block';
-                                console.log('Copy url command was ' + msg);  
-                              } catch(err) {  
-                                document.getElementById('copy-ulr-success').style.display = 'none';
-                                console.log('Oops, unable to copy');  
-                                alert("Please copy this URL: " + window.location.href);
-                              }  
+                            //   try {  
+                            //     var successful = document.execCommand('copy');  
+                            //     var msg = successful ? 'successful' : 'unsuccessful';  
+                            //     document.getElementById('copy-ulr-success').style.display = 'inline-block';
+                            //     console.log('Copy url command was ' + msg);  
+                            //   } catch(err) {  
+                            //     document.getElementById('copy-ulr-success').style.display = 'none';
+                            //     console.log('Oops, unable to copy');  
+                            //     alert("Please copy this URL: " + window.location.href);
+                            //   }  
 
-                              window.getSelection().removeAllRanges();  
-                            });
+                            //   window.getSelection().removeAllRanges();  
+                            // });
                     </script>
                 </div>
             </div>
 
 
             <div class="large-8 columns">
-                <div class="controls">
+                <div class="controls" style="display: none;">
                     <button id="previous" onclick="previousLevel()" style="display: none;">Previous Level</button>
                     <button id="next" onclick="nextLevel()" style="display: none;">Next Level</button>
                     <button id="showDialogue" onclick="showDialogue()" style="display: none;">Story</button>
@@ -232,6 +239,7 @@
                     <button id="publish" onclick="publish()" style="display: none;">Share your game</button>
                 </div>
                 <div class="large-12 columns margin-left-0 margin-right-0">
+                    <!-- <div id="current-level-text" style="text-align: center; color: #0b6481;"></div> -->
                     <div id="p5_canvas"></div>
                     <div id="current-level-text" style="margin-top: 10px; text-align: center; color: #0b6481;"></div>
                 </div>
