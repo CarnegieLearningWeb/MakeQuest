@@ -26,9 +26,12 @@ var CustomErrors = {
         }
       }
     };
+
+    return false;
   },
 
   displayError: function(location, message){
+    console.log("Error found");
     markJsErrorAtLine( location );
 
     $('#errorModal p.error-text').text( message );
@@ -93,12 +96,16 @@ var CustomErrors = {
         console.log(test[j]);
         console.log(test);
         console.log(tokens[tokenIndex]);
+
         // Error found. Display to the user and exit
         var err = {
           // Use original index to highlight the correct line
           token: tokens[index], 
           errMsg: test[j].errorMsg
         };
+
+        console.log("Output error");
+        console.log(err);
 
         this.displayError( err.token.loc.start.line, err.errMsg );
         
@@ -114,7 +121,11 @@ var CustomErrors = {
           token: tokens[index], 
           errMsg: test[j].errorMsg
         };
-        return err;
+
+        
+        this.displayError( err.token.loc.start.line, err.errMsg );
+        
+        return true;
       }
     };           
     
@@ -144,6 +155,51 @@ var CustomErrors = {
 
       if( test[j].type.indexOf( tokenType ) == -1 ){
         console.log("Err A");
+        console.log(tokenType);
+        console.log(test[j]);
+        console.log(test);
+        console.log(tokens[tokenIndex]);
+        // Error found. Display to the user and exit
+        var err = {
+          // Use original index to highlight the correct line
+          token: tokens[index], 
+          errMsg: test[j].errorMsg
+        };
+
+        this.displayError( err.token.loc.start.line, err.errMsg );
+        
+        return true;
+      }
+    };           
+    
+    return false;
+  },
+  setSpeed: function(tokens, index){
+    // Handle multilpe signatures of createPlatform (4 and 5 arguments)
+    var tests = {
+        twoArgs: [
+           // We might allow multiple options, such as Identifier or Numeric. Use arrays to account for that
+           {type: ['Punctuator'],            value: ['('],  errorMsg: CustomErrors.errorMsgs.parentheses  },
+           {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
+           {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Punctuator'],            value: [')'],  errorMsg: CustomErrors.errorMsgs.parentheses  },
+           {type: ['Punctuator'],            value: [';'],  errorMsg: CustomErrors.errorMsgs.semicolon  },
+         ],
+    }
+
+    // Determine what function signature we need to compare against
+    var test = tests.twoArgs;
+  
+    for (var j = 0; j < test.length; j++) {
+      // Need to add 1 to the passed index to begin checks after the triggering identifier
+      var tokenIndex = index + 1 + j;
+
+      var tokenType = tokens[tokenIndex].type;
+      var tokenValue = tokens[tokenIndex].value;
+
+      if( test[j].type.indexOf( tokenType ) == -1 ){
+        console.log("setSpeed error found");
         console.log(tokenType);
         console.log(test[j]);
         console.log(test);

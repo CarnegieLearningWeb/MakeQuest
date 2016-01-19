@@ -4,9 +4,6 @@
 // code to help you play around and make a game you can 
 // call your own.
 // 
-// Should you get stuck at any point, you can always use 
-// the Reset button to get back to the game's original state.
-// 
 // Don't worry if you don't understand everything you see.
 // Try to find lines of code you understand and feel
 // comfortable with and play around with those.

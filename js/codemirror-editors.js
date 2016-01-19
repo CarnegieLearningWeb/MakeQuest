@@ -135,6 +135,7 @@ function readOnlyToken(/* esprima token match pattern ... */) {
 }
 
 function markJsErrorAtLine(line) {
+  console.log("Marking error at: " + line);
   var start = {line: line - 1, ch: 0};
   editor_js.markText(start, {line: line, ch: 0}, {
     className: 'js-error',
@@ -152,11 +153,15 @@ function refreshPreview() {
 
   // Test for custom feedback first and exit if found. 
   // Errors will be displayed to the user.
-  var err = CustomErrors.test( js_content );
-  if( err ){
-    CustomErrors.displayError(err);
-    return;
+  if( CustomErrors.test( js_content ) ){
+    return false;
   }
+  
+  // var err = CustomErrors.test( js_content );
+  // if( err ){
+  //   // CustomErrors.displayError(err);
+  //   return;
+  // }
 
   if (typeof(esprima) !== 'undefined') {
     try {
