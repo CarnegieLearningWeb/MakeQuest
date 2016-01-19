@@ -413,6 +413,10 @@ function loadMiniCourse(cb){
 
         originalEditorContent = data;
         editor_js.setValue(data);
+        // Mark editor as clean after inserting the base template to handle Undo display
+        editor_js.markClean();
+        // Since the editor will be clean to start with, disable Undo
+        $("#undo").prop("disabled",true);
 
         // Make the first line read-only.
         readOnlyRanges.push([0, 1]);

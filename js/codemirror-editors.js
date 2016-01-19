@@ -9,13 +9,13 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   // theme : 'monokai'
 });
 
-// editor_js.on('changes', function() {
-//   if (editor_js.getValue() === originalEditorContent) {
-//     $("#revert").hide();
-//   } else {
-//     $("#revert").show();
-//   }
-// });
+editor_js.on('changes', function() {
+  if ( editor_js.isClean() ) {
+    $("#undo").prop("disabled",true);
+  } else {
+    $("#undo").prop("disabled",false);
+  }
+});
 
 function markHint(/* esprima token match pattern ... */) {
   var candidateMarks = [];
