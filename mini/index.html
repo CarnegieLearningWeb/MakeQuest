@@ -194,36 +194,48 @@
                   <!-- <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a> -->
 
                   <!-- makequest.globaloria.com ONLY -->
-                  <p>Copy your URL: <br><span style="font-size: 11px;" class="copyurl-text"></span></p>
-                  <!-- <p><button class="copyurl-button">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied</span></p> -->
+                  <p><input style="font-size: 11px;" id="copyurl-text"></p>
+                  <p><button class="copyurl-button" data-clipboard-target="#copyurl-text">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied</span></p>
                     <script>
                         // Copy URL
                         // Update copy url text
                             $(document).on('ready', function(){
-                                $('.copyurl-text').text(window.location.href);
+                                $('#copyurl-text').val(window.location.href);
                             });
+                            if( document.body.hasAttribute('data-published-game-base-level') ){
+                                // Load clipboardjs
+                                (function(d, s, id) {
+                                  var js, fjs = d.getElementsByTagName(s)[0];
+                                  if (d.getElementById(id)) return;
+                                  js = d.createElement(s); js.id = id;
+                                  js.src = "//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js";
+                                  js.onload = function(){
+                                    console.log("CLIPBOARD LOADED");
+                                    clipboard = new Clipboard('.copyurl-button');
+                                    console.log(clipboard);
 
-                            // Implement Copy URL function (the copy API has varied support and testing has proven the code to be brittle)
-                            // var copyUrlBtn = document.querySelector('.copyurl-button');  
-                            // copyUrlBtn.addEventListener('click', function(event) {  
-                            //   var url = document.querySelector('.copyurl-text');  
-                            //   var range = document.createRange();  
-                            //   range.selectNode(url);  
-                            //   window.getSelection().addRange(range);  
+                                    clipboard.on('success', function(e) {
+                                        console.info('Action:', e.action);
+                                        console.info('Text:', e.text);
+                                        console.info('Trigger:', e.trigger);
 
-                            //   try {  
-                            //     var successful = document.execCommand('copy');  
-                            //     var msg = successful ? 'successful' : 'unsuccessful';  
-                            //     document.getElementById('copy-ulr-success').style.display = 'inline-block';
-                            //     console.log('Copy url command was ' + msg);  
-                            //   } catch(err) {  
-                            //     document.getElementById('copy-ulr-success').style.display = 'none';
-                            //     console.log('Oops, unable to copy');  
-                            //     alert("Please copy this URL: " + window.location.href);
-                            //   }  
+                                        document.getElementById('copy-ulr-success').style.display = 'block';
 
-                            //   window.getSelection().removeAllRanges();  
-                            // });
+                                        e.clearSelection();
+                                    });
+
+                                    clipboard.on('error', function(e) {
+                                        console.error('Action:', e.action);
+                                        console.error('Trigger:', e.trigger);
+                                        alert("Sorry, we were unable to copy the URL. Please copy the link manually.")
+                                    });
+                                  }
+                                  fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'clipboardjs'));
+
+                                
+                                
+                            }
                     </script>
                 </div>
             </div>
