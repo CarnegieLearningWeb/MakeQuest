@@ -9,7 +9,7 @@
 // comfortable with and play around with those.
 // 
 // NOTE: We have made some lines of code uneditable so that your
-// game doesn't accidentally break. This lines of code
+// game doesn't accidentally break. These lines of code
 // are required for the game engine to work properly.
 // ********************************************************
 
