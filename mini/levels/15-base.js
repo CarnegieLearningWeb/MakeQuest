@@ -1,7 +1,7 @@
 PLAYER_START_X = 120;
 PLAYER_START_Y = 380;
 
-GOAL_REACHED_TEXT = "OH EM GEE!!! You did it! You are truly among the Globalorians!\nYou have completed MakeQuest and saved the World of Code!\nTHANKS FOR PLAYING";
+GOAL_REACHED_TEXT = "Congratulations, you've defeated 404 and restored the World of Code!\n\nClick continue to create your own version of MakeQuest in the Sandbox.";
 CURRENT_LEVEL_TEXT = "16. Save the World of Code";
 
 function base_getLevelDialogue() {

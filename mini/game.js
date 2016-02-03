@@ -80,7 +80,9 @@ function draw() {
     if (player.overlap(goal) && !goalReached) {
         showNextLevelButton();
         goalReached = true;
-        autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
+
+        // Remove autoadvance feature for now
+        // autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
     }
 
     if (autoAdvanceToNextLevel && frameCount >= autoAdvanceToNextLevel) {
@@ -205,9 +207,12 @@ function levelComplete(){
         console.log("ERROR: Set unlocked item image");
     }
 
-    if( currentLevel < maxLevel ){
+    if( currentLevel < maxLevel - 1 ){
         fill('orange');
         text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
+    }else if( currentLevel == maxLevel - 1 ){
+        fill('orange');
+        text("Go to Sandbox...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
     }
 
     //Reset rectMode back to default
