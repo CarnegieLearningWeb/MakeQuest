@@ -243,9 +243,9 @@ function publish(){
     //               : 'https://hackpub.herokuapp.com/buckets/globaloria/';
     var baseURL;
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
-        baseURL = 'https://globaloria.com:8000/';
+        baseURL = 'http://globaloria.com:8000/';
     }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
-        baseURL = 'https://globaloria.com:8001/';
+        baseURL = 'http://globaloria.com:8001/';
     }else{
         baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
     }
@@ -324,9 +324,9 @@ function loadMiniCourse(cb){
     if( remixUrl && storage.get('skipToSandbox') == 'true' ){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
         if(window.location.href.match(/code.globaloria.com/)){
-            codeUrl = 'https://mycode.globaloria.com/'+remixUrl[1];
+            codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
         }else if(window.location.href.match(/makequest.globaloria.com/)){
-            codeUrl = 'https://mymakequest.globaloria.com/'+remixUrl[1];
+            codeUrl = 'http://mymakequest.globaloria.com/'+remixUrl[1];
         }else{
             codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
         }
