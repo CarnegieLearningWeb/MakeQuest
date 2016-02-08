@@ -326,7 +326,9 @@ function loadMiniCourse(cb){
         if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
         }else if(window.location.href.match(/makequest.globaloria.com/)){
-            codeUrl = 'http://mymakequest.globaloria.com/'+remixUrl[1];
+            // Need to use full bucket name. Using mymakequest will throw an error
+            // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
+            codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
         }else{
             codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
         }
