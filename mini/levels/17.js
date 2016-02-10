@@ -1,21 +1,18 @@
+// EDITOR: beginReadOnly();
+// ***** CHALLENGE - Setup and Draw *****
 function setupLevel(){
-    
-    // ***** LEVEL NINE (BRONZE) INSTRUCTIONS *****
-    // 
-    //Change the image for your hero to be superhero instead of hero.
-    // 
+// EDITOR: endReadOnly();
+
     // ***** ENTER YOUR CODE BELOW *****
-    // 
-    playerImage = loadImage("images/hero.png");
-    player.addImage(playerImage);
-	
+    
+
+
+    platform1 = createPlatform(50, 50, 80, 10, 'green');
+    platform2 = createPlatform(50, 150, 80, 10, 'blue');
+
 }
 
 function drawLevel() {
-    if ( isPlayerOnPlatform() ) {
-    
-      makePlayerJump( 5 );
-
-    }
+    platform2.setSpeed(5, 0);
 
 }

@@ -53,9 +53,9 @@ var CustomErrors = {
         fourArgs: [
            // We might allow multiple options, such as Identifier or Numeric. Use arrays to account for that
            {type: ['Punctuator'],            value: ['('],  errorMsg: CustomErrors.errorMsgs.parentheses  },
-           {type: ['Numeric'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Numeric', 'Identifier'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
-           {type: ['Numeric'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Numeric', 'Identifier'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
            {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
@@ -66,9 +66,9 @@ var CustomErrors = {
          fiveArgs: [
            // We might allow multiple options, such as Identifier or Numeric. Use arrays to account for that
            {type: ['Punctuator'],            value: ['('],  errorMsg: CustomErrors.errorMsgs.parentheses  },
-           {type: ['Numeric'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Numeric', 'Identifier'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
-           {type: ['Numeric'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Numeric', 'Identifier'],               value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
            {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },

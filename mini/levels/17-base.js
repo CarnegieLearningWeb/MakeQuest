@@ -29,8 +29,14 @@ function base_setupLevel() {
   
   platformColor = "orange";
   createPlatform(40, 450, platformWidth, platformHeight, platformColor);
-  createPlatform(220, 450, platformWidth, platformHeight, platformColor);
-  createPlatform(400, 450, platformWidth, platformHeight, platformColor);
+}
+
+function base_drawLevel(){
+  if ( isPlayerOnPlatform() ) {
+    
+      makePlayerJump( 0 );
+
+    }
 }
 
 function makePlayerJump(force){
