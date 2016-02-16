@@ -175,13 +175,16 @@ var CustomErrors = {
     return false;
   },
   setSpeed: function(tokens, index){
+
     // Handle multilpe signatures of createPlatform (4 and 5 arguments)
     var tests = {
         twoArgs: [
            // We might allow multiple options, such as Identifier or Numeric. Use arrays to account for that
            {type: ['Punctuator'],            value: ['('],  errorMsg: CustomErrors.errorMsgs.parentheses  },
-           {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
+           {type: ['Punctuator'],            value: ['-'],  optional: true, errorMsg: 'Optional value'  },
+           {type: ['Numeric', 'Identifier'], value: null,   errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [','],  errorMsg: CustomErrors.errorMsgs.comma  },
+           {type: ['Punctuator'],            value: ['-'],  optional: true, errorMsg: 'Optional value'  },
            {type: ['Numeric', 'Identifier'], value: null ,  errorMsg: CustomErrors.errorMsgs.number  },
            {type: ['Punctuator'],            value: [')'],  errorMsg: CustomErrors.errorMsgs.parentheses  },
            {type: ['Punctuator'],            value: [';'],  errorMsg: CustomErrors.errorMsgs.semicolon  },
@@ -198,7 +201,21 @@ var CustomErrors = {
       var tokenType = tokens[tokenIndex].type;
       var tokenValue = tokens[tokenIndex].value;
 
-      if( test[j].type.indexOf( tokenType ) == -1 ){
+      //If the current test value is optional, don't error out
+      if(test[j].optional){
+        //If the optional test passes, continue to next iteration
+        if(test[j].type.indexOf( tokenType ) !== -1){
+          continue;
+        }
+
+        //Otherwise remove the optional test
+        test.splice(j, 1);
+      }
+
+
+
+      if( test[j].type.indexOf( tokenType ) == -1){
+        deb = tokens[tokenIndex];
         console.log("setSpeed error found");
         console.log(tokenType);
         console.log(test[j]);
