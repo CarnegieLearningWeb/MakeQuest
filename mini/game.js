@@ -121,19 +121,19 @@ function keepPlatformsInScene() {
 
 
         if (platforms[i].velocity.x < 0 && (platforms[i].position.x - platforms[i].width / 2) < 0) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.x = 0 + platforms[i].width / 2;
         }
         if (platforms[i].velocity.x > 0 && (platforms[i].position.x + platforms[i].width / 2) > WIDTH) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.x = WIDTH - platforms[i].width / 2;
         }
         if (platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height / 2 - player.height) < 0) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.y = 0 + platforms[i].height / 2 + player.height;
         }
         if (platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height / 2) > HEIGHT) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.y = HEIGHT - platforms[i].height / 2;
         }
     }
