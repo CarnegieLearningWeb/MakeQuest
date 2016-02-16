@@ -247,7 +247,8 @@ function publish(){
     }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
         baseURL = 'https://globaloria.com:8001/';
     }else{
-        baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
+        // baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
+        baseURL = 'https://publish-dev.herokuapp.com/';
     }
     
     $.ajax({
@@ -330,7 +331,8 @@ function loadMiniCourse(cb){
             // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
             codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
         }else{
-            codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
+            // codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
+            codeUrl = 'https://hackpub-publisher-dev.s3.amazonaws.com/'+remixUrl[1];
         }
     }
 
