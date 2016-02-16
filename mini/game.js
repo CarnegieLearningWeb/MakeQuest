@@ -130,7 +130,7 @@ function keepPlatformsInScene() {
         }
         if (platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height / 2) < 0) {
             // platforms[i].velocity.x = 0;
-            platforms[i].position.y = 0 + platforms[i].height / 2 + player.height;
+            platforms[i].position.y = 0 + platforms[i].height / 2;
         }
         if (platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height / 2) > HEIGHT) {
             // platforms[i].velocity.x = 0;
