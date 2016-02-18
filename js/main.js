@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     //Open welcome modal on first load
     // code.globaloria.com only
-    // $('#welcomeModal').foundation('reveal', 'open');
+    $('#welcomeModal').foundation('reveal', 'open');
     
     //Open walkthrough on first load
     // makequest.globaloria.com only
@@ -273,23 +273,23 @@ function publish(){
         // $('button[type="submit"]').attr('disabled', 'disabled');
 
         // code.globaloria.com ONLY
-        // // Replace the form's return URL and submit the form
-        // $('#publish-form input#retUrl').val( data['published-url'] );
+        // Replace the form's return URL and submit the form
+        $('#publish-form input#retUrl').val( data['published-url'] );
         
-        // // Populate game link for salesforce capture
-        // $('#00NU0000005PN7t').val(data['published-url']);
+        // Populate game link for salesforce capture
+        $('#00NU0000005PN7t').val(data['published-url']);
 
-        // // Populate the role field for salesforce
-        // var role = [];
-        // if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
-        // if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
-        // if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
-        // if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
+        // Populate the role field for salesforce
+        var role = [];
+        if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
+        if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
+        if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
+        if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
                     
-        // $('#00NU0000005Ph2K').val( role.join(',') );
+        $('#00NU0000005Ph2K').val( role.join(',') );
 
         //Unbind form to prevent submit loop
-        // $('#publish-form').unbind().submit();
+        $('#publish-form').unbind().submit();
 
 
 
