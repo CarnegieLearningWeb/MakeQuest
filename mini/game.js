@@ -21,7 +21,7 @@ function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
     myCanvas.parent('p5_canvas');
 
-    backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
+    backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
 
     goalReached = false;
     goal = createSprite(600, 40, 30, 30);
@@ -33,7 +33,7 @@ function setup() {
     player = createSprite(PLAYER_START_X, PLAYER_START_Y, 20, 20);
     player.shapeColor = 'Aqua';
 
-    playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
+    playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_F_60.png");
     player.addImage(playerImage);
 
     autoAdvanceToNextLevel = 0;

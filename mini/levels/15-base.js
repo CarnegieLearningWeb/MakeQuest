@@ -26,7 +26,7 @@ function base_setupLevel() {
   goal.position.x = 550;
   goal.position.y = 440;
 
-  goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
+  goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
   goal.addImage(goalImage);
   
   platformWidth = 80;

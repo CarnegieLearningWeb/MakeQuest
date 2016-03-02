@@ -44,11 +44,11 @@ function setupLevel() {
 
   // This code loads the image for your player.
   // You can uncomment (remove the '//') from any line to choose a different image
-  playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
+  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_F_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Hero_P_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/PolarBear_F_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/PolarBear_P_60.png");
-  // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_F_60.png");
+  playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_F_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/Astronaut_P_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/GraceHopper_F_60.png");
   // playerImage = loadImage("images/MakeQuestAssets/Characters60PX/GraceHopper_P_60.png");
@@ -97,7 +97,7 @@ function setupLevel() {
   // Choose an enemy to defeat as your goal
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_P_60.png");
-  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
+  goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_P_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_P_60.png");
@@ -108,9 +108,9 @@ function setupLevel() {
 
   // This code loads the image for the background.
   // You can uncomment (remove the '//') from any line to choose a different image
-  backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
+  // backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_2.png");
-  // backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
+  backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_4.png");
   
   
