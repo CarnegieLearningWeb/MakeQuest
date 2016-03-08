@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYou’ve come so far, and restored so much of the damage caused by the 404... victory will soon be yours!"
+      text: "\nYou’ve come so far, and restored so much of the damage caused by Supernova... victory will soon be yours!"
     }
   ];
 }

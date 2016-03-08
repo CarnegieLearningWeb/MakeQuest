@@ -22,11 +22,11 @@ function setupLevel() {
 
   // Change the text between quotation marks "" 
   // to make it your own.
-  GOAL_REACHED_TEXT = "\n\nThank you for playing MakeQuest! \nChange this text, this is YOUR world!";
-  CURRENT_LEVEL_TEXT = "My world of code";
+  GOAL_REACHED_TEXT = "\n\nThank you for playing MakeQuest Science! \nChange this text, this is YOUR galaxy!";
+  CURRENT_LEVEL_TEXT = "My Galaxy of Code";
   STORY_TEXT = [
-"\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!",
-"\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
+"\nThe galaxy is restored! \n\nThe power of code is yours to shape the galaxy. Explore the full game code and make it your own!",
+"\nAfter creating a galaxy you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
 ];
 
   // These variables are used to tell the platforms which 
@@ -97,7 +97,7 @@ function setupLevel() {
   // Choose an enemy to defeat as your goal
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/404_P_60.png");
-  goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
+  // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Alien_P_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_F_60.png");
   // goalImage = loadImage("images/MakeQuestAssets/Characters60PX/Moth_P_60.png");

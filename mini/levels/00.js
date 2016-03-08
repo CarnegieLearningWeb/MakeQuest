@@ -1,4 +1,4 @@
-// ***** 1. The world of code *****
+// ***** 1. The Galaxy of Code *****
 
 // ***** INSTRUCTIONS *****
 // Click on the game scene to the right to start playing

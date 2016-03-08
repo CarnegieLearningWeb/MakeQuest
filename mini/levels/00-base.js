@@ -1,8 +1,8 @@
 PLAYER_START_X = 100;
 PLAYER_START_Y = 320;
 
-GOAL_REACHED_TEXT = "Oh...no… 4...0...4…";
-CURRENT_LEVEL_TEXT = "1. The world of code";
+GOAL_REACHED_TEXT = "Oh...no… Supernova!";
+CURRENT_LEVEL_TEXT = "1. The Galaxy of Code";
 
 function base_getLevelDialogue() {
   return [
@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWelcome to MakeQuest\n\nEnter the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
+      text: "\nWelcome to MakeQuest Science\n\nEnter the Galaxy of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
     }
   ];
 }

@@ -7,7 +7,7 @@ function setupLevel() {
   // Update the color of the VARIABLE below to change all of the
   // platform colors. By changing the platformColor variable
   //instead of each color one by one, you can save loads
-  //of time… time you will need later to defeat For-Oh-For!
+  //of time… time you will need later to defeat Supernova!
   // ***** ENTER YOUR CODE BELOW *****
   // EDITOR: endReadOnly();
   

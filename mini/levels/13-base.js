@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nOh Boy, this thing has advanced settings?!?  You are going to enjoy reaching this next one.  It looks like The 404 set a trap for you!",
+      text: "\nOh Boy, this thing has advanced settings?!?  You are going to enjoy reaching this next one.  It looks like Supernova set a trap for you!",
     },
     {
       character: "heroA",

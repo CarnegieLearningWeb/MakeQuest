@@ -1,4 +1,4 @@
-// ***** 16. Save the World of Code *****
+// ***** 16. Save the Galaxy of Code *****
 
 // EDITOR: beginReadOnly();
 function drawLevel() {

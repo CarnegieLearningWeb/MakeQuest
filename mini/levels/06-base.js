@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYour are one step closer to stopping the 404...",
+      text: "\nYour are one step closer to stopping Supernova",
     },
   ];
 }

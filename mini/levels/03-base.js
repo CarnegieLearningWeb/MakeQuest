@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nClick on the code and resize the platforms to reach the goal! \n\nBetter hurry, the 404 won’t avoid you forever..."
+      text: "\nClick on the code and resize the platforms to reach the goal! \n\nBetter hurry, Supernova won’t avoid you forever..."
     }
   ];
 }

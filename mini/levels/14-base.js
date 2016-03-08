@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYes!  The 404 must be scared.  You are so close to undoing his evil plan. There is just one last thing to master.",
+      text: "\nYes!  Supernova must be scared.  You are so close to undoing his evil plan. There is just one last thing to master.",
     },
     {
       character: "heroA",
