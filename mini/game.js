@@ -204,7 +204,7 @@ function levelComplete(){
     if(levelCompleteImage){
         image(levelCompleteImage, 300, HEIGHT / 2 - 20);
     }else{
-        console.log("ERROR: Set unlocked item image");
+        // console.log("ERROR: Set unlocked item image");
     }
 
     if( currentLevel < maxLevel - 1 ){
