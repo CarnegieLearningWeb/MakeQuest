@@ -264,7 +264,7 @@ function publish(){
         console.log(arguments);
 
         // Log error to ga
-        ga('send', 'event', 'Ajax Error', xhr.responseText, 'publisher', { 'nonInteraction': 1 });
+        ga('send', 'event', 'Ajax Error', status, 'publisher', { 'nonInteraction': 1 });
       },
       success: function(data) {
         $("#published").fadeIn()
