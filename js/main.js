@@ -259,9 +259,12 @@ function publish(){
       },
       crossDomain: true,
       dataType: 'json',
-      error: function() {
-        alert("Error publishing HTML!");
+      error: function(xhr, status, error) {
+        alert("It looks like something went wrong. Please verify your internet connection and click Publish again.");
         console.log(arguments);
+
+        // Log error to ga
+        ga('send', 'event', 'Ajax Error', xhr.responseText, 'publisher', { 'nonInteraction': 1 });
       },
       success: function(data) {
         $("#published").fadeIn()

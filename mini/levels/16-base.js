@@ -1,4 +1,14 @@
 function base_setupLevel() {
+  // Remove platforms in case students remove platform creation but forget to remove later calls
+  // e.g. remove platform3 but try to set speed
+  platform1 = undefined;
+  platform2 = undefined;
+  platform3 = undefined;
+  platform4 = undefined;
+  platform5 = undefined;
+  platform6 = undefined;
+  platform7 = undefined;
+  platform8 = undefined;
 }
 
 function base_drawLevel() {
