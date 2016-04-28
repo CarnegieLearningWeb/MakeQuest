@@ -9,6 +9,11 @@ function base_setupLevel() {
   platform6 = undefined;
   platform7 = undefined;
   platform8 = undefined;
+
+  // Same for images
+  playerImage = undefined; 
+  goalImage = undefined;
+  backgroundImage = undefined;
 }
 
 function base_drawLevel() {
