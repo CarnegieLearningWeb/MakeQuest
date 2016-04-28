@@ -245,7 +245,8 @@ function publish(){
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
         baseURL = 'http://globaloria.com:8000/';
     }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
-        baseURL = 'https://globaloria.com:8001/';
+        // baseURL = 'https://globaloria.com:8001/';
+        baseURL = 'https://publish.globaloria.com/';
     }else{
         // baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
         baseURL = 'https://publish-dev.herokuapp.com/';
