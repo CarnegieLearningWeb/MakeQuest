@@ -7,7 +7,7 @@ function setupLevel() {
   //
   // Write the code to create two new platforms.
   //
-  // Refer to line 9 for help.
+  // Refer to line 11 for help.
   //
   // EDITOR: beginReadOnly();
   // The line of code below creates the platform you are standing on
@@ -15,7 +15,7 @@ function setupLevel() {
   // EDITOR: endReadOnly();
   // ***** ENTER YOUR CODE BELOW *****
   // Create two new platforms below. Take a look at the code
-  // on line 9 to help you create your own platforms.
+  // on line 11 to help you create your own platforms.
   
   
   // EDITOR: beginCodeFold('Click here for an example.');
