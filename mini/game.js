@@ -42,6 +42,10 @@ function setup() {
     setupLevel();
     setupDialogue();
 
+    // In case the user updates PLAYER_START_X or PLAYER_START_Y
+    player.position.x = PLAYER_START_X;
+    player.position.y = PLAYER_START_Y;
+
     document.getElementById('current-level-text').innerHTML = CURRENT_LEVEL_TEXT;
 }
 

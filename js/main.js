@@ -333,7 +333,8 @@ function loadMiniCourse(cb){
         }else if(window.location.href.match(/makequest.globaloria.com/)){
             // Need to use full bucket name. Using mymakequest will throw an error
             // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
-            codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
+            // codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
+            codeUrl = 'https://mymakequest.globaloria.com/'+remixUrl[1];
         }else{
             // codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
             codeUrl = 'https://hackpub-publisher-dev.s3.amazonaws.com/'+remixUrl[1];
