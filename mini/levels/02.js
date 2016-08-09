@@ -11,6 +11,8 @@ function setupLevel() {
   // Use “Run” to see your changes
   // Use “Show Hints” to get extra help if you need it
   //
+  //The x,y coordinates in CreatePlatform() refer to the center of the platform.
+  //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //
   // ***** ENTER YOUR CODE BELOW *****

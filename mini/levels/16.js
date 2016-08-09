@@ -22,6 +22,7 @@ function setupLevel() {
 
   // Change the text between quotation marks "" 
   // to make it your own.
+  // The computer will print the text to the screen in a single line. Use '\n' to add a line break.
   GOAL_REACHED_TEXT = "\n\nThank you for playing MakeQuest! \nChange this text, this is YOUR world!";
   CURRENT_LEVEL_TEXT = "My world of code";
   STORY_TEXT = [

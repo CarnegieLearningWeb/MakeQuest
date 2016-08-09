@@ -21,12 +21,12 @@ function base_getLevelDialogue() {
       textColor: "white",
       text: "\nUse the arrows to move your avatar to the goal.  This will power up your visual sensors so you can see JavaScript and the coordinate plane.",
     },
-    // {
-    //   character: "heroA",
-    //   image: heroAPic,
-    //   textColor: "white",
-    //   text: "If you are getting this, we need you to fight back against the Vile For-oh-For, who has corrupted all the world’s code, giving him infinite power and control over reality."
-    // },
+    {
+      character: "heroA",
+      image: heroAPic,
+      textColor: "white",
+      text: "Read the left side of the screen and follow the “secret” instructions there!"
+    }
     // {
     //   character: "heroA",
     //   image: heroAPic,
