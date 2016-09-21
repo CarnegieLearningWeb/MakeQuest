@@ -14,6 +14,19 @@ function base_setupLevel() {
   playerImage = undefined; 
   goalImage = undefined;
   backgroundImage = undefined;
+
+  // Text vars
+  GOAL_REACHED_TEXT = undefined;
+  CURRENT_LEVEL_TEXT = undefined;
+  STORY_TEXT = undefined;
+
+  FACE_RIGHT = undefined;
+  FACE_LEFT = undefined;
+  FACE_DOWN = undefined;
+  FACE_UP = undefined;
+
+  PLAYER_START_X = undefined;
+  PLAYER_START_Y = undefined;
 }
 
 function base_drawLevel() {
