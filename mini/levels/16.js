@@ -114,6 +114,8 @@ function setupLevel() {
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_4.png");
   
+  // Define the color for the fireworks that get displayed once the player wins the game
+  fireworksColor = 'blue';
   
 // EDITOR: beginReadOnly();
 }

@@ -22,6 +22,9 @@ Particle.prototype.update = function() {
 // Method to display
 Particle.prototype.display = function() {
     c = color(0, 0, random(200, 255), this.lifespan);
+    if(fireworksColor){
+        c = color(fireworksColor);
+    }
     fill(c);
 
     ellipse(this.position.x, this.position.y, 12, 12);
