@@ -2,7 +2,17 @@ var maxLevel = gameConstants.MAX_LEVEL;
 // Check if we're accessing a remix url, if so, store the url for later use
 var remixUrl = window.location.href.match(/remix=(.+)/);
 
+
+var queryParams = window.location.search.substring(1).split('=');
+var langIndex = queryParams.indexOf('lang');
+// Default to english => ''
+var language = (langIndex > -1) ? queryParams[langIndex+1] : '';
+var languagePath = (langIndex > -1) ? queryParams[langIndex+1]+'/' : '';
+
 $(document).ready(function() {
+    // Set language in storage
+    storage.set('languagePath', languagePath);
+    
     // Don't start in sandbox if the page is refreshed and we're not in remix mode
     storage.set('skipToSandbox', false);
     if(remixUrl){
@@ -323,7 +333,7 @@ function loadMiniCourse(cb){
         $("#levelMenu").css('display', 'block');
     }
 
-    var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
+    var codeUrl = 'mini/'+languagePath+'levels/' + zeroPaddedLevel + '.js';
 
     // Load remix code for sandbox when available
     if( remixUrl && storage.get('skipToSandbox') == 'true' ){

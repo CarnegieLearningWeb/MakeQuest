@@ -37,6 +37,10 @@ if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
+// Append language path
+var languagePath = storage.get('languagePath');
+currentLevelFilename = languagePath+currentLevelFilename;
+
 
 
 
