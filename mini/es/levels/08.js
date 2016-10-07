@@ -1,36 +1,35 @@
-// ***** 9. Make 2 platforms *****
+// ***** 9. Programa 2 plataformas *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {
 // EDITOR: endReadOnly();
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Fix the values for the last two platforms.
+  // Corrige el problema en las últimas dos plataformas.
   //
-  // Refer to the first platform code for help.
+  // Usa el código de la primera plataforma como referencia.
   //
   // EDITOR: markHint('createPlatform', '(', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'Numeric', highlight: true}, ',', {type: 'String', highlight: true});
   // EDITOR: beginReadOnly();
   createPlatform(40, 100, 80, 20, 'orange');
   // EDITOR: endReadOnly();
-  // ***** ENTER YOUR CODE BELOW *****
-  // The code below creates two new platforms.
-  // But the platforms have a height and width of 0,
-  // so you can't see them.
-  // Update the size, position and color of the 
-  // platforms to reach your goal.
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
+  // El código siguiente construye dos plataformas.
+  // Pero las plataformas tienen una altura y una anchura de cero unidades.
+  // Cambia el tamaño, posición y color de las plataformas para llegar
+  // al portal.
   createPlatform(100, 100, 0, 0, 'red');
   createPlatform(200, 200, 0, 0, 'red');
 
-  // EDITOR: beginCodeFold('Click here for an example.');
-  // ******See Example Below******:
+  // EDITOR: beginCodeFold('Haz clic aquí para ver un ejemplo.');
+  // ******Ejemplo******:
   //
   //   createPlatform(40, 100, 100, 30, 'magenta');
   //                  ^   ^    ^    ^    ^                     
   //                  |   |    |    |    color                     
-  //                  |   |    |    height                                      
-  //                  |   |    width
-  //                  |   y-position
-  //                  x-position
+  //                  |   |    |    altura                                      
+  //                  |   |    anchura
+  //                  |   posición y
+  //                  posición x
   // EDITOR: endCodeFold();
 }

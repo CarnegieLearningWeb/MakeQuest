@@ -1,37 +1,35 @@
-// ***** 11. Write Code with Variables *****
+// ***** 11. Escribe código con variables *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {  
 // EDITOR: endReadOnly();
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Add as many platforms as you need to reach the goal.
+  // Construye todas las plataformas que sean necesarias para alcanzar el portal.
   //
-  // Use the VARIABLES to control the size and color of
-  // all your platforms. 
+  // Utiliza VARIABLES para controlar el tamaño y color de tus plataformas. 
   // 
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   platformWidth = 80;
   platformHeight = 20;
   platformColor = "orange";
 
   // EDITOR: beginReadOnly();
-  // The line of code below creates the platform you are standing on
+  // La siguiente línea de código construye la plataforma sobre la cual estás parado
   createPlatform(40, 100, platformWidth, platformHeight, platformColor);
   // EDITOR: endReadOnly();
-  // Use the previous line of code as reference to create your own
 
 
-  // EDITOR: beginCodeFold('Click here for an example.');
-  // ******See Example Below******:
+  // EDITOR: beginCodeFold('Haz clic aquí para ver un ejemplo.');
+  // ******EJEMPLO******:
   //
-  //   createPlatform(40, 100, platformWidth, platformHeight, platformColor);
+  // createPlatform(40, 100, platformWidth, platformHeight, platformColor);
   //                  ^   ^    ^              ^               ^                     
   //                  |   |    |              |               color                     
-  //                  |   |    |              height                                      
-  //                  |   |    width
-  //                  |   y-position
-  //                  x-position
+  //                  |   |    |              altura                                      
+  //                  |   |    anchura
+  //                  |   posición y
+  //                  posición x
   // EDITOR: endCodeFold();
   
 }

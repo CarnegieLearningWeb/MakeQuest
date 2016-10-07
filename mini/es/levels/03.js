@@ -1,19 +1,19 @@
-// ***** 4. Resize the Platforms *****
+// ***** 4. Cambia las dimensiones de las plataformas *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   
-  // Make the platforms bigger by changing their width
-  // and height in the code.
+  // Modifica los valores de anchura y altura para 
+  // cambiar las dimensiones de las plataformas
   //
-  // The third number controls width, the last number 
-  // controls height.
+  // El tercer número controla la anchura,
+  // el último número controla la altura.
   //
-  // TIP: Your x and y position will be at the center 
-  // of the platform. 
+  // TIP: El valor x e y definen la ubicación
+  // del punto central de la plataforma. 
   //
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
 // EDITOR: endReadOnly();
 
 // EDITOR: markHint('createPlatform', '(', null, ',', null, ',', {type: 'Numeric', highlight: true});
@@ -27,15 +27,15 @@ function setupLevel() {
 
 // EDITOR: beginReadOnly();
 // EDITOR: beginCodeFold('Click here for an example.');
-  // ******See Example Below******:
+  // ******Ejemplo******:
   //
   //   createPlatform(40, 100, 80, 10);
   //                  ^   ^    ^   ^
   //                  |   |    |   |
-  //                  |   |    |   height
-  //                  |   |    width
-  //                  |   y-position
-  //                  x-position
+  //                  |   |    |   altura
+  //                  |   |    anchura
+  //                  |   posición y
+  //                  posición x
   // EDITOR: endCodeFold();
 }
 // EDITOR: endReadOnly();

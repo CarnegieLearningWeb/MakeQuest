@@ -1,26 +1,25 @@
-// ***** 16. Save the World of Code *****
+// ***** 16. Rescata el Mundo de Código *****
 
 // EDITOR: beginReadOnly();
 function drawLevel() {
 
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   // 
-  // Use the right amount of force to reach the goal
-  // with a single jump. 
-  // ***** ENTER YOUR CODE BELOW *****
+  // Utiliza la fuerza exacta para caer sobre tu enemigo con un solo salto. 
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   
     makePlayerJump( 0 );
   // EDITOR: beginReadOnly();
   }
   // EDITOR: endReadOnly();
-  // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
-  // ******See Example Below******:
+  // EDITOR: beginCodeFold('Haz clic aquí para un EJEMPLO.');
+  // ******Ejemplo******:
   //
   //   makePlayerJump( 5 );
   //                   ^
   //                   |
-  //                   force
+  //                   fuerza
   // EDITOR: endCodeFold();
 }

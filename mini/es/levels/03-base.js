@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, Hex Code Unscrambler Unlocked!";
-CURRENT_LEVEL_TEXT = "4. Resize the Platforms";
+GOAL_REACHED_TEXT = "¡Haz adquirido el Decodificador de Colores!";
+CURRENT_LEVEL_TEXT = "4. Cambia las dimensiones de las plataformas";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nOh no these platforms are too small! Luckily, the Size Modification power lets you access the third and fourth numbers for each platform. The third number controls how wide a platform is, and the fourth controls how tall it is.",
+      text: "\n¡No puede ser, estas plataformas son demasiado pequeñas! Pero el Modificador Dimensional te permite cambiar los últimos dos números de cada platforma. El tercer número controla el ancho de la plataforma, y el cuarto número controla su altura.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nClick on the code and resize the platforms to reach the goal! \n\nBetter hurry, the 404 won’t avoid you forever..."
+      text: "\n¡Haz clic en el editor de código y cambia el tamaño de las plataformas para alcanzar el portal! \n¡No hay tiempo que perder, el Villano 404 no puede estar lejos!"
     }
   ];
 }

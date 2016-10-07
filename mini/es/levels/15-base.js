@@ -1,8 +1,8 @@
 PLAYER_START_X = 120;
 PLAYER_START_Y = 380;
 
-GOAL_REACHED_TEXT = "Congratulations, you've defeated 404 and restored the World of Code!\n\nClick continue to create your own version of MakeQuest in the Sandbox.";
-CURRENT_LEVEL_TEXT = "16. Save the World of Code";
+GOAL_REACHED_TEXT = "¡Felicidades, haz derrotado al Villano 404 y restaurado el orden en el Mundo de Código!\n\nHaz clic aquí para crear tu propia versión de MakeQuest en el Sandbox.";
+CURRENT_LEVEL_TEXT = "16. Rescata el Mundo de Código";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nHere it is, the doorstep of doom, the threshold of terror, the spinning color wheel of… wait, that’s something else.  We are face to face with 404, defeat him with one mighty jump and release coding back into the world!",
+      text: "\nHemos llegado, las puertas del infierno, un abismo infinito, la rueda de colores... momento, esa es otra historia. Ahora estamos frente al Villano 404. ¡Un salto como ningún otro será suficiente para restaurar el código del mundo!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nUse the Codo Stick to reach the final goal.  This will give you full control over the code, and allow you to reshape the world in any way.\n\nYou are but one mighty jump away!"
+      text: "\n\nUtiliza tu Resorte Codificado para aplastar al Villano 404. Esto te dará control absoluto sobre el código y podrás modificar el mundo a tu gusto.\n\n¡Ha llegado el momento del salto decisivo!"
     }
   ];
 }

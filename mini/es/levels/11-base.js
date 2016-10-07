@@ -2,7 +2,7 @@ PLAYER_START_X = 120;
 PLAYER_START_Y = 420;
 
 GOAL_REACHED_TEXT = "Remote Control Instruction Manual Unlocked!";
-CURRENT_LEVEL_TEXT = "12. Change Direction";
+CURRENT_LEVEL_TEXT = "12. Cambia de dirección";
 
 function base_getLevelDialogue() {
   return [
@@ -10,19 +10,19 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWhat is that thing, a remote control? Whoa, the platform is moving, but the wrong way!",
+      text: "\n¿Qué es eso, un control remoto? ¡La plataforma se mueve, pero va en dirección opuesta!",
     },
         {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nLook closer, it seems to have something written on it.  You need to face the RIGHT direction to make this platform move towards the next goal.  Maybe that will uncover more about it.",
+      text: "\nMira más de cerca, parece que hay algo escrito. La plataforma debe mirar en la dirección correcta para llegar a la meta.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nMake the platform FACE the correct direction to reach the goal."
+      text: "\nHaz que la plataforma se mueva en la dirección correcta para alcanzar el portal."
     }
   ];
 }

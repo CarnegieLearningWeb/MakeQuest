@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "The mysterious watch glows brighter!";
-CURRENT_LEVEL_TEXT = "9. Make 2 platforms";
+GOAL_REACHED_TEXT = "¡El reloj misterioso brilla con mayor intensidad!";
+CURRENT_LEVEL_TEXT = "9. Programa 2 plataformas";
 
 function base_getLevelDialogue() {
   return [
@@ -10,28 +10,28 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nAfter that last energy surge a watch appeared on your arm. It has platform creation code!",
+      text: "\nDespués del último destello de luz, un reloj apareció en tu brazo. ¡El reloj te permite escribir código para crear más plataformas!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "It says:\n\n"
+      text: "El reloj tiene escrito:\n\n"
             +"createPlatform(x,y,width,height,color);\n"
-            +"example:\n"
+            +"ejemplo:\n"
             +"createPlatform(100, 200, 80, 20, ‘blue);"
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nDo you know what this is?!? This is the ancient lost code of platform creation! You can now create your own platforms.  Look for parts of the code where platforms may have once existed. You can bring them back!",
+      text: "\n¿Sabes lo que esto significa? ¡Es el antiguo código de construcción! Ahora puedes construir tus propias plataformas.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nQuickly rebuild the path with your own platforms to reach the goal. (Hint: change the zeros and give those platforms some value.)",
+      text: "\nUtiliza tu nuevo poder para reconstruir el camino hasta el portal con tus propias plataformas. (TIP: cambia esos ceros)",
     }
   ];
 }

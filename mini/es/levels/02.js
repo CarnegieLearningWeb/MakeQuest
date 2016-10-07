@@ -1,21 +1,21 @@
-// ***** 3. Master the coordinate plane *****
+// ***** 3. Domina el plano de coordenadas *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   
-  // Move the two lower platforms by changing their 
-  // x and y position in the code.
+  // Modifica la posición x e y de las dos últimas
+  // plataformas para moverlas.
   //
-  // Use “Reset” to start each level over
-  // Use “Run” to see your changes
-  // Use “Show Hints” to get extra help if you need it
+  // Utiliza el botón “Deshacer" para revertir el último cambio
+  // Utiliza el botón “Ejecutar" para ver tus cambios
+  // Utiliza el botón “Ayuda” para recibir pistas
   //
-  //The x,y coordinates in CreatePlatform() refer to the center of the platform.
+  // Las coordenadas x,y en createPlatform() hacen referencia al centro de la plataforma.
   //
-  // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
+  // TIP: El nivel mide 640 de ANCHO (WIDTH) y 480 de ALTO (HEIGHT)
   //
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
 
   createPlatform(60, 100, 120, 10);
   // EDITOR: endReadOnly();
@@ -26,15 +26,15 @@ function setupLevel() {
 
   // EDITOR: beginReadOnly();
   // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
-  // Example:
+  // ******Ejemplo******:
   //
   //   createPlatform(40, 100, 80, 10);
   //                  ^   ^    ^   ^
   //                  |   |    |   |
-  //                  |   |    |   height
-  //                  |   |    width
-  //                  |   y-position
-  //                  x-position
+  //                  |   |    |   altura
+  //                  |   |    anchura
+  //                  |   posición y
+  //                  posición x
   // EDITOR: endCodeFold();
   // EDITOR: endReadOnly();
 }

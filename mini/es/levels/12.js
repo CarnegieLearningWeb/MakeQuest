@@ -1,4 +1,4 @@
-// ***** 13. Slow the Platforms *****
+// ***** 13. Plataformas a baja velocidad *****
 
 // EDITOR: beginReadOnly();
 function setupLevel (){
@@ -16,22 +16,22 @@ function setupLevel (){
   platform3 = createPlatform(0, 350, platformWidth, platformHeight, 'green');
   // EDITOR: endReadOnly();
   
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Update the speed of platforms 2 and 3 to move slower so you can reach the goal. 
+  // Cambia la velocidade de las plataformas 2 y 3 para que se muevan más lento y así alcanzar el portal. 
   //
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   
   platform2.setSpeed( 7, FACE_RIGHT );
   platform3.setSpeed( 10, FACE_RIGHT );
 
-  // EDITOR: beginCodeFold('Click here for an example.');
+  // EDITOR: beginCodeFold('Haz clic aquí para un ejemplo.');
   // Example:
   //   platform1.setSpeed(0.5, FACE_DOWN);
   //                      ^        ^   
   //                      |        |   
   //                      |        |   
-  //                      |        direction
-  //                      speed
+  //                      |        dirección
+  //                      velocidad
   // EDITOR: endCodeFold();
 }

@@ -1,4 +1,4 @@
-// ***** 15. Learn to Jump *****
+// ***** 15. Aprende a saltar *****
 
 // EDITOR: beginReadOnly(); 
 function drawLevel() {
@@ -6,11 +6,11 @@ function drawLevel() {
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
   
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   // 
-  // Use a number different from 0 to give the jump some force.
+  // Utiliza un número mayor a cero para saltar con mayor fuerza.
   // 
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   
     makePlayerJump( 1 );
   
@@ -19,12 +19,12 @@ function drawLevel() {
   // EDITOR: endReadOnly();
 
 
-  // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
-  // ******See Example Below******:
+  // EDITOR: beginCodeFold('Haz clic aquí para un ejemplo.');
+  // ******Ejemplo******:
   //
   //   makePlayerJump( 5 );
   //                   ^
   //                   |
-  //                   force
+  //                   fuerza
   // EDITOR: endCodeFold();
 }

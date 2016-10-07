@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 80;
 
-GOAL_REACHED_TEXT = "Remote Control Advanced Settings Unlocked!";
-CURRENT_LEVEL_TEXT = "13. Slow the Platforms";
+GOAL_REACHED_TEXT = "¡Haz adquirido el control remoto con opciones avanzadas!";
+CURRENT_LEVEL_TEXT = "13. Plataformas a baja velocidad";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWow, the instruction manual helps a lot! You can use it to change the speed of the platforms. \nMake the numbers smaller and use the platforms to reach the goal before it’s too late.",
+      text: "\n¡El manual de instrucciones ha sido muy útil! Contiene información sobre como cambiar la velocidad de las plataformas. \nUtiliza una número más pequeño para llegar hasta el portal antes de que sea demasiado tarde.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYou’ve come so far, and restored so much of the damage caused by the 404... victory will soon be yours!"
+      text: "\n¡Haz llegado muy lejos y restaurado gran parte del daño causado por el Villano 404, la victoria está cerca!"
     }
   ];
 }

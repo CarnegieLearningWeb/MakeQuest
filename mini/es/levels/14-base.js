@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 380;
 
-GOAL_REACHED_TEXT = "Codo Stick at maximum power!";
-CURRENT_LEVEL_TEXT = "15. Learn to Jump";
+GOAL_REACHED_TEXT = "¡Resorte Codificado al máximo poder!";
+CURRENT_LEVEL_TEXT = "15. Aprende a saltar to Jump";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYes!  The 404 must be scared.  You are so close to undoing his evil plan. There is just one last thing to master.",
+      text: "\n!Si! El 404 debe tener miedo.  Estás a punto de deshacer su plan malvado. Sólo tienes una última cosa que dominar.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nThe Codo Stick unlocked code that lets you bounce on platforms. Edit the code and make yourself jump higher to reach the goal!"
+      text: "\nEl Resorte Codificado te permite saltar sobre las plataformas. ¡Cambia el código y salta más alto para alcanzar tu meta!"
     }
   ];
 }

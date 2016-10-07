@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "A mysterious watch has appeared!";
-CURRENT_LEVEL_TEXT = "8. Change Three Variables";
+GOAL_REACHED_TEXT = "¡Haz descubierto un reloj misterioso!";
+CURRENT_LEVEL_TEXT = "8. Cambia tres variables";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWith your V.E.S.T. at full power you can now store as many different variables as you will ever need.  What a wondrous piece of equipment, I bet the possibilities with variables are endless.  But for now, let’s focus on reaching the goal.",
+      text: "\nAhora que tu V.E.S.T. ha alcanzado su máximo poder puedes usar todas las variables que necesites. Esto es genial, las posibilidades son infinitas con todas estas variables a tu disposición. Pero por el momento, hay que concentrarse en llegar al portal.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nHead to the code and change all 3 variables to make some stairs to reach the goal.  Don’t forget you can’t stand on red platforms!",
+      text: "\nCambia las tres variables para construir unas escaleras que te lleven hasta el portal. ¡No olvides que las plataformas rojas son una trampa!",
     }
   ];
 }

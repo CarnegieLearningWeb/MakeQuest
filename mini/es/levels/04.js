@@ -1,17 +1,16 @@
-// ***** 5. Recolor the Platforms *****
+// ***** 5. Colorea las plataformas *****
 
 // EDITOR: beginReadOnly();
 function setupLevel(){ 
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Change the word 'red' to something else
-  // like 'magenta' or 'blue'.
-  // You'll have to change it every time you see
-  // the word 'red' below, but it's worth the extra work to
-  // beat the evil 404!
+  // Cambia la palabra 'red' (rojo) por
+  // el nombre de otro color en inglés como 'magenta' (magenta) o 'blue' (azul).
+  // ¡Tendrás que cambiar el color cada que veas la palabra
+  // 'red', pero vale la pena con tal de derrotar al Villano 404.
 
   //
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
 
   createPlatform(40, 100, 80, 10, 'green');
   // EDITOR: markHint('createPlatform', '(', null, ',', null, ',', null, ',', null, ',', {type: 'String', highlight: true});
@@ -22,13 +21,12 @@ function setupLevel(){
   createPlatform(510, 400, 80, 10, 'red');
 
   // EDITOR: beginReadOnly();
-  // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
-  // ***** CHALLENGE ********
-  // Challenge1 (bronze level) 
-  // -- Change each platform to a  *different* color.
-  // Challenge 2 (silver level) 
-  // -- Change each platform to a *square* instead of
-  // a rectangle.
+  // EDITOR: beginCodeFold('Haz clic aquí para un RETO.');
+  // ***** RETO ********
+  // Reto 1 (nivel bronce) 
+  // -- Utiliza un color distinto para cada plataforma.
+  // Reto 2 (nivel plata) 
+  // -- Haz que tus plataformas sean cuadradas en lugar de rectangulares.
   // EDITOR: endCodeFold('Click here for a CHALLENGE.');
   // EDITOR: endReadOnly();
 

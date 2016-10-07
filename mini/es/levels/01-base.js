@@ -1,5 +1,5 @@
-GOAL_REACHED_TEXT = "CoordinateVision unlocked!!!";
-CURRENT_LEVEL_TEXT = "2. Secret Communication with Comments";
+GOAL_REACHED_TEXT = "¡Haz adquirido Visión Programadora!";
+CURRENT_LEVEL_TEXT = "2. Comunicación Secreta con Comentarios";
 
 function base_getLevelDialogue() {
   return [
@@ -7,25 +7,25 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nOh no, our code is broken! \n\nThe Vile 404 has corrupted all the world’s code, giving him infinite power and control over reality!",
+      text: "\n¡Ay no, nuestro código ya no funciona!\n\n¡El Villano 404 alteró el código del mundo para obtener poderes ilimitados y controlar nuestra realidad!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYou’re the only one with access to the code now, so we need you to fix it. I’ll coach you through it!"
+      text: "\nEres la única persona capaz de reprogramar el mundo. ¡Yo te ayudare durante tu recorrido!"
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nUse the arrows to move your avatar to the goal.  This will power up your visual sensors so you can see JavaScript and the coordinate plane.",
+      text: "\nUtiliza las flechas para mover a tu avatar hasta el portal. Esto amplificará tu sentido de la vista para que puedas ver el código JavaScript y el plano de coordenadas.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Read the left side of the screen and follow the “secret” instructions there!"
+      text: "¡Lee las instructions del lado izquierdo de la pantalla y sigue las instrucciones “secretas”!"
     }
     // {
     //   character: "heroA",

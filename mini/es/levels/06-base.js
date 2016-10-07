@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = " Congratulations, V.E.S.T. has reached full power!";
-CURRENT_LEVEL_TEXT = "7. Change Two Variables";
+GOAL_REACHED_TEXT = "¡Felicidades, tu V.E.S.T. ha alcanzado su máximo poder!";
+CURRENT_LEVEL_TEXT = "7. Cambia dos variables";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWow, your V.E.S.T. gained even more storage capacity.  Now you can change two variables at once, like color and length. Recolor and Resize the platforms by changing the platformWidth and platformColor variables and reach the goal!",
+      text: "\nIncreíble, tu V.E.S.T. tiene más espacio para variables. Ahora puedes modificar dos variables al mismo tiempo, por ejemplo las variables de color y anchura. Utiliza las variables platformWidth y platformColor para cambiar las plataformas de tamaño y color.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nYour are one step closer to stopping the 404...",
+      text: "\nEstás cada vez más cerca de detener al Villano 404",
     },
   ];
 }

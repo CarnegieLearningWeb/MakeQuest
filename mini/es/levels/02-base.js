@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, Size Modification Unlocked!";
-CURRENT_LEVEL_TEXT = "3. Master the coordinate plane";
+GOAL_REACHED_TEXT = "¡Haz adquirido el Modificador Dimensional!";
+CURRENT_LEVEL_TEXT = "3. Domina el plano de coordenadas";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWelcome to the coordinate plane! With your coordinateVision, you can now see an x and y axis. It’s like the coordinate plane you know from math class, but the starting point (0,0) is in the top left, instead of the bottom left corner. Weird, right?",
+      text: "\n¡Bienvenido al plano de coordenadas! Gracias a tu Visión Programadora, ahora puedes ver los ejes x e y. El plano de coordenadas es similar al que ya conoces, pero las coordenadas (0,0) se encuentran en la esquina superior izquierda.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Move the platforms so you can reach the goal. To create the platform, the computer needs 4 numbers: (x position, y position, width, height). \n\nGo into the code and edit the x and y position for each platform. (Hint: that’s the first 2 numbers!)",
+      text: "Mueve las plataformas para alcanzar el portal. Para construir una plataforma, la computadora necesitar 4 números: (posición x, posición  y, ancho, altura). \n\nUsa el código para editar la posición x e y de cada plataforma. (Tip: ¡Son los primeros dos números!)",
     }
   ];
 }

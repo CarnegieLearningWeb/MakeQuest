@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 280;
 
-GOAL_REACHED_TEXT = "Congratulations, Codo Stick Acquired!";
-CURRENT_LEVEL_TEXT = "14. Falling Blocks";
+GOAL_REACHED_TEXT = "¡Haz adquirido el Resorte Codificado!";
+CURRENT_LEVEL_TEXT = "14. Lluvia de bloques";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nOh Boy, this thing has advanced settings?!?  You are going to enjoy reaching this next one.  It looks like The 404 set a trap for you!",
+      text: "\n¿Ésta cosa tiene opciones avanzadas? Esto será divertido. ¡Parece que el Villano 404 nos dejó una trampa!",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nUse the remote control to make the blocks fall slower...or maybe there is another way?"
+      text: "\nUtiliza el control remoto para hacer que los bloques caigan más lento... ¿o quizá exista otra forma?"
     }
   ];
 }

@@ -1,14 +1,15 @@
-// ***** 6. Use Variables *****
+// ***** 6. Utiliza Variables *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Update the color of the VARIABLE below to change all of the
-  // platform colors. By changing the platformColor variable
-  //instead of each color one by one, you can save loads
-  //of time… time you will need later to defeat For-Oh-For!
-  // ***** ENTER YOUR CODE BELOW *****
+  // Actualiza el color de la siguiente VARIABLE para cambiar
+  // el color de todas las plataformas. Usar una variable es
+  // una forma más sencilla de editar múltiples plataformas
+  // al mismo tiempo y ahorrar tiempo. ¡Tiempo esencial para
+  // derrotar al Villano 404!
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   // EDITOR: endReadOnly();
   
   // EDITOR: markHint('platformColor', '=', {type: 'String', highlight: true});
@@ -23,14 +24,13 @@ function setupLevel() {
   createPlatform(510, 400, 80, 10, platformColor);
   
   // EDITOR: beginReadOnly();
-  // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
-  // ***** CHALLENGE ********
-  // Challenge (answer in your head): if using a variable called
-  // platformColor can change *all* of the colors in this level… 
-  // how do you think you could change all of the platform *sizes*
-  // (length or width) without having to change each individual 
-  // platform?  
-  // Think you’ve got it? Stay tuned!
+  // EDITOR: beginCodeFold('Haz clic aquí para un RETO.');
+  // ***** RETO ********
+  // Si la variable platformColor sirve para cambiar 
+  // *todas* las plataformas de color en este nivel, ¿qué 
+  // puedes hacer para cambiar todas las plataformas de 
+  // tamaño?
+  // ¡Pronto tendrás la respuesta!
   // EDITOR: endCodeFold();
   // EDITOR: endReadOnly();
 

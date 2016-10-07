@@ -1,15 +1,17 @@
-// ***** 1. El mundo de codigo *****
+// ***** 1. El Mundo del Código *****
 
-// ***** INSTRUCTIONS *****
-// Click on the game scene to the right to start playing
-// and unlock the power to edit this code
+// ***** INSTRUCCIONES *****
+// Haz clic en el juego del lado derecho de la pantalla
+// para comenzar a jugar y descubrir el poder del código
 // 
-// Below is the code for the game scene on the right.  
-// Writing code (a.k.a, programming) is how you tell a 
-// computer to do something.
-// Lines of code that start with two slashes (like this one) 
-// are called “comments”
-// Only humans can read comments - computers can’t see them.
+// A continuación se encuentra el código que da vida
+// al juego en el lado derecho de la pantalla.  
+// Escribir código, o programar, es la manera de dar
+// instrucciones a la computadora para que haga algo.
+// Las líneas de código que comienzan con dos diagonales ( // )
+// se conocen como “comentarios
+// Únicamente los humanos pueden leer comentarios;
+// para la computadora son invisibles.
 // EDITOR: beginReadOnly();
 
 function setupLevel() {

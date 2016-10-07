@@ -1,4 +1,4 @@
-// ***** 14. Falling Blocks *****
+// ***** 14. Lluvia de bloques *****
 
 // EDITOR: beginReadOnly();
 function setupLevel (){
@@ -16,27 +16,28 @@ function setupLevel (){
   platform4 = createPlatform(500, 200, 100, platformHeight, 'green');
   // EDITOR: endReadOnly();
   
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Update the platforms to move slower so you can reach the goal. 
-  //
-  // ***** ENTER YOUR CODE BELOW *****
+  // Actualiza las plataformas para que se muevan más lento y poder   
+  // alcanzar el portal.    
+  // 
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   
   platform2.setSpeed( 4, FACE_DOWN );
   platform3.setSpeed( 3, FACE_DOWN );
   platform4.setSpeed( 4, FACE_DOWN );
 
-  // EDITOR: beginCodeFold('Click here for an EXAMPLE.');
+  // EDITOR: beginCodeFold('Haz clic aquí para un ejemplo.');
   // Example:
   //   platform1.setSpeed(0.5, FACE_DOWN);
   //                      ^        ^   
   //                      |        |   
   //                      |        |   
-  //                      |        direction
-  //                      speed
+  //                      |        dirección
+  //                      velocidad
   // EDITOR: endCodeFold();
   
-  // EDITOR: beginCodeFold('Click here for a CHALLENGE.');
-  // Change the speed of just two platforms
+  // EDITOR: beginCodeFold('Haz clic aquí para un RETO.');
+  // Cambia la velocidad de sólo dos plataformas
   // EDITOR: endCodeFold();
 }

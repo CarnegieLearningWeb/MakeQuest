@@ -1,32 +1,31 @@
-// ***** 10. Write Your Own Platform Code *****
+// ***** 10. Programa tus propias plataformas *****
 
 // EDITOR: beginReadOnly();
 function setupLevel() {
 // EDITOR: endReadOnly();
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Write the code to create two new platforms.
+  // Escribe el código para construir dos plataformas nuevas.
   //
-  // Refer to line 11 for help.
+  // Utiliza el código en la línea 11 como referencia.
   //
   // EDITOR: beginReadOnly();
-  // The line of code below creates the platform you are standing on
+  // La siguiente línea de código construye la plataforma sobre la cual estás parado
   createPlatform(40, 100, 80, 20, 'blue');
   // EDITOR: endReadOnly();
-  // ***** ENTER YOUR CODE BELOW *****
-  // Create two new platforms below. Take a look at the code
-  // on line 11 to help you create your own platforms.
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
+  // Construye dos plataformas nuevas.
   
   
-  // EDITOR: beginCodeFold('Click here for an example.');
-  // ******See Example Below******:
+  // EDITOR: beginCodeFold('Haz clic aquí para ver un ejemplo.');
+  // ******EJEMPLO******:
   //
   //   createPlatform(40, 100, 100, 30, 'orange');
   //                  ^   ^    ^    ^    ^                     
   //                  |   |    |    |    color                     
-  //                  |   |    |    height                                      
-  //                  |   |    width
-  //                  |   y-position
-  //                  x-position
+  //                  |   |    |    altura                                      
+  //                  |   |    anchura
+  //                  |   posición y
+  //                  posición x
   // EDITOR: endCodeFold();
 }

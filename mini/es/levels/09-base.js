@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "The mysterious watch alters appearance!";
-CURRENT_LEVEL_TEXT = "10. Write Your Own Platform Code";
+GOAL_REACHED_TEXT = "¡El reloj misterioso cambia de apariencia!";
+CURRENT_LEVEL_TEXT = "10. Programa tus propias plataformas";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nWow, is the watch brighter than before?  It’s going to let you create your own platforms! If you look at the code for the platform you are standing on, it will guide you to creating additional platforms.",
+      text: "\nEl reloj brilla con mayor intensidad. Ahora puedes escribir el código para crear plataformas tú solo. Puedes estudiar el código de la plataforma sobre la cual estás parado para crear plataformas adicionales.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nType in the platform code and edit it. Make at least two new platforms so you can reach the goal!"
+      text: "\nPrograma al menos dos plataformas nuevas para alcanzar el portal."
     }
   ];
 }

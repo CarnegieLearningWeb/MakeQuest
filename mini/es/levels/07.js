@@ -1,20 +1,20 @@
-// ***** 8. Change Three Variables *****
+// ***** 8. Cambia tres variables *****
 
 // EDITOR: beginReadOnly();
 function setupLevel(){
 // EDITOR: endReadOnly();
-  // ***** INSTRUCTIONS *****
+  // ***** INSTRUCCIONES *****
   //
-  // Update the number in the platformWidth VARIABLE to change
-  // the width of many platforms.
+  // Cambia el valor de la VARIABLE platformWidth para cambiar
+  // la anchura de varias plataformas a la vez.
   //
-  // Update the number in the platformHeight VARIABLE to change
-  // the height of many platforms.
+  // Cambia el valor de la VARIABLE platformHeight para cambiar
+  // la altura de varias plataformas a la vez.
   //
-  // Update the color of the platformColor VARIABLE below to
-  // change all of the platform colors.
+  // Cambia el valor de la VARIABLE platformColor para cambiar
+  // el color de las plataformas.
   //
-  // ***** ENTER YOUR CODE BELOW *****
+  // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****
   // EDITOR: markHint('platformColor', '=', {type: 'String', highlight: true});
   // EDITOR: markHint('platformWidth', '=', {type: 'Numeric', highlight: true});
   // EDITOR: markHint('platformHeight', '=', {type: 'Numeric', highlight: true});

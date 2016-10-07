@@ -1,8 +1,8 @@
 PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
-GOAL_REACHED_TEXT = "Congratulations, V.E.S.T Discovered!";
-CURRENT_LEVEL_TEXT = "5. Recolor the Platforms";
+GOAL_REACHED_TEXT = "!Haz adquirido el V.E.S.T!";
+CURRENT_LEVEL_TEXT = "5. Colorea las plataformas";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nCareful! You will fall right through red platforms.  Be sure to change them to a different color! With your Hex Code Unscrambler it’s  easy - just change the word ‘red’ to a different color in the platform code.",
+      text: "\n¡Cuidado! Las plataformas rojas son una trampa.  Utiliza tu Decodificador de Colores para cambiar las plataformas de color; sólo tienes que cambiar la palabra ‘red’ (rojo) por el nombre de otro color en inglés.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nHex codes are numbers that computers read as colors. Thankfully we unscrambled it, so we can see the color name (‘red’) and not the hex code (#FF0000). Get these platforms re-colored so you can reach the goal!"
+      text: "\nLos códigos hexadecimales son números que la computadora interpreta como colores. Pero el Decodificador te permite ver el nombre en inglés (‘red’) en lugar del código hexadecimal (#FF0000). ¡Hora de recolorear esas plataformas!"
     }
   ];
 }
