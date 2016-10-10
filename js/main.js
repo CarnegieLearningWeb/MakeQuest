@@ -2,12 +2,17 @@ var maxLevel = gameConstants.MAX_LEVEL;
 // Check if we're accessing a remix url, if so, store the url for later use
 var remixUrl = window.location.href.match(/remix=(.+)/);
 
-
-var queryParams = window.location.search.substring(1).split('=');
-var langIndex = queryParams.indexOf('lang');
+// Set language
+var queryParams = window.location.search.substring(1).split('&');
 // Default to english => ''
-var language = (langIndex > -1) ? queryParams[langIndex+1] : '';
-var languagePath = (langIndex > -1) ? queryParams[langIndex+1]+'/' : '';
+var language = '';
+var languagePath = '';
+for (var i = 0; i < queryParams.length; i++) {
+    if(queryParams[i].indexOf('lang')>-1){
+      language = queryParams[i].split('=')[1];
+      languagePath = language+'/';
+    }
+}
 
 $(document).ready(function() {
     // Set language in storage
@@ -278,10 +283,15 @@ function publish(){
         ga('send', 'event', 'Ajax Error', status, 'publisher', { 'nonInteraction': 1 });
       },
       success: function(data) {
+        var url = data['published-url'];
+        if(language && language == 'es'){
+            url += '?lang=es';
+        }
+
         $("#published").fadeIn()
           .find('a')
-          .attr('href', data['published-url'])
-          .text(data['published-url']);
+          .attr('href', url)
+          .text(url);
 
         // Disable Publish button to avoid publishing spam
         // $('button[type="submit"]').attr('disabled', 'disabled');

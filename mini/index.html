@@ -303,6 +303,19 @@
         // Insert remix url
         // var baseRemixUrl = 'http://code.globaloria.com';
         
+        // HANDLE DIFFERENT LANGUAGES
+        // Set language
+        var queryParams = window.location.search.substring(1).split('&');
+        // Default to english => ''
+        var language = '';
+        var languagePath = '';
+        for (var i = 0; i < queryParams.length; i++) {
+          if(queryParams[i].indexOf('lang')>-1){
+            language = queryParams[i].split('=')[1];
+            languagePath = language+'/';
+          }
+        }
+        
         // Where was the game published from
         var sourceUrl = document.getElementsByTagName('base')[0].href;
         var baseRemixUrl = sourceUrl.replace('/mini/', '');
@@ -310,8 +323,16 @@
         var url = document.createElement("a");
         url.href = window.location.href;
 
-        var remixUrl = baseRemixUrl + url.pathname.replace('/', '?remix=');
-        $('#remix').attr('href', remixUrl);
+        // Insert language in remix url
+        switch(language){
+            case 'es':
+                var remixUrl = baseRemixUrl + url.pathname.replace('/', '?lang=es&remix=');
+                $('#remix').attr('href', remixUrl);
+                break;
+            default:
+                var remixUrl = baseRemixUrl + url.pathname.replace('/', '?remix=');
+                $('#remix').attr('href', remixUrl);
+        }
     </script>
 </body>
 

@@ -667,11 +667,17 @@
   
   <script>
       // HANDLE DIFFERENT LANGUAGES
-      var queryParams = window.location.search.substring(1).split('=');
-      var langIndex = queryParams.indexOf('lang');
+      // Set language
+      var queryParams = window.location.search.substring(1).split('&');
       // Default to english => ''
-      var language = (langIndex > -1) ? queryParams[langIndex+1] : '';
-      var languagePath = (langIndex > -1) ? queryParams[langIndex+1]+'/' : '';
+      var language = '';
+      var languagePath = '';
+      for (var i = 0; i < queryParams.length; i++) {
+          if(queryParams[i].indexOf('lang')>-1){
+            language = queryParams[i].split('=')[1];
+            languagePath = language+'/';
+          }
+      }
 
       var sandboxMenuItemMarkup;
       switch(language){
@@ -1240,29 +1246,29 @@
       switch(language){
         case 'es':
           joyrideMarkup = '<ol class="joyride-list" data-joyride>'
-            +'<li data-text="Next" data-options="prev_button: false; tip_animation:fade">'
+            +'<li data-text="Siguiente" data-options="prev_button: false; tip_animation:fade">'
             +'<p>Bienvenido a MakeQuest!</p>'
-            +'<p>Let\'s take a quick tour through your coding environment.</p>'
-            +'<p>You can skip this at any time.</p>'
+            +'<p>Veamos como funcionan las distintas herramientas.</p>'
+            +'<p>Puedes cerrar este tutorial en cualquier momento.</p>'
             +'</li>'
-            +'<li data-id="levelMenu" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
-            +'<p>Choose a level or skip to the sandbox</p>'
+            +'<li data-id="levelMenu" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Elige un nivel o ve directo al Sandbox</p>'
             +'</li>'
-            +'<li data-id="undo" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
-            +'<p>Undo edits to your code</p>'
+            +'<li data-id="undo" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Deshaz el último cambio a tu código</p>'
             +'</li>'
-            +'<li data-id="run" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
-            +'<p>Update the game using your code</p>'
+            +'<li data-id="run" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Actualiza tu juego con el código más reciente</p>'
             +'</li>'
-            +'<li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">'
-            +'<p>Learn more about the current level and write your code</p>'
-            +'<p>*Code in italics cannot be changed</p>'
+            +'<li data-id="js_editor" data-button="Siguiente" data-prev-text="Anterior" data-options="tip_location:right; tip_animation:fade">'
+            +'<p>Descubre más sobre el nivel actual y escribe tu código</p>'
+            +'<p>*El código en itálicas no se puede modificar</p>'
             +'</li>'
-            +'<li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">'
-            +'<p>Display the game story again</p>'
+            +'<li data-id="showDialogue" data-button="Siguiente" data-prev-text="Anterior" data-options="tip_location:left; tip_animation:fade">'
+            +'<p>Volver a mostrar la historia del juego</p>'
             +'</li>'
-            +'<li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; +tip_animation:fade">'
-            +'<p>Click on the game screen to move the hero using the left and right arrow keys</p>'
+            +'<li data-id="preview" data-button="¡A programar!" data-prev-text="Anterior" data-options="tip_location:left; +tip_animation:fade">'
+            +'<p>Haz clic en la escena de juego para mover a tu héroe con las flechas izquierda y derecha del teclado.</p>'
             +'</li>'
             +'</ol>';
           break;
