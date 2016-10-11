@@ -9,7 +9,7 @@ var isPublishedGame = false;
 
 
 // Set language
-var queryParams = window.location.search.substring(1).split('&');
+var queryParams = parent.window.location.search.substring(1).split('&');
 // Default to english => ''
 var language = '';
 var languagePath = '';
@@ -53,6 +53,8 @@ if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
 // Append language path
+console.log("Appending language path");
+console.log(languagePath);
 currentLevelFilename = languagePath+currentLevelFilename;
 
 
@@ -150,6 +152,8 @@ function setupLevel() {}
 function drawLevel() {}
 function getLevelDialogue() {}
 
+console.log("Loading level file");
+console.log(currentLevelFilename);
 // Load the BASE level file for the current level.
 document.write('<script src="' + currentLevelFilename + '-base.js"></script>');
 
