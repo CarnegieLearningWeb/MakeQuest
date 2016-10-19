@@ -1,3 +1,34 @@
+// Set language
+var queryParams = parent.window.location.search.substring(1).split('&');
+// Default to english => ''
+var language = '';
+var languagePath = '';
+for (var i = 0; i < queryParams.length; i++) {
+  if(queryParams[i].indexOf('lang')>-1){
+    language = queryParams[i].split('=')[1];
+    languagePath = language+'/';
+  }
+}
+
+var errorMsgs = {
+  color: "You need a valid color name. Make sure you're spelling the name of your color correctly, and that it's surrounded with quotation marks.",
+  comma: "Every value or ARGUMENT inside parentheses must be separated by a comma",
+  semicolon: "Every line of code or STATEMENT must end with a semicolon ';'",
+  parentheses: "You need an opening '(' and a closing ')' parentheses.",
+  number: "It looks like you're missing a number between the opening '(' and closing ')' parentheses."
+};
+
+// Spanish errors
+if(language == 'es'){
+  errorMsgs = {
+    color: "El nombre del color debe ser en inglés. Verifica que el nombre esté bien escrito, y que se encuentre entre comillas.",
+    comma: "Los valores o ARGUMENTS entre paréntesis deben estar separados por una coma",
+    semicolon: "Cada línea de código o STATEMENT termina con ';'",
+    parentheses: "Necesitas dos paréntesis, uno izquierdo '(' y otro derecho ')'",
+    number: "Hace falta un número entre los paréntesis '(' y ')'."
+  };
+}
+
 var CustomErrors = {
   //Main funciton to be called when performing tests
   test: function( code ){
@@ -38,13 +69,7 @@ var CustomErrors = {
     $('#errorModal').foundation('reveal', 'open');
   },
 
-  errorMsgs: {
-    color: "You need a valid color name. Make sure you're spelling the name of your color correctly, and that it's surrounded with quotation marks.",
-    comma: "Every value or ARGUMENT inside parentheses must be separated by a comma",
-    semicolon: "Every line of code or STATEMENT must end with a semicolon ';'",
-    parentheses: "You need an opening '(' and a closing ')' parentheses.",
-    number: "It looks like you're missing a number between the opening '(' and closing ')' parentheses."
-  },
+  errorMsgs: errorMsgs,
 
   // Custom functions to handle tailored feedback.
   createPlatform: function(tokens, index){

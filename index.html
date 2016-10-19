@@ -103,14 +103,12 @@
   </main>
   <!-- error modal -->
   <div id="errorModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
-    <h2>Fix a bug!</h2>
-    <p class="error-text">Error text</p>
-    <!-- <div class="row">
-            <div class="large-6 columns auth-plain">
-                
-            </div>
-        </div> -->
-    <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>
+    <div id="errorModalContent">
+      <h2>Fix a bug!</h2>
+      <p class="error-text">Error text</p>
+      <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>  
+    </div>
+    
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
   <div id="welcomeModal" class="reveal-modal" data-reveal aria-labelledby="Welcome modal" aria-hidden="true" role="dialog">
@@ -678,6 +676,22 @@
             languagePath = language+'/';
           }
       }
+
+
+      var errorModalMarkup;
+      switch(language){
+        case 'es':
+          errorModalMarkup = '<h2>¡Inténtalo de nuevo!</h2>'
+          +'<p class="error-text">Error text</p>'
+          +'<p>TIP: No olvides utilizar el punto y coma ";" al final de tus líneas de código</p>'
+          break;
+        default:
+          errorModalMarkup = '<h2>Fix a bug!</h2>'
+          +'<p class="error-text">Error text</p>'
+          +'<p>TIP: Make sure the code you write ends with a semicolon: ";" </p>  '
+      }
+      $('#errorModalContent').html(errorModalMarkup);
+
 
       var sandboxMenuItemMarkup;
       switch(language){
