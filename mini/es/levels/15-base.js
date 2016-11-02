@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\n\nUtiliza tu Resorte Codificado para aplastar al Villano 404. Esto te dará control absoluto sobre el código y podrás modificar el mundo a tu gusto.\n\n¡Ha llegado el momento del salto decisivo!"
+      text: "\nUtiliza tu Resorte Codificado para aplastar al Villano 404. Esto te dará control absoluto sobre el código y podrás modificar el mundo a tu gusto.\n\n¡Ha llegado el momento del salto decisivo!"
     }
   ];
 }

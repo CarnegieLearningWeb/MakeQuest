@@ -7,7 +7,7 @@ function setupLevel(){
   // Cambia la palabra 'red' (rojo) por
   // el nombre de otro color en inglés como 'magenta' (magenta) o 'blue' (azul).
   // ¡Tendrás que cambiar el color cada que veas la palabra
-  // 'red', pero vale la pena con tal de derrotar al Villano 404.
+  // 'red', pero vale la pena con tal de derrotar al Villano 404!
 
   //
   // ***** ESCRIBE TU CÓDIGO A CONTINUACIÓN *****

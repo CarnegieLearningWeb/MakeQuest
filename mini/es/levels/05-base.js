@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\n¡Encontraste VEST (Tanque de Variables)!  El VEST te permite ver variables y partes del código que controlan varias cosas a la vez.",
+      text: "\n¡Encontraste V.E.S.T. (Tanque de Variables)!  El V.E.S.T. te permite ver variables y partes del código que controlan varias cosas a la vez.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "\nEste VEST nivel 1 te da acceso a una variable llamada platformColor, la cual contiene información sobre el color que se usa en todas las plataformas. Cambia la palabra ‘red’ por otro color y ve como todas las plataformas cambian a la vez."
+      text: "\nEste V.E.S.T. nivel 1 te da acceso a una variable llamada platformColor, la cual contiene información sobre el color que se usa en todas las plataformas. Cambia la palabra ‘red’ por otro color y ve como todas las plataformas cambian a la vez."
     },
     {
       character: "heroA",

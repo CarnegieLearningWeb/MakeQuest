@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 380;
 
 GOAL_REACHED_TEXT = "¡Resorte Codificado al máximo poder!";
-CURRENT_LEVEL_TEXT = "15. Aprende a saltar to Jump";
+CURRENT_LEVEL_TEXT = "15. Aprende a saltar";
 
 function base_getLevelDialogue() {
   return [

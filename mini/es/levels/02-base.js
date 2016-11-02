@@ -16,7 +16,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Mueve las plataformas para alcanzar el portal. Para construir una plataforma, la computadora necesitar 4 números: (posición x, posición  y, ancho, altura). \n\nUsa el código para editar la posición x e y de cada plataforma. (Tip: ¡Son los primeros dos números!)",
+      text: "Mueve las plataformas para alcanzar el portal. Para construir una plataforma, la computadora necesitar 4 números: (posicionx, posiciony, anchura, altura). \n\nUtilice el código para editar la posición x e y de cada plataforma. (Tip: ¡Son los primeros dos números!)",
     }
   ];
 }

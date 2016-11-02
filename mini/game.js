@@ -211,12 +211,26 @@ function levelComplete(){
         console.log("ERROR: Set unlocked item image");
     }
 
+    // Set language
+    var queryParams = parent.window.location.search.substring(1).split('&');
+    // Default to english => ''
+    var language = '';
+    var languagePath = '';
+    for (var i = 0; i < queryParams.length; i++) {
+      if(queryParams[i].indexOf('lang')>-1){
+        language = queryParams[i].split('=')[1];
+        languagePath = language+'/';
+      }
+    }
+
     if( currentLevel < maxLevel - 1 ){
+        var clickNextLvlTxt = (language == 'es') ? "Haz clic aquí para ir al siguiente nivel..." : "Click for next level...";
         fill('orange');
-        text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
+        text(clickNextLvlTxt, WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
     }else if( currentLevel == maxLevel - 1 ){
+        var clickToSandbox = (language == 'es') ? "Ir al Sandbox..." : "Go to Sandbox...";
         fill('orange');
-        text("Go to Sandbox...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
+        text(clickToSandbox, WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
     }
 
     //Reset rectMode back to default
