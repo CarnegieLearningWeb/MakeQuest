@@ -4,7 +4,7 @@ function setupDialogue(){
 	dialogueGutter = 20;
 	dialoguePicWidth = 64;
 	dialoguePicX = WIDTH - dialoguePicWidth - dialogueGutter;
-	pixelFont = loadFont('c64-pixelized.otf');
+	// pixelFont = loadFont('c64-pixelized.otf');
 	//Need a text height + "next" text to fit inside the BoxHeight
 	dialogueFontSize = 18;
 	dialogueBoxHeight = 218;
@@ -47,7 +47,7 @@ function drawDialogue(){
 		noStroke();
 		fill( currentDialogue[dialogueIndex].textColor );
 	    textSize( dialogueFontSize );
-	    textFont(pixelFont);
+	    // textFont(pixelFont);
 
 	    rectMode(CORNER);
 	    text( currentDialogue[dialogueIndex].text,
@@ -57,7 +57,25 @@ function drawDialogue(){
 				dialogueTextHeight - dialogueGutter );
 	    //Simulate a next "button" so the user clicks on the dialogueBox
 	    fill("orange");
-	    text( "Click to continue...",
+
+
+	    // Change text according to language from parent URL
+		var queryParams = parent.window.location.search.substring(1).split('&');
+		// Default to english => ''
+		var language = '';
+		var languagePath = '';
+		for (var i = 0; i < queryParams.length; i++) {
+		if(queryParams[i].indexOf('lang')>-1){
+		  language = queryParams[i].split('=')[1];
+		  languagePath = '/'+language;
+		}
+		}
+	    var clickToContinueText = "Click to continue...";
+	    if(language=='es'){
+	    	clickToContinueText = "Haz clic aquí para continuar...";
+	    }
+
+	    text( clickToContinueText,
 	    		dialogueGutter,
 	    		dialogueTextHeight + HEIGHT/3,
 	    		dialogueTextWidth );

@@ -4,15 +4,12 @@
 // code to help you play around and make a game you can 
 // call your own.
 // 
-// Should you get stuck at any point, you can always use 
-// the Reset button to get back to the game's original state.
-// 
 // Don't worry if you don't understand everything you see.
 // Try to find lines of code you understand and feel
 // comfortable with and play around with those.
 // 
 // NOTE: We have made some lines of code uneditable so that your
-// game doesn't accidentally break. This lines of code
+// game doesn't accidentally break. These lines of code
 // are required for the game engine to work properly.
 // ********************************************************
 
@@ -25,8 +22,13 @@ function setupLevel() {
 
   // Change the text between quotation marks "" 
   // to make it your own.
-  GOAL_REACHED_TEXT = "Change this text, this is YOUR world!";
+  // The computer will print the text to the screen in a single line. Use '\n' to add a line break.
+  GOAL_REACHED_TEXT = "\n\nThank you for playing MakeQuest! \nChange this text, this is YOUR world!";
   CURRENT_LEVEL_TEXT = "My world of code";
+  STORY_TEXT = [
+"\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!",
+"\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
+];
 
   // These variables are used to tell the platforms which 
   // way to move.
@@ -69,10 +71,10 @@ function setupLevel() {
   platform2 = createPlatform(180, 320, 80, platformHeight, 'blue');
   platform3 = createPlatform(150, 460, 130, platformHeight, 'magenta');
   platform4 = createPlatform(350, 460, 20, platformHeight, 'magenta');
-  createPlatform(450, 460, 20, platformHeight, 'magenta');
-  createPlatform(500, 390, 40, platformHeight, 'pink');
-  createPlatform(600, 320, 40, platformHeight, 'pink');
-  createPlatform(350, 260, 80, platformHeight, 'orange');
+  platform5 = createPlatform(450, 460, 20, platformHeight, 'magenta');
+  platform6 = createPlatform(500, 390, 40, platformHeight, 'pink');
+  platform7 = createPlatform(600, 320, 40, platformHeight, 'pink');
+  platform8 = createPlatform(350, 260, 80, platformHeight, 'orange');
   // Add more platforms here or change the ones above
   
 
@@ -112,6 +114,8 @@ function setupLevel() {
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_3.png");
   // backgroundImage = loadImage("images/MakeQuestAssets/Background_4.png");
   
+  // Define the color for the fireworks that get displayed once the player wins the game
+  fireworksColor = 'blue';
   
 // EDITOR: beginReadOnly();
 }
@@ -176,34 +180,3 @@ function drawLevel() {
 // EDITOR: beginReadOnly();
 }
 // EDITOR: endReadOnly();
-
-// The getLevelDialogue function draws the game's story
-// when the game starts and every time a player clicks
-// on the Story button
-// EDITOR: beginReadOnly();
-function getLevelDialogue() {
-  return [
-    {
-      character: "heroA",
-      image: heroAPic,
-// EDITOR: endReadOnly();
-      // You can change the color for the text as well as
-      // the message your players will see.
-      textColor: "white",
-      // To have text start in a new line use \n
-      // Notice how we skip one line at the beginning (\n),
-      // and two lines later on (\n\n)
-      text: "\nThe world is restored! \n\nThe power of code is yours to shape the world. Explore the full game code and make it your own!"
-// EDITOR: beginReadOnly();
-    },
-    {
-      character: "heroA",
-      image: heroAPic,
-// EDITOR: endReadOnly();
-      textColor: "white",
-      text: "\nAfter creating a world you like, click 'Share your game' to share your creation with your friends! \n\nThanks for coding!"
-// EDITOR: beginReadOnly();
-    }
-  ];
-// EDITOR: endReadOnly();
-}

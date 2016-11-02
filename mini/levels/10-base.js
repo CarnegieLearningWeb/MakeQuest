@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, Remote Control Acquired!";
-CURRENT_LEVEL_TEXT = "Write Code with Variables";
+CURRENT_LEVEL_TEXT = "11. Write Code with Variables";
 
 function base_getLevelDialogue() {
   return [
@@ -10,13 +10,13 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "The watch changed again? It must think you are ready! Now the platforms will behave according to the variables. You will have to use the coordinate planes if you want to become a platform creation master.",
+      text: "\nThe watch changed again? It must think you are ready! Now the platforms will behave according to the variables. You will have to use the coordinate planes if you want to become a platform creation master.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Create as many platforms as you need to reach the goal. I bet you could even make a staircase if you wanted..."
+      text: "\nCreate as many platforms as you need to reach the goal. I bet you could even make a staircase if you wanted..."
     }
   ];
 }

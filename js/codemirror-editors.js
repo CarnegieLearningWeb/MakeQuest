@@ -9,13 +9,13 @@ var editor_js = CodeMirror($('#js_editor')[0], {
   // theme : 'monokai'
 });
 
-// editor_js.on('changes', function() {
-//   if (editor_js.getValue() === originalEditorContent) {
-//     $("#revert").hide();
-//   } else {
-//     $("#revert").show();
-//   }
-// });
+editor_js.on('changes', function() {
+  if ( editor_js.isClean() ) {
+    $("#undo").prop("disabled",true);
+  } else {
+    $("#undo").prop("disabled",false);
+  }
+});
 
 function markHint(/* esprima token match pattern ... */) {
   var candidateMarks = [];
@@ -135,6 +135,7 @@ function readOnlyToken(/* esprima token match pattern ... */) {
 }
 
 function markJsErrorAtLine(line) {
+  console.log("Marking error at: " + line);
   var start = {line: line - 1, ch: 0};
   editor_js.markText(start, {line: line, ch: 0}, {
     className: 'js-error',
@@ -152,11 +153,15 @@ function refreshPreview() {
 
   // Test for custom feedback first and exit if found. 
   // Errors will be displayed to the user.
-  var err = CustomErrors.test( js_content );
-  if( err ){
-    CustomErrors.displayError(err);
-    return;
+  if( CustomErrors.test( js_content ) ){
+    return false;
   }
+  
+  // var err = CustomErrors.test( js_content );
+  // if( err ){
+  //   // CustomErrors.displayError(err);
+  //   return;
+  // }
 
   if (typeof(esprima) !== 'undefined') {
     try {
@@ -177,12 +182,17 @@ function refreshPreview() {
   //Error checking (provide user feedback)
   try {
      console.log("Eval js");
+     console.log( document.getElementById('preview').contentWindow.remove );
      console.log(js_content);
+
+    if( document.getElementById('preview').contentWindow.remove ){
       //Eval the code to overwrite existing function. Access the iframe by name
-    document.getElementById('preview').contentWindow.eval(js_content + '//# sourceURL=user-level.js');
-    document.getElementById('preview').contentWindow.remove();
-    document.getElementById('preview').contentWindow.p5PlayRebind();
-    document.getElementById('preview').contentWindow.eval("new p5();");
+      document.getElementById('preview').contentWindow.eval(js_content + '//# sourceURL=user-level.js');
+      document.getElementById('preview').contentWindow.remove();
+      document.getElementById('preview').contentWindow.p5PlayRebind();
+      document.getElementById('preview').contentWindow.eval("new p5();");
+    }
+    
   } catch (err) {
     StackTrace.fromError(err, {
       offline: true,
@@ -202,6 +212,10 @@ function refreshPreview() {
       $('#errorModal').foundation('reveal', 'open');
       // alert("Make sure you've defined your variable before trying to use it");
   }
+
+  // Give focus to game
+  $('#preview').focus();
+  $('#preview').contents().find('canvas').focus();
 }
 
 function insertEditoTooltip(text, line, ch){

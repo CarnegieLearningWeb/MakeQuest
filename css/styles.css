@@ -114,6 +114,12 @@ main > .row.border-bottom{
     letter-spacing: 1px;
 }
 
+#undo {
+    background-color: #fbb800;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
 #revert {
     background-color: #c83f1b;
     /*border: 3px solid rgba(232,74,93, 1);*/
@@ -121,7 +127,7 @@ main > .row.border-bottom{
     letter-spacing: 1px;
 }
 
-#showHints {
+#showHints, #undo, #levelMenu {
     background-color: #0b6481;
     /*border: 3px solid rgba(232,74,93, 1);*/
     color: #ffffff;

@@ -7,13 +7,28 @@ var skipToSandbox = storage.get('skipToSandbox') == "true" ? true : false;
 
 var isPublishedGame = false;
 
+
+// Set language
+var queryParams = parent.window.location.search.substring(1).split('&');
+// Default to english => ''
+var language = '';
+var languagePath = '';
+for (var i = 0; i < queryParams.length; i++) {
+  if(queryParams[i].indexOf('lang')>-1){
+    language = queryParams[i].split('=')[1];
+    languagePath = language+'/';
+  }
+}
+storage.set('languagePath', languagePath);
+
+
 if( skipToSandbox ){
   currentLevel = maxLevel;
-  parent.document.getElementById('skipToSandbox').style.display = 'none';
+  // parent.document.getElementById('skipToSandbox').style.display = 'none';
   parent.document.getElementById('backToGame').style.display = 'inline-block';
   parent.document.getElementById('publish').style.display = 'inline-block';
 }else{
-  parent.document.getElementById('skipToSandbox').style.display = 'inline-block';
+  // parent.document.getElementById('skipToSandbox').style.display = 'inline-block';
   parent.document.getElementById('backToGame').style.display = 'none';
   parent.document.getElementById('publish').style.display = 'none';
 }
@@ -37,20 +52,25 @@ if (isNaN(dialogueOn)) dialogueOn = storage.set('dialogueOn'+currentLevel, 1);
 
 currentLevelFilename = (currentLevel<10) ? 'levels/0' + currentLevel : 'levels/' + currentLevel;
 
+// Append language path
+console.log("Appending language path");
+console.log(languagePath);
+currentLevelFilename = languagePath+currentLevelFilename;
 
 
 
-if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
-  parent.document.getElementById('previous').style.display = 'inline-block';
-}else{
-  parent.document.getElementById('previous').style.display = 'none';
-}
 
-if(currentLevel < maxLevelUnlocked){
-	showNextLevelButton();
-}else{
-  parent.document.getElementById('next').style.display = 'none'; 
-}
+// if (currentLevel > 1 && !isPublishedGame && !skipToSandbox) {
+//   parent.document.getElementById('previous').style.display = 'inline-block';
+// }else{
+//   parent.document.getElementById('previous').style.display = 'none';
+// }
+
+// if(currentLevel < maxLevelUnlocked){
+// 	showNextLevelButton();
+// }else{
+//   parent.document.getElementById('next').style.display = 'none'; 
+// }
 
 function publish(){
   parent.publishPrompt();
@@ -77,7 +97,7 @@ function backToGame(){
 
 function showNextLevelButton() {
   if (isPublishedGame || currentLevel == maxLevel || skipToSandbox) return;
-  parent.document.getElementById('next').style.display = 'inline-block';
+  // parent.document.getElementById('next').style.display = 'inline-block';
 }
 
 function previousLevel() {
@@ -132,6 +152,8 @@ function setupLevel() {}
 function drawLevel() {}
 function getLevelDialogue() {}
 
+console.log("Loading level file");
+console.log(currentLevelFilename);
 // Load the BASE level file for the current level.
 document.write('<script src="' + currentLevelFilename + '-base.js"></script>');
 

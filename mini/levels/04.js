@@ -1,5 +1,7 @@
+// ***** 5. Recolor the Platforms *****
+
+// EDITOR: beginReadOnly();
 function setupLevel(){ 
-  // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Change the word 'red' to something else

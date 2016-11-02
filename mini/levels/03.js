@@ -1,3 +1,5 @@
+// ***** 4. Resize the Platforms *****
+
 // EDITOR: beginReadOnly();
 function setupLevel() {
   // ***** INSTRUCTIONS *****
@@ -20,8 +22,8 @@ function setupLevel() {
   createPlatform(40, 100, 80, 10);
 // EDITOR: endReadOnly();
 
-  createPlatform(260, 180, 80, 10);
-  createPlatform(460, 280, 80, 10);
+  createPlatform(160, 180, 40, 10);
+  createPlatform(460, 280, 40, 10);
 
 // EDITOR: beginReadOnly();
 // EDITOR: beginCodeFold('Click here for an example.');

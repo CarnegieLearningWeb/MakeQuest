@@ -1,5 +1,7 @@
+// ***** 3. Master the coordinate plane *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {
-  // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
   
   // Move the two lower platforms by changing their 
@@ -8,6 +10,8 @@ function setupLevel() {
   // Use “Reset” to start each level over
   // Use “Run” to see your changes
   // Use “Show Hints” to get extra help if you need it
+  //
+  //The x,y coordinates in CreatePlatform() refer to the center of the platform.
   //
   // TIP: The level has a WIDTH of 640 and a HEIGHT of 480
   //

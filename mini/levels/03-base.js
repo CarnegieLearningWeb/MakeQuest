@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, Hex Code Unscrambler Unlocked!";
-CURRENT_LEVEL_TEXT = "Resize the Platforms";
+CURRENT_LEVEL_TEXT = "4. Resize the Platforms";
 
 function base_getLevelDialogue() {
   return [
@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Oh no these platforms are too small! Luckily, the Size Modification power lets you access the third and fourth numbers for each platform. The third number controls how wide a platform is, and the fourth controls how tall it is.",
+      text: "\nOh no these platforms are too small! Luckily, the Size Modification power lets you access the third and fourth numbers for each platform. The third number controls how wide a platform is, and the fourth controls how tall it is.",
     },
     {
       character: "heroA",

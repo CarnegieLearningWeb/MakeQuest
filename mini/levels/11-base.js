@@ -2,7 +2,7 @@ PLAYER_START_X = 120;
 PLAYER_START_Y = 420;
 
 GOAL_REACHED_TEXT = "Remote Control Instruction Manual Unlocked!";
-CURRENT_LEVEL_TEXT = "Change Direction";
+CURRENT_LEVEL_TEXT = "12. Change Direction";
 
 function base_getLevelDialogue() {
   return [
