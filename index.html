@@ -41,6 +41,9 @@
 </head>
 
 <body>
+  <!-- Hour of code tracking pixel -->
+  <img src="https://code.org/api/hour/begin_globaloria.png" alt="">
+
   <nav class="menu" style="display: flex; flex-flow: row; justify-content: space-between; align-items: center;">
     <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank" style="border-bottom: none">
       <img class="globaloria-logo" src="images/Globaloria_Square_transparent_no_text.png">
@@ -123,8 +126,8 @@
           <h2>MakeQuest</h2>
         </div>
       </div>
-      <div class="large-8 columns">
-        <p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>
+      <div class="large-8 columns" id="welcomeModalMarkup">
+        <!-- <p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>
         <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
         <p>Remix and expand the full game code in the Sandbox to create your own game. Then publish and share it with your friends!</p>
 
@@ -136,7 +139,7 @@
 
         <p>Teachers: here is a <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
 
-        <p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p>
+        <p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p> -->
       </div>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -695,6 +698,33 @@
       }
       $('#errorModalContent').html(errorModalMarkup);
 
+      var welcomeModalMarkup;
+      switch(language){
+        case 'es':
+          welcomeModalMarkup = '<p>En Globaloria creemos que construir juegos es una manera divertida y poderosa de aprender. ¡Cualquier persona puede aprender a escribir código, incluso dentro de su primera hora!</p>'
+          +'<p>En MakeQuest, editarás el código JavaScript para derrotar al villano "404". En el proceso, aprendes a dominar conceptos de programación como variables y funciones.</p>'
+          +'<p>Visita el Sandbox para conocer el código detrás del juego y editarlo para crear tu propia versión. ¡Publica y comparte tu juego con tus amigos!</p>'
+          +'<p>Diseñado para:</p>'
+          +'<ul>'
+            +'<li>Programadores principiantes. Edad: 10+</li>'
+            +'<li>Chromebook, PC o Mac (navegadores modernos: Chrome, Firefox, Edge)*</li>'
+          +'</ul>'
+          +'<p>Maestros: <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Plan de Estudio</a> (en inglés) para usar MakeQuest en clase.</p>'
+          +'<p style="font-size: 0.8rem;">*No compatible con dispositivos móviles</p>'
+          break;
+        default:
+          welcomeModalMarkup = '<p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>'
+          +'<p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>'
+          +'<p>Remix and expand the full game code in the Sandbox to create your own game. Then publish and share it with your friends!</p>'
+          +'<p>Designed for:</p>'
+          +'<ul>'
+            +'<li>Beginner coders, age 10 and up </li>'
+            +'<li>Chromebook, PC or Mac (all modern browsers)*</li>'
+          +'</ul>'
+          +'<p>Teachers: here is a <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>'
+          +'<p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p>';
+      }
+      $('#welcomeModalMarkup').append(welcomeModalMarkup);
 
       var sandboxMenuItemMarkup;
       switch(language){

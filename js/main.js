@@ -31,7 +31,9 @@ $(document).ready(function() {
 
     //Open welcome modal on first load
     // code.globaloria.com only
-    // $('#welcomeModal').foundation('reveal', 'open');
+    // if(window.location.hostname == 'code.globaloria.com'){
+        $('#welcomeModal').foundation('reveal', 'open');
+    // }
     
     //Open walkthrough on first load
     // makequest.globaloria.com only
