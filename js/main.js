@@ -2,7 +2,22 @@ var maxLevel = gameConstants.MAX_LEVEL;
 // Check if we're accessing a remix url, if so, store the url for later use
 var remixUrl = window.location.href.match(/remix=(.+)/);
 
+// Set language
+var queryParams = window.location.search.substring(1).split('&');
+// Default to english => ''
+var language = '';
+var languagePath = '';
+for (var i = 0; i < queryParams.length; i++) {
+    if(queryParams[i].indexOf('lang')>-1){
+      language = queryParams[i].split('=')[1];
+      languagePath = language+'/';
+    }
+}
+
 $(document).ready(function() {
+    // Set language in storage
+    storage.set('languagePath', languagePath);
+    
     // Don't start in sandbox if the page is refreshed and we're not in remix mode
     storage.set('skipToSandbox', false);
     if(remixUrl){
@@ -12,44 +27,26 @@ $(document).ready(function() {
     //Resize to viewport
     $("main").css("height", window.innerHeight-36);
 
+    
+
     //Open welcome modal on first load
-    $('#welcomeModal').foundation('reveal', 'open');
+    // code.globaloria.com only
+    // $('#welcomeModal').foundation('reveal', 'open');
+    
+    //Open walkthrough on first load
+    // makequest.globaloria.com only
+    if( !remixUrl ){
+        startWalkthrough();
+    }
+
+
+
 
     // Init joyride after Welcome Modal
     $(document).on('close.fndtn.reveal', '#welcomeModal', function () {
       
-      $(document).foundation('joyride', 'start', {
-        
-        pre_ride_callback      : function (){
-                                  //Display all buttons for joyride
-                                  $("#showHints").css('display', 'block');
-                                  $("#previous").css('display', 'block');
-                                  $("#next").css('display', 'block');
-                                },
-        pre_step_callback      : function (){
-                                  console.log(this.$target.first().attr('id'));
-                                  if(this.$target.first().attr('id') == "preview"){
-                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
-                                  }else{
-                                    this.$target.first().addClass('joyride-highlight');
-                                  }
-                                },
-        post_step_callback     : function (){
-                                  if(this.$target.first().attr('id') == "preview"){
-                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
-                                  }else{
-                                    this.$target.first().removeClass('joyride-highlight');            
-                                  }
-                                },
-        post_ride_callback     : function (){
-                                console.log("JOYRIDE CLOSED");
-                                    //Display all buttons for joyride
-                                  $("#showHints").css('display', 'none');
-                                  $("#previous").css('display', 'none');
-                                  $("#next").css('display', 'none');
-                                },
-        abort_on_close           : false
-      });
+        startWalkthrough();
+      
     });
     $(document).on('click', '.joyride-close-tip', function(){
       console.log(this);
@@ -103,7 +100,15 @@ $(document).ready(function() {
         logout();
     });
 
-    loadMiniCourse();
+    loadMiniCourse(refreshPreview);
+
+    // Fix this ugly hack so that the game is displayed correctly when remixing.
+    // Currently have to hit Run when opening for Remix or use this timeout call: 
+    setTimeout(function(){
+        console.log("REFRESH 2000");
+        refreshPreview();
+    }, 2000);
+
     //Set iframe to right level
     $('iframe#preview').attr('src', 'mini/index.html').focus();
 
@@ -151,6 +156,41 @@ $(document).ready(function() {
     });
 });
 
+function startWalkthrough(){
+    $(document).foundation('joyride', 'start', {
+        
+        pre_ride_callback      : function (){
+                                  //Display all buttons for joyride
+                                  $("#showHints").css('display', 'block');
+                                  $("#previous").css('display', 'block');
+                                  $("#next").css('display', 'block');
+                                },
+        pre_step_callback      : function (){
+                                  console.log(this.$target.first().attr('id'));
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").addClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().addClass('joyride-highlight');
+                                  }
+                                },
+        post_step_callback     : function (){
+                                  if(this.$target.first().attr('id') == "preview"){
+                                    $("iframe").contents().find("canvas").removeClass("joyride-highlight");
+                                  }else{
+                                    this.$target.first().removeClass('joyride-highlight');            
+                                  }
+                                },
+        post_ride_callback     : function (){
+                                console.log("JOYRIDE CLOSED");
+                                    //Display all buttons for joyride
+                                  $("#showHints").css('display', 'none');
+                                  $("#previous").css('display', 'none');
+                                  $("#next").css('display', 'none');
+                                },
+        abort_on_close           : false
+      });
+}
+
 function levelSelectMenu(){
   $('#levelSelectMenuModal').foundation('reveal', 'open');  
 }
@@ -188,9 +228,9 @@ function publish(){
     baseURL: './mini/',
     baseLevel: maxLevel,
     js: editor_js.getValue(),
-    formInfo: '<span id="first_name">'+ $('#first_name').val().charAt(0).toUpperCase() + $('#first_name').val().slice(1) +'</span> from <span id="city">'+$('#city').val()+'</span>'
+    formInfo: '<span id="first_name">'+ $('#first_name').val().charAt(0).toUpperCase() + $('#first_name').val().slice(1) +'</span> from <span id="school">'+$('#00NU0000005PN7e').val()+'</span>'
               +'<span id="grade" style="display: none;">'+$('#grade').val()+'</span>'
-              +'<span id="school" style="display: none;">'+$('#00NU0000005PN7e').val()+'</span>'
+              +'<span id="city" style="display: none;">'+$('#city').val()+'</span>'
               +'<span id="state" style="display: none;">'+$('#state').val()+'</span>'
               +'<span id="country" style="display: none;">'+$('#country').val()+'</span>'
   }, function(err, html) {
@@ -220,9 +260,11 @@ function publish(){
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
         baseURL = 'http://globaloria.com:8000/';
     }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
-        baseURL = 'http://globaloria.com:8001/';
+        // baseURL = 'https://globaloria.com:8001/';
+        baseURL = 'https://publish.globaloria.com/';
     }else{
-        baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
+        // baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
+        baseURL = 'https://publish-dev.herokuapp.com/';
     }
     
     $.ajax({
@@ -233,34 +275,52 @@ function publish(){
       },
       crossDomain: true,
       dataType: 'json',
-      error: function() {
-        alert("Error publishing HTML!");
+      error: function(xhr, status, error) {
+        alert("It looks like something went wrong. Please verify your internet connection and click Publish again.");
         console.log(arguments);
+
+        // Log error to ga
+        ga('send', 'event', 'Ajax Error', status, 'publisher', { 'nonInteraction': 1 });
       },
       success: function(data) {
+        var url = data['published-url'];
+        if(language && language == 'es'){
+            url += '?lang=es';
+        }
+
         $("#published").fadeIn()
           .find('a')
-          .attr('href', data['published-url'])
-          .text(data['published-url']);
+          .attr('href', url)
+          .text(url);
 
-        
-        // Replace the form's return URL and submit the form
-        $('#publish-form input#retUrl').val( data['published-url'] );
-        
-        // Populate game link for salesforce capture
-        $('#00NU0000005PN7t').val(data['published-url']);
+        // Disable Publish button to avoid publishing spam
+        // $('button[type="submit"]').attr('disabled', 'disabled');
 
-        // Populate the role field for salesforce
-        var role = [];
-        if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
-        if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
-        if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
-        if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
+        // code.globaloria.com ONLY
+        // // Replace the form's return URL and submit the form
+        // $('#publish-form input#retUrl').val( data['published-url'] );
+        
+        // // Populate game link for salesforce capture
+        // $('#00NU0000005PN7t').val(data['published-url']);
+
+        // // Populate the role field for salesforce
+        // var role = [];
+        // if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
+        // if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
+        // if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
+        // if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
                     
-        $('#00NU0000005Ph2K').val( role.join(',') );
+        // $('#00NU0000005Ph2K').val( role.join(',') );
 
         //Unbind form to prevent submit loop
-        $('#publish-form').unbind().submit();
+        // $('#publish-form').unbind().submit();
+
+
+
+        // makquest.globaloria.com ONLY
+        // window.location.href = 'data['published-url']';
+
+
 
       },
       complete: function() {
@@ -278,18 +338,27 @@ function loadMiniCourse(cb){
     // Skip to sandbox
     if( storage.get('skipToSandbox') == 'true' ){
         zeroPaddedLevel = maxLevel;
+        $("#levelMenu").css('display', 'none');
+    }else{
+        $("#levelMenu").css('display', 'block');
     }
 
-    var codeUrl = 'mini/levels/' + zeroPaddedLevel + '.js';
+    var codeUrl = 'mini/'+languagePath+'levels/' + zeroPaddedLevel + '.js';
 
     // Load remix code for sandbox when available
     if( remixUrl && storage.get('skipToSandbox') == 'true' ){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
-        // if(window.location.href.match(/code.globaloria.com/)){
+        if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
-        // }else{
-        //     codeUrl = 'http://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
-        // }    
+        }else if(window.location.href.match(/makequest.globaloria.com/)){
+            // Need to use full bucket name. Using mymakequest will throw an error
+            // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
+            // codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
+            codeUrl = 'https://mymakequest.globaloria.com/'+remixUrl[1];
+        }else{
+            // codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
+            codeUrl = 'https://hackpub-publisher-dev.s3.amazonaws.com/'+remixUrl[1];
+        }
     }
 
     $.get(codeUrl, function(data) {
@@ -373,6 +442,10 @@ function loadMiniCourse(cb){
 
         originalEditorContent = data;
         editor_js.setValue(data);
+        // Mark editor as clean after inserting the base template to handle Undo display
+        editor_js.markClean();
+        // Since the editor will be clean to start with, disable Undo
+        $("#undo").prop("disabled",true);
 
         // Make the first line read-only.
         readOnlyRanges.push([0, 1]);

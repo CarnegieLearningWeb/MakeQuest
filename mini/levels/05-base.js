@@ -2,7 +2,7 @@ PLAYER_START_X = 20;
 PLAYER_START_Y = 50;
 
 GOAL_REACHED_TEXT = "Congratulations, V.E.S.T. has reached Level 2!";
-CURRENT_LEVEL_TEXT = "Use Variables";
+CURRENT_LEVEL_TEXT = "6. Use Variables";
 
 function base_getLevelDialogue() {
   return [
@@ -10,19 +10,19 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "You found a VEST (Variable-Entering Storage Tank)!  With the VEST you can see variables, or parts of the code that control many things at once.",
+      text: "\nYou found a VEST (Variable-Entering Storage Tank)!  With the VEST you can see variables, or parts of the code that control many things at once.",
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "This Level 1 VEST unlocked a variable called platformColor -- it holds color information for all the platforms you can edit.  Change the word ‘red’ to something else and watch how all the platforms change at one time."
+      text: "\nThis Level 1 VEST unlocked a variable called platformColor -- it holds color information for all the platforms you can edit.  Change the word ‘red’ to something else and watch how all the platforms change at one time."
     },
     {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Talk about a time saver!  Change these platforms now and reach the goal.",
+      text: "\nTalk about a time saver!  Change these platforms now and reach the goal.",
     }
   ];
 }

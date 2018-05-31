@@ -1,5 +1,7 @@
+// ***** 6. Use Variables *****
+
+// EDITOR: beginReadOnly();
 function setupLevel() {
-  // EDITOR: beginReadOnly();
   // ***** INSTRUCTIONS *****
   //
   // Update the color of the VARIABLE below to change all of the

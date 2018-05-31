@@ -21,8 +21,6 @@ function setup() {
     var myCanvas = createCanvas(WIDTH, HEIGHT);
     myCanvas.parent('p5_canvas');
 
-    setupDialogue();
-
     backgroundImage = loadImage("images/MakeQuestAssets/Background_1.png");
 
     goalReached = false;
@@ -42,6 +40,11 @@ function setup() {
 
     base_setupLevel();
     setupLevel();
+    setupDialogue();
+
+    // In case the user updates PLAYER_START_X or PLAYER_START_Y
+    player.position.x = PLAYER_START_X;
+    player.position.y = PLAYER_START_Y;
 
     document.getElementById('current-level-text').innerHTML = CURRENT_LEVEL_TEXT;
 }
@@ -81,7 +84,9 @@ function draw() {
     if (player.overlap(goal) && !goalReached) {
         showNextLevelButton();
         goalReached = true;
-        autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
+
+        // Remove autoadvance feature for now
+        // autoAdvanceToNextLevel = frameCount + (frameRate() * 8);
     }
 
     if (autoAdvanceToNextLevel && frameCount >= autoAdvanceToNextLevel) {
@@ -120,19 +125,19 @@ function keepPlatformsInScene() {
 
 
         if (platforms[i].velocity.x < 0 && (platforms[i].position.x - platforms[i].width / 2) < 0) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.x = 0 + platforms[i].width / 2;
         }
         if (platforms[i].velocity.x > 0 && (platforms[i].position.x + platforms[i].width / 2) > WIDTH) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.x = WIDTH - platforms[i].width / 2;
         }
-        if (platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height / 2 - player.height) < 0) {
-            platforms[i].velocity.x = 0;
-            platforms[i].position.y = 0 + platforms[i].height / 2 + player.height;
+        if (platforms[i].velocity.y < 0 && (platforms[i].position.y - platforms[i].height / 2) < 0) {
+            // platforms[i].velocity.x = 0;
+            platforms[i].position.y = 0 + platforms[i].height / 2;
         }
         if (platforms[i].velocity.y > 0 && (platforms[i].position.y + platforms[i].height / 2) > HEIGHT) {
-            platforms[i].velocity.x = 0;
+            // platforms[i].velocity.x = 0;
             platforms[i].position.y = HEIGHT - platforms[i].height / 2;
         }
     }
@@ -206,9 +211,26 @@ function levelComplete(){
         console.log("ERROR: Set unlocked item image");
     }
 
-    if( currentLevel < maxLevel ){
+    // Set language
+    var queryParams = parent.window.location.search.substring(1).split('&');
+    // Default to english => ''
+    var language = '';
+    var languagePath = '';
+    for (var i = 0; i < queryParams.length; i++) {
+      if(queryParams[i].indexOf('lang')>-1){
+        language = queryParams[i].split('=')[1];
+        languagePath = language+'/';
+      }
+    }
+
+    if( currentLevel < maxLevel - 1 ){
+        var clickNextLvlTxt = (language == 'es') ? "Haz clic aquí para ir al siguiente nivel..." : "Click for next level...";
         fill('orange');
-        text("Click for next level...", WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
+        text(clickNextLvlTxt, WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
+    }else if( currentLevel == maxLevel - 1 ){
+        var clickToSandbox = (language == 'es') ? "Ir al Sandbox..." : "Go to Sandbox...";
+        fill('orange');
+        text(clickToSandbox, WIDTH/2, HEIGHT/2+GOAL_REACHED_BOX_HEIGHT/2 - GOAL_REACHED_BOX_GUTTER);
     }
 
     //Reset rectMode back to default

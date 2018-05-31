@@ -1,8 +1,8 @@
 PLAYER_START_X = 100;
-PLAYER_START_Y = 400;
+PLAYER_START_Y = 320;
 
 GOAL_REACHED_TEXT = "Oh...no… 4...0...4…";
-CURRENT_LEVEL_TEXT = "The world of code";
+CURRENT_LEVEL_TEXT = "1. The world of code";
 
 function base_getLevelDialogue() {
   return [
@@ -10,7 +10,7 @@ function base_getLevelDialogue() {
       character: "heroA",
       image: heroAPic,
       textColor: "white",
-      text: "Welcome to MakeQuest\nEnter the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Click on the scene and use the arrow keys to move.",
+      text: "\nWelcome to MakeQuest\n\nEnter the World of Code, where everyone has codeVision and can use the power of code to effect the world around them. Start exploring! Use the left and right arrow keys to move and reach the stars.",
     }
   ];
 }

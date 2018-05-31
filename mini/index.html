@@ -126,6 +126,11 @@
         .joyride-highlight{
             border: 3px solid red !important;
         }
+
+        .container{
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -144,10 +149,10 @@
         <div class="row">
             
             <div class="large-4 columns" id="publishedGameInfo" style="display: none;">
-                <div style="margin-top: 1rem">
+                
                   <div style="text-align: center;">
                     <h2>Globaloria</h2>
-                    <a href="http://www.globaloria.com" target="_blank"><img src="http://www.code.globaloria.com/images/GlobaloriaG.png" height="30px" width="150px"></a>
+                    <a href="https://www.globaloria.com" target="_blank"><img src="images/GlobaloriaG.png" height="30px" width="150px"></a>
                     <h2>MakeQuest</h2>
                   </div>
                   <p><!-- PUBLISHER: INSERT HTML HERE --> created this game.</p>
@@ -157,6 +162,7 @@
                         // Only load social media on published games
                         console.log( document.body.hasAttribute('data-published-game-base-level') ? "PUBLISHED" : "UNPLUBLISHED");
                         if( document.body.hasAttribute('data-published-game-base-level') ){
+
                             // Facebook
                             (function(d, s, id) {
                               var js, fjs = d.getElementsByTagName(s)[0];
@@ -178,16 +184,70 @@
                       <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Learning to code: Play the game I made with MakeQuest!" data-via="globaloria" data-hashtags="GlobaloriaMakeQuest,hourofcode,csedweek">Tweet</a>
                   </div>
                   <br>
-                  <p>
+
+                  <!-- code.globaloria.com ONLY -->
+                  <!-- <p>
                   <a id="remix" href="">Remix this game</a>, <a href="http://www.code.globaloria.com" target="_blank">make your own</a> or visit our <a href="http://globaloria.com/game-gallery/" target="_blank">Game Gallery</a> and play the games students have made with the full Globaloria experience.
+                  </p> -->
+
+                  <!-- makequest.globaloria.com ONLY -->
+                  <p>
+                  <a id="remix" href="">Remix this game</a>, or play <a href="https://makequest.globaloria.com" target="_blank">MakeQuest</a>
                   </p>
-                  <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a>
-                </div>
+
+                  <!-- code.globaloria.com ONLY -->
+                  <!-- <a class="button" href="http://globaloria.com/get-started/" target="_blank" style="background-color: #fb9b3b">Bring Globaloria to your school</a> -->
+
+                  <!-- makequest.globaloria.com ONLY -->
+                  <p><input style="font-size: 11px;" id="copyurl-text"></p>
+                  <p><button class="copyurl-button" data-clipboard-target="#copyurl-text">Copy URL</button><br><span id="copy-ulr-success" style="display: none;">Copied. If you are a Globaloria student, paste URL to your Project Page to save your game.</span></p>
+                    <script>
+                        // Copy URL
+                        // Update copy url text
+                            $(document).on('ready', function(){
+                                $('#copyurl-text').val(window.location.href);
+                            });
+                            if( document.body.hasAttribute('data-published-game-base-level') ){
+                                // Load clipboardjs
+                                (function(d, s, id) {
+                                  var js, fjs = d.getElementsByTagName(s)[0];
+                                  if (d.getElementById(id)) return;
+                                  js = d.createElement(s); js.id = id;
+                                  js.src = "//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js";
+                                  js.onload = function(){
+                                    console.log("CLIPBOARD LOADED");
+                                    clipboard = new Clipboard('.copyurl-button');
+                                    console.log(clipboard);
+
+                                    clipboard.on('success', function(e) {
+                                        console.info('Action:', e.action);
+                                        console.info('Text:', e.text);
+                                        console.info('Trigger:', e.trigger);
+
+                                        document.getElementById('copy-ulr-success').style.display = 'block';
+
+                                        e.clearSelection();
+                                    });
+
+                                    clipboard.on('error', function(e) {
+                                        console.error('Action:', e.action);
+                                        console.error('Trigger:', e.trigger);
+                                        alert("Sorry, we were unable to copy the URL. Please copy the link manually.")
+                                    });
+                                  }
+                                  fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'clipboardjs'));
+
+                                
+                                
+                            }
+                    </script>
+                
             </div>
 
 
             <div class="large-8 columns">
-                <div class="controls">
+                <div class="controls" style="display: none;">
                     <button id="previous" onclick="previousLevel()" style="display: none;">Previous Level</button>
                     <button id="next" onclick="nextLevel()" style="display: none;">Next Level</button>
                     <button id="showDialogue" onclick="showDialogue()" style="display: none;">Story</button>
@@ -196,6 +256,7 @@
                     <button id="publish" onclick="publish()" style="display: none;">Share your game</button>
                 </div>
                 <div class="large-12 columns margin-left-0 margin-right-0">
+                    <!-- <div id="current-level-text" style="text-align: center; color: #0b6481;"></div> -->
                     <div id="p5_canvas"></div>
                     <div id="current-level-text" style="margin-top: 10px; text-align: center; color: #0b6481;"></div>
                 </div>
@@ -242,6 +303,19 @@
         // Insert remix url
         // var baseRemixUrl = 'http://code.globaloria.com';
         
+        // HANDLE DIFFERENT LANGUAGES
+        // Set language
+        var queryParams = window.location.search.substring(1).split('&');
+        // Default to english => ''
+        var language = '';
+        var languagePath = '';
+        for (var i = 0; i < queryParams.length; i++) {
+          if(queryParams[i].indexOf('lang')>-1){
+            language = queryParams[i].split('=')[1];
+            languagePath = language+'/';
+          }
+        }
+        
         // Where was the game published from
         var sourceUrl = document.getElementsByTagName('base')[0].href;
         var baseRemixUrl = sourceUrl.replace('/mini/', '');
@@ -249,8 +323,16 @@
         var url = document.createElement("a");
         url.href = window.location.href;
 
-        var remixUrl = baseRemixUrl + url.pathname.replace('/', '?remix=');
-        $('#remix').attr('href', remixUrl);
+        // Insert language in remix url
+        switch(language){
+            case 'es':
+                var remixUrl = baseRemixUrl + url.pathname.replace('/', '?lang=es&remix=');
+                $('#remix').attr('href', remixUrl);
+                break;
+            default:
+                var remixUrl = baseRemixUrl + url.pathname.replace('/', '?remix=');
+                $('#remix').attr('href', remixUrl);
+        }
     </script>
 </body>
 

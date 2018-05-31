@@ -1,5 +1,8 @@
+// ***** 16. Save the World of Code *****
+
+// EDITOR: beginReadOnly();
 function drawLevel() {
-  // EDITOR: beginReadOnly();
+
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
   // ***** INSTRUCTIONS *****

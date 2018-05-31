@@ -1,9 +1,12 @@
+// ***** 2. Secret Communication with Comments *****
+
 // Hey Humans, look here!
 // Read the code comments on each game level for secret
 // instructions.
 // Like all computers, 404 can’t see comments.
 // Practice typing a comment on the next line, so we know 
 // you’re really human!
+// Remember: comments start with '//'
 
 
 // Use the arrow keys to move left and right. 

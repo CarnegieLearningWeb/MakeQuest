@@ -1,5 +1,8 @@
+// ***** 15. Learn to Jump *****
+
+// EDITOR: beginReadOnly(); 
 function drawLevel() {
-  // EDITOR: beginReadOnly();
+
   if ( isPlayerOnPlatform() ) {
   // EDITOR: endReadOnly();
   

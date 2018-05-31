@@ -41,10 +41,19 @@
 </head>
 
 <body>
-  <nav class="menu">
-    <a href="http://globaloria.com/courses-services/teacher-guides/" target="_blank" style="border-bottom: none">
+  <!-- Hour of code tracking pixel -->
+  <img style="display: none;" src="https://code.org/api/hour/begin_globaloria.png" alt="">
+
+  <nav class="menu" style="display: flex; flex-flow: row; justify-content: space-between; align-items: center;">
+    <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank" style="border-bottom: none">
       <img class="globaloria-logo" src="images/Globaloria_Square_transparent_no_text.png">
       <span style="color: white; margin-left: 1rem;">MakeQuest</span>
+    </a>
+    <div>
+      <a href="/?lang=es" style="color: white;">Español</a> / <a href="/" style="color: white;">English</a>
+    </div>
+    <a style="float:right; padding-right: 0.3rem;" href="https://globaloria.com/privacy-policy" target="_blank" style="border-bottom: none">
+      <span style="color: white;">Globaloria © 2017</span>
     </a>
     <!-- LINK TO CODE.ORG CERTIFICATE -->
     <!-- <a href="http://www.code.org/api/hour/finish" style="float: right; color: white; margin-right: 1rem; font-size: 12px;">I’m finished with my Hour of Code</a> -->
@@ -64,12 +73,11 @@
       <div class="medium-12 large-6 columns border-right" data-equalizer-watch>
         <div class="row">
           <div class="large-12 columns margin-left-0 margin-right-0">
-            <div class="controls">
-              <button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>
-              <!-- <button id="revert" class="button center" onclick="revertMiniCourse()">Reset</button> -->
+            <div class="controls" id="controls">
+              <!-- <button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>
               <button id="undo" class="button center" onclick="undo()">Undo</button>
               <button id="run" class="button center" onclick="refreshPreview()">Run</button>
-              <button id="showHints" class="button center" onclick="showHints()">Show Hints</button>
+              <button id="showHints" class="button center" onclick="showHints()">Show Hints</button> -->
             </div>
           </div>
         </div>
@@ -85,18 +93,13 @@
         </div>
       </div>
       <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
-        <!-- <h2>Game</h2> -->
-        <div class="iframe-controls">
-          <!-- <button id="previous" onclick="document.getElementById('preview').contentWindow.previousLevel()" style="display: none;">Previous Level</button>
-          <button id="next" onclick="document.getElementById('preview').contentWindow.nextLevel()" style="display: none;">Next Level</button> -->
-          <button id="showDialogue" onclick="document.getElementById('preview').contentWindow.showDialogue()" style="display: none;">Story</button>
-          <!-- <button id="skipToSandbox" onclick="document.getElementById('preview').contentWindow.goToSandbox()" style="display: inline-block;">Skip to sandbox</button> -->
+        <div class="iframe-controls" id="iframe-controls">
+          <!-- <button id="showDialogue" onclick="document.getElementById('preview').contentWindow.showDialogue()" style="display: none;">Story</button>
           <button id="backToGame" onclick="document.getElementById('preview').contentWindow.backToGame()" style="display: none;">Back to game</button>
-          <button id="publish" onclick="document.getElementById('preview').contentWindow.publish()" style="display: none;">Share your game</button>
+          <button id="publish" onclick="document.getElementById('preview').contentWindow.publish()" style="display: none;">Save your game</button> -->
         </div>
         <!-- LIVE PREVIEW -->
         <div class="preview_container">
-          <!-- src="project_template/index.html" -->
           <iframe name="preview" frameborder="0" id="preview" sandbox="allow-forms allow-popups allow-scripts allow-same-origin allow-modals">
           </iframe>
         </div>
@@ -106,14 +109,12 @@
   </main>
   <!-- error modal -->
   <div id="errorModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
-    <h2>Fix a bug!</h2>
-    <p class="error-text">Error text</p>
-    <!-- <div class="row">
-            <div class="large-6 columns auth-plain">
-                
-            </div>
-        </div> -->
-    <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>
+    <div id="errorModalContent">
+      <h2>Fix a bug!</h2>
+      <p class="error-text">Error text</p>
+      <p>TIP: Make sure the code you write ends with a semicolon: ";" </p>  
+    </div>
+    
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
   <div id="welcomeModal" class="reveal-modal" data-reveal aria-labelledby="Welcome modal" aria-hidden="true" role="dialog">
@@ -125,8 +126,8 @@
           <h2>MakeQuest</h2>
         </div>
       </div>
-      <div class="large-8 columns">
-        <p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>
+      <div class="large-8 columns" id="welcomeModalMarkup">
+        <!-- <p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>
         <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
         <p>Remix and expand the full game code in the Sandbox to create your own game. Then publish and share it with your friends!</p>
 
@@ -136,9 +137,9 @@
           <li>Chromebook, PC or Mac (all modern browsers)*</li>
         </ul>
 
-        <p>Teachers: here is a <a href="http://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
+        <p>Teachers: here is a <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
 
-        <p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p>
+        <p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p> -->
       </div>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -146,407 +147,13 @@
   <div id="publishModal" class="reveal-modal" data-reveal aria-labelledby="code errors modal" aria-hidden="true" role="dialog">
     <!-- Send form to Salesforce -->
     <form id="publish-form" method="POST" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" data-abide>
-      <h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publish Your Game</h2>
-      <input name="oid" type="hidden" value="00DU0000000LhCA">
-      <input id="retUrl" name="retURL" type="hidden" value="http://globaloria.com/get-started/get-started-2/">
-      <div class="row">
-        <div class="large-4 columns">
-          <label for="first_name">Name
-            <input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">
-          </label>
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-4 columns">
-          <label for="00NU0000005Ph4g">Age
-            <input id="00NU0000005Ph4g" name="00NU0000005Ph4g" type="text" required>
-          </label>
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-4 columns">
-          <label for="00NU0000005PN7e">School</label>
-          <input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-4 columns">
-          <label for="city">City</label>
-          <input id="city" name="city" type="text" required pattern="[a-zA-Z]+">
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-4 columns">
-          <label for="state">State/Province</label>
-          <input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">
-          <datalist id="states-list">
-            <option>Alabama</option>
-            <option>Alaska</option>
-            <option>Arizona</option>
-            <option>Arkansas</option>
-            <option>California</option>
-            <option>Colorado</option>
-            <option>Connecticut</option>
-            <option>Delaware</option>
-            <option>District Of Columbia</option>
-            <option>Florida</option>
-            <option>Georgia</option>
-            <option>Hawaii</option>
-            <option>Idaho</option>
-            <option>Illinois</option>
-            <option>Indiana</option>
-            <option>Iowa</option>
-            <option>Kansas</option>
-            <option>Kentucky</option>
-            <option>Louisiana</option>
-            <option>Maine</option>
-            <option>Maryland</option>
-            <option>Massachusetts</option>
-            <option>Michigan</option>
-            <option>Minnesota</option>
-            <option>Mississippi</option>
-            <option>Missouri</option>
-            <option>Montana</option>
-            <option>Nebraska</option>
-            <option>Nevada</option>
-            <option>New Hampshire</option>
-            <option>New Jersey</option>
-            <option>New Mexico</option>
-            <option>New York</option>
-            <option>North Carolina</option>
-            <option>North Dakota</option>
-            <option>Ohio</option>
-            <option>Oklahoma</option>
-            <option>Oregon</option>
-            <option>Pennsylvania</option>
-            <option>Rhode Island</option>
-            <option>South Carolina</option>
-            <option>South Dakota</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Utah</option>
-            <option>Vermont</option>
-            <option>Virginia</option>
-            <option>Washington</option>
-            <option>West Virginia</option>
-            <option>Wisconsin</option>
-            <option>Wyoming</option>
-          </datalist>
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-4 columns">
-          <label for="country">Country</label>
-          <input id="country" list="countries-list" name="country" type="text" required pattern="[a-zA-Z]+">
-          <datalist id="countries-list">
-            <option>Afghanistan</option>
-            <option>Åland Islands</option>
-            <option>Albania</option>
-            <option>Algeria</option>
-            <option>American Samoa</option>
-            <option>Andorra</option>
-            <option>Angola</option>
-            <option>Anguilla</option>
-            <option>Antarctica</option>
-            <option>Antigua and Barbuda</option>
-            <option>Argentina</option>
-            <option>Armenia</option>
-            <option>Aruba</option>
-            <option>Australia</option>
-            <option>Austria</option>
-            <option>Azerbaijan</option>
-            <option>Bahamas</option>
-            <option>Bahrain</option>
-            <option>Bangladesh</option>
-            <option>Barbados</option>
-            <option>Belarus</option>
-            <option>Belgium</option>
-            <option>Belize</option>
-            <option>Benin</option>
-            <option>Bermuda</option>
-            <option>Bhutan</option>
-            <option>Bolivia, Plurinational State of</option>
-            <option>Bonaire, Sint Eustatius and Saba</option>
-            <option>Bosnia and Herzegovina</option>
-            <option>Botswana</option>
-            <option>Bouvet Island</option>
-            <option>Brazil</option>
-            <option>British Indian Ocean Territory</option>
-            <option>Brunei Darussalam</option>
-            <option>Bulgaria</option>
-            <option>Burkina Faso</option>
-            <option>Burundi</option>
-            <option>Cambodia</option>
-            <option>Cameroon</option>
-            <option>Canada</option>
-            <option>Cape Verde</option>
-            <option>Cayman Islands</option>
-            <option>Central African Republic</option>
-            <option>Chad</option>
-            <option>Chile</option>
-            <option>China</option>
-            <option>Christmas Island</option>
-            <option>Cocos (Keeling) Islands</option>
-            <option>Colombia</option>
-            <option>Comoros</option>
-            <option>Congo</option>
-            <option>Congo, the Democratic Republic of the</option>
-            <option>Cook Islands</option>
-            <option>Costa Rica</option>
-            <option>Côte d'Ivoire</option>
-            <option>Croatia</option>
-            <option>Cuba</option>
-            <option>Curaçao</option>
-            <option>Cyprus</option>
-            <option>Czech Republic</option>
-            <option>Denmark</option>
-            <option>Djibouti</option>
-            <option>Dominica</option>
-            <option>Dominican Republic</option>
-            <option>Ecuador</option>
-            <option>Egypt</option>
-            <option>El Salvador</option>
-            <option>Equatorial Guinea</option>
-            <option>Eritrea</option>
-            <option>Estonia</option>
-            <option>Ethiopia</option>
-            <option>Falkland Islands (Malvinas)</option>
-            <option>Faroe Islands</option>
-            <option>Fiji</option>
-            <option>Finland</option>
-            <option>France</option>
-            <option>French Guiana</option>
-            <option>French Polynesia</option>
-            <option>French Southern Territories</option>
-            <option>Gabon</option>
-            <option>Gambia</option>
-            <option>Georgia</option>
-            <option>Germany</option>
-            <option>Ghana</option>
-            <option>Gibraltar</option>
-            <option>Greece</option>
-            <option>Greenland</option>
-            <option>Grenada</option>
-            <option>Guadeloupe</option>
-            <option>Guam</option>
-            <option>Guatemala</option>
-            <option>Guernsey</option>
-            <option>Guinea</option>
-            <option>Guinea-Bissau</option>
-            <option>Guyana</option>
-            <option>Haiti</option>
-            <option>Heard Island and McDonald Islands</option>
-            <option>Holy See (Vatican City State)</option>
-            <option>Honduras</option>
-            <option>Hong Kong</option>
-            <option>Hungary</option>
-            <option>Iceland</option>
-            <option>India</option>
-            <option>Indonesia</option>
-            <option>Iran, Islamic Republic of</option>
-            <option>Iraq</option>
-            <option>Ireland</option>
-            <option>Isle of Man</option>
-            <option>Israel</option>
-            <option>Italy</option>
-            <option>Jamaica</option>
-            <option>Japan</option>
-            <option>Jersey</option>
-            <option>Jordan</option>
-            <option>Kazakhstan</option>
-            <option>Kenya</option>
-            <option>Kiribati</option>
-            <option>Korea, Democratic People's Republic of</option>
-            <option>Korea, Republic of</option>
-            <option>Kuwait</option>
-            <option>Kyrgyzstan</option>
-            <option>Lao People's Democratic Republic</option>
-            <option>Latvia</option>
-            <option>Lebanon</option>
-            <option>Lesotho</option>
-            <option>Liberia</option>
-            <option>Libya</option>
-            <option>Liechtenstein</option>
-            <option>Lithuania</option>
-            <option>Luxembourg</option>
-            <option>Macao</option>
-            <option>Macedonia, the former Yugoslav Republic of</option>
-            <option>Madagascar</option>
-            <option>Malawi</option>
-            <option>Malaysia</option>
-            <option>Maldives</option>
-            <option>Mali</option>
-            <option>Malta</option>
-            <option>Marshall Islands</option>
-            <option>Martinique</option>
-            <option>Mauritania</option>
-            <option>Mauritius</option>
-            <option>Mayotte</option>
-            <option>Mexico</option>
-            <option>Micronesia, Federated States of</option>
-            <option>Moldova, Republic of</option>
-            <option>Monaco</option>
-            <option>Mongolia</option>
-            <option>Montenegro</option>
-            <option>Montserrat</option>
-            <option>Morocco</option>
-            <option>Mozambique</option>
-            <option>Myanmar</option>
-            <option>Namibia</option>
-            <option>Nauru</option>
-            <option>Nepal</option>
-            <option>Netherlands</option>
-            <option>New Caledonia</option>
-            <option>New Zealand</option>
-            <option>Nicaragua</option>
-            <option>Niger</option>
-            <option>Nigeria</option>
-            <option>Niue</option>
-            <option>Norfolk Island</option>
-            <option>Northern Mariana Islands</option>
-            <option>Norway</option>
-            <option>Oman</option>
-            <option>Pakistan</option>
-            <option>Palau</option>
-            <option>Palestinian Territory, Occupied</option>
-            <option>Panama</option>
-            <option>Papua New Guinea</option>
-            <option>Paraguay</option>
-            <option>Peru</option>
-            <option>Philippines</option>
-            <option>Pitcairn</option>
-            <option>Poland</option>
-            <option>Portugal</option>
-            <option>Puerto Rico</option>
-            <option>Qatar</option>
-            <option>Réunion</option>
-            <option>Romania</option>
-            <option>Russian Federation</option>
-            <option>Rwanda</option>
-            <option>Saint Barthélemy</option>
-            <option>Saint Helena, Ascension and Tristan da Cunha</option>
-            <option>Saint Kitts and Nevis</option>
-            <option>Saint Lucia</option>
-            <option>Saint Martin (French part)</option>
-            <option>Saint Pierre and Miquelon</option>
-            <option>Saint Vincent and the Grenadines</option>
-            <option>Samoa</option>
-            <option>San Marino</option>
-            <option>Sao Tome and Principe</option>
-            <option>Saudi Arabia</option>
-            <option>Senegal</option>
-            <option>Serbia</option>
-            <option>Seychelles</option>
-            <option>Sierra Leone</option>
-            <option>Singapore</option>
-            <option>Sint Maarten (Dutch part)</option>
-            <option>Slovakia</option>
-            <option>Slovenia</option>
-            <option>Solomon Islands</option>
-            <option>Somalia</option>
-            <option>South Africa</option>
-            <option>South Georgia and the South Sandwich Islands</option>
-            <option>South Sudan</option>
-            <option>Spain</option>
-            <option>Sri Lanka</option>
-            <option>Sudan</option>
-            <option>Suriname</option>
-            <option>Svalbard and Jan Mayen</option>
-            <option>Swaziland</option>
-            <option>Sweden</option>
-            <option>Switzerland</option>
-            <option>Syrian Arab Republic</option>
-            <option>Taiwan, Province of China</option>
-            <option>Tajikistan</option>
-            <option>Tanzania, United Republic of</option>
-            <option>Thailand</option>
-            <option>Timor-Leste</option>
-            <option>Togo</option>
-            <option>Tokelau</option>
-            <option>Tonga</option>
-            <option>Trinidad and Tobago</option>
-            <option>Tunisia</option>
-            <option>Turkey</option>
-            <option>Turkmenistan</option>
-            <option>Turks and Caicos Islands</option>
-            <option>Tuvalu</option>
-            <option>Uganda</option>
-            <option>Ukraine</option>
-            <option>United Arab Emirates</option>
-            <option>United Kingdom</option>
-            <option>United States</option>
-            <option>United States Minor Outlying Islands</option>
-            <option>Uruguay</option>
-            <option>Uzbekistan</option>
-            <option>Vanuatu</option>
-            <option>Venezuela, Bolivarian Republic of</option>
-            <option>Viet Nam</option>
-            <option>Virgin Islands, British</option>
-            <option>Virgin Islands, U.S.</option>
-            <option>Wallis and Futuna</option>
-            <option>Western Sahara</option>
-            <option>Yemen</option>
-            <option>Zambia</option>
-            <option>Zimbabwe</option>
-          </datalist>
-          <small class="error">This field is required.</small>
-        </div>
-        <div class="large-12 columns">
-          <span>I'm a: </span>
-          <label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student
-            <input id="isStudent" value="Student" name="isStudent" type="checkbox">
-          </label>
-          <label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher
-            <input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox">
-          </label>
-          <label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent
-            <input id="isParent" value="Parent" name="isParent" type="checkbox">
-          </label>
-          <label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator
-            <input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox">
-          </label>
-        </div>
-        <div class="large-12 columns">
-          <label for="description">Tell us what you think:
-            <input id="description" name="description" type="text">
-          </label>
-        </div>
-        <!-- Contact information -->
-        <div class="large-12 columns">
-          <input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox" value="1">
-          <label for="00NU0000005PN7j">I'm 18 or older and would like a full Globaloria demo</label>
-        </div>
-        <!-- <div class="large-6 columns">
-              <label for="first_name">First Name <input id="first_name" name="first_name" type="text" disabled></label>
-            </div>
-            <div class="large-6 columns">
-              <label for="last_name">Last Name <input id="last_name" name="last_name" type="text" disabled></label>
-            </div> -->
-        <div class="large-6 columns">
-          <label for="email">Email
-            <input id="email" name="email" type="email" disabled>
-          </label>
-        </div>
-        <div class="large-6 columns">
-          <label for="phone">Phone
-            <input id="phone" name="phone" type="text" disabled>
-          </label>
-        </div>
-        <!-- Role: summary of I'm a: -->
-        <input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">
-        <!-- Game Link Field-->
-        <input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">
-        <input type="hidden" name="lead_source" value="code.globaloria.com Campaign">
-        <!-- Publishing feedback -->
-        <div class="large-12 columns">
-          <span id="published" style="display: none;">Published: <a></a></span>
-          <span id="publishing" style="display: none;">Publishing...</span>
-          <br>
-          <!-- <button onclick="publish()">Publish</button> -->
-          <button type="submit">Publish</button>
-        </div>
-      </div>
+      <!-- Dynamic injection -->
     </form>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 
   <style type="text/css">
-    .flex-header-container{
+    /*.flex-header-container{
       display: flex;
       justify-content: center;
     }
@@ -554,15 +161,16 @@
     .flex-button-container{
       display: flex;
       justify-content: flex-start;
-      flex-flow: nowrap;
-      overflow: auto;
+      flex-flow: column;
+      justify-content: space-around;
+      /*overflow: auto;*/
       /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
     }
 
     .flex-item {
       /*border: 2px solid red;*/
-      width: 300px;
-      margin-left: 1em;
+      /*width: 300px;*/
+      /*margin-left: 1em;*/
       
       color: black;
       text-align: center;
@@ -570,14 +178,9 @@
       align-self: stretch;
       font-size: 10px;
       display: flex;
-      flex-flow: column;
-      flex-shrink: 0;
-      justify-content: flex-end;
-    }
-
-    #levelSelectMenuModal{
-      overflow: hidden;
-    }
+      align-items: center;
+      justify-content: space-around;
+    }*/
 
     .flex-button-container .flex-item p:first-child{
       color: #fbb800;
@@ -586,115 +189,38 @@
     .levelDescription{
        font-style: italic;
     }
+
+    button.levelSelectButton{
+      font-size: 12px;
+    }
   </style>
-  <div id="levelSelectMenuModal" class="reveal-modal" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
+  <div id="levelSelectMenuModal" class="reveal-modal medium" data-reveal aria-labelledby="level select menu" aria-hidden="true" role="dialog">
     <div class="flex-header-container">
       <h3 style="color: #0b6481;">Level Select</h3>
     </div>
-    <div class="flex-button-container">
-        <div class="flex-item">
-          <p>The world of code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>
-          <p class="levelDescription">Learn to play the game by moving around with the arrow keys.</p>
-          <button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>
-        </div>
-        <div class="flex-item">
-          <p>Secret Communication with Comments</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>
-          <p class="levelDescription">Learn about comments</p>
-          <button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>
-        </div>
-        <div class="flex-item">
-          <p>Master the Coordinate Plane</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>
-          <p class="levelDescription">Learn how to position objects in the game</p>
-          <button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>
-        </div>
-        <div class="flex-item">
-          <p>Resize the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>
-          <p class="levelDescription">Change the shape and size of the platforms</p>
-          <button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>
-        </div>
-        <div class="flex-item">
-          <p>Recolor the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Introduction to colors in code</p>
-          <button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>
-        </div>
-        <div class="flex-item">
-          <p>Use Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Learn about variables</p>
-          <button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>
-        </div>
-        <div class="flex-item">
-          <p>Change Two Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">Practice using variables</p>
-          <button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>
-        </div>
-        <div class="flex-item">
-          <p>Change Three Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Practice using variables</p>
-          <button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>
-        </div>
-        <div class="flex-item">
-          <p>Make 2 platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Introduction to functions</p>
-          <button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>
-        </div>
-        <div class="flex-item">
-          <p>Write Your Own Platform Code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">Write a function on your own</p>
-          <button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>
-        </div>
-        <div class="flex-item">
-          <p>Write Code with Variables</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Combine your knowledge about functions and variables</p>
-          <button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>
-        </div>
-        <div class="flex-item">
-          <p>Change Direction</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Play with platform movement</p>
-          <button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>
-        </div>
-        <div class="flex-item">
-          <p>Slow the Platforms</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>
-          <p class="levelDescription">More on platform movement</p>
-          <button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>
-        </div>
-        <div class="flex-item">
-          <p>Falling Blocks</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>
-          <p class="levelDescription">Puzzle solving</p>
-          <button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>
-        </div>
-        <div class="flex-item">
-          <p>Learn to Jump</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>
-          <p class="levelDescription">Manipulate simple physics</p>
-          <button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>
-        </div>
-        <div class="flex-item">
-          <p>Save the World of Code</p>
-          <div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>
-          <p class="levelDescription">Finish the game</p>
-          <button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>
-        </div>
-        <div class="flex-item">
-          <p>Build your own game</p>
-          <div style="text-align: center;"><img src="/mini/images/star.png" width="160px"></div>
-          <p class="levelDescription">Use all your new knowledge and more to make your own game</p>
-          <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
-        </div>
+    <div id="levelSelectMenuItems" style="max-height: 400px; overflow-y: scroll;">
+        
     </div>
+    <hr>
+    
+    <div class="row" style="margin-top: 0.5rem">
+      <div class="large-2 columns">
+        <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
+      </div>
+      <div id="sandboxMenuItem">
+        <!-- <div class="large-3 columns">
+          <p>Build your own game</p>
+        </div>
+        <div class="large-4 columns">
+          <p class="levelDescription">Use all your new knowledge and more to make your own game</p>
+        </div> -->  
+      </div>
+      
+      <div class="large-3 columns">
+        <div style="text-align: center;"><img src="/mini/images/star.png" width="160px"></div>
+      </div>
+    </div>
+    
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 
@@ -752,47 +278,869 @@
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
-  <!-- JOYRIDE -->
-  <ol class="joyride-list" data-joyride>
-    <li data-text="Next" data-options="prev_button: false; tip_animation:fade">
-      <p>Let's take a quick tour through your coding environment.</p>
-      <p>You can skip this at any time.</p>
-    </li>
-    <li data-id="levelMenu" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-      <p>Choose a level or skip to the sandbox</p>
-    </li>
-    <li data-id="undo" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-      <p>Undo edits to your code</p>
-    </li>
-    <li data-id="run" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-      <p>Update the game using your code</p>
-    </li>
-    <!-- <li data-id="revert" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">
-      <p>Go back to the original code</p>
-    </li> -->
-    <li data-id="showHints" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
-      <p>Get help</p>
-    </li>
-    <li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">
-      <p>Write your code</p>
-      <p>*Code in italics cannot be changed</p>
-    </li>
-    <!-- <li data-id="previous" data-text="Next" data-options="tip_location: left; prev_button: false; tip_animation:fade">
-      <p>Go back and retry any levels</p>
-    </li>
-    <li data-id="next" data-text="Next" data-prev-text="Prev" data-options="tip_location: left; tip_animation:fade">
-      <p>The next level button will show up after you complete the current level.</p>
-    </li> -->
-    <li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
-      <p>Display the game story again</p>
-    </li>
-    <!-- <li data-id="skipToSandbox" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade;">
-      <p>Go to the sandbox to create your own game</p>
-    </li> -->
-    <li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">
-      <p>Click on the game screen to move the hero using the left and right arrow keys</p>
-    </li>
-  </ol>
+  
+  <script>
+      // HANDLE DIFFERENT LANGUAGES
+      // Set language
+      var queryParams = window.location.search.substring(1).split('&');
+      // Default to english => ''
+      var language = '';
+      var languagePath = '';
+      for (var i = 0; i < queryParams.length; i++) {
+          if(queryParams[i].indexOf('lang')>-1){
+            language = queryParams[i].split('=')[1];
+            languagePath = language+'/';
+          }
+      }
+
+
+      var errorModalMarkup;
+      switch(language){
+        case 'es':
+          errorModalMarkup = '<h2>¡Inténtalo de nuevo!</h2>'
+          +'<p class="error-text">Error text</p>'
+          +'<p>TIP: No olvides utilizar el punto y coma ";" al final de tus líneas de código</p>'
+          break;
+        default:
+          errorModalMarkup = '<h2>Fix a bug!</h2>'
+          +'<p class="error-text">Error text</p>'
+          +'<p>TIP: Make sure the code you write ends with a semicolon: ";" </p>  '
+      }
+      $('#errorModalContent').html(errorModalMarkup);
+
+      var welcomeModalMarkup;
+      switch(language){
+        case 'es':
+          welcomeModalMarkup = '<p>En Globaloria creemos que construir juegos es una manera divertida y poderosa de aprender. ¡Cualquier persona puede aprender a escribir código, incluso dentro de su primera hora!</p>'
+          +'<p>En MakeQuest, editarás el código JavaScript para derrotar al villano "404". En el proceso, aprendes a dominar conceptos de programación como variables y funciones.</p>'
+          +'<p>Visita el Sandbox para conocer el código detrás del juego y editarlo para crear tu propia versión. ¡Publica y comparte tu juego con tus amigos!</p>'
+          +'<p>Diseñado para:</p>'
+          +'<ul>'
+            +'<li>Programadores principiantes. Edad: 10+</li>'
+            +'<li>Chromebook, PC o Mac (navegadores modernos: Chrome, Firefox, Edge)*</li>'
+          +'</ul>'
+          +'<p>Maestros: <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Plan de Estudio</a> (en inglés) para usar MakeQuest en clase.</p>'
+          +'<p style="font-size: 0.8rem;">*No compatible con dispositivos móviles</p>'
+          break;
+        default:
+          welcomeModalMarkup = '<p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>'
+          +'<p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>'
+          +'<p>Remix and expand the full game code in the Sandbox to create your own game. Then publish and share it with your friends!</p>'
+          +'<p>Designed for:</p>'
+          +'<ul>'
+            +'<li>Beginner coders, age 10 and up </li>'
+            +'<li>Chromebook, PC or Mac (all modern browsers)*</li>'
+          +'</ul>'
+          +'<p>Teachers: here is a <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>'
+          +'<p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p>';
+      }
+      $('#welcomeModalMarkup').append(welcomeModalMarkup);
+
+      var sandboxMenuItemMarkup;
+      switch(language){
+        case 'es':
+          sandboxMenuItemMarkup = '<div class="large-3 columns">'
+            +'<p>Programa tu propio juego</p>'
+          +'</div>'
+          +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Utiliza todo lo que aprendiste para programar tu propio juego</p>'
+          +'</div>';
+          break;
+        default:
+          sandboxMenuItemMarkup = '<div class="large-3 columns">'
+            +'<p>Build your own game</p>'
+          +'</div>'
+          +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Use all your new knowledge and more to make your own game</p>'
+          +'</div>';
+      }
+      $('#sandboxMenuItem').append(sandboxMenuItemMarkup);
+
+      var levelSelectMenuMarkup;
+      switch(language){
+        case 'es':
+          levelSelectMenuMarkup = '<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Nivel 1</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>El mundo de codigo</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Aprende a jugar con las flechas de tu teclado.</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Nivel 2</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Comunicación secreta con comentarios</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Aprende sobre comentarios</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Nivel 3</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Domina el plano de coordenadas</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Aprenda a cambiar la posición de los objetos en el juego</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Nivel 4</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Cambia las dimensiones de las plataformas</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Cambia el tamaño de las plataformas</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Nivel 5</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Colorea las plataformas</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Introducción a los colores en código</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Nivel 6</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Utiliza variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Aprende sobre variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Nivel 7</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Cambia dos variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Juega con variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Nivel 8</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Cambia tres variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Juega con variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Nivel 9</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Programa 2 plataformas</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Introducción a funciones</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Nivel 10</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Programa tus propias plataformas</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Escribe el código completo para construir una plataforma</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Nivel 11</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Escribe código con variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Utiliza tu conocimiento sobre funciones y variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Nivel 12</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Cambia de dirección</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Juega con plataformas en movimiento</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Nivel 13</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Plataformas a baja velocidad</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Más sobre plataformas en movimiento</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Nivel 14</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Lluvia de bloques</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Usa todo lo que sabes para superar esta prueba</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Nivel 15</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Aprende a saltar</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Manipula fuerzas en el juego</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Nivel 16</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Rescata el Mundo del Código</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">La prueba final</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>';
+          break;
+        default:
+          levelSelectMenuMarkup = '<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="0" class="levelSelectButton" onclick="skipToLevel(0)">Level 1</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>The world of code</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Learn to play the game by moving around with the arrow keys.</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Characters60PX/Hero_F_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="1" class="levelSelectButton" onclick="skipToLevel(1)">Level 2</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Secret Communication with Comments</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Learn about comments</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/GriddedGlasses_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="2" class="levelSelectButton" onclick="skipToLevel(2)">Level 3</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Master the Coordinate Plane</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Learn how to position objects in the game</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Gloves_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="3" class="levelSelectButton" onclick="skipToLevel(3)">Level 4</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Resize the Platforms</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Change the shape and size of the platforms</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/HexUnscrambler_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="4" class="levelSelectButton" onclick="skipToLevel(4)">Level 5</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Recolor the Platforms</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Introduction to colors in code</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="5" class="levelSelectButton" onclick="skipToLevel(5)">Level 6</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Use Variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Learn about variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="6" class="levelSelectButton" onclick="skipToLevel(6)">Level 7</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Change Two Variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Practice using variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/VEST_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="7" class="levelSelectButton" onclick="skipToLevel(7)">Level 8</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Change Three Variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Practice using variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="8" class="levelSelectButton" onclick="skipToLevel(8)">Level 9</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Make 2 platforms</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Introduction to functions</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="9" class="levelSelectButton" onclick="skipToLevel(9)">Level 10</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Write Your Own Platform Code</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Write a function on your own</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Watch_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="10" class="levelSelectButton" onclick="skipToLevel(10)" >Level 11</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Write Code with Variables</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Combine your knowledge about functions and variables</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="11" class="levelSelectButton" onclick="skipToLevel(11)" >Level 12</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Change Direction</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Play with platform movement</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="12" class="levelSelectButton" onclick="skipToLevel(12)" >Level 13</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Slow the Platforms</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">More on platform movement</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/Remote_Lvl3_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="13" class="levelSelectButton" onclick="skipToLevel(13)" >Level 14</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Falling Blocks</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Puzzle solving</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl1_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="14" class="levelSelectButton" onclick="skipToLevel(14)" >Level 15</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Learn to Jump</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Manipulate simple physics</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Items60PX/CodoStick_Lvl2_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>'
+            +'<div class="row">'
+            +'<div class="large-2 columns">'
+            +'<button id="15" class="levelSelectButton" onclick="skipToLevel(15)" >Level 16</button>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<p>Save the World of Code</p>'
+            +'</div>'
+            +'<div class="large-4 columns">'
+            +'<p class="levelDescription">Finish the game</p>'
+            +'</div>'
+            +'<div class="large-3 columns">'
+            +'<div style="text-align: center;"><img src="/mini/images/MakeQuestAssets/Portal_60.png" width="60px"></div>'
+            +'</div>'
+            +'</div>';
+      }
+      $('#levelSelectMenuItems').append(levelSelectMenuMarkup);
+
+      var controlsMarkup;
+      switch(language){
+        case 'es':
+          controlsMarkup = '<button id="levelMenu" class="button center" onclick="levelSelectMenu()">Elegir nivel</button>'
+            +'<button id="undo" class="button center" onclick="undo()">Deshacer</button>'
+            +'<button id="run" class="button center" onclick="refreshPreview()">Ejecutar</button>'
+            +'<button id="showHints" class="button center" onclick="showHints()">Ayuda</button>'
+          break;
+        default:
+          controlsMarkup = '<button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>'
+            +'<button id="undo" class="button center" onclick="undo()">Undo</button>'
+            +'<button id="run" class="button center" onclick="refreshPreview()">Run</button>'
+            +'<button id="showHints" class="button center" onclick="showHints()">Show Hints</button>'
+      }
+      $('#controls').append(controlsMarkup);
+
+      var iframeControls;
+      switch(language){
+        case 'es':
+          iframeControls = '<button id="showDialogue" onclick="document.getElementById(\'preview\').contentWindow.showDialogue()" style="display: none;">Historia</button>'
+          +'<button id="backToGame" onclick="document.getElementById(\'preview\').contentWindow.backToGame()" style="display: none;">Volver al juego</button>'
+          +'<button id="publish" onclick="document.getElementById(\'preview\').contentWindow.publish()" style="display: none;">Guarda tu juego</button>'
+          break;
+        default:
+          iframeControls = '<button id="showDialogue" onclick="document.getElementById(\'preview\').contentWindow.showDialogue()" style="display: none;">Story</button>'
+          +'<button id="backToGame" onclick="document.getElementById(\'preview\').contentWindow.backToGame()" style="display: none;">Back to game</button>'
+          +'<button id="publish" onclick="document.getElementById(\'preview\').contentWindow.publish()" style="display: none;">Save your game</button>'
+      }
+      $('#iframe-controls').append(iframeControls);
+
+      // PUBLISH MODAL
+      var publishModal;
+      if(window.location.hostname == 'code.globaloria.com'){
+        switch(language){
+          case 'es':
+            publishModal = '<h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publica y Guarda Tu Juego</h2>'
+              +'<p>Tu juego será publicado en una página web</p>'
+              +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
+              +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
+              +'<div class="row">'
+                +'<div class="large-6 columns">'
+                    +'<label for="first_name">Nombre'
+                        +'<input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">'
+                    +'</label>'
+                    +'<small class="error">This field is required.</small>'
+                +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="00NU0000005Ph4g">Edad'
+                  +'<input id="00NU0000005Ph4g" name="00NU0000005Ph4g" type="text" required>'
+                +'</label>'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="00NU0000005PN7e">Escuela</label>'
+                +'<input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="city">City</label>'
+                +'<input id="city" name="city" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                  +'<label for="country">Pais</label>'
+                  +'<input id="country" name="country" type="text" required pattern="[a-zA-Z]+">'
+                  +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="state">Estado/Provincia</label>'
+                +'<input id="state" name="state" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-12 columns">'
+                +'<span>I\'m a: </span>'
+                +'<label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Estudiante'
+                  +'<input id="isStudent" value="Student" name="isStudent" type="checkbox">'
+                +'</label>'
+                +'<label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Maestro'
+                  +'<input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox">'
+                +'</label>'
+                +'<label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Padre/Madre'
+                  +'<input id="isParent" value="Parent" name="isParent" type="checkbox">'
+                +'</label>'
+                +'<label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrador'
+                  +'<input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox">'
+                +'</label>'
+              +'</div>'
+              +'<div class="large-12 columns">'
+                +'<label for="description">Tu opinion es importante:'
+                  +'<input id="description" name="description" type="text">'
+                +'</label>'
+              +'</div>'
+              +'<!-- Contact information -->'
+              +'<div class="large-12 columns">'
+                +'<input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox" value="1">'
+                +'<label for="00NU0000005PN7j">Soy mayor de 18 años y me gustaría un demo de Globaloria</label>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="email">Email'
+                  +'<input id="email" name="email" type="email" disabled>'
+                +'</label>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="phone">Telefono'
+                  +'<input id="phone" name="phone" type="text" disabled>'
+                +'</label>'
+              +'</div>'
+              +'<!-- Role: summary of I\'m a: -->'
+              +'<input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">'
+              +'<!-- Game Link Field-->'
+              +'<input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">'
+              +'<input type="hidden" name="lead_source" value="code.globaloria.com Campaign">'
+              +'<!-- Publishing feedback -->'
+              +'<div class="large-12 columns">'
+                +'<span id="published" style="display: none;">Usa esta liga para ver tu juego.<br><a target="_blank"></a></span>'
+                +'<span id="publishing" style="display: none;">Proceso...</span>'
+                +'<br><br>'
+              +'<!-- <button onclick="publish()">Publish</button> -->'
+                +'<button type="submit">Publicar</button>'
+              +'</div>'
+            +'</div>';
+            break;
+          default:
+            publishModal = '<h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publish and Save Your Game</h2>'
+              +'<p>Your game will be published as a web page</p>'
+              +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
+              +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
+              +'<div class="row">'
+                +'<div class="large-6 columns">'
+                    +'<label for="first_name">Name'
+                        +'<input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">'
+                    +'</label>'
+                    +'<small class="error">This field is required.</small>'
+                +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="00NU0000005Ph4g">Age'
+                  +'<input id="00NU0000005Ph4g" name="00NU0000005Ph4g" type="text" required>'
+                +'</label>'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="00NU0000005PN7e">School</label>'
+                +'<input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="city">City</label>'
+                +'<input id="city" name="city" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                +'<label for="state">State/Province</label>'
+                +'<input id="state" list="states-list" name="state" type="text" required pattern="[a-zA-Z]+">'
+                +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-4 columns">'
+                  +'<label for="country">Country</label>'
+                  +'<input id="country" list="countries-list" name="country" type="text" required pattern="[a-zA-Z]+">'
+                  +'<small class="error">This field is required.</small>'
+              +'</div>'
+              +'<div class="large-12 columns">'
+                +'<span>I\'m a: </span>'
+                +'<label for="isStudent" style="display: inline-block; margin-left: 0.5rem;">Student'
+                  +'<input id="isStudent" value="Student" name="isStudent" type="checkbox">'
+                +'</label>'
+                +'<label for="isTeacher" style="display: inline-block; margin-left: 0.5rem;">Teacher'
+                  +'<input id="isTeacher" value="Teacher" name="isTeacher" type="checkbox">'
+                +'</label>'
+                +'<label for="isParent" style="display: inline-block; margin-left: 0.5rem;">Parent'
+                  +'<input id="isParent" value="Parent" name="isParent" type="checkbox">'
+                +'</label>'
+                +'<label for="isAdministrator" style="display: inline-block; margin-left: 0.5rem;">Administrator'
+                  +'<input id="isAdministrator" value="Administrator" name="isAdministrator" type="checkbox">'
+                +'</label>'
+              +'</div>'
+              +'<div class="large-12 columns">'
+                +'<label for="description">Tell us what you think:'
+                  +'<input id="description" name="description" type="text">'
+                +'</label>'
+              +'</div>'
+              +'<!-- Contact information -->'
+              +'<div class="large-12 columns">'
+                +'<input id="00NU0000005PN7j" name="00NU0000005PN7j" type="checkbox" value="1">'
+                +'<label for="00NU0000005PN7j">I\'m 18 or older and would like a full Globaloria demo</label>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="email">Email'
+                  +'<input id="email" name="email" type="email" disabled>'
+                +'</label>'
+              +'</div>'
+              +'<div class="large-6 columns">'
+                +'<label for="phone">Phone'
+                  +'<input id="phone" name="phone" type="text" disabled>'
+                +'</label>'
+              +'</div>'
+              +'<!-- Role: summary of I\'m a: -->'
+              +'<input type="hidden" name="00NU0000005Ph2K" id="00NU0000005Ph2K" value="">'
+              +'<!-- Game Link Field-->'
+              +'<input type="hidden" name="00NU0000005PN7t" id="00NU0000005PN7t" value="">'
+              +'<input type="hidden" name="lead_source" value="code.globaloria.com Campaign">'
+              +'<!-- Publishing feedback -->'
+              +'<div class="large-12 columns">'
+                +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Project Page.<br><a target="_blank"></a></span>'
+                +'<span id="publishing" style="display: none;">Publishing...</span>'
+                +'<br><br>'
+              +'<!-- <button onclick="publish()">Publish</button> -->'
+                +'<button type="submit">Publish</button>'
+              +'</div>'
+            +'</div>';
+        }
+      }else{
+        switch(language){
+          case 'es':
+            publishModal = '<h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publica y guarda tu juego</h2>'
+            +'<p>Tu juego sera publicado como una pagina web</p>'
+            +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
+            +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
+            +'<div class="row">'
+              +'<div class="large-6 columns">'
+                +'<label for="first_name">Nombre'
+                  +'<input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">'
+                +'</label>'
+                +'<small class="error">Este campo es obligatorio.</small>'
+              +'</div>'
+                +'<div class="large-6 columns">'
+                  +'<label for="00NU0000005PN7e">Escuela</label>'
+                  +'<input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">'
+                  +'<small class="error">Este campo es obligatorio.</small>'
+                +'</div>'
+                +'<div class="large-12 columns">'
+                  +'<span id="published" style="display: none;">Tu juego ha sido publicado con el siguiente enlace URL.<br>Para guardar tu juego, copia el enlace URL a tu proyecto.<br><a target="_blank"></a></span>'
+                  +'<span id="publishing" style="display: none;">Procesando...</span>'
+                  +'<br><br>'
+                  +'<button type="submit">Publicar</button>'
+                +'</div>'
+              +'</div>';
+            break;
+          default:
+            publishModal = '<h2 style="text-align:center;"><img src="images/GlobaloriaG.png" width="60px" style="margin-right: 2rem">Publish and Save Your Game</h2>'
+                +'<p>Your game will be published as a web page</p>'
+                +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
+                +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
+                +'<div class="row">'
+                  +'<div class="large-6 columns">'
+                    +'<label for="first_name">Name'
+                      +'<input id="first_name" name="first_name" maxlength="40" type="text" required pattern="[a-zA-Z]+">'
+                    +'</label>'
+                    +'<small class="error">This field is required.</small>'
+                  +'</div>'
+                    +'<div class="large-6 columns">'
+                      +'<label for="00NU0000005PN7e">School</label>'
+                      +'<input id="00NU0000005PN7e" name="00NU0000005PN7e" type="text" required pattern="[a-zA-Z]+">'
+                      +'<small class="error">This field is required.</small>'
+                    +'</div>'
+                    +'<div class="large-12 columns">'
+                      +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Project Page.<br><a target="_blank"></a></span>'
+                      +'<span id="publishing" style="display: none;">Publishing...</span>'
+                      +'<br><br>'
+                      +'<button type="submit">Publish</button>'
+                    +'</div>'
+                  +'</div>';
+        }
+      }
+      $('#publish-form').html(publishModal);
+
+
+
+      var joyrideMarkup;
+      switch(language){
+        case 'es':
+          joyrideMarkup = '<ol class="joyride-list" data-joyride>'
+            +'<li data-text="Siguiente" data-options="prev_button: false; tip_animation:fade">'
+            +'<p>¡Bienvenido a MakeQuest!</p>'
+            +'<p>Veamos como funcionan las distintas herramientas.</p>'
+            +'<p>Puede cerrar este tutorial en cualquier momento.</p>'
+            +'</li>'
+            +'<li data-id="levelMenu" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Elige un nivel o ve directo al Sandbox</p>'
+            +'</li>'
+            +'<li data-id="undo" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Deshaz el último cambio a tu código</p>'
+            +'</li>'
+            +'<li data-id="run" data-text="Siguiente" data-prev-text="Anterior" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Actualiza tu juego con el código más reciente</p>'
+            +'</li>'
+            +'<li data-id="js_editor" data-button="Siguiente" data-prev-text="Anterior" data-options="tip_location:right; tip_animation:fade">'
+            +'<p>Descubre más sobre el nivel actual y escribe tu código</p>'
+            +'<p>*El código en itálicas no se puede modificar</p>'
+            +'</li>'
+            +'<li data-id="showDialogue" data-button="Siguiente" data-prev-text="Anterior" data-options="tip_location:left; tip_animation:fade">'
+            +'<p>Volver a mostrar la historia del juego</p>'
+            +'</li>'
+            +'<li data-id="preview" data-button="¡A programar!" data-prev-text="Anterior" data-options="tip_location:left; +tip_animation:fade">'
+            +'<p>Haz clic en la escena de juego para mover a tu héroe con las flechas izquierda y derecha del teclado.</p>'
+            +'</li>'
+            +'</ol>';
+          break;
+        default: 
+          joyrideMarkup = '<ol class="joyride-list" data-joyride>'
+            +'<li data-text="Next" data-options="prev_button: false; tip_animation:fade">'
+            +'<p>Welcome to MakeQuest!</p>'
+            +'<p>Let\'s take a quick tour through your coding environment.</p>'
+            +'<p>You can skip this at any time.</p>'
+            +'</li>'
+            +'<li data-id="levelMenu" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Choose a level or skip to the sandbox</p>'
+            +'</li>'
+            +'<li data-id="undo" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Undo edits to your code</p>'
+            +'</li>'
+            +'<li data-id="run" data-text="Next" data-prev-text="Prev" data-options="tip_location: right; tip_animation:fade">'
+            +'<p>Update the game using your code</p>'
+            +'</li>'
+            +'<li data-id="js_editor" data-button="Next" data-prev-text="Prev" data-options="tip_location:right; tip_animation:fade">'
+            +'<p>Learn more about the current level and write your code</p>'
+            +'<p>*Code in italics cannot be changed</p>'
+            +'</li>'
+            +'<li data-id="showDialogue" data-button="Next" data-prev-text="Prev" data-options="tip_location:left; tip_animation:fade">'
+            +'<p>Display the game story again</p>'
+            +'</li>'
+            +'<li data-id="preview" data-button="Start coding" data-prev-text="Prev" data-options="tip_location:left; +tip_animation:fade">'
+            +'<p>Click on the game screen to move the hero using the left and right arrow keys</p>'
+            +'</li>'
+            +'</ol>';
+      }
+    
+    $('body').append(joyrideMarkup);
+
+  </script>
   <script src="dist/js/codemirror-editors.js"></script>
   <script src="dist/vendor/stacktrace/stacktrace-with-polyfills.min.js"></script>
   <script src="dist/vendor/esprima.js"></script>
