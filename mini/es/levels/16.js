@@ -1,4 +1,4 @@
-// *********** BIENVENIDO AL SANDBOX DE GLOBALORIA **********
+// *********** BIENVENIDO AL SANDBOX DE Carnegie Learning **********
 // Todo el código que vez aquí sirve para crear el juego que vez
 // a tu derecha. Hemos incluido una serie de comentarios
 // para que juegues con código y programes tu propio juego.

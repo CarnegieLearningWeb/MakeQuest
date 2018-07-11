@@ -181,7 +181,7 @@ function levelComplete(){
     rectMode(CENTER);
     strokeWeight(GOAL_REACHED_BOX_GUTTER);
     stroke(36,164,205);
-    fill('#0B6481');
+    fill('#1c2b63');
 
     //Level 0 only
     if (currentLevel == 0) {

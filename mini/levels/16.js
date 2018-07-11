@@ -1,4 +1,4 @@
-// *********** WELCOME TO THE GLOBALORIA SANDBOX **********
+// *********** WELCOME TO THE Carnegie Learning SANDBOX **********
 // All the code you see here helps create the game you see 
 // on the right. We have included comments throughout the 
 // code to help you play around and make a game you can 

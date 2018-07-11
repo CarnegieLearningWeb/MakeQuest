@@ -2,7 +2,7 @@
   max-width: 100%; }
 
 .menu {
-  background-color: #0b6481;
+  background-color: #1c2b63;
   padding: .06rem 0rem;
   height: auto; }
   .menu .inline-list {
@@ -14,10 +14,10 @@
       color: #fff;
       padding-bottom: 0.5rem; }
       .menu .inline-list a:hover {
-        color: #fb9b3b;
+        color: #5fc0ec;
         transition: all .3s ease-in-out; }
     .menu .inline-list .active a {
-      color: #fb9b3b; }
+      color: #5fc0ec; }
   .menu .account {
     position: absolute;
     top: 3%;
@@ -29,7 +29,7 @@
         float: left;
         margin: 0 0 0 1.5rem; }
       .menu a:hover {
-        border-bottom: 2px solid #fb9b3b; } }
+        border-bottom: 2px solid #5fc0ec; } }
   .menu .account-action {
     float: right;
     margin: -.75rem 0 0 0; }
@@ -49,7 +49,7 @@
   margin: 0 0 1rem 0;
   color: #fff; }
   .name i {
-    color: #fb9b3b;
+    color: #5fc0ec;
     margin-right: 0.5rem; }
   @media only screen and (min-width: 40.063em) {
     .name {
@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 1300px) {
   .sidebar-border {
-    border-left: 2.2rem solid #0B6481;
+    border-left: 2.2rem solid #1c2b63;
   }
 }
 
@@ -75,7 +75,7 @@ main > .row.border-bottom{
 }
 
 .border-bottom {
-  border-bottom: 1px solid #0B6481;
+  border-bottom: 1px solid #1c2b63;
 }
 
 .border-right {
@@ -128,7 +128,7 @@ main > .row.border-bottom{
 }
 
 #showHints, #undo, #levelMenu {
-    background-color: #0b6481;
+    background-color: #1c2b63;
     /*border: 3px solid rgba(232,74,93, 1);*/
     color: #ffffff;
     letter-spacing: 1px;
@@ -192,7 +192,7 @@ main > .row.border-bottom{
 }
 
 .iframe-controls #backToGame {
-    background-color: #fb9b3b;
+    background-color: #5fc0ec;
     /*border: 3px solid rgba(230,96,0, 1);*/
     color: #ffffff;
     letter-spacing: 1px;

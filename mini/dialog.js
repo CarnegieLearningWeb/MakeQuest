@@ -39,7 +39,7 @@ function drawDialogue(){
 		rectMode(CENTER);
 
 		// Build 'Story' Dialogue box for text
-		fill("#0B6481");
+		fill("#1c2b63");
 		stroke(36,164,205);
 		strokeWeight(12);
 		rect(320, 270, 630, 204);

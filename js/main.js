@@ -257,9 +257,10 @@ function publish(){
     //               ? 'http://globaloria.com:8000/'
     //               : 'https://hackpub.herokuapp.com/buckets/globaloria/';
     var baseURL;
+    //TODO: revisit publishing from CLI domain
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
         baseURL = 'http://globaloria.com:8000/';
-    }else if( window.location.hostname.indexOf('makequest.globaloria.com') > -1 ){
+    }else if( window.location.hostname.indexOf('makequest.carnegielearning.com') > -1 ){
         // baseURL = 'https://globaloria.com:8001/';
         baseURL = 'https://publish.globaloria.com/';
     }else{
@@ -350,11 +351,11 @@ function loadMiniCourse(cb){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
         if(window.location.href.match(/code.globaloria.com/)){
             codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
-        }else if(window.location.href.match(/makequest.globaloria.com/)){
+        }else if(window.location.href.match(/makequest.carnegielearning.com/)){
             // Need to use full bucket name. Using mymakequest will throw an error
             // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
             // codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
-            codeUrl = 'https://mymakequest.globaloria.com/'+remixUrl[1];
+            codeUrl = 'https://mymakequest.carnegielearning.com/'+remixUrl[1];
         }else{
             // codeUrl = 'https://globaloria-dev.s3.amazonaws.com/'+remixUrl[1];
             codeUrl = 'https://hackpub-publisher-dev.s3.amazonaws.com/'+remixUrl[1];
