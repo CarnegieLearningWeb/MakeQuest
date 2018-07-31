@@ -847,7 +847,7 @@
       if(window.location.hostname == 'code.globaloria.com'){
         switch(language){
           case 'es':
-            publishModal = '<h2 style="text-align:center;"><img src="images/CL_Logo.png" width="60px" style="margin-right: 2rem">Publica y Guarda Tu Juego</h2>'
+            publishModal = '<h2 style="text-align:center;">Publica y Guarda Tu Juego</h2>'
               +'<p>Tu juego será publicado en una página web</p>'
               +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
               +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
@@ -935,7 +935,7 @@
             +'</div>';
             break;
           default:
-            publishModal = '<h2 style="text-align:center;"><img src="images/CL_Logo.png" width="60px" style="margin-right: 2rem">Publish and Save Your Game</h2>'
+            publishModal = '<h2 style="text-align:center;">Publish and Save Your Game</h2>'
               +'<p>Your game will be published as a web page</p>'
               +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
               +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
@@ -1014,7 +1014,7 @@
               +'<input type="hidden" name="lead_source" value="code.globaloria.com Campaign">'
               +'<!-- Publishing feedback -->'
               +'<div class="large-12 columns">'
-                +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Project Page.<br><a target="_blank"></a></span>'
+                +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Notebook Entry Page.<br><a target="_blank"></a></span>'
                 +'<span id="publishing" style="display: none;">Publishing...</span>'
                 +'<br><br>'
               +'<!-- <button onclick="publish()">Publish</button> -->'
@@ -1022,10 +1022,11 @@
               +'</div>'
             +'</div>';
         }
-      }else{
+      }
+      else{
         switch(language){
           case 'es':
-            publishModal = '<h2 style="text-align:center;"><img src="images/CL_Logo.png" width="60px" style="margin-right: 2rem">Publica y guarda tu juego</h2>'
+            publishModal = '<h2 style="text-align:center;">Publica y guarda tu juego</h2>'
             +'<p>Tu juego sera publicado como una pagina web</p>'
             +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
             +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
@@ -1050,7 +1051,7 @@
               +'</div>';
             break;
           default:
-            publishModal = '<h2 style="text-align:center;"><img src="images/CL_Logo.png" width="60px" style="margin-right: 2rem">Publish and Save Your Game</h2>'
+            publishModal = '<h2 style="text-align:center;">Publish and Save Your Game</h2>'
                 +'<p>Your game will be published as a web page</p>'
                 +'<input name="oid" type="hidden" value="00DU0000000LhCA">'
                 +'<input id="retUrl" name="retURL" type="hidden" value="https://globaloria.com/get-started/get-started-2/">'
@@ -1067,7 +1068,7 @@
                       +'<small class="error">This field is required.</small>'
                     +'</div>'
                     +'<div class="large-12 columns">'
-                      +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Project Page.<br><a target="_blank"></a></span>'
+                      +'<span id="published" style="display: none;">Published! Click link to view your game. To save your game, copy link to your Notebook Entry.<br><a target="_blank"></a></span>'
                       +'<span id="publishing" style="display: none;">Publishing...</span>'
                       +'<br><br>'
                       +'<button type="submit">Publish</button>'

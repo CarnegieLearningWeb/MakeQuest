@@ -240,8 +240,6 @@ function publish(){
     }
     
     generatedHTML = html;
-    console.log("GENERATED HTML");
-    console.log(generatedHTML);
 
     if (!generatedHTML) {
       alert("There was an error publishing your game. Please try again later!");
@@ -260,7 +258,8 @@ function publish(){
     //TODO: revisit publishing from CLI domain
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
         baseURL = 'http://globaloria.com:8000/';
-    }else if( window.location.hostname.indexOf('makequest.carnegielearning.com') > -1 ){
+    }else if( window.location.hostname.indexOf('makequest.carnegielearning.com') > -1
+        || window.location.hostname.indexOf('makequest.globaloria.com') > -1){
         // baseURL = 'https://globaloria.com:8001/';
         baseURL = 'https://publish.globaloria.com/';
     }else{
@@ -288,41 +287,12 @@ function publish(){
         if(language && language == 'es'){
             url += '?lang=es';
         }
+        url = url.replace('globaloria.com', 'carnegielearning.com');
 
         $("#published").fadeIn()
           .find('a')
           .attr('href', url)
           .text(url);
-
-        // Disable Publish button to avoid publishing spam
-        // $('button[type="submit"]').attr('disabled', 'disabled');
-
-        // code.globaloria.com ONLY
-        // // Replace the form's return URL and submit the form
-        // $('#publish-form input#retUrl').val( data['published-url'] );
-        
-        // // Populate game link for salesforce capture
-        // $('#00NU0000005PN7t').val(data['published-url']);
-
-        // // Populate the role field for salesforce
-        // var role = [];
-        // if( $('#isStudent').prop('checked') ) role.push( $('#isStudent').val() );
-        // if( $('#isTeacher').prop('checked') ) role.push( $('#isTeacher').val() );
-        // if( $('#isParent').prop('checked') ) role.push( $('#isParent').val() );
-        // if( $('#isAdministrator').prop('checked') ) role.push( $('#isAdministrator').val() );
-                    
-        // $('#00NU0000005Ph2K').val( role.join(',') );
-
-        //Unbind form to prevent submit loop
-        // $('#publish-form').unbind().submit();
-
-
-
-        // makquest.globaloria.com ONLY
-        // window.location.href = 'data['published-url']';
-
-
-
       },
       complete: function() {
         $("#publishing").hide();
@@ -333,7 +303,6 @@ function publish(){
 
 function loadMiniCourse(cb){
     cb = cb || function() {}
-    console.log("Loading mini course template");
     var zeroPaddedLevel = (currentLevel < 10) ? '0' + currentLevel : currentLevel;
 
     // Skip to sandbox
@@ -370,8 +339,6 @@ function loadMiniCourse(cb){
             if(remixCode){
                 // Data should only be the editor specific code (i.e. the captured group)
                 data = remixCode[0].replace('<script id="published-level-code">', '').replace('</script>', '');
-                console.log("NEW DATA");
-                console.log(data);
             }
         }
 
@@ -412,9 +379,6 @@ function loadMiniCourse(cb){
                 editorTooltips.push(arguments);
             }
         };
-
-        console.log("Course retrieved: ");
-        console.log(data);
 
         // Normalize whitespace if we're on windows.
         data = data.replace(/\r\n/g, '\n');
