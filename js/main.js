@@ -257,11 +257,11 @@ function publish(){
     var baseURL;
     //TODO: revisit publishing from CLI domain
     if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
-        baseURL = 'http://globaloria.com:8000/';
+        baseURL = 'http://myglife.org:8000/';
     }else if( window.location.hostname.indexOf('makequest.carnegielearning.com') > -1
         || window.location.hostname.indexOf('makequest.globaloria.com') > -1){
         // baseURL = 'https://globaloria.com:8001/';
-        baseURL = 'https://publish.globaloria.com/';
+        baseURL = 'https://publish.myglife.org/';
     }else{
         // baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
         baseURL = 'https://publish-dev.herokuapp.com/';
@@ -288,6 +288,7 @@ function publish(){
             url += '?lang=es';
         }
         url = url.replace('globaloria.com', 'carnegielearning.com');
+        url = url.replace('myglife.org', 'carnegielearning.com');
 
         $("#published").fadeIn()
           .find('a')
