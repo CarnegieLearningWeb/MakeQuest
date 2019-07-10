@@ -249,27 +249,10 @@ function publish(){
     // Begin publishing
     $("#published").hide();
     $("#publishing").fadeIn();
-
-    // Publish everything to mycode until we have a second bucket with CORS enabled
-    // var baseURL = window.location.hostname.indexOf('code.globaloria.com') > -1
-    //               ? 'http://globaloria.com:8000/'
-    //               : 'https://hackpub.herokuapp.com/buckets/globaloria/';
-    var baseURL;
-    //TODO: revisit publishing from CLI domain
-    if( window.location.hostname.indexOf('code.globaloria.com') > -1 ){
-        baseURL = 'http://myglife.org:8000/';
-    }else if( window.location.hostname.indexOf('makequest.carnegielearning.com') > -1
-        || window.location.hostname.indexOf('makequest.globaloria.com') > -1){
-        // baseURL = 'https://globaloria.com:8001/';
-        baseURL = 'https://publish.myglife.org/';
-    }else{
-        // baseURL = 'https://hackpub.herokuapp.com/buckets/globaloria/';
-        baseURL = 'https://publish-dev.herokuapp.com/';
-    }
     
     $.ajax({
       type: 'POST',
-      url: baseURL + 'publish',
+      url: 'https://publish.emcl.com/publish',
       data: {
         'html': generatedHTML
       },
