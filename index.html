@@ -42,7 +42,7 @@
 
 <body>
   <!-- Hour of code tracking pixel -->
-  <img style="display: none;" src="https://code.org/api/hour/begin_globaloria.png" alt="">
+<!--  <img style="display: none;" src="https://code.org/api/hour/begin_globaloria.png" alt="">-->
 
   <nav class="menu" style="display: flex; flex-flow: row; justify-content: space-between; align-items: center;">
     <a href="https://carnegielearning.com" target="_blank" style="border-bottom: none">
@@ -74,10 +74,6 @@
         <div class="row">
           <div class="large-12 columns margin-left-0 margin-right-0">
             <div class="controls" id="controls">
-              <!-- <button id="levelMenu" class="button center" onclick="levelSelectMenu()">Level Select</button>
-              <button id="undo" class="button center" onclick="undo()">Undo</button>
-              <button id="run" class="button center" onclick="refreshPreview()">Run</button>
-              <button id="showHints" class="button center" onclick="showHints()">Show Hints</button> -->
             </div>
           </div>
         </div>
@@ -94,9 +90,6 @@
       </div>
       <div class="medium-12 large-6 columns margin-left-0 margin-right-0" data-equalizer-watch>
         <div class="iframe-controls" id="iframe-controls">
-          <!-- <button id="showDialogue" onclick="document.getElementById('preview').contentWindow.showDialogue()" style="display: none;">Story</button>
-          <button id="backToGame" onclick="document.getElementById('preview').contentWindow.backToGame()" style="display: none;">Back to game</button>
-          <button id="publish" onclick="document.getElementById('preview').contentWindow.publish()" style="display: none;">Save your game</button> -->
         </div>
         <!-- LIVE PREVIEW -->
         <div class="preview_container">
@@ -127,19 +120,6 @@
         </div>
       </div>
       <div class="large-8 columns" id="welcomeModalMarkup">
-        <!-- <p>At Globaloria we believe that making games is a fun and powerful way to learn. Everyone can write real code, even in your first hour!</p>
-        <p>In the MakeQuest game, you edit JavaScript code to defeat "404" the evil villain. Along the way, you master computer science concepts like variables and functions.</p>
-        <p>Remix and expand the full game code in the Sandbox to create your own game. Then publish and share it with your friends!</p>
-
-        <p>Designed for:</p>
-        <ul>
-          <li>Beginner coders, age 10 and up </li>
-          <li>Chromebook, PC or Mac (all modern browsers)*</li>
-        </ul>
-
-        <p>Teachers: here is a <a href="https://globaloria.com/courses-services/teacher-guides/" target="_blank">Lesson Plan</a> for using MakeQuest in your class.</p>
-
-        <p style="font-size: 0.8rem;">*Not for mobile phones or tablets</p> -->
       </div>
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -153,35 +133,6 @@
   </div>
 
   <style type="text/css">
-    /*.flex-header-container{
-      display: flex;
-      justify-content: center;
-    }
-
-    .flex-button-container{
-      display: flex;
-      justify-content: flex-start;
-      flex-flow: column;
-      justify-content: space-around;
-      /*overflow: auto;*/
-      /*-ms-overflow-style: -ms-autohiding-scrollbar;*/
-    }
-
-    .flex-item {
-      /*border: 2px solid red;*/
-      /*width: 300px;*/
-      /*margin-left: 1em;*/
-      
-      color: black;
-      text-align: center;
-      
-      align-self: stretch;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-    }*/
-
     .flex-button-container .flex-item p:first-child{
       color: #fbb800;
     }
@@ -208,12 +159,6 @@
         <button id="sandbox" class="levelSelectButton" onclick="skipToLevel('sandbox')" style="background-color: #fbb800">Sandbox</button>
       </div>
       <div id="sandboxMenuItem">
-        <!-- <div class="large-3 columns">
-          <p>Build your own game</p>
-        </div>
-        <div class="large-4 columns">
-          <p class="levelDescription">Use all your new knowledge and more to make your own game</p>
-        </div> -->  
       </div>
       
       <div class="large-3 columns">

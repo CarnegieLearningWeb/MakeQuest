@@ -1,5 +1,5 @@
 // Set language
-var queryParams = parent.window.location.search.substring(1).split('&');
+var queryParams = window.location.search.substring(1).split('&');
 // Default to english => ''
 var language = '';
 var languagePath = '';

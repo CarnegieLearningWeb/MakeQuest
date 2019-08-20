@@ -182,8 +182,6 @@ function refreshPreview() {
   //Error checking (provide user feedback)
   try {
      console.log("Eval js");
-     console.log( document.getElementById('preview').contentWindow.remove );
-     console.log(js_content);
 
     if( document.getElementById('preview').contentWindow.remove ){
       //Eval the code to overwrite existing function. Access the iframe by name
