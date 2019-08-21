@@ -13,7 +13,7 @@
     min-height: 100vh;
 }
 
-@media only screen and (min-width: 1050px) {
+@media only screen and (max-width: 1050px) {
     .CodeMirror{
         min-height: 50vh;
     }
