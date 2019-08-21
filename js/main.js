@@ -302,9 +302,7 @@ function loadMiniCourse(cb){
     // Load remix code for sandbox when available
     if( remixUrl && storage.get('skipToSandbox') == 'true' ){
         // Pull game from dev or live (CORS is currently breaking pulls from globaloria-dev.s3)
-        if(window.location.href.match(/code.globaloria.com/)){
-            codeUrl = 'http://mycode.globaloria.com/'+remixUrl[1];
-        }else if(window.location.href.match(/makequest.carnegielearning.com/)){
+        if(window.location.href.match(/makequest.carnegielearning.com/)){
             // Need to use full bucket name. Using mymakequest will throw an error
             // codeUrl = 'http://mymakequest.globaloria.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];
             // codeUrl = 'http://mymakequest.globaloria.com.s3-website-us-east-1.amazonaws.com/'+remixUrl[1];

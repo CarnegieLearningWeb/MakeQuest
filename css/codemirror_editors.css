@@ -10,7 +10,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    min-height: 75vh;
+    min-height: 100vh;
+}
+
+@media only screen and (min-width: 1050px) {
+    .CodeMirror{
+        min-height: 50vh;
+    }
 }
 
 #js_editor.show-js-hints .js-hint:not(.js-read-only) {

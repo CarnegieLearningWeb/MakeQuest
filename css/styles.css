@@ -47,19 +47,16 @@
   font-size: 1.5rem;
   line-height: 1;
   margin: 0 0 1rem 0;
-  color: #fff; }
-  .name i {
+  color: #fff;
+}
+.name i {
     color: #5fc0ec;
-    margin-right: 0.5rem; }
-  @media only screen and (min-width: 40.063em) {
+    margin-right: 0.5rem;
+}
+@media only screen and (min-width: 40.063em) {
     .name {
-      float: left; } }
-
-
-@media only screen and (min-width: 1300px) {
-  .sidebar-border {
-    border-left: 2.2rem solid #1c2b63;
-  }
+      float: left;
+    }
 }
 
 #errorModal{
@@ -93,7 +90,9 @@ main > .row.border-bottom{
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+    margin-top: 7px;
+    background: #EEE;
+    margin-left: 5%;
 }
 
 .controls button {
@@ -103,8 +102,7 @@ main > .row.border-bottom{
   /*Copying iframe styles*/
   padding: 10px 20px;
   font-size: .8rem;
-  /*border: 3px solid rgba(12, 111, 143, 1);
-  color: rgba(12, 111, 143, 1);*/
+  border-radius: 6px;
 }
 
 #run {
@@ -134,14 +132,6 @@ main > .row.border-bottom{
     letter-spacing: 1px;
 }
 
-.globaloria-logo {
-  height: 24px;
-  width: 24px;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-bottom: 5px
-}
-
 .joyride-highlight{
   border: 3px solid red !important;
 }
@@ -165,6 +155,7 @@ main > .row.border-bottom{
 .iframe-controls #publish {
     padding: 10px 20px;
     font-size: .8rem;
+    border-radius: 6px;
 }
 
 .iframe-controls #previous,
@@ -208,9 +199,9 @@ main > .row.border-bottom{
 .iframe-controls{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 7px;
 }
 
 .iframe-controls button{
-    margin-right: 1rem;
+    margin: 0 1rem .5rem;
 }
