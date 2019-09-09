@@ -252,7 +252,7 @@ function publish(){
     
     $.ajax({
       type: 'POST',
-      url: 'https://publish.emcl.com/',
+      url: 'https://publish.emcl.com/publish',
       data: {
         'html': generatedHTML
       },
