@@ -31,7 +31,9 @@ $(document).ready(function() {
 
     //Open welcome modal on first load
     // code.globaloria.com only
-    if(window.location.hostname == 'code.carnegielearning.com' || window.location.hostname == 'localhost'){
+    if(window.location.hostname == 'code.carnegielearning.com'
+        || window.location.hostname == 'code.globaloria.com'
+        || window.location.hostname == 'localhost'){
         $('#welcomeModal').foundation('reveal', 'open');
     }
     //Open walkthrough on first load
